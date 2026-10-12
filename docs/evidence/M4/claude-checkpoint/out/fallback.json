@@ -1,0 +1,89 @@
+{
+ "native": {
+  "exts": [
+   "EXT_color_buffer_float",
+   "EXT_color_buffer_half_float",
+   "EXT_float_blend",
+   "OES_texture_float_linear"
+  ],
+  "snapshot": {
+   "format": "RGBA16F / manual bilinear",
+   "running": true,
+   "frames": 88
+  },
+  "noticeVisible": false,
+  "noticeText": "",
+  "contact": {
+   "max": 0.8491187914854658,
+   "sum": 1343.222034027613,
+   "centroidU": 0.5000860191397989,
+   "centroidV": 0.5301707175412397,
+   "minX": -0.5146336252937407,
+   "maxX": 0.5146336252937407
+  },
+  "console": [
+   [
+    "info",
+    "[Walden] Wall capture: RGBA16F linear"
+   ],
+   [
+    "info",
+    "[Walden] Touch field: RGBA16F / manual bilinear; framebuffer, vertex sampling and neutral checks passed"
+   ]
+  ]
+ },
+ "noFloatExt": {
+  "exts": [
+   "EXT_color_buffer_float",
+   "EXT_color_buffer_half_float",
+   "EXT_float_blend",
+   "OES_texture_float_linear"
+  ],
+  "snapshot": {
+   "format": "RGBA8 packed16 / manual bilinear",
+   "running": true,
+   "frames": 90
+  },
+  "noticeVisible": false,
+  "noticeText": "",
+  "contact": {
+   "max": 0.8492713817044327,
+   "sum": 1371.8407263294166,
+   "centroidU": 0.5000869556565569,
+   "centroidV": 0.5281202947899833,
+   "minX": -0.5150303659169286,
+   "maxX": 0.5149082918790246
+  },
+  "console": [
+   [
+    "info",
+    "[Walden] Wall capture: SRGB8_ALPHA8 (hardware decode; HDR clipped)"
+   ],
+   [
+    "info",
+    "[Walden] Touch field: RGBA8 packed16 / manual bilinear; framebuffer, vertex sampling and neutral checks passed"
+   ]
+  ]
+ },
+ "validationFails": {
+  "exts": [
+   "EXT_color_buffer_float",
+   "EXT_color_buffer_half_float",
+   "EXT_float_blend",
+   "OES_texture_float_linear"
+  ],
+  "snapshot": null,
+  "noticeVisible": true,
+  "noticeText": "The 3D view could not start. Enable WebGL 2 and hardware acceleration, then reload.",
+  "console": [
+   [
+    "info",
+    "[Walden] Wall capture: RGBA16F linear"
+   ],
+   [
+    "error",
+    "Unable to initialize the scene. Error: No usable touch field framebuffer/sampling path.\n    at Object.configure (http://127.0.0.1:5175/src/interaction/TouchField.js:82:24)\n    at Object.configure (htt"
+   ]
+  ]
+ }
+}

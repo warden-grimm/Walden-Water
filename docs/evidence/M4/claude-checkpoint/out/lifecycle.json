@@ -1,0 +1,167 @@
+{
+ "twoDown": {
+  "count": 2,
+  "pointers": [
+   {
+    "id": 2,
+    "held": true,
+    "valid": true,
+    "uv": [
+     0.27376082873797924,
+     0.6980243966624092
+    ]
+   },
+   {
+    "id": 3,
+    "held": true,
+    "valid": true,
+    "uv": [
+     0.7263525654457703,
+     0.30200728822042516
+    ]
+   }
+  ],
+  "format": "RGBA16F / manual bilinear",
+  "gen": 1,
+  "res": [
+   4,
+   3,
+   4
+  ],
+  "restores": 0,
+  "running": true,
+  "field": {
+   "max": 0.8491187914854658,
+   "sum": 2759.8231021590996,
+   "centroidU": 0.5257183069773205,
+   "centroidV": 0.4392585789469662,
+   "minX": -0.5151219214453566,
+   "maxX": 0.5146336252937407
+  }
+ },
+ "twoMoved": [
+  {
+   "id": 2,
+   "held": true,
+   "valid": true,
+   "uv": [
+    0.27376483013711683,
+    0.6980254974676555
+   ]
+  },
+  {
+   "id": 3,
+   "held": true,
+   "valid": true,
+   "uv": [
+    0.8117070128449531,
+    0.3545742842883412
+   ]
+  }
+ ],
+ "oneLeft": [
+  {
+   "id": 2,
+   "held": true,
+   "valid": true,
+   "uv": [
+    0.27376791283266577,
+    0.6980263328914152
+   ]
+  }
+ ],
+ "afterCancel": 0,
+ "hiddenRunning": {
+  "hidden": true
+ },
+ "afterReturnHeldMouse": 0,
+ "rapidRepressHeld": 0,
+ "resizeHeld": [
+  {
+   "id": 1,
+   "held": true,
+   "valid": false,
+   "uv": [
+    0.4999664112690884,
+    0.5000269805590539
+   ]
+  }
+ ],
+ "lostCount": 0,
+ "afterRestore": {
+  "count": 0,
+  "pointers": [],
+  "format": "RGBA8 packed16 / manual bilinear",
+  "gen": 3,
+  "res": [
+   4,
+   3,
+   4
+  ],
+  "restores": 1,
+  "running": true,
+  "field": {
+   "max": 0,
+   "sum": 0,
+   "centroidU": null,
+   "centroidV": null,
+   "minX": 0,
+   "maxX": 0
+  }
+ },
+ "afterRestoreNeutral": {
+  "max": 0,
+  "sum": 0,
+  "centroidU": null,
+  "centroidV": null,
+  "minX": 0,
+  "maxX": 0
+ },
+ "final": {
+  "count": 0,
+  "pointers": [],
+  "format": "RGBA16F / manual bilinear",
+  "gen": 7,
+  "res": [
+   4,
+   3,
+   4
+  ],
+  "restores": 2,
+  "running": true,
+  "field": {
+   "max": 0,
+   "sum": 0,
+   "centroidU": null,
+   "centroidV": null,
+   "minX": 0,
+   "maxX": 0
+  }
+ },
+ "console": [
+  [
+   "info",
+   "[Walden] Wall capture: RGBA16F linear"
+  ],
+  [
+   "info",
+   "[Walden] Touch field: RGBA16F / manual bilinear; framebuffer, vertex sampling and neutral checks passed"
+  ],
+  [
+   "info",
+   "[Walden] Touch field: RGBA8 packed16 / manual bilinear; framebuffer, vertex sampling and neutral checks passed"
+  ],
+  [
+   "info",
+   "[Walden] Touch field: RGBA16F / manual bilinear; framebuffer, vertex sampling and neutral checks passed"
+  ],
+  [
+   "info",
+   "[Walden] Touch field: RGBA8 packed16 / manual bilinear; framebuffer, vertex sampling and neutral checks passed"
+  ],
+  [
+   "info",
+   "[Walden] Touch field: RGBA16F / manual bilinear; framebuffer, vertex sampling and neutral checks passed"
+  ]
+ ]
+}

@@ -189,6 +189,13 @@
 - **Manual checkpoint:** (1) Open `?debug`, enable touch overlay and hold at top/middle/corners; colors should remain under contact with a downward tail. (2) Hold 3s, release and watch it heal; try slow/fast swipes. (3) Use two pointers and cancel/blur/leave/reenter; no held obstacle may remain. (4) Force byte and repeat, then rebuild targets/reset/restore context. (5) Verify no pass samples its write target and that frame order projects current input before the update. (6) Inspect the resting-surface strategy before adding displacement; final parting/foam, portrait/landscape clips, current-head cost and physical-phone evidence remain due within M4.
 - **Scope:** This checkpoint is deliberately before deformation/foam. M5 particles and future shaft/pool are not included. No M4 code has been pushed to the public M3 site.
 
+### M4 — Checkpoint outcome and fix ownership
+
+- **Review:** [Claude checkpoint r1](docs/reviews/M4-checkpoint-r1.md), DRAFT FEEDBACK at `458f0bd87b5d32efaa71788b275480e9d1cda748`. One blocker: frame-delta velocity produces refresh-dependent strength when input events arrive more slowly than rendering. Coupling is stopped until fixed and independently rechecked. No M4 acceptance.
+- **Ownership:** Builder owns event-timestamp velocity, mismatched-cadence tests, byte quantization residue, graceful terminal validation failure, and rapid re-press fixes before final M4. Also try the half-float-specific extension now while touching allocation. Bound/project the displaced contact centre when coupling later. Phone evidence remains pending.
+- **Evidence:** [54 SHA256-verified reviewer files](docs/evidence/M4/claude-checkpoint/ARCHIVE.md). Independent contact peaks were within 0.5 CSS px; transport error <0.0005 v; normal context cycles and input cleanup passed. Reviewer frame median/p95 17.6/18.3 ms with field on/off/byte. The roughly +2 ms in-app GPU delta remained constant across 64×128 and 512×1024 fields, while the isolated pass took 0.02–0.08 ms. Attribute this to fixed pass/target-switch overhead or timer behavior on this desktop, not demonstrated field shading cost. Re-measure the complete interaction and on phones.
+- **Orca:** Run `run_be8c890ffaab`, task `task_fc15f8e85c9d`, dispatch `ctx_982b82b336ce`. Report committed unchanged as `1761024` before release, fast-forwarded into builder. Worker released; review workspace preserved. Final exact-head review still required.
+
 ### M<n> — <summary>
 
 - Status:

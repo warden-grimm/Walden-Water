@@ -1,0 +1,177 @@
+{
+  "byteDefault_360": {
+    "t": 1.75,
+    "minX": 0,
+    "maxX": 0,
+    "max": 0
+  },
+  "byteDefault_480": {
+    "t": null,
+    "minX": -0.0016785180211798456,
+    "maxX": 0.0016785180211798456,
+    "max": 0
+  },
+  "advect_auto_60": {
+    "v0": 0.8,
+    "rows": [
+      {
+        "T": 0.25,
+        "centroidV": 0.7213,
+        "analytic": 0.721
+      },
+      {
+        "T": 0.5,
+        "centroidV": 0.6302,
+        "analytic": 0.6297
+      }
+    ]
+  },
+  "advect_auto_144": {
+    "v0": 0.8,
+    "rows": [
+      {
+        "T": 0.25,
+        "centroidV": 0.7212,
+        "analytic": 0.721
+      },
+      {
+        "T": 0.5,
+        "centroidV": 0.6301,
+        "analytic": 0.6297
+      }
+    ]
+  },
+  "advect_byte_60": {
+    "v0": 0.8,
+    "rows": [
+      {
+        "T": 0.25,
+        "centroidV": 0.7213,
+        "analytic": 0.721
+      },
+      {
+        "T": 0.5,
+        "centroidV": 0.6302,
+        "analytic": 0.6297
+      }
+    ]
+  },
+  "advect_byte_144": {
+    "v0": 0.8,
+    "rows": [
+      {
+        "T": 0.25,
+        "centroidV": 0.7212,
+        "analytic": 0.721
+      },
+      {
+        "T": 0.5,
+        "centroidV": 0.6301,
+        "analytic": 0.6297
+      }
+    ]
+  },
+  "edges_auto": {
+    "bottomAfter0p3": {
+      "sum": 0,
+      "max": 0,
+      "cV": null
+    },
+    "edgeHeldCentroidU": 0.03892909155417127,
+    "edgeAfterCentroidU": 0.03949123233434537,
+    "edgeMinX": -0.007995849482711264,
+    "edgeMaxX": 0.18567461165196691
+  },
+  "edges_byte": {
+    "bottomAfter0p3": {
+      "sum": 0,
+      "max": 0,
+      "cV": null
+    },
+    "edgeHeldCentroidU": 0.0389298552004542,
+    "edgeAfterCentroidU": 0.0394928844134919,
+    "edgeMinX": -0.008087405011139257,
+    "edgeMaxX": 0.18762779625843073
+  },
+  "extreme_auto_64x128_r0.06": {
+    "finite": true,
+    "max": 0.9995117112993057,
+    "minX": -1,
+    "maxX": 1,
+    "distinct": true,
+    "readId": 2508,
+    "writeId": 2506,
+    "steps": 63,
+    "format": "RGBA16F / manual bilinear"
+  },
+  "extreme_auto_512x1024_r0.3": {
+    "finite": true,
+    "max": 1,
+    "minX": -1,
+    "maxX": 1,
+    "distinct": true,
+    "readId": 2516,
+    "writeId": 2514,
+    "steps": 63,
+    "format": "RGBA16F / manual bilinear"
+  },
+  "extreme_auto_256x512_r0.3": {
+    "finite": true,
+    "max": 0.9995117112993057,
+    "minX": -1,
+    "maxX": 1,
+    "distinct": true,
+    "readId": 2524,
+    "writeId": 2522,
+    "steps": 63,
+    "format": "RGBA16F / manual bilinear"
+  },
+  "extreme_byte_64x128_r0.06": {
+    "finite": true,
+    "max": 0.9998931868467231,
+    "minX": -1,
+    "maxX": 1,
+    "distinct": true,
+    "readId": 2532,
+    "writeId": 2530,
+    "steps": 63,
+    "format": "RGBA8 packed16 / manual bilinear"
+  },
+  "extreme_byte_512x1024_r0.3": {
+    "finite": true,
+    "max": 1,
+    "minX": -1,
+    "maxX": 1,
+    "distinct": true,
+    "readId": 2540,
+    "writeId": 2538,
+    "steps": 63,
+    "format": "RGBA8 packed16 / manual bilinear"
+  },
+  "extreme_byte_256x512_r0.3": {
+    "finite": true,
+    "max": 1,
+    "minX": -1,
+    "maxX": 1,
+    "distinct": true,
+    "readId": 2548,
+    "writeId": 2546,
+    "steps": 63,
+    "format": "RGBA8 packed16 / manual bilinear"
+  },
+  "lateral": {
+    "max": 0.8481422140840772,
+    "sum": 703.9321278706108,
+    "centroidU": 0.4999999999999828,
+    "centroidV": 0.4999999999999817,
+    "minX": -0.5141453291421247,
+    "maxX": 0.5141453291421247
+  },
+  "churn": {
+    "before": 2,
+    "after": 2,
+    "format": "RGBA16F / manual bilinear",
+    "generation": 7,
+    "afterDispose": 0
+  }
+}

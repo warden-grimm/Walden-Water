@@ -1,0 +1,101 @@
+{
+ "control": {
+  "count": 1,
+  "log": [
+   [
+    "pointerdown",
+    1,
+    1
+   ],
+   [
+    "gotpointercapture",
+    1,
+    1
+   ],
+   [
+    "pointerup",
+    1,
+    1
+   ],
+   [
+    "lostpointercapture",
+    1,
+    1
+   ],
+   [
+    "pointerdown",
+    1,
+    10
+   ]
+  ]
+ },
+ "rapid": {
+  "count": 0,
+  "pointers": [],
+  "log": [
+   [
+    "gotpointercapture",
+    1,
+    27
+   ],
+   [
+    "pointerup",
+    1,
+    27
+   ],
+   [
+    "lostpointercapture",
+    1,
+    27
+   ],
+   [
+    "pointerdown",
+    1,
+    112
+   ],
+   [
+    "gotpointercapture",
+    1,
+    112
+   ],
+   [
+    "pointerup",
+    1,
+    112
+   ],
+   [
+    "lostpointercapture",
+    1,
+    112
+   ],
+   [
+    "pointerdown",
+    1,
+    112
+   ]
+  ]
+ },
+ "rapidAfterMove": 0,
+ "beforeResize": [
+  {
+   "id": 1,
+   "held": true,
+   "valid": false,
+   "uv": [
+    0.4438984444904424,
+    0.5000331375830629
+   ]
+  }
+ ],
+ "afterResize": [
+  {
+   "id": 1,
+   "held": true,
+   "valid": true,
+   "uv": [
+    0.5000975861353775,
+    0.6821667256930785
+   ]
+  }
+ ]
+}

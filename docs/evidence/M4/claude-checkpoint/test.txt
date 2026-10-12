@@ -1,0 +1,15 @@
+✔ frame sampler excludes warmup, reports percentiles, and rejects interrupted runs (1.0684ms)
+✔ analytical contacts match both curved meshes during drift, portrait and landscape (173.7034ms)
+✔ pointer IDs, current-camera reprojection, short taps and cleanup do not stick (1.9347ms)
+✔ swipe strength follows speed rather than refresh count, and pointer capacity is bounded (1.0004ms)
+✔ wall covers frustum at farthest displaced depth, including ultrawide and maximum drift (15.9969ms)
+✔ shared light preserves uniform identity and finite ordered cone/fade when tuned (0.5121ms)
+✔ GPU timer waits for availability, rejects disjoint data, restores pool and supports CPU-only fallback (1.5564ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 637.9481

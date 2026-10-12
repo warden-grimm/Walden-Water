@@ -1,0 +1,10 @@
+import { connect, browserSend, sleep } from './cdp.mjs';
+const c = await connect();
+await c.send('Runtime.enable'); await c.send('Log.enable'); await c.send('Page.enable');
+await c.send('Emulation.setDeviceMetricsOverride', { width: 1440, height: 900, deviceScaleFactor: 1, mobile: false });
+await c.send('Page.navigate', { url: 'http://127.0.0.1:5175/?debug' });
+await browserSend('Target.activateTarget', { targetId: c.target.id }); await sleep(2500);
+const s = await c.ev('__WALDEN_DEBUG__.snapshot()');
+console.log(JSON.stringify({ frames: s.frames, running: s.running, touch: s.touch, programs: s.programs, geometries: s.geometries, textures: s.textures }, null, 1));
+console.log(JSON.stringify(c.events.filter(e => e.method==='Runtime.consoleAPICalled'||e.method==='Log.entryAdded'||e.method==='Runtime.exceptionThrown').map(e=>[e.params.type, e.params.args?.map(a=>a.value).join(' ')||e.params.entry?.text||e.params.exceptionDetails?.text])));
+c.close();

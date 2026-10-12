@@ -1,0 +1,130 @@
+{
+  "auto_60Hz_R1.6_th0.001_dif3": {
+    "expected": 1.6,
+    "tNeutral": 1.75,
+    "max": 0,
+    "minX": 0,
+    "maxX": 0,
+    "sum": 0
+  },
+  "auto_60Hz_R3_th0.001_dif0": {
+    "expected": 3,
+    "tNeutral": 3,
+    "max": 0,
+    "minX": 0,
+    "maxX": 0,
+    "sum": 0
+  },
+  "auto_165Hz_R3_th0.001_dif0": {
+    "expected": 3,
+    "tNeutral": 3,
+    "max": 0,
+    "minX": 0,
+    "maxX": 0,
+    "sum": 0
+  },
+  "auto_240Hz_R1.6_th0.001_dif0": {
+    "expected": 1.6,
+    "tNeutral": 1.75,
+    "max": 0,
+    "minX": 0,
+    "maxX": 0,
+    "sum": 0
+  },
+  "auto_240Hz_R3_th0.001_dif0": {
+    "expected": 3,
+    "tNeutral": 3,
+    "max": 0,
+    "minX": 0,
+    "maxX": 0,
+    "sum": 0
+  },
+  "auto_240Hz_R3_th0.001_dif3": {
+    "expected": 3,
+    "tNeutral": 3,
+    "max": 0,
+    "minX": 0,
+    "maxX": 0,
+    "sum": 0
+  },
+  "auto_144Hz_R3_th0.0005_dif0": {
+    "expected": 3,
+    "tNeutral": 3,
+    "max": 0,
+    "minX": 0,
+    "maxX": 0,
+    "sum": 0
+  },
+  "auto_240Hz_R3_th0.0005_dif3": {
+    "expected": 3,
+    "tNeutral": 3,
+    "max": 0,
+    "minX": 0,
+    "maxX": 0,
+    "sum": 0
+  },
+  "byte_60Hz_R1.6_th0.001_dif3": {
+    "expected": 1.6,
+    "tNeutral": 1.75,
+    "max": 0,
+    "minX": 0,
+    "maxX": 0,
+    "sum": 0
+  },
+  "byte_60Hz_R3_th0.001_dif0": {
+    "expected": 3,
+    "tNeutral": 3,
+    "max": 0,
+    "minX": 0,
+    "maxX": 0,
+    "sum": 0
+  },
+  "byte_165Hz_R3_th0.001_dif0": {
+    "expected": 3,
+    "tNeutral": null,
+    "max": 0,
+    "minX": -0.001098666341135899,
+    "maxX": 0.001098666341135899,
+    "sum": 0
+  },
+  "byte_240Hz_R1.6_th0.001_dif0": {
+    "expected": 1.6,
+    "tNeutral": 1.75,
+    "max": 0,
+    "minX": 0,
+    "maxX": 0,
+    "sum": 0
+  },
+  "byte_240Hz_R3_th0.001_dif0": {
+    "expected": 3,
+    "tNeutral": null,
+    "max": 0,
+    "minX": -0.001586962492751854,
+    "maxX": 0.001586962492751854,
+    "sum": 0
+  },
+  "byte_240Hz_R3_th0.001_dif3": {
+    "expected": 3,
+    "tNeutral": null,
+    "max": 0,
+    "minX": -0.0015564439832758568,
+    "maxX": 0.0015564439832758568,
+    "sum": 0
+  },
+  "byte_144Hz_R3_th0.0005_dif0": {
+    "expected": 3,
+    "tNeutral": null,
+    "max": 0,
+    "minX": -0.0008545182653279214,
+    "maxX": 0.0008545182653279214,
+    "sum": 0
+  },
+  "byte_240Hz_R3_th0.0005_dif3": {
+    "expected": 3,
+    "tNeutral": null,
+    "max": 0,
+    "minX": -0.0014038514358958708,
+    "maxX": 0.001434369945371868,
+    "sum": 0
+  }
+}
