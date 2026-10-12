@@ -1,0 +1,74 @@
+﻿[
+    {
+        "path":  "bands.mjs",
+        "sha256":  "9E69E728AEC4D00E0D12DA685B4AB41F6E56141A4FC526046BCCC58D2DA5DE40"
+    },
+    {
+        "path":  "bands.py",
+        "sha256":  "5250265083A2C628E46BB57248BAB753E67F3D846109A1D7657047E25F63C1C5"
+    },
+    {
+        "path":  "cdp.mjs",
+        "sha256":  "62312E5491BED2813209C83604D4DCE3428F62309F819C8B73188A5DD197836E"
+    },
+    {
+        "path":  "draws.mjs",
+        "sha256":  "B459E71E5CCE455A243CC01A837199C9A6E6CA50BB0E5F3CA6EDA0DB2710DB90"
+    },
+    {
+        "path":  "gui.mjs",
+        "sha256":  "2A9A8396EB740F1BA2CA9A40F9E2D340A9BFB6DA7C501F83D404AA1292F0DAB7"
+    },
+    {
+        "path":  "lum.py",
+        "sha256":  "43BBC1868CEC15A8E6C489645D57FC5299C9E73F6D75395BEDC937AAB3FF75E8"
+    },
+    {
+        "path":  "motion.py",
+        "sha256":  "CCB06F3BF3D3629359CA62868F9E6DF828CAEBACC0B9CF8043C6254F366F30C6"
+    },
+    {
+        "path":  "review.mjs",
+        "sha256":  "70AA638ED858A1E16F6C6B7B13C3A71013953BBF1F462831CCE713FD5CDD87AC"
+    },
+    {
+        "path":  "out/results.json",
+        "sha256":  "7146A43D1CF5CD1796863676485E90FFFEAE49DAEA2F4C07C1719BC5AD6BD861"
+    },
+    {
+        "path":  "out/390x844-before.png",
+        "sha256":  "CEF2E82E037B94F8E951DCC1995627E60CDB54FAC2C1531E9FC456E6CAF728B8"
+    },
+    {
+        "path":  "out/390x844-after.png",
+        "sha256":  "4AB91841D5855FB36B7931D8DC0E13CEF3B707CB2398181ABE4B312186E135F0"
+    },
+    {
+        "path":  "out/844x390-before.png",
+        "sha256":  "31950FCE0080C352938136125DDF703D8A4193ECF2AA4529407012B07A52ED85"
+    },
+    {
+        "path":  "out/844x390-after.png",
+        "sha256":  "DBF91825B5BD0DDF40599BAC9E4EA3C5E75C1026AEAC56F970361A2574F440DB"
+    },
+    {
+        "path":  "out/390x844-auto-hold3s.png",
+        "sha256":  "BD7C5B614A06CB3EA049F44F7D0142CE2FDE3CF9BACED221E5F02AB0FF473E33"
+    },
+    {
+        "path":  "out/844x390-byte-hold3s.png",
+        "sha256":  "F829A44EDA2E435CFE3B959630376EC146D18F456B21D871EF4C0B7460DD5D19"
+    },
+    {
+        "path":  "out/bands-1.webm",
+        "sha256":  "933F187687A76C52A084B6337AFA7857A4C2D5E4405E62FF1E506AE722451550"
+    },
+    {
+        "path":  "out/bands-1.15.webm",
+        "sha256":  "0C992E26FB649E32EB2E64EA707C89355D6BF9B247C0C9463CB26233A656FD44"
+    },
+    {
+        "path":  "out/bands-1.15.png",
+        "sha256":  "D49BD695D46E4B0AD1EC807BB9CCCDE7C34CF65773EC601F5E804E1B1AF53B7C"
+    }
+]

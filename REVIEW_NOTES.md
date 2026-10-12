@@ -270,6 +270,14 @@
 - Manual script: (1) reload and compare flow: modestly faster with downward acceleration; (2) check brighter streaks against darker rocks in both orientations, retaining detail/transparency; (3) hold two fingers for three seconds, release and observe healing within about 1–2 seconds; (4) repeat with forced byte. Desktop emulation checks are recorded; physical-phone confirmation is still pending and is not inferred from this visual request.
 - Cost/limits: same passes/geometry/programs and no hot-loop change; existing M4 cost evidence applies. Capture cadence is not measured FPS. No scope deviation or M5 work; current M4 phone-evidence gate and other owned nits remain.
 
+### M4 — faster-flow tune review and release
+
+- Claude reviewed exact `86f9fd594e98719b8b0f059e4267c0c29cdad09a` in the separate `claude-m4-flow-review` Orca workspace. [Unchanged report](docs/reviews/M4-review-r3.md), committed `c8f150d`; [selected independent evidence](docs/evidence/M4/claude-flow-review/README.md). Worker `ctx_837f2d1be943` settled successfully, report committed before release, worktree preserved.
+- **No code or visual blocker to publication.** Reviewer confirms flow frequency 3.998 → 4.608 Hz (1.153×), acceleration preserved, wakes moving down faster, stable held openings, and exact-neutral recovery in 1.22–1.25 seconds. Both formats and orientations deliver two DOM contacts with no console warnings/errors. Wet detail and translucent streaks remain; contrast rises slightly without clipping. Install/build and 17 tests pass; pipeline counts unchanged.
+- M4 verdict remains **CHANGES REQUESTED (unchanged phone evidence only)**. No new physical two-finger confirmation or phone-version information has been supplied. No M5 advancement. Faster recovery remains within the required 1–2 seconds and needs no code action; note at the phone check. All prior owned nits retain deadlines; DOM-counter evidence nit is resolved.
+- Published `c8f150de98c8fc8c79fd3945fb35af47898d4d4d` through [successful Actions run 38311822819](https://github.com/warden-grimm/Walden-Water/actions/runs/38311822819), source-identical to reviewed `86f9fd5`. [Live verification](docs/evidence/M4/flow-contrast-deployment/README.md) confirms matching HTML/asset hashes, normal/debug routes, desktop/portrait/landscape two-contact recovery including byte fallback, and no console warnings/errors.
+- All 18 selected reviewer artifacts in the Git index match their source SHA-256 manifest. This archive and the live verification are evidence-only follow-ups; published application source remains unchanged.
+
 ### M<n> — <summary>
 
 - Status:
