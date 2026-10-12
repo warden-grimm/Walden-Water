@@ -2,6 +2,10 @@
 
 A static Three.js page using plain JavaScript, Vite, and GitHub Pages. The starter includes a rotating placeholder sculpture, orbit controls, responsive rendering, a motion toggle, and a WebGL fallback message.
 
+## Waterfall build and review
+
+The waterfall specification is in [docs/goal.md](docs/goal.md). Follow the ordered [milestone plan](docs/milestones.md) and [working agreement](docs/working-agreement.md). Each milestone stops for independent Claude review in a separate Orca workspace, using [the reviewer prompt](docs/reviewer.md). Record evidence and findings in [REVIEW_NOTES.md](REVIEW_NOTES.md). The current starter is a baseline, not an approved M1.
+
 ## Local development
 
 Use Node.js 24 or newer and npm. `.nvmrc` selects Node 24 for development and CI.
