@@ -1,6 +1,6 @@
 # Milestone acceptance and review plan
 
-Read [goal.md](goal.md) for visual intent and [working-agreement.md](working-agreement.md) for ownership and the stop/review/fix loop. Every milestone ends with a runnable page, passing build, focused commit, evidence, and a Claude verdict for that exact commit. Do not start the next milestone before acceptance.
+Read [goal.md](goal.md) as the product authority and [working-agreement.md](working-agreement.md) for ownership and the stop/review/fix loop. This plan governs operational scope, checks, and evidence; the older working-agreement milestone summary is an outline. Every milestone ends with a runnable page, passing build, focused commit, evidence, and a Claude verdict for that exact commit. Do not start the next milestone before acceptance.
 
 ## Current state and early risks
 
@@ -10,6 +10,7 @@ Read [goal.md](goal.md) for visual intent and [working-agreement.md](working-agr
 - M4 must prove half-float framebuffer support, UV orientation, and byte encoding. Allocation success alone does not prove a usable target. Demonstrate downward transport in the debug field before coupling all effects.
 - M5/M7 need shared pool height and an impact contract. Choose GPU/analytical impact data without synchronous GPU readback or per-frame object allocation; document the choice in M5.
 - A GitHub remote, actual target phone models, and phone measurements are not available yet. These are open verification needs, not passing checks. Desktop resize does not prove mobile GPU performance.
+- Before M4, the coordinator must arrange/request physical-phone evidence from the user or a designated human tester, who supplies the real-device runs. Tester/device assignments remain pending in `REVIEW_NOTES.md` until confirmed; record model, OS/browser, and evidence location when available. M9 requires named recent iPhone/Safari and mid-range Android/Chrome tests; no phones are presumed available.
 
 ## Evidence at every gate
 
@@ -17,11 +18,15 @@ Record build result, changed files, gaps/deviations, and a 3–6 step manual scr
 
 In the review workspace, use `npm ci`, `npm run build`, and `npm run dev -- --port <free-port> --strictPort`. Give the reviewer its own explicit port so it cannot accidentally view the builder's server. Record the served checkout and URL. If browser/device access is unavailable, mark affected checks **unverified**.
 
-For visible milestones, record viewport, browser, device/GPU if known, DPR, enabled effects, buffer dimensions, draw calls/triangles, and median/p95 frame time over 60 seconds after a 10-second warmup. Use debug-only counters/typed buffers; keep instrumentation out of the production hot path. Compare matching settings and surface sustained regressions before the next milestone.
+For visible milestones, record viewport, browser, device/GPU if known, DPR, enabled effects, buffer dimensions, draw calls/triangles, and median/p95 frame time over 60 seconds after a 10-second warmup. Use debug-only counters/typed buffers; keep instrumentation out of the production hot path.
+
+From M2 onward, compare two comparable 60-second runs (accepted baseline and candidate), each after a 10-second warmup, on the same device/browser with matching viewport, DPR, quality/effects, interaction script, and thermal conditions. A >10% increase in **either median OR p95** frame time triggers investigation and documentation of settings, samples, cause, and disposition in `REVIEW_NOTES.md`. Unresolved material regressions block advancement. Reference-quality geometry changes require explicit cost/fidelity review of measured cost and visible tradeoffs before acceptance. This early trigger does not change M9's sustained 60 fps target.
+
+Early M3/M4/M6 reports use `docs/reviews/M<n>-checkpoint-r<revision>.md` and **DRAFT FEEDBACK**. They are non-gating and do not approve a milestone; blocking findings still halt dependent work until resolved. Full milestone approval requires the separate exact-head review.
 
 ## M1 — Scaffold and lifecycle
 
-**Deliverable:** Dark full-screen scene with a wall plane behind a translucent curtain placeholder; fixed camera framed for both orientations; one shared time source; centralized config; `?debug` lil-gui; resize/DPR/lifecycle handling. Ordinary drag must not orbit the camera. Preserve the Pages build.
+**Deliverable:** Dark full-screen scene with a wall plane behind a translucent curtain placeholder; fixed camera framed for both orientations with subtle configurable breathing drift, disabled when `prefers-reduced-motion: reduce` applies; one shared time source; centralized config; `?debug` lil-gui; resize/DPR/lifecycle handling. Fixed means no user orbit: ordinary drag must not orbit the camera. Preserve the Pages build.
 
 **Reviewer checks:**
 
@@ -29,8 +34,9 @@ For visible milestones, record viewport, browser, device/GPU if known, DPR, enab
 2. At 390 × 844, 844 × 390, and desktop size, the lip and future pool line stay in frame, curtain fills most useful height, and wall stays behind it. No page scroll or gesture zoom on the scene surface.
 3. DPR stays at or below 2; buffer dimensions follow resize; shared time cannot jump on resume; hidden tabs stop rendering.
 4. Repeated HMR and context loss/restoration leave one canvas/loop/GUI and no accumulating resources/listeners. Restoration resumes cleanly or offers a clear controlled restart.
+5. Breathing drift is subtle and configurable in `config.js`/debug GUI, preserves framing, and stops while the reduced-motion preference applies. User dragging never changes camera framing.
 
-**Evidence:** Both viewport captures, baseline frame-time sample, lifecycle/console results. Missing physical-device checks are explicit; M1 does not certify final mobile performance.
+**Evidence:** Both viewport captures, drift/reduced-motion clip, baseline frame-time sample, lifecycle/console results. Missing physical-device checks are explicit; M1 does not certify final mobile performance.
 
 **Expected gaps:** Finished shaders, simulation, and effects. The sculpture/orbit demo is not a substitute for the required placeholders.
 
@@ -64,13 +70,14 @@ For visible milestones, record viewport, browser, device/GPU if known, DPR, enab
 
 **Reviewer checks:**
 
-1. Touch top/middle/corners; field marks coincide with contact. Two fingers act independently; dragging does not move the camera.
+1. Touch top/middle/corners with breathing drift running; raycasts use the current camera matrices and field marks coincide with contact. Repeat after resize/orientation change. Two fingers act independently; dragging does not control the camera.
 2. Hold for three seconds: the gap remains. Release: wake moves down and heals in roughly 1–2 seconds. Repeat after orientation change.
 3. Slow/fast swipes produce appropriate strength independent of refresh rate. No overflow/NaN, wrapping ghosts, or upside-down advection.
 4. Leave the canvas, cancel a pointer, blur/hide, and release capture: no stuck touches. Verify no pass reads its active write target.
 5. Force byte mode and repeat. Verify range/neutral value/encode/decode/filtering, reset, resize, and context restoration. Log the chosen path once, not per frame.
+6. Verify current-frame pointer state is consumed before the field update/render. On a physical phone, observe slow/fast drags: splats/parting track contact with no visible trailing lag, preferably evidenced by a slow-motion recording. Record the observation and method; report numeric latency only if actually measured.
 
-**Evidence:** Debug/final-water clips; a real multi-touch phone run; recovery timing; both path logs; cost delta. Missing multi-touch or fallback evidence blocks this gate.
+**Evidence:** Debug/final-water clips including drift/raycast alignment; a real multi-touch phone run with tester/model/OS/browser and latency observation; recovery timing; both path logs; cost delta. Missing multi-touch, phone latency observation, or fallback evidence blocks this gate.
 
 **Expected gaps:** Splash particles (M5). Parting must work without particles hiding a defective field.
 
@@ -112,7 +119,7 @@ For visible milestones, record viewport, browser, device/GPU if known, DPR, enab
 
 **Deliverable:** Profiled final presets and evidence for all six goal acceptance criteria; repeatable production build at a Pages repository path.
 
-**Reviewer checks:** Identify recent iPhone/Safari and mid-range Android/Chrome devices; test orientation and two fingers. Record 60-second idle/interaction samples after warmup, thermal conditions, and GPU timings where available. Target sustained 60 fps (about 16.7 ms/frame); include median/p95 and dropped frames. Average-only screenshots or desktop emulation do not pass. Document weaker-device degradation separately.
+**Reviewer checks:** Run tests on a named recent iPhone/Safari and a named mid-range Android/Chrome device, with confirmed human testers; test orientation and two fingers on both. Record 60-second idle/interaction samples after warmup, thermal conditions, and GPU timings where available. Target sustained 60 fps (about 16.7 ms/frame); include median/p95 and dropped frames. Average-only screenshots or desktop emulation do not pass. Document weaker-device degradation separately.
 
 Inspect hot paths for allocations/leaks, synchronous readbacks, unnecessary passes, overdraw, and unbounded emitters. Serve `dist/` at `/Walden-Water/`; verify assets, `?debug`, and interaction. Actual publication requires a remote and Pages configuration; report that status accurately.
 

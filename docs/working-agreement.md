@@ -1,6 +1,6 @@
 # Working Agreement: Builder and Reviewer
 
-The product specification is [goal.md](goal.md). Concrete acceptance checks and evidence for each milestone are in [milestones.md](milestones.md). Claude's independent prompt and rubric are in [reviewer.md](reviewer.md).
+[goal.md](goal.md) is the product authority. [milestones.md](milestones.md) governs operational scope, acceptance checks, and evidence for each milestone; the older summary below is an outline, not a competing authority or a reason to defer work assigned earlier there. Claude's independent prompt and rubric are in [reviewer.md](reviewer.md).
 
 The rotating-sculpture starter is a baseline, not an approved M1. Work proceeds through M1–M9 in order; plan review does not approve any implementation milestone.
 
@@ -8,8 +8,8 @@ The rotating-sculpture starter is a baseline, not an approved M1. Work proceeds 
 
 - The builder owns implementation and fixes. Claude owns findings and the verdict, and must not rewrite the implementation being reviewed.
 - Use separate Orca workspaces: the builder checkout and a child review worktree created from the exact submitted commit. Review committed snapshots, never a moving working directory. Keep the builder idle on the submitted milestone during review.
-- Each submission names the milestone, previous approved commit (`BASE_SHA`), submitted commit (`HEAD_SHA`), review workspace ID, and evidence location. The reviewer verifies `git rev-parse HEAD` and reviews `git diff BASE_SHA..HEAD_SHA`.
-- Save Claude's report under `docs/reviews/M<n>-review-r<revision>.md`, tied to `HEAD_SHA`. A report written afterward is review evidence, not a change to the reviewed implementation.
+- Each submission names the milestone, last accepted reviewed implementation head (`BASE_SHA`), submitted commit (`HEAD_SHA`), review workspace ID, and evidence location. The next `BASE_SHA` is that accepted implementation head, never the later report-only commit. Since no implementation milestone is approved yet, use `e03aed336d31985206bfb9be0ea88525cead4d64` as the PLAN/M1 baseline; PLAN approval does not create an implementation approval. The reviewer verifies `git rev-parse HEAD` and reviews `git diff BASE_SHA..HEAD_SHA`; the full review documents remain inputs regardless of the diff.
+- Save Claude's report under `docs/reviews/<milestone>-review-r<revision>.md` (`<milestone>` is `PLAN` or `M1`–`M9`), tied to `HEAD_SHA`. A report written afterward is review evidence, not a change to the reviewed implementation.
 - The builder addresses findings in focused `M<n>: ...` fix commits and submits a new exact head. Claude verifies fixes and regressions. Never silently carry a blocker into the next milestone.
 - Advance only after `APPROVE` or `APPROVE WITH NITS`, required evidence is present, and remaining nits have an owner and due milestone. `CHANGES REQUESTED` or missing critical evidence keeps the gate closed. Passing builds, completed agent tasks, acknowledgments, and silence are not approval.
 - The coordinator records the report/outcome in `REVIEW_NOTES.md` and updates Orca status/comments. It processes early questions/blockers during review. Commit review reports before releasing an agent; preserve the review worktree for inspection. Do not delete workspaces automatically.
@@ -40,7 +40,11 @@ Stop after each milestone for review, and don't start the next one until review 
 
 Raise problems when discovered: report the failing check, reproduction, affected milestone, consequence, and smallest proposed remedy. Stop dependent work when an unresolved choice would cause rework; continue only independent work within the current milestone. Use early draft checkpoints for M3 transparency/refraction, M4 field transport/fallback, and M6 depth fade before completing each feature.
 
-Capture a performance baseline in M1 and compare every milestone on the same available device. M9 is final verification, not the first profiling pass. Device emulation is not evidence of real mobile GPU performance or multi-touch behavior.
+The coordinator names early reports `docs/reviews/M<n>-checkpoint-r<revision>.md`. These contain **DRAFT FEEDBACK**, are non-gating, and do not approve a milestone or permit advancement. Blocking findings still halt dependent work until resolved; the complete milestone still requires its exact-head review.
+
+Capture a performance baseline in M1 and compare every milestone on the same available device using the reproducible regression trigger in [milestones.md](milestones.md#evidence-at-every-gate). Unresolved material regressions block advancement; reference-quality geometry changes require explicit cost/fidelity review. M9 is final verification, not the first profiling pass, and its sustained 60 fps target is unchanged. Device emulation is not evidence of real mobile GPU performance or multi-touch behavior.
+
+Before M4, the coordinator owns arranging/requesting physical-phone evidence; the user or a designated human tester supplies the real-device runs. Record confirmed tester, device model, OS/browser, and evidence location in `REVIEW_NOTES.md`; keep assignments pending until confirmed. M4 needs a real multi-touch phone run, and M9 needs named recent iPhone/Safari and mid-range Android/Chrome tests. No device availability is assumed.
 
 ### Milestones
 
