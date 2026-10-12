@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#edf1eb" />
+    <meta name="description" content="Walden Water — an exploration of water, light, and motion." />
+    <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
+    <title>Walden Water</title>
+  </head>
+  <body>
+    <main class="experience">
+      <canvas id="scene" aria-label="An interactive, rotating blue geometric sculpture" aria-describedby="scene-help"></canvas>
+      <header class="intro">
+        <p class="eyebrow">Water · Light · Motion</p>
+        <h1>Walden Water</h1>
+        <p>A place to begin.</p>
+      </header>
+      <footer class="toolbar" id="scene-controls" hidden>
+        <p id="scene-help">Drag to orbit · Scroll or pinch to zoom</p>
+        <div class="actions">
+          <button id="toggle-motion" type="button">Pause motion</button>
+          <button id="reset-view" type="button">Reset view</button>
+        </div>
+      </footer>
+      <p class="notice" id="scene-error" role="status" hidden>
+        The 3D view could not start. Try a browser with WebGL 2 and hardware acceleration enabled.
+      </p>
+      <noscript><p class="notice">Enable JavaScript to explore this 3D scene.</p></noscript>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
