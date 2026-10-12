@@ -1,0 +1,17 @@
+{
+  "label": "m2",
+  "phases": {
+    "load": 0,
+    "afterContext": 0,
+    "afterHmrWithPriorRestore": 30,
+    "hmrWithoutRestoreDelta": 0
+  },
+  "sample": [
+    "WebGL: INVALID_OPERATION: delete: object does not belong to this context",
+    "WebGL: INVALID_OPERATION: delete: object does not belong to this context"
+  ],
+  "restoredOk": {
+    "frames": 89,
+    "running": true
+  }
+}

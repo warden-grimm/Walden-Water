@@ -1,0 +1,1215 @@
+{
+  "captures": {
+    "desktop": {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "buffer": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "running": true,
+      "contextLost": false,
+      "restores": 0,
+      "frames": 166,
+      "elapsed": 2.7501679999999955,
+      "reducedMotion": false,
+      "camera": [
+        0.02051641019576088,
+        3.009693838994006,
+        9.388320632897686
+      ],
+      "drawCalls": 4,
+      "triangles": 131078,
+      "geometries": 2,
+      "textures": 0,
+      "programs": 2,
+      "wall": {
+        "segments": 256,
+        "size": [
+          20,
+          12
+        ],
+        "quality": "reference",
+        "displacement": true,
+        "sheen": true,
+        "view": "rock"
+      },
+      "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+    },
+    "portrait": {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "buffer": {
+        "width": 780,
+        "height": 1688
+      },
+      "dpr": 2,
+      "running": true,
+      "contextLost": false,
+      "restores": 0,
+      "frames": 233,
+      "elapsed": 3.9002679999999925,
+      "reducedMotion": false,
+      "camera": [
+        0.024472943288552425,
+        3.0125937721851406,
+        10.647765095859238
+      ],
+      "drawCalls": 4,
+      "triangles": 131078,
+      "geometries": 2,
+      "textures": 0,
+      "programs": 2,
+      "wall": {
+        "segments": 256,
+        "size": [
+          20,
+          12
+        ],
+        "quality": "reference",
+        "displacement": true,
+        "sheen": true,
+        "view": "rock"
+      },
+      "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+    },
+    "landscape": {
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "buffer": {
+        "width": 1688,
+        "height": 780
+      },
+      "dpr": 2,
+      "running": true,
+      "contextLost": false,
+      "restores": 0,
+      "frames": 298,
+      "elapsed": 5.017168000000002,
+      "reducedMotion": false,
+      "camera": [
+        0.024572428618342954,
+        3.0143783253273915,
+        9.388320632897686
+      ],
+      "drawCalls": 4,
+      "triangles": 131078,
+      "geometries": 2,
+      "textures": 0,
+      "programs": 2,
+      "wall": {
+        "segments": 256,
+        "size": [
+          20,
+          12
+        ],
+        "quality": "reference",
+        "displacement": true,
+        "sheen": true,
+        "view": "rock"
+      },
+      "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+    },
+    "ultrawide": {
+      "viewport": {
+        "width": 3840,
+        "height": 720
+      },
+      "buffer": {
+        "width": 3840,
+        "height": 720
+      },
+      "dpr": 1,
+      "running": true,
+      "contextLost": false,
+      "restores": 0,
+      "frames": 396,
+      "elapsed": 6.65056800000002,
+      "reducedMotion": false,
+      "camera": [
+        0.018174162067127114,
+        3.014876474874039,
+        9.388320632897686
+      ],
+      "drawCalls": 4,
+      "triangles": 131078,
+      "geometries": 2,
+      "textures": 0,
+      "programs": 2,
+      "wall": {
+        "segments": 256,
+        "size": [
+          45.941576130761035,
+          12
+        ],
+        "quality": "reference",
+        "displacement": true,
+        "sheen": true,
+        "view": "rock"
+      },
+      "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+    },
+    "ultrawide-8to1": {
+      "viewport": {
+        "width": 5760,
+        "height": 720
+      },
+      "buffer": {
+        "width": 5760,
+        "height": 720
+      },
+      "dpr": 1,
+      "running": true,
+      "contextLost": false,
+      "restores": 0,
+      "frames": 508,
+      "elapsed": 8.51736800000003,
+      "reducedMotion": false,
+      "camera": [
+        0.003995636896044682,
+        3.0123341930485132,
+        9.388320632897686
+      ],
+      "drawCalls": 4,
+      "triangles": 131078,
+      "geometries": 2,
+      "textures": 0,
+      "programs": 2,
+      "wall": {
+        "segments": 256,
+        "size": [
+          68.64388440603527,
+          12
+        ],
+        "quality": "reference",
+        "displacement": true,
+        "sheen": true,
+        "view": "rock"
+      },
+      "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+    },
+    "rock-reference": {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "buffer": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "running": true,
+      "contextLost": false,
+      "restores": 0,
+      "frames": 662,
+      "elapsed": 11.084267999999984,
+      "reducedMotion": false,
+      "camera": [
+        0,
+        3,
+        9.388320632897686
+      ],
+      "drawCalls": 4,
+      "triangles": 131078,
+      "geometries": 2,
+      "textures": 0,
+      "programs": 2,
+      "wall": {
+        "segments": 256,
+        "size": [
+          20,
+          12
+        ],
+        "quality": "reference",
+        "displacement": true,
+        "sheen": true,
+        "view": "rock"
+      },
+      "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+    },
+    "rock-reduced": {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "buffer": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "running": true,
+      "contextLost": false,
+      "restores": 0,
+      "frames": 709,
+      "elapsed": 11.867567999999974,
+      "reducedMotion": false,
+      "camera": [
+        0,
+        3,
+        9.388320632897686
+      ],
+      "drawCalls": 4,
+      "triangles": 32774,
+      "geometries": 2,
+      "textures": 0,
+      "programs": 2,
+      "wall": {
+        "segments": 128,
+        "size": [
+          20,
+          12
+        ],
+        "quality": "reduced",
+        "displacement": true,
+        "sheen": true,
+        "view": "rock"
+      },
+      "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+    },
+    "wet-mask": {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "buffer": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "running": true,
+      "contextLost": false,
+      "restores": 0,
+      "frames": 742,
+      "elapsed": 12.417667999999967,
+      "reducedMotion": false,
+      "camera": [
+        0,
+        3,
+        9.388320632897686
+      ],
+      "drawCalls": 4,
+      "triangles": 131078,
+      "geometries": 2,
+      "textures": 0,
+      "programs": 2,
+      "wall": {
+        "segments": 256,
+        "size": [
+          20,
+          12
+        ],
+        "quality": "reference",
+        "displacement": true,
+        "sheen": true,
+        "view": "wet mask"
+      },
+      "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+    },
+    "light-mask": {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "buffer": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "running": true,
+      "contextLost": false,
+      "restores": 0,
+      "frames": 775,
+      "elapsed": 12.967767999999957,
+      "reducedMotion": false,
+      "camera": [
+        0,
+        3,
+        9.388320632897686
+      ],
+      "drawCalls": 4,
+      "triangles": 131078,
+      "geometries": 2,
+      "textures": 0,
+      "programs": 2,
+      "wall": {
+        "segments": 256,
+        "size": [
+          20,
+          12
+        ],
+        "quality": "reference",
+        "displacement": true,
+        "sheen": true,
+        "view": "light mask"
+      },
+      "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+    },
+    "light-mask-moved": {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "buffer": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "running": true,
+      "contextLost": false,
+      "restores": 0,
+      "frames": 807,
+      "elapsed": 13.50106799999995,
+      "reducedMotion": false,
+      "camera": [
+        0,
+        3,
+        9.388320632897686
+      ],
+      "drawCalls": 4,
+      "triangles": 131078,
+      "geometries": 2,
+      "textures": 0,
+      "programs": 2,
+      "wall": {
+        "segments": 256,
+        "size": [
+          20,
+          12
+        ],
+        "quality": "reference",
+        "displacement": true,
+        "sheen": true,
+        "view": "light mask"
+      },
+      "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+    },
+    "rock-light-moved": {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "buffer": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "running": true,
+      "contextLost": false,
+      "restores": 0,
+      "frames": 853,
+      "elapsed": 14.26776799999994,
+      "reducedMotion": false,
+      "camera": [
+        0,
+        3,
+        9.388320632897686
+      ],
+      "drawCalls": 4,
+      "triangles": 131078,
+      "geometries": 2,
+      "textures": 0,
+      "programs": 2,
+      "wall": {
+        "segments": 256,
+        "size": [
+          20,
+          12
+        ],
+        "quality": "reference",
+        "displacement": true,
+        "sheen": true,
+        "view": "rock"
+      },
+      "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+    },
+    "sheen-off": {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "buffer": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "running": true,
+      "contextLost": false,
+      "restores": 0,
+      "frames": 899,
+      "elapsed": 15.03446799999993,
+      "reducedMotion": false,
+      "camera": [
+        0,
+        3,
+        9.388320632897686
+      ],
+      "drawCalls": 4,
+      "triangles": 131078,
+      "geometries": 2,
+      "textures": 0,
+      "programs": 2,
+      "wall": {
+        "segments": 256,
+        "size": [
+          20,
+          12
+        ],
+        "quality": "reference",
+        "displacement": true,
+        "sheen": false,
+        "view": "rock"
+      },
+      "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+    },
+    "displacement-off": {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "buffer": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "running": true,
+      "contextLost": false,
+      "restores": 0,
+      "frames": 944,
+      "elapsed": 15.784567999999913,
+      "reducedMotion": false,
+      "camera": [
+        0,
+        3,
+        9.388320632897686
+      ],
+      "drawCalls": 4,
+      "triangles": 131078,
+      "geometries": 2,
+      "textures": 0,
+      "programs": 2,
+      "wall": {
+        "segments": 256,
+        "size": [
+          20,
+          12
+        ],
+        "quality": "reference",
+        "displacement": false,
+        "sheen": true,
+        "view": "rock"
+      },
+      "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+    },
+    "rock-reference-restored": {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "buffer": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "running": true,
+      "contextLost": false,
+      "restores": 0,
+      "frames": 989,
+      "elapsed": 16.534567999999883,
+      "reducedMotion": false,
+      "camera": [
+        0,
+        3,
+        9.388320632897686
+      ],
+      "drawCalls": 4,
+      "triangles": 131078,
+      "geometries": 2,
+      "textures": 0,
+      "programs": 2,
+      "wall": {
+        "segments": 256,
+        "size": [
+          20,
+          12
+        ],
+        "quality": "reference",
+        "displacement": true,
+        "sheen": true,
+        "view": "rock"
+      },
+      "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+    }
+  },
+  "gui": {
+    "folders": {
+      "renderer": 3,
+      "camera": 9,
+      "wall": 9,
+      "rock": 19,
+      "wet": 11,
+      "light": 14,
+      "curtain": 4,
+      "markers": 5,
+      "timing": 1,
+      "Diagnostics": 9
+    },
+    "missing": [],
+    "rebuild": [
+      "quality (rebuild)",
+      "referenceSegments (rebuild)",
+      "reducedSegments (rebuild)"
+    ],
+    "title": "Walden · M2"
+  },
+  "normals": {
+    "reference": {
+      "pixels": 1165715,
+      "over095": 0.8963,
+      "from080to095": 0.0744,
+      "under080": 0.0293
+    },
+    "reduced": {
+      "pixels": 1165715,
+      "over095": 0.7417,
+      "from080to095": 0.1691,
+      "under080": 0.0892
+    },
+    "flat": {
+      "pixels": 1165715,
+      "over095": 0.9983,
+      "from080to095": 0.0009,
+      "under080": 0.0008
+    }
+  },
+  "context": [
+    {
+      "lost": {
+        "snapshot": {
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "buffer": {
+            "width": 1440,
+            "height": 900
+          },
+          "dpr": 1,
+          "running": false,
+          "contextLost": true,
+          "restores": 0,
+          "frames": 83,
+          "elapsed": 1.3999999999999988,
+          "reducedMotion": false,
+          "camera": [
+            0.011765647204278942,
+            3.005251811110703,
+            9.388320632897686
+          ],
+          "drawCalls": 4,
+          "triangles": 131078,
+          "geometries": 2,
+          "textures": 0,
+          "programs": 2,
+          "wall": {
+            "segments": 256,
+            "size": [
+              20,
+              12
+            ],
+            "quality": "reference",
+            "displacement": true,
+            "sheen": true,
+            "view": "rock"
+          },
+          "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+        },
+        "sample": "cancelled"
+      },
+      "restored": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "buffer": {
+          "width": 1440,
+          "height": 900
+        },
+        "dpr": 1,
+        "running": true,
+        "contextLost": false,
+        "restores": 1,
+        "frames": 143,
+        "elapsed": 2.3999999999999986,
+        "reducedMotion": false,
+        "camera": [
+          0.018616077999271476,
+          3.008632310943035,
+          9.388320632897686
+        ],
+        "drawCalls": 4,
+        "triangles": 131078,
+        "geometries": 2,
+        "textures": 0,
+        "programs": 2,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      }
+    },
+    {
+      "lost": {
+        "snapshot": {
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "buffer": {
+            "width": 1440,
+            "height": 900
+          },
+          "dpr": 1,
+          "running": false,
+          "contextLost": true,
+          "restores": 1,
+          "frames": 143,
+          "elapsed": 2.3999999999999986,
+          "reducedMotion": false,
+          "camera": [
+            0.018616077999271476,
+            3.008632310943035,
+            9.388320632897686
+          ],
+          "drawCalls": 4,
+          "triangles": 131078,
+          "geometries": 2,
+          "textures": 0,
+          "programs": 2,
+          "wall": {
+            "segments": 256,
+            "size": [
+              20,
+              12
+            ],
+            "quality": "reference",
+            "displacement": true,
+            "sheen": true,
+            "view": "rock"
+          },
+          "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+        },
+        "sample": "cancelled"
+      },
+      "restored": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "buffer": {
+          "width": 1440,
+          "height": 900
+        },
+        "dpr": 1,
+        "running": true,
+        "contextLost": false,
+        "restores": 2,
+        "frames": 204,
+        "elapsed": 3.416699999999996,
+        "reducedMotion": false,
+        "camera": [
+          0.02326313621170037,
+          3.0114935801096308,
+          9.388320632897686
+        ],
+        "drawCalls": 4,
+        "triangles": 131078,
+        "geometries": 2,
+        "textures": 0,
+        "programs": 2,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      }
+    },
+    {
+      "lost": {
+        "snapshot": {
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "buffer": {
+            "width": 1440,
+            "height": 900
+          },
+          "dpr": 1,
+          "running": false,
+          "contextLost": true,
+          "restores": 2,
+          "frames": 204,
+          "elapsed": 3.416699999999996,
+          "reducedMotion": false,
+          "camera": [
+            0.02326313621170037,
+            3.0114935801096308,
+            9.388320632897686
+          ],
+          "drawCalls": 4,
+          "triangles": 131078,
+          "geometries": 2,
+          "textures": 0,
+          "programs": 2,
+          "wall": {
+            "segments": 256,
+            "size": [
+              20,
+              12
+            ],
+            "quality": "reference",
+            "displacement": true,
+            "sheen": true,
+            "view": "rock"
+          },
+          "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+        },
+        "sample": "cancelled"
+      },
+      "restored": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "buffer": {
+          "width": 1440,
+          "height": 900
+        },
+        "dpr": 1,
+        "running": true,
+        "contextLost": false,
+        "restores": 3,
+        "frames": 265,
+        "elapsed": 4.433500000000002,
+        "reducedMotion": false,
+        "camera": [
+          0.02499545369397787,
+          3.013583790091634,
+          9.388320632897686
+        ],
+        "drawCalls": 4,
+        "triangles": 131078,
+        "geometries": 2,
+        "textures": 0,
+        "programs": 2,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      }
+    }
+  ],
+  "hmr": [
+    {
+      "snapshot": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "buffer": {
+          "width": 1440,
+          "height": 900
+        },
+        "dpr": 1,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 71,
+        "elapsed": 1.1834000000000002,
+        "reducedMotion": false,
+        "camera": [
+          0.010061213849515792,
+          3.004466591020364,
+          9.388320632897686
+        ],
+        "drawCalls": 4,
+        "triangles": 131078,
+        "geometries": 2,
+        "textures": 0,
+        "programs": 2,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      },
+      "canvases": 1,
+      "panels": 1
+    },
+    {
+      "snapshot": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "buffer": {
+          "width": 1440,
+          "height": 900
+        },
+        "dpr": 1,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 71,
+        "elapsed": 1.1834000000000002,
+        "reducedMotion": false,
+        "camera": [
+          0.010061213849515792,
+          3.004466591020364,
+          9.388320632897686
+        ],
+        "drawCalls": 4,
+        "triangles": 131078,
+        "geometries": 2,
+        "textures": 0,
+        "programs": 2,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      },
+      "canvases": 1,
+      "panels": 1
+    },
+    {
+      "snapshot": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "buffer": {
+          "width": 1440,
+          "height": 900
+        },
+        "dpr": 1,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 72,
+        "elapsed": 1.1834000000000002,
+        "reducedMotion": false,
+        "camera": [
+          0.010061213849515792,
+          3.004466591020364,
+          9.388320632897686
+        ],
+        "drawCalls": 4,
+        "triangles": 131078,
+        "geometries": 2,
+        "textures": 0,
+        "programs": 2,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      },
+      "canvases": 1,
+      "panels": 1
+    },
+    {
+      "snapshot": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "buffer": {
+          "width": 1440,
+          "height": 900
+        },
+        "dpr": 1,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 69,
+        "elapsed": 1.1333999999999997,
+        "reducedMotion": false,
+        "camera": [
+          0.009659187568357354,
+          3.004283299251186,
+          9.388320632897686
+        ],
+        "drawCalls": 4,
+        "triangles": 131078,
+        "geometries": 2,
+        "textures": 0,
+        "programs": 2,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      },
+      "canvases": 1,
+      "panels": 1
+    },
+    {
+      "snapshot": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "buffer": {
+          "width": 1440,
+          "height": 900
+        },
+        "dpr": 1,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 69,
+        "elapsed": 1.1334,
+        "reducedMotion": false,
+        "camera": [
+          0.009659187568357356,
+          3.004283299251186,
+          9.388320632897686
+        ],
+        "drawCalls": 4,
+        "triangles": 131078,
+        "geometries": 2,
+        "textures": 0,
+        "programs": 2,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      },
+      "canvases": 1,
+      "panels": 1
+    }
+  ],
+  "files": {
+    "fragBefore": "8fe0a129141ed7d3d5ffdc55188c2e391bd230f74b3d409402d398d7e4955a6b",
+    "fragAfter": "8fe0a129141ed7d3d5ffdc55188c2e391bd230f74b3d409402d398d7e4955a6b",
+    "configBefore": "6b2f853607eea0bf68110e481528305beaaad739859f141508dfba4b10f37382",
+    "configAfter": "6b2f853607eea0bf68110e481528305beaaad739859f141508dfba4b10f37382"
+  },
+  "normalUrl": {
+    "debug": false,
+    "gui": 0,
+    "canvases": 1
+  },
+  "qualityToggleGeometries": [
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+  ],
+  "trickleShiftPx": {
+    "best": 40,
+    "note": "positive = pattern moved down the screen between captures ~0.5-0.9 s apart"
+  },
+  "timerAfterRestore": {
+    "timerExt": true,
+    "lost": false
+  },
+  "afterHmrRestore": {
+    "snapshot": {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "buffer": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "running": true,
+      "contextLost": false,
+      "restores": 0,
+      "frames": 70,
+      "elapsed": 1.1502000000000014,
+      "reducedMotion": false,
+      "camera": [
+        0.00979460451058925,
+        3.0043449647519713,
+        9.388320632897686
+      ],
+      "drawCalls": 4,
+      "triangles": 131078,
+      "geometries": 2,
+      "textures": 0,
+      "programs": 2,
+      "wall": {
+        "segments": 256,
+        "size": [
+          20,
+          12
+        ],
+        "quality": "reference",
+        "displacement": true,
+        "sheen": true,
+        "view": "rock"
+      },
+      "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+    },
+    "canvases": 1,
+    "panels": 1
+  },
+  "reducedMotion": [
+    0,
+    3,
+    9.388320632897686
+  ],
+  "visibility": {
+    "hiddenA": [
+      "hidden",
+      92,
+      1.5168000000000006
+    ],
+    "hiddenB": [
+      "hidden",
+      92,
+      1.5168000000000006
+    ],
+    "resumed": [
+      "visible",
+      124,
+      2.0334
+    ]
+  },
+  "gpu": {
+    "renderer": "ANGLE (NVIDIA, NVIDIA RTX A4500 (0x00002232) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "precision": 23
+  },
+  "consoleIssues": [
+    "{\"entry\":{\"source\":\"rendering\",\"level\":\"warning\",\"text\":\"WebGL: INVALID_OPERATION: delete: object does not belong to this context\",\"timestamp\":1791824020260.5,\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lineNumber\":42095,\"stackTrace\":{\"callFrames\":[{\"functionName\":\"remove\",\"scriptId\":\"8\",\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lineN",
+    "{\"entry\":{\"source\":\"rendering\",\"level\":\"warning\",\"text\":\"WebGL: INVALID_OPERATION: delete: object does not belong to this context\",\"timestamp\":1791824020260.621,\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lineNumber\":42095,\"stackTrace\":{\"callFrames\":[{\"functionName\":\"remove\",\"scriptId\":\"8\",\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lin",
+    "{\"entry\":{\"source\":\"rendering\",\"level\":\"warning\",\"text\":\"WebGL: INVALID_OPERATION: delete: object does not belong to this context\",\"timestamp\":1791824020260.676,\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lineNumber\":42095,\"stackTrace\":{\"callFrames\":[{\"functionName\":\"remove\",\"scriptId\":\"8\",\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lin",
+    "{\"entry\":{\"source\":\"rendering\",\"level\":\"warning\",\"text\":\"WebGL: INVALID_OPERATION: delete: object does not belong to this context\",\"timestamp\":1791824020260.719,\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lineNumber\":42095,\"stackTrace\":{\"callFrames\":[{\"functionName\":\"remove\",\"scriptId\":\"8\",\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lin",
+    "{\"entry\":{\"source\":\"rendering\",\"level\":\"warning\",\"text\":\"WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context\",\"timestamp\":1791824020260.839,\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lineNumber\":42909,\"stackTrace\":{\"callFrames\":[{\"functionName\":\"deleteVertexArrayObject\",\"scriptId\":\"8\",\"url\":\"http://127.0.0.1:5175/node_modules/.vite/de",
+    "{\"entry\":{\"source\":\"rendering\",\"level\":\"warning\",\"text\":\"WebGL: INVALID_OPERATION: delete: object does not belong to this context\",\"timestamp\":1791824020260.906,\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lineNumber\":42095,\"stackTrace\":{\"callFrames\":[{\"functionName\":\"remove\",\"scriptId\":\"8\",\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lin",
+    "{\"entry\":{\"source\":\"rendering\",\"level\":\"warning\",\"text\":\"WebGL: INVALID_OPERATION: delete: object does not belong to this context\",\"timestamp\":1791824020260.955,\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lineNumber\":42095,\"stackTrace\":{\"callFrames\":[{\"functionName\":\"remove\",\"scriptId\":\"8\",\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lin",
+    "{\"entry\":{\"source\":\"rendering\",\"level\":\"warning\",\"text\":\"WebGL: INVALID_OPERATION: delete: object does not belong to this context\",\"timestamp\":1791824020261,\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lineNumber\":42095,\"stackTrace\":{\"callFrames\":[{\"functionName\":\"remove\",\"scriptId\":\"8\",\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lineNum",
+    "{\"entry\":{\"source\":\"rendering\",\"level\":\"warning\",\"text\":\"WebGL: INVALID_OPERATION: delete: object does not belong to this context\",\"timestamp\":1791824020261.064,\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lineNumber\":42095,\"stackTrace\":{\"callFrames\":[{\"functionName\":\"remove\",\"scriptId\":\"8\",\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lin",
+    "{\"entry\":{\"source\":\"rendering\",\"level\":\"warning\",\"text\":\"WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context\",\"timestamp\":1791824020261.126,\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lineNumber\":42909,\"stackTrace\":{\"callFrames\":[{\"functionName\":\"deleteVertexArrayObject\",\"scriptId\":\"8\",\"url\":\"http://127.0.0.1:5175/node_modules/.vite/de",
+    "{\"entry\":{\"source\":\"rendering\",\"level\":\"warning\",\"text\":\"WebGL: INVALID_OPERATION: delete: object does not belong to this context\",\"timestamp\":1791824020261.188,\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lineNumber\":42095,\"stackTrace\":{\"callFrames\":[{\"functionName\":\"remove\",\"scriptId\":\"8\",\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lin",
+    "{\"entry\":{\"source\":\"rendering\",\"level\":\"warning\",\"text\":\"WebGL: INVALID_OPERATION: delete: object does not belong to this context\",\"timestamp\":1791824020261.233,\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lineNumber\":42095,\"stackTrace\":{\"callFrames\":[{\"functionName\":\"remove\",\"scriptId\":\"8\",\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lin",
+    "{\"entry\":{\"source\":\"rendering\",\"level\":\"warning\",\"text\":\"WebGL: INVALID_OPERATION: delete: object does not belong to this context\",\"timestamp\":1791824020261.285,\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lineNumber\":42095,\"stackTrace\":{\"callFrames\":[{\"functionName\":\"remove\",\"scriptId\":\"8\",\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lin",
+    "{\"entry\":{\"source\":\"rendering\",\"level\":\"warning\",\"text\":\"WebGL: INVALID_OPERATION: delete: object does not belong to this context\",\"timestamp\":1791824020261.346,\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lineNumber\":42095,\"stackTrace\":{\"callFrames\":[{\"functionName\":\"remove\",\"scriptId\":\"8\",\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lin",
+    "{\"entry\":{\"source\":\"rendering\",\"level\":\"warning\",\"text\":\"WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context\",\"timestamp\":1791824020261.408,\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lineNumber\":42909,\"stackTrace\":{\"callFrames\":[{\"functionName\":\"deleteVertexArrayObject\",\"scriptId\":\"8\",\"url\":\"http://127.0.0.1:5175/node_modules/.vite/de",
+    "{\"entry\":{\"source\":\"rendering\",\"level\":\"warning\",\"text\":\"WebGL: INVALID_OPERATION: delete: object does not belong to this context\",\"timestamp\":1791824020261.555,\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lineNumber\":42095,\"stackTrace\":{\"callFrames\":[{\"functionName\":\"remove\",\"scriptId\":\"8\",\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lin",
+    "{\"entry\":{\"source\":\"rendering\",\"level\":\"warning\",\"text\":\"WebGL: INVALID_OPERATION: delete: object does not belong to this context\",\"timestamp\":1791824020261.618,\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lineNumber\":42095,\"stackTrace\":{\"callFrames\":[{\"functionName\":\"remove\",\"scriptId\":\"8\",\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lin",
+    "{\"entry\":{\"source\":\"rendering\",\"level\":\"warning\",\"text\":\"WebGL: INVALID_OPERATION: delete: object does not belong to this context\",\"timestamp\":1791824020261.662,\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lineNumber\":42095,\"stackTrace\":{\"callFrames\":[{\"functionName\":\"remove\",\"scriptId\":\"8\",\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lin",
+    "{\"entry\":{\"source\":\"rendering\",\"level\":\"warning\",\"text\":\"WebGL: INVALID_OPERATION: delete: object does not belong to this context\",\"timestamp\":1791824020261.715,\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lineNumber\":42095,\"stackTrace\":{\"callFrames\":[{\"functionName\":\"remove\",\"scriptId\":\"8\",\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lin",
+    "{\"entry\":{\"source\":\"rendering\",\"level\":\"warning\",\"text\":\"WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context\",\"timestamp\":1791824020261.768,\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lineNumber\":42909,\"stackTrace\":{\"callFrames\":[{\"functionName\":\"deleteVertexArrayObject\",\"scriptId\":\"8\",\"url\":\"http://127.0.0.1:5175/node_modules/.vite/de",
+    "{\"entry\":{\"source\":\"rendering\",\"level\":\"warning\",\"text\":\"WebGL: INVALID_OPERATION: delete: object does not belong to this context\",\"timestamp\":1791824020261.823,\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lineNumber\":42095,\"stackTrace\":{\"callFrames\":[{\"functionName\":\"remove\",\"scriptId\":\"8\",\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lin",
+    "{\"entry\":{\"source\":\"rendering\",\"level\":\"warning\",\"text\":\"WebGL: INVALID_OPERATION: delete: object does not belong to this context\",\"timestamp\":1791824020261.866,\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lineNumber\":42095,\"stackTrace\":{\"callFrames\":[{\"functionName\":\"remove\",\"scriptId\":\"8\",\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lin",
+    "{\"entry\":{\"source\":\"rendering\",\"level\":\"warning\",\"text\":\"WebGL: INVALID_OPERATION: delete: object does not belong to this context\",\"timestamp\":1791824020261.911,\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lineNumber\":42095,\"stackTrace\":{\"callFrames\":[{\"functionName\":\"remove\",\"scriptId\":\"8\",\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lin",
+    "{\"entry\":{\"source\":\"rendering\",\"level\":\"warning\",\"text\":\"WebGL: INVALID_OPERATION: delete: object does not belong to this context\",\"timestamp\":1791824020261.957,\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lineNumber\":42095,\"stackTrace\":{\"callFrames\":[{\"functionName\":\"remove\",\"scriptId\":\"8\",\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lin",
+    "{\"entry\":{\"source\":\"rendering\",\"level\":\"warning\",\"text\":\"WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context\",\"timestamp\":1791824020262.003,\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lineNumber\":42909,\"stackTrace\":{\"callFrames\":[{\"functionName\":\"deleteVertexArrayObject\",\"scriptId\":\"8\",\"url\":\"http://127.0.0.1:5175/node_modules/.vite/de",
+    "{\"entry\":{\"source\":\"rendering\",\"level\":\"warning\",\"text\":\"WebGL: INVALID_OPERATION: delete: object does not belong to this context\",\"timestamp\":1791824020262.055,\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lineNumber\":42095,\"stackTrace\":{\"callFrames\":[{\"functionName\":\"remove\",\"scriptId\":\"8\",\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lin",
+    "{\"entry\":{\"source\":\"rendering\",\"level\":\"warning\",\"text\":\"WebGL: INVALID_OPERATION: delete: object does not belong to this context\",\"timestamp\":1791824020262.106,\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lineNumber\":42095,\"stackTrace\":{\"callFrames\":[{\"functionName\":\"remove\",\"scriptId\":\"8\",\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lin",
+    "{\"entry\":{\"source\":\"rendering\",\"level\":\"warning\",\"text\":\"WebGL: INVALID_OPERATION: delete: object does not belong to this context\",\"timestamp\":1791824020262.152,\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lineNumber\":42095,\"stackTrace\":{\"callFrames\":[{\"functionName\":\"remove\",\"scriptId\":\"8\",\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lin",
+    "{\"entry\":{\"source\":\"rendering\",\"level\":\"warning\",\"text\":\"WebGL: INVALID_OPERATION: delete: object does not belong to this context\",\"timestamp\":1791824020262.198,\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lineNumber\":42095,\"stackTrace\":{\"callFrames\":[{\"functionName\":\"remove\",\"scriptId\":\"8\",\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lin",
+    "{\"entry\":{\"source\":\"rendering\",\"level\":\"warning\",\"text\":\"WebGL: INVALID_OPERATION: deleteVertexArray: object does not belong to this context\",\"timestamp\":1791824020262.239,\"url\":\"http://127.0.0.1:5175/node_modules/.vite/deps/three.js?v=cc0f3348\",\"lineNumber\":42909,\"stackTrace\":{\"callFrames\":[{\"functionName\":\"deleteVertexArrayObject\",\"scriptId\":\"8\",\"url\":\"http://127.0.0.1:5175/node_modules/.vite/de"
+  ]
+}

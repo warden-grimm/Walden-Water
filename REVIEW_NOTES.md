@@ -76,7 +76,7 @@
 
 ### M2 — Wet rock and shared light submission
 
-- **Status:** Implementation/evidence complete; awaiting Claude's exact-head review. M3 has not started.
+- **Status:** Accepted with **APPROVE WITH NITS** by Claude at `0354151a78de0eaa228d58591d3618aa43358c51`. No blockers. M2 is complete; M3 has not started.
 - **BASE_SHA:** `6af1797edb83f5677eb46ff49b92b713181e0240`, the accepted M1 implementation, not its later report commits. Submission head is supplied in the Orca dispatch.
 - **Changed:** Procedural ridged/fBm vertex displacement with warped ledges and folded undersides; smooth normals from the same xyz surface; dark albedo/crevice moss and localized downward-moving wet sheen. Stable shared light uniform objects and a world-space cone/fade function establish the upper-left light. Added reference/reduced mesh controls, separate displacement/sheen toggles, normal/light/wet inspection views, geometry replacement disposal, and camera-derived wall coverage. Extracted existing camera behavior into a shader-independent module so framing remains directly testable.
 - **M1 follow-ups addressed:** Ultrawide wall coverage is derived from the farthest relief depth and all camera drift phases. Debug-only GPU timer queries expose cost beneath the refresh cap, with CPU-render submission fallback, available-only asynchronous reads, disjoint rejection, and context/HMR ownership.
@@ -95,7 +95,24 @@
 - **Manual review:** (1) Open ordinary URL and `?debug`, then inspect portrait/landscape/ultrawide and DPR cap. (2) Set curtain opacity 0, compare reference/reduced with drift and trickle speed 0, and check rebuild disposal. (3) Toggle displacement and normals view: the normal output becomes flat; toggle sheen separately and restore trickle speed to 0.35. (4) Inspect light mask; move light position/target/cone and verify the rock glints follow it. (5) Repeat context loss/restoration, HMR and native tab switching with stable resources and no time jump. (6) Run the fixed sampler, inspect frame/GPU/CPU distinctions and the production build.
 - **Scope/deviations:** Equivalent shared custom-light uniforms implement the permitted SpotLight alternative. Crevice occlusion is an artistic approximation; no shadow map or visible volume yet. A procedural folded sheet implements rock relief rather than a closed cliff mesh. Remaining water, interaction, particles, pool and postprocessing are future milestones. All implemented art/quality controls live in config/GUI; four fBm octaves and hash coefficients are fixed algorithm bounds/constants.
 - **Outstanding external needs:** Physical testers/devices remain unconfirmed; arrange before M4. Named iPhone/Safari and Android/Chrome evidence is still required at later gates. No remote/Pages publication performed. The prior checkpoint-template nit remains due before the first M3 checkpoint.
-- **Review report/reviewed SHA:** Pending independent Claude review in the M2 Orca child workspace.
+- **Review report/reviewed SHA:** [Claude M2 review r1](docs/reviews/M2-review-r1.md), exact implementation head `0354151a78de0eaa228d58591d3618aa43358c51`. The report is preserved unchanged; its later commit is review evidence, not a new implementation acceptance base.
+
+### Coordinator outcome — M2 accepted
+
+- **Orca run/task/dispatch:** `run_d66abf8b04f8` / `task_0116f817e117` / `ctx_adbb7f54b776`. The review task succeeded with **APPROVE WITH NITS** and no blockers. Claude's separate `claude-m2-review` workspace and report commit `1e000da` are preserved. Reviewer servers on 5175/5176 and its dedicated Edge instance were stopped.
+- **Independent evidence:** [Archived reviewer index](docs/evidence/M2/claude/README.md), with [archive provenance](docs/evidence/M2/claude/ARCHIVE.md). `npm ci`, 6/6 tests, build, GUI inventory, 8:1 ultrawide, quality/toggle/light checks, a normal agreement probe, downward advection observation, three context cycles, five HMR cycles, reduced motion and native visibility passed. All temporary source probes were byte-restored. The six independent timing runs include matched M1/reference/reduced, DPR-2 stress, and post-restore GPU timing. Frame median/p95 stayed at 16.7/16.8 ms; GPU results remain noisy and cannot select a phone preset.
+- **Warnings surfaced:** Claude additionally captured WebGL disposal warnings when HMR follows forced context restoration, reproduced in accepted M1. These were not in the builder's error-only console filter. Rendering resumes with stable resources; Claude classified this as a pre-existing development-only nit due at M8, not an M2 blocker.
+- **Next implementation base:** `0354151a78de0eaa228d58591d3618aa43358c51`. M3 is permitted but has not begun. No deployment or physical-phone certification was performed.
+
+| Accepted follow-up | Owner | Due |
+| --- | --- | --- |
+| Measure and justify static vertex displacement/normal cost on physical phones before choosing the mobile preset; investigate baking/caching if necessary while preserving the specified procedural surface. | Builder | M4 phone runs; latest M9 |
+| Reassess square noise cells and stepped shelf rims under the real water curtain; improve visible polish. | Builder | M3 |
+| Bound the wet mask vertically to the curtain or explicitly document the intended extent above/below it. | Builder | M3 |
+| Correct bounce-light contract wording, share the view-choice list, remove the source BOM, and improve disjoint warmup handling/invalid GPU labels. | Builder | M3 |
+| Investigate the pre-existing Three.js disposal warnings on HMR after context restoration. | Builder | M8 lifecycle validation |
+| Add CHECKPOINT / DRAFT FEEDBACK / not-approved-by-checkpoint to the report template. | Coordinator/builder | Before first M3 checkpoint |
+| Arrange confirmed iPhone/Safari and Android/Chrome testers and evidence access; assignments remain unconfirmed. | Coordinator / human tester | Before M4 |
 
 ### M<n> — <summary>
 

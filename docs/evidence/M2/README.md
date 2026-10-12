@@ -50,7 +50,7 @@ The final comparison and disposition are in the M2 entry of
 - [Normals](normals.png) / [flat normals](normals-flat.png): displacement on/off,
   same footprint. [Sheen off](sheen-off.png) isolates the dry rock response;
   [light mask](light-mask.png) shows the shared cone intersection and fade.
-- [Moving wet highlights](wet-trickle.webm): 7.97 seconds, VP9, 1440×900 at
+- [Moving wet highlights](wet-trickle.webm): approximately eight seconds, VP9, 1440×900 at
   captureStream 30 fps; curtain opacity 0 and drift off to isolate trickling.
   Wet settings otherwise default. Positive time phase advects highlights down.
 
@@ -76,3 +76,12 @@ shared-light identity and clamp invariants, sampler interruption, and GPU timer
 availability/disjoint/context/fallback behavior. Browser captures verify actual
 shader compilation. Physical phone pinch, backgrounding, multi-touch and
 latency remain unverified and due at M4; final iPhone/Android performance is M9.
+
+## Independent review
+
+Claude accepted implementation `0354151a78de0eaa228d58591d3618aa43358c51` with
+nits and no blockers. See the [unchanged report](../../reviews/M2-review-r1.md),
+[reviewer evidence](claude/README.md), and [archive provenance](claude/ARCHIVE.md).
+Its broader console check found pre-existing development-only disposal warnings
+after context restore followed by HMR; these are now tracked for M8. Physical
+phone measurements and the mobile quality decision remain open.
