@@ -2,7 +2,7 @@
 
 ## PLAN — Milestone and reviewer setup
 
-- **Status:** Original submission received APPROVE WITH NITS in [PLAN-review-r1.md](docs/reviews/PLAN-review-r1.md); the revised plan below is pending Claude re-review. No implementation milestone is approved.
+- **Status:** Revised plan accepted with APPROVE WITH NITS at `4f03b2b1603dce787de74eb63cce298f0d38753e`; see [PLAN-review-r2.md](docs/reviews/PLAN-review-r2.md). All seven original findings are resolved. No implementation milestone is approved.
 - **Baseline:** `e03aed336d31985206bfb9be0ea88525cead4d64` records the starter and supplied briefs. The submitted head is in the Orca dispatch.
 - **Changed:** Concrete deliverables/checks/evidence for M1–M9; independent review snapshots and stop/fix/re-review gate; repaired broken spec/notes links; Claude prompt, rubric, and report template.
 - **Review scope:** `docs/working-agreement.md`, `docs/milestones.md`, `docs/reviewer.md`, and `docs/reviews/TEMPLATE.md`. Check ordering, conformance to `docs/goal.md`, gate scope, and evidence feasibility.
@@ -14,7 +14,7 @@
 
 ## PLAN — Resolve revision 1 findings
 
-- **Status:** Seven documentation resolutions prepared; pending independent Claude re-review, not implementation or performance certification. The original [PLAN-review-r1.md](docs/reviews/PLAN-review-r1.md) is unchanged.
+- **Status:** Claude independently verified all seven resolutions in [PLAN-review-r2.md](docs/reviews/PLAN-review-r2.md). This is plan acceptance only, not implementation or performance certification. The original [PLAN-review-r1.md](docs/reviews/PLAN-review-r1.md) is unchanged.
 - **Changed files:** `docs/working-agreement.md`, `docs/milestones.md`, `docs/reviewer.md`, and `REVIEW_NOTES.md`. Product goal, milestone order, reviewer reports/template, application code, and dependencies are unchanged.
 - **Review baseline:** No accepted implementation milestone exists; M1 uses `e03aed336d31985206bfb9be0ea88525cead4d64`. Later bases are the last accepted reviewed implementation head, not report-only commits; full review documents remain inputs. The revision's exact submitted head belongs in the dispatch.
 
@@ -31,6 +31,15 @@
 - **Outstanding external verification:** Coordinator must confirm human tester(s), phone models, OS/browser versions, and evidence access before M4; all assignments and device availability remain **pending/unconfirmed**. M4 still needs real multi-touch/latency and fallback evidence; M9 still needs named iPhone/Android performance and interaction runs. No phone tests, numeric latency results, or frame-rate certification were produced. Remote/Pages setup remains an external release need.
 - **Validation:** All 16 local Markdown links/anchors across 8 Markdown files pass; `git diff --check` passes. Diff scope confirms only the four owned docs changed and the original PLAN report is preserved. No build or device test was run for these documentation-only edits; prior starter checks are not new milestone evidence.
 - **Re-review audit:** (1) Compare all seven findings with this table and the revised documents. (2) Trace M1 drift/reduced motion into M4 camera/input ordering and phone observations. (3) Trace the regression trigger and pending phone evidence through the closed gate. (4) Confirm a checkpoint cannot approve advancement. (5) Confirm PLAN/report commits cannot replace M1's baseline and the original report is unchanged.
+
+## Coordinator outcome — PLAN accepted
+
+- **Reviewer workspace:** `claude-plan-review`, `C:/Users/Adam Tate/orca/workspaces/Walden-Water/claude-plan-review`. Separate checkout preserved with both committed reports; reviewer processes released after completion.
+- **Orca run:** `run_bd53d2494d9a`. Initial review `task_d98868b19191`, documentation corrections `task_0eb0d69f2afb`, and re-review `task_0f3d648f9976` all completed successfully. These task outcomes do not certify implementation.
+- **Accepted plan head:** `4f03b2b1603dce787de74eb63cce298f0d38753e`. Later review/status commits only record the outcome; M1 still uses the documented starter baseline.
+- **Remaining nit A:** Extend `docs/reviews/TEMPLATE.md` with CHECKPOINT, DRAFT FEEDBACK, and `not approved by checkpoint`. Owner: coordinator/builder. Due: before the first M3 checkpoint. The reviewer prompt already specifies these values; Claude confirmed this does not weaken the gate.
+- **External needs:** Physical testers/devices remain unconfirmed; arrange them before M4 and collect named iPhone/Android evidence for M9. Remote/Pages configuration remains pending for deployment.
+- **Next:** M1 implementation may start as a separate milestone, followed by its own build/evidence/commit/Claude review. No M1 work was performed during this plan setup.
 
 ## Milestone submission template
 
