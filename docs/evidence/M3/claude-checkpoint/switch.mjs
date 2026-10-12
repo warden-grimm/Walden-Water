@@ -1,0 +1,32 @@
+import { connect } from './cdp.mjs';
+import { writeFileSync } from 'node:fs';
+const c = await connect();
+const r = await c.ev(`(${async function () {
+  const url = performance.getEntriesByType('resource').find(e => e.name.includes('/deps/three.js')).name;
+  const T = await import(url); const { createScene } = await import('/src/scene/createScene.js'); const { config } = await import('/src/config.js');
+  const W = 360, H = 225, out = {};
+  const cfg = structuredClone(config); cfg.camera.drift = false; cfg.markers.opacity = 0; cfg.curtain.visible = false;
+  const canvas = document.createElement('canvas'); const renderer = new T.WebGLRenderer({ canvas });
+  renderer.setPixelRatio(1); renderer.setSize(W, H, false); renderer.outputColorSpace = T.SRGBColorSpace; renderer.toneMapping = T.ACESFilmicToneMapping;
+  const world = createScene(cfg, { value: 3 }, renderer); world.configure(W / H, false, W, H); world.updateCamera(false);
+  const gl = renderer.getContext();
+  const read = () => { const a = new Uint8Array(W * H * 4); gl.readPixels(0, 0, W, H, gl.RGBA, gl.UNSIGNED_BYTE, a); return a; };
+  const cmp = (a, b) => { let max = 0, at; for (let i = 0; i < a.length; i += 4) { const d = Math.max(Math.abs(a[i]-b[i]), Math.abs(a[i+1]-b[i+1]), Math.abs(a[i+2]-b[i+2])); if (d > max) { max = d; at = [(i/4)%W, Math.floor(i/4/W), [...a.slice(i,i+4)], [...b.slice(i,i+4)]]; } } return { max, at }; };
+  world.render(); const auto0 = read();
+  const direct = new T.Scene(); direct.background = new T.Color(cfg.renderer.background);
+  const parent = world.wall.mesh.parent; direct.add(world.wall.mesh); renderer.render(direct, world.camera); const d = read(); parent.add(world.wall.mesh);
+  out.auto = cmp(auto0, d);
+  cfg.refraction.precision = 'byte'; world.configure(W / H, false, W, H);
+  out.bgUniformIsTarget = world.capture.texture.value?.type;
+  world.render(); const b1 = read(); out.byteFirst = cmp(b1, d);
+  world.render(); const b2 = read(); out.byteSecond = cmp(b2, d);
+  cfg.refraction.precision = 'auto'; world.configure(W / H, false, W, H); world.render(); out.backAuto = cmp(read(), d);
+  // Same but with the direct render happening between switch and render (mimics first probe order)
+  cfg.refraction.precision = 'byte'; world.configure(W / H, false, W, H);
+  direct.add(world.wall.mesh); renderer.render(direct, world.camera); parent.add(world.wall.mesh);
+  world.render(); out.byteAfterDirect = cmp(read(), d);
+  out.glError = gl.getError();
+  world.dispose(); renderer.dispose(); renderer.forceContextLoss();
+  return out;
+}})()`);
+console.log(JSON.stringify(r, null, 1)); c.close();

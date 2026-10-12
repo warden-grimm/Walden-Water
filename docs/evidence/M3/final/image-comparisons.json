@@ -1,0 +1,72 @@
+{
+  "reference vs curtain-reduced": {
+    "maxChannelDifference": 1,
+    "meanChannelDifference": 0.0007474279835390946,
+    "changedPixels": 2743,
+    "bounds": [
+      109,
+      16,
+      1436,
+      858
+    ]
+  },
+  "wall-msaa4 vs wall-msaa0": {
+    "maxChannelDifference": 10,
+    "meanChannelDifference": 0.004888374485596708,
+    "changedPixels": 14310,
+    "bounds": [
+      0,
+      0,
+      1440,
+      900
+    ]
+  },
+  "refraction-on vs refraction-off": {
+    "maxChannelDifference": 11,
+    "meanChannelDifference": 0.03203034979423868,
+    "changedPixels": 62870,
+    "bounds": [
+      109,
+      16,
+      1436,
+      858
+    ],
+    "boundsAbove1": [
+      558,
+      192,
+      874,
+      722
+    ]
+  },
+  "wall-auto vs wall-byte": {
+    "maxChannelDifference": 2,
+    "meanChannelDifference": 0.16862962962962963,
+    "changedPixels": 554074,
+    "bounds": [
+      0,
+      0,
+      1440,
+      900
+    ]
+  },
+  "wall-byte vs zero-byte": {
+    "maxChannelDifference": 0,
+    "meanChannelDifference": 0.0,
+    "changedPixels": 0,
+    "bounds": null
+  },
+  "wall-auto-neutral vs zero-auto": {
+    "maxChannelDifference": 0,
+    "meanChannelDifference": 0.0,
+    "changedPixels": 0,
+    "bounds": null
+  },
+  "wetBoundary": {
+    "aboveLipMax": 0,
+    "belowPoolMax": 0
+  },
+  "uniqueColors": {
+    "wall-auto": 5843,
+    "wall-byte": 4053
+  }
+}

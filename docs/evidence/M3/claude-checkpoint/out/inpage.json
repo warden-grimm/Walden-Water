@@ -1,0 +1,88 @@
+{
+  "order": [
+    "wall@capture",
+    "background@screen",
+    "lipMarker@screen",
+    "poolMarker@screen",
+    "curtain@screen"
+  ],
+  "stateKept": {
+    "exposure": true,
+    "clear": true,
+    "clearAlpha": true,
+    "target": true,
+    "colorSpace": "srgb",
+    "toneMapping": true
+  },
+  "halfVsDirect": {
+    "max": 1,
+    "changedChannels": 1619
+  },
+  "byteVsDirect": {
+    "max": 93,
+    "changedChannels": 197475
+  },
+  "byteFormat": "RGBA8 linear",
+  "flow": {
+    "p0": [
+      44,
+      81,
+      114,
+      141,
+      164,
+      182,
+      195,
+      204
+    ],
+    "p1": [
+      39,
+      77,
+      110,
+      138,
+      162,
+      180,
+      194,
+      203
+    ],
+    "vAt0": [
+      114,
+      173,
+      198,
+      210,
+      217,
+      222,
+      224,
+      226
+    ],
+    "vAt1": [
+      100,
+      169,
+      195,
+      209,
+      217,
+      221,
+      224,
+      226
+    ]
+  },
+  "probeExtremes": {
+    "minLipMaxStepG0": {
+      "nan": 0,
+      "inf": 0,
+      "glError": 0
+    },
+    "minLipMaxStepG5": {
+      "nan": 0,
+      "inf": 0,
+      "glError": 0
+    },
+    "minStep": {
+      "nan": 0,
+      "inf": 0,
+      "glError": 0
+    }
+  },
+  "info": {
+    "calls": 45
+  }
+}

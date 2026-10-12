@@ -1,0 +1,439 @@
+{
+  "snapshot": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "buffer": {
+      "width": 1440,
+      "height": 900
+    },
+    "dpr": 1,
+    "running": true,
+    "contextLost": false,
+    "restores": 0,
+    "frames": 162,
+    "elapsed": 2.8787999999999982,
+    "reducedMotion": false,
+    "camera": [
+      0.02113855658091974,
+      3.0100647412912016,
+      9.388320632897686
+    ],
+    "drawCalls": 5,
+    "triangles": 227078,
+    "geometries": 3,
+    "textures": 1,
+    "programs": 4,
+    "wall": {
+      "segments": 256,
+      "size": [
+        20,
+        12
+      ],
+      "quality": "reference",
+      "displacement": true,
+      "sheen": true,
+      "view": "rock"
+    },
+    "curtain": {
+      "quality": "reference",
+      "columns": 120,
+      "rows": 400,
+      "visible": true,
+      "view": "water",
+      "refraction": true,
+      "uv": "u left-to-right, v bottom-to-top",
+      "geometryMatchesRaycast": true
+    },
+    "capture": {
+      "width": 1440,
+      "height": 900,
+      "format": "RGBA16F linear",
+      "generation": 1,
+      "sourceObjects": [
+        "wall"
+      ]
+    },
+    "effects": "M3 curved flowing curtain; isolated wall capture/refraction; shared shaft light; no postprocessing",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+  },
+  "byteSnap": {
+    "width": 1440,
+    "height": 900,
+    "format": "RGBA8 linear",
+    "generation": 2,
+    "sourceObjects": [
+      "wall"
+    ]
+  },
+  "halfSnap": {
+    "width": 720,
+    "height": 450,
+    "format": "RGBA16F linear",
+    "generation": 4,
+    "sourceObjects": [
+      "wall"
+    ]
+  },
+  "console": [
+    {
+      "type": "debug",
+      "args": [
+        {
+          "type": "string",
+          "value": "[vite] connecting..."
+        }
+      ],
+      "executionContextId": 2,
+      "timestamp": 1791826354401.709,
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "",
+            "scriptId": "3",
+            "url": "http://127.0.0.1:5175/@vite/client",
+            "lineNumber": 934,
+            "columnNumber": 8
+          }
+        ]
+      }
+    },
+    {
+      "type": "debug",
+      "args": [
+        {
+          "type": "string",
+          "value": "[vite] connected."
+        }
+      ],
+      "executionContextId": 2,
+      "timestamp": 1791826354432.484,
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "handleMessage",
+            "scriptId": "3",
+            "url": "http://127.0.0.1:5175/@vite/client",
+            "lineNumber": 1047,
+            "columnNumber": 11
+          },
+          {
+            "functionName": "",
+            "scriptId": "3",
+            "url": "http://127.0.0.1:5175/@vite/client",
+            "lineNumber": 663,
+            "columnNumber": 41
+          },
+          {
+            "functionName": "dequeue",
+            "scriptId": "3",
+            "url": "http://127.0.0.1:5175/@vite/client",
+            "lineNumber": 685,
+            "columnNumber": 7
+          },
+          {
+            "functionName": "",
+            "scriptId": "3",
+            "url": "http://127.0.0.1:5175/@vite/client",
+            "lineNumber": 677,
+            "columnNumber": 8
+          },
+          {
+            "functionName": "enqueue",
+            "scriptId": "3",
+            "url": "http://127.0.0.1:5175/@vite/client",
+            "lineNumber": 671,
+            "columnNumber": 9
+          },
+          {
+            "functionName": "",
+            "scriptId": "3",
+            "url": "http://127.0.0.1:5175/@vite/client",
+            "lineNumber": 663,
+            "columnNumber": 27
+          },
+          {
+            "functionName": "onMessage",
+            "scriptId": "3",
+            "url": "http://127.0.0.1:5175/@vite/client",
+            "lineNumber": 96,
+            "columnNumber": 5
+          },
+          {
+            "functionName": "",
+            "scriptId": "3",
+            "url": "http://127.0.0.1:5175/@vite/client",
+            "lineNumber": 214,
+            "columnNumber": 4
+          }
+        ]
+      }
+    },
+    {
+      "type": "info",
+      "args": [
+        {
+          "type": "string",
+          "value": "[Walden] Wall capture: RGBA16F linear"
+        }
+      ],
+      "executionContextId": 2,
+      "timestamp": 1791826354500.356,
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "resize",
+            "scriptId": "13",
+            "url": "http://127.0.0.1:5175/src/scene/WallCapture.js",
+            "lineNumber": 51,
+            "columnNumber": 16
+          },
+          {
+            "functionName": "configure",
+            "scriptId": "6",
+            "url": "http://127.0.0.1:5175/src/scene/createScene.js",
+            "lineNumber": 32,
+            "columnNumber": 12
+          },
+          {
+            "functionName": "resize",
+            "scriptId": "4",
+            "url": "http://127.0.0.1:5175/src/main.js",
+            "lineNumber": 34,
+            "columnNumber": 8
+          },
+          {
+            "functionName": "",
+            "scriptId": "4",
+            "url": "http://127.0.0.1:5175/src/main.js",
+            "lineNumber": 139,
+            "columnNumber": 2
+          }
+        ]
+      }
+    },
+    {
+      "type": "info",
+      "args": [
+        {
+          "type": "string",
+          "value": "[Walden] Wall capture: RGBA8 linear (HDR clipped)"
+        }
+      ],
+      "executionContextId": 2,
+      "timestamp": 1791826362085.625,
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "resize",
+            "scriptId": "13",
+            "url": "http://127.0.0.1:5175/src/scene/WallCapture.js",
+            "lineNumber": 51,
+            "columnNumber": 16
+          },
+          {
+            "functionName": "configure",
+            "scriptId": "6",
+            "url": "http://127.0.0.1:5175/src/scene/createScene.js",
+            "lineNumber": 32,
+            "columnNumber": 12
+          },
+          {
+            "functionName": "resize",
+            "scriptId": "4",
+            "url": "http://127.0.0.1:5175/src/main.js",
+            "lineNumber": 34,
+            "columnNumber": 8
+          },
+          {
+            "functionName": "",
+            "scriptId": "39",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 115
+          }
+        ]
+      }
+    },
+    {
+      "type": "info",
+      "args": [
+        {
+          "type": "string",
+          "value": "[Walden] Wall capture: RGBA16F linear"
+        }
+      ],
+      "executionContextId": 2,
+      "timestamp": 1791826363387.104,
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "resize",
+            "scriptId": "13",
+            "url": "http://127.0.0.1:5175/src/scene/WallCapture.js",
+            "lineNumber": 51,
+            "columnNumber": 16
+          },
+          {
+            "functionName": "configure",
+            "scriptId": "6",
+            "url": "http://127.0.0.1:5175/src/scene/createScene.js",
+            "lineNumber": 32,
+            "columnNumber": 12
+          },
+          {
+            "functionName": "resize",
+            "scriptId": "4",
+            "url": "http://127.0.0.1:5175/src/main.js",
+            "lineNumber": 34,
+            "columnNumber": 8
+          },
+          {
+            "functionName": "",
+            "scriptId": "42",
+            "url": "",
+            "lineNumber": 0,
+            "columnNumber": 69
+          }
+        ]
+      }
+    },
+    {
+      "type": "debug",
+      "args": [
+        {
+          "type": "string",
+          "value": "[vite] connecting..."
+        }
+      ],
+      "executionContextId": 3,
+      "timestamp": 1791826366639.54,
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "",
+            "scriptId": "3",
+            "url": "http://127.0.0.1:5175/@vite/client",
+            "lineNumber": 934,
+            "columnNumber": 8
+          }
+        ]
+      }
+    },
+    {
+      "type": "info",
+      "args": [
+        {
+          "type": "string",
+          "value": "[Walden] Wall capture: RGBA16F linear"
+        }
+      ],
+      "executionContextId": 3,
+      "timestamp": 1791826366684.353,
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "resize",
+            "scriptId": "13",
+            "url": "http://127.0.0.1:5175/src/scene/WallCapture.js",
+            "lineNumber": 51,
+            "columnNumber": 16
+          },
+          {
+            "functionName": "configure",
+            "scriptId": "6",
+            "url": "http://127.0.0.1:5175/src/scene/createScene.js",
+            "lineNumber": 32,
+            "columnNumber": 12
+          },
+          {
+            "functionName": "resize",
+            "scriptId": "4",
+            "url": "http://127.0.0.1:5175/src/main.js",
+            "lineNumber": 34,
+            "columnNumber": 8
+          },
+          {
+            "functionName": "",
+            "scriptId": "4",
+            "url": "http://127.0.0.1:5175/src/main.js",
+            "lineNumber": 139,
+            "columnNumber": 2
+          }
+        ]
+      }
+    },
+    {
+      "type": "debug",
+      "args": [
+        {
+          "type": "string",
+          "value": "[vite] connected."
+        }
+      ],
+      "executionContextId": 3,
+      "timestamp": 1791826366784.496,
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "handleMessage",
+            "scriptId": "3",
+            "url": "http://127.0.0.1:5175/@vite/client",
+            "lineNumber": 1047,
+            "columnNumber": 11
+          },
+          {
+            "functionName": "",
+            "scriptId": "3",
+            "url": "http://127.0.0.1:5175/@vite/client",
+            "lineNumber": 663,
+            "columnNumber": 41
+          },
+          {
+            "functionName": "dequeue",
+            "scriptId": "3",
+            "url": "http://127.0.0.1:5175/@vite/client",
+            "lineNumber": 685,
+            "columnNumber": 7
+          },
+          {
+            "functionName": "",
+            "scriptId": "3",
+            "url": "http://127.0.0.1:5175/@vite/client",
+            "lineNumber": 677,
+            "columnNumber": 8
+          },
+          {
+            "functionName": "enqueue",
+            "scriptId": "3",
+            "url": "http://127.0.0.1:5175/@vite/client",
+            "lineNumber": 671,
+            "columnNumber": 9
+          },
+          {
+            "functionName": "",
+            "scriptId": "3",
+            "url": "http://127.0.0.1:5175/@vite/client",
+            "lineNumber": 663,
+            "columnNumber": 27
+          },
+          {
+            "functionName": "onMessage",
+            "scriptId": "3",
+            "url": "http://127.0.0.1:5175/@vite/client",
+            "lineNumber": 96,
+            "columnNumber": 5
+          },
+          {
+            "functionName": "",
+            "scriptId": "3",
+            "url": "http://127.0.0.1:5175/@vite/client",
+            "lineNumber": 214,
+            "columnNumber": 4
+          }
+        ]
+      }
+    }
+  ]
+}

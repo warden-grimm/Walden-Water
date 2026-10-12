@@ -4,6 +4,7 @@ uniform float uAlbedoScale, uAlbedoVariation, uMoss, uMossThreshold, uMossSoftne
 uniform float uBounce, uCreviceShade, uDrySpecular;
 uniform bool uWetSheen;
 uniform float uCurtainWidth, uWetMargin, uWetFrequency, uWetThreshold, uWetSoftness;
+uniform float uCurtainHeight, uWetVerticalFade, uWetWarp;
 uniform float uTrickleSpeed, uTrickleFrequency, uTrickleContrast, uWetSpecular, uGloss;
 uniform int uView;
 varying vec3 vWorld;
@@ -19,14 +20,17 @@ void main() {
   vec3 V = normalize(cameraPosition - vWorld);
   vec3 H = normalize(L + V);
   float beam = shaftMask(vWorld);
-  float variation = noise2(vRock * uAlbedoScale);
+  // Rotate the layered albedo domain to avoid obvious axis-aligned square cells.
+  float variation = fbm(mat2(0.8, -0.6, 0.6, 0.8) * vRock * uAlbedoScale);
   vec3 albedo = uRockColor * mix(1.0 - uAlbedoVariation, 1.0 + uAlbedoVariation, variation);
   float moss = smoothstep(uMossThreshold, uMossThreshold + uMossSoftness, vCrevice) * uMoss;
   albedo = mix(albedo, uMossColor, moss);
   float occlusion = 1.0 - uCreviceShade * vCrevice;
   float local = 1.0 - smoothstep(uCurtainWidth * 0.5, uCurtainWidth * 0.5 + uWetMargin, abs(vWorld.x));
+  local *= smoothstep(0.0, uWetVerticalFade, vWorld.y)
+    * (1.0 - smoothstep(uCurtainHeight - uWetVerticalFade, uCurtainHeight, vWorld.y));
   float streak = smoothstep(uWetThreshold, uWetThreshold + uWetSoftness,
-    noise2(vec2(vRock.x * uWetFrequency, vRock.y / uWetFrequency)));
+    fbm(vec2(vRock.x * uWetFrequency + uWetWarp * noise2(vRock), vRock.y / uWetFrequency)));
   // +time in a +Y-up field makes a fixed phase move DOWN in world space.
   float trickle = 0.5 + 0.5 * sin((vWorld.y + uTime * uTrickleSpeed) * uTrickleFrequency
     + noise2(vec2(vRock.x * uWetFrequency, 0.0)) * 6.28318530718);

@@ -24,6 +24,7 @@ export function createScene(config, time, renderer) {
   background.frustumCulled = false; background.renderOrder = -1;
   const markerMaterial = new MeshBasicMaterial({ transparent: true, depthWrite: false });
   const lip = new Mesh(geometry, markerMaterial), poolLine = new Mesh(geometry, markerMaterial);
+  lip.renderOrder = poolLine.renderOrder = 2;
   scene.add(background, curtain.mesh, lip, poolLine, view.camera);
   function configure(aspect, reducedMotion, bufferWidth, bufferHeight) {
     wallScene.background.set(config.renderer.background);
@@ -35,6 +36,7 @@ export function createScene(config, time, renderer) {
     curtain.configure(bufferWidth, bufferHeight, target.width, target.height);
     markerMaterial.color.set(config.markers.color);
     markerMaterial.opacity = config.markers.opacity;
+    lip.visible = poolLine.visible = config.markers.opacity > 0;
     lip.position.set(0, config.curtain.height, config.markers.depth);
     poolLine.position.set(0, 0, config.markers.depth);
     lip.scale.set(config.curtain.width + 2 * config.markers.overhang, config.markers.thickness, 1);

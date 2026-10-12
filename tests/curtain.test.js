@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { Mesh, MeshBasicMaterial, Raycaster, Vector3 } from 'three';
+import { Mesh, MeshBasicMaterial, Raycaster, SRGBColorSpace, Vector3 } from 'three';
 import { config } from '../src/config.js';
 import { createCurtainGeometry, travelTime } from '../src/scene/curtainGeometry.js';
 import { createWallCapture } from '../src/scene/WallCapture.js';
@@ -35,12 +35,12 @@ test('wall capture restores destination on success/failure, rejects feedback, fa
   const outer = { name: 'outer' }, source = { children: [{ name: 'wall' }] }, camera = {};
   let active = outer, face = 2, mip = 3, fail = false, complete = true, rendered, disposed = 0;
   const gl = { FRAMEBUFFER: 1, FRAMEBUFFER_COMPLETE: 2, checkFramebufferStatus: () => complete ? 2 : 0 };
-  const renderer = { autoClear: false, extensions: { has: () => true },
+  const renderer = { autoClear: false, extensions: { has: () => true }, capabilities: { maxSamples: 4 },
     getRenderTarget: () => active, getActiveCubeFace: () => face, getActiveMipmapLevel: () => mip,
     setRenderTarget(t, f = 0, m = 0) { active = t; face = f; mip = m; }, getContext: () => gl,
     render(s, c) { rendered = active; assert.equal(s, source); assert.equal(c, camera); assert.equal(this.autoClear, true); if (fail) throw Error('test failure'); },
   };
-  const settings = { scale: 1, precision: 'auto' }, capture = createWallCapture(renderer, source, camera, settings);
+  const settings = { wallResolution: 1, precision: 'auto', samples: 4 }, capture = createWallCapture(renderer, source, camera, settings);
   capture.resize(400, 200); capture.render();
   rendered.addEventListener('dispose', () => disposed++);
   const restore = () => { assert.equal(active, outer); assert.equal(face, 2); assert.equal(mip, 3); assert.equal(renderer.autoClear, false); };
@@ -48,9 +48,15 @@ test('wall capture restores destination on success/failure, rejects feedback, fa
   renderer.setRenderTarget(rendered); assert.throws(capture.render, /separate/); assert.throws(() => capture.resize(800, 400), /active/);
   renderer.setRenderTarget(outer, 2, 3);
   settings.precision = 'byte'; capture.resize(400, 200); restore(); assert.equal(disposed, 1);
-  assert.equal(capture.snapshot().format, 'RGBA8 linear');
+  assert.equal(capture.snapshot().format, 'SRGB8_ALPHA8');
   const retained = capture.texture.value; complete = false;
   assert.throws(() => capture.resize(800, 400), /No renderable/); restore(); assert.equal(capture.texture.value, retained);
+  let framebufferChecks = 0; settings.precision = 'auto';
+  gl.checkFramebufferStatus = () => ++framebufferChecks === 1 ? 0 : 2;
+  capture.resize(800, 400); restore();
+  assert.equal(framebufferChecks, 2); assert.equal(capture.texture.value.colorSpace, SRGBColorSpace);
+  complete = true; capture.contextRestored(); assert.equal(capture.texture.value, null);
+  capture.resize(400, 200); assert.notEqual(capture.texture.value, retained);
   capture.dispose(); assert.equal(capture.texture.value, null);
 });
 

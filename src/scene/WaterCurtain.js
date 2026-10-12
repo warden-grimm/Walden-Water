@@ -11,12 +11,13 @@ export function createWaterCurtain(config, time, light, wallTexture) {
   const uniforms = { ...light.uniforms, uTime: time, uWallTexture: wallTexture,
     uBufferSize: { value: new Vector2() }, uTargetSize: { value: new Vector2() }, uView: { value: 0 } };
   const bindings = {
-    uHeight: ['curtain', 'height'], uWaterColor: ['curtain', 'color'], uOpacity: ['curtain', 'opacity'],
+    uHeight: ['curtain', 'height'], uWidth: ['curtain', 'width'], uWaterColor: ['curtain', 'color'], uOpacity: ['curtain', 'opacity'],
     uLipSpeed: ['water', 'lipSpeed'], uGravity: ['water', 'gravity'], uFlowSpeed: ['water', 'flowSpeed'],
     uFlowFrequency: ['water', 'flowFrequency'], uStreakFrequency: ['water', 'streakFrequency'],
     uStreakStretch: ['water', 'streakStretch'], uWarp: ['water', 'warp'],
     uLacunarity: ['water', 'lacunarity'], uGain: ['water', 'gain'],
-    uEdgeWidth: ['water', 'edgeWidth'], uBreakup: ['water', 'breakup'], uBreakupStart: ['water', 'breakupStart'],
+    uEdgeWidth: ['water', 'edgeWidth'], uEdgeRaggedness: ['water', 'edgeRaggedness'], uLipFade: ['water', 'lipFade'],
+    uBreakup: ['water', 'breakup'], uBreakupStart: ['water', 'breakupStart'],
     uBreakupSoftness: ['water', 'breakupSoftness'], uStreakContrast: ['water', 'streakContrast'],
     uNormalStrength: ['water', 'normalStrength'], uNormalStep: ['water', 'normalStep'],
     uFresnel: ['water', 'fresnel'], uFresnelPower: ['water', 'fresnelPower'],

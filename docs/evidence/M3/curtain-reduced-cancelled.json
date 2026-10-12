@@ -1,0 +1,9 @@
+{
+  "measuredAt": "2026-10-12T17:48:40.305Z",
+  "status": {
+    "state": "cancelled",
+    "count": 2864,
+    "reason": "Settings or viewport changed; restart the sample.",
+    "result": null
+  }
+}

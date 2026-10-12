@@ -116,7 +116,7 @@
 
 ### M3 — Early curtain checkpoint
 
-- **Status:** Draft submitted for CHECKPOINT / DRAFT FEEDBACK; this does not approve M3. Final milestone review follows polish and complete evidence.
+- **Status:** Claude returned **DRAFT FEEDBACK**, no blockers, for `a06955aaf217855e3e33f5c77231fe17845e48f9`. The architecture was independently verified and cleared for polish within M3. This does not approve M3 or M4. [Checkpoint report](docs/reviews/M3-checkpoint-r1.md); report-only commit `1b7af94` preserved before worker release.
 - **BASE_SHA:** `0354151a78de0eaa228d58591d3618aa43358c51`, accepted M2 implementation. Exact checkpoint head supplied in dispatch.
 - **Changed:** CPU curved ribbon at reference 120×400/reduced 60×200, travel-time downward acceleration, streak/coverage/Fresnel/glint shading with shared light/time, isolated linear wall capture and premultiplied final composition. Debug views and refraction/quality controls are wired; mesh/target rebuilds are labeled and disposed.
 - **M2 diagnostic/contract nits:** Shared wall view choices, removed createScene BOM, warmup disjoint no longer poisons a later valid sample, explicit invalid GPU label, corrected bounce wording. CHECKPOINT values added to report template.
@@ -126,6 +126,34 @@
 - **Known gaps:** Art/quality-cost review, M2 wet-mask/noise polish nits, final portrait/landscape clips, lifecycle checks and full final review still due within M3. Touch, splashes, visible shaft and pool are later milestones.
 - **Phone evidence:** Coordinator asked the user for iPhone/Safari and Android/Chrome testers/models/versions at M3 start; no confirmation yet. Assignments and evidence location remain pending. M3 can proceed; no phone performance claim.
 - **Deviation:** Wall target also supplies the final background to avoid drawing reference wall geometry twice. Byte fallback is normalized linear RGBA8 with HDR clipping documented; signed field encoding remains M4 work. Static CPU bow ensures current raycasts match visible geometry exactly.
+
+### M3 — Checkpoint follow-up and final evidence
+
+- **Checkpoint ownership:** Orca run `run_47018a47ebbd`, task `task_4575d483718f`, dispatch `ctx_b08d3c165948`. Separate `claude-m3-checkpoint` workspace retained; worker released after preserving the report. [Archived independent probes](docs/evidence/M3/claude-checkpoint/ARCHIVE.md) remain tied to the draft head.
+- **Addressed before final review:** Byte fallback now uses hardware-encoded/decoded SRGB8_ALPHA8 to improve shadow precision (HDR clipping remains). Old capture targets are abandoned on context restoration, avoiding stale GL deletion in the new context. Markers default hidden and draw after the curtain when enabled. Renamed `scale` to `wallResolution` and documented its full-background effect. Restored 4× target MSAA with a capability clamp and debug sample control. Normal differences now use metres and divide by the sampling interval; Fresnel clamps its dot product. Less opaque/streakier water, a soft lip and ragged sides replace the draft's uniform upper sheet.
+- **M2 polish:** Layered rotated albedo and warped wet noise reduce square cells. Broader, less frequent shelves with smaller folds reduce undersampling at reference quality. The wet mask fades inside y=0/y=height and is zero outside (image checks confirm black above/below). Bounce wording, shared view choices, BOM, warmup disjoint handling and invalid labels are resolved.
+- **Lifecycle:** Both orientation clips exceed 10s. DPR3 emulation caps the drawing buffer at 2. Eight quality/target rebuilds and three ordinary HMR cycles retain 3 geometries/1 texture/3 programs, one canvas/GUI. Genuine tab hiding freezes frames and shared time; reduced motion disables drift. Three context restores resume with zero warnings. The pre-existing HMR-after-restore issue still produces 45 stale-dispose warnings with the larger M3 resource set; rendering/resources recover. This remains a development-only M8 follow-up, separated from the new capture warning that was fixed. No shader/compiler or runtime errors observed.
+- **Color/refraction:** At fixed time/camera, zero-offset views match wall-only captures exactly in both formats. Final byte/float max difference is 2/255; 4,053 vs 5,843 unique colors (improved from the draft's conspicuous linear-byte quantization, not a promise of equal precision). Refraction on/off and MSAA on/off captures are preserved. The reduced curtain removes 75% of its triangles; its static bow differs by at most 1/255 at the measured view. That result does not certify future M4 field deformation fidelity.
+- **Evidence:** [Final captures and checks](docs/evidence/M3/final), scripts `verify.mjs`/`measure.mjs`; Edge155/RTX A4500/Windows, builder strict port5174. Physical phone behavior remains unverified. Two initial timing attempts were cancelled by settings/viewport notifications before completion and retained as invalid; completed runs are recorded separately. The repeat reference run has only its initial observer notification, no sampling-period viewport changes.
+- **Build/validation:** `npm test` passes 10/10 including automatic incomplete-float-to-byte fallback; `npm run build` passes, 552.58 kB raw / 140.50 kB gzip main bundle (existing >500 kB warning). No dependencies or Pages configuration changed. Config keeps lip speed positive; the shader clamps negative sampling distance at the lip, and the checkpoint's extreme-value probe found no NaN/Inf. The final normal calculation additionally clamps Fresnel's dot product.
+- **Manual final review:** (1) Preview ordinary URL and `?debug`; inspect portrait, landscape and ultrawide framing. (2) Follow flow bands down, then switch to water and compare the two orientation clips. (3) Freeze flow/drift, compare refraction off/on and zero-offset wall identity in auto/byte formats. (4) Move the light, compare glints, inspect the wet mask's lip/pool boundaries. (5) Compare curtain presets, full/half wall resolution and target MSAA, checking rebuild counts. (6) Run the fixed sampler, visibility/reduced-motion checks, context cycles and HMR; distinguish the pre-existing post-restore HMR warnings from normal recovery.
+- **Final gate status:** Submitted for an exact-head Claude review; head supplied in dispatch, BASE remains `0354151a78de0eaa228d58591d3618aa43358c51`. No M4 work or deployment performed.
+
+| Completed 10s warmup + 60s sample | Draws / triangles | Frame median / p95 ms | GPU median / p95 ms | CPU submit median / p95 ms |
+| --- | --- | --- | --- | --- |
+| Fresh accepted M2 baseline | 4 / 131,078 | 16.7 / 16.8 | 0.502 / 4.676 | 0.1 / 0.2 |
+| M3 reference curtain, full wall target, MSAA4 | 3 / 227,074 | 16.7 / 16.8 | 1.744 / 4.765 | 0.1 / 0.2 |
+| M3 reduced curtain only | 3 / 155,074 | 16.7 / 16.8 | 1.562 / 4.609 | 0.1 / 0.2 |
+| M3 reference curtain, half wall resolution | 3 / 227,074 | 16.7 / 16.8 | 0.465 / 3.910 | 0.1 / 0.2 |
+| M3 with curtain hidden | 2 / 131,074 | 16.7 / 16.8 | 0.871 / 2.332 | 0.1 / 0.2 |
+
+- **Performance disposition:** Each completed run has 3,600 frame samples and 3,599 valid GPU samples; no disjoint event. Neither frame median nor p95 increased by >10%, so the gating regression trigger did not fire. Reference GPU median grew by about 1.24 ms (roughly 248%) vs M2, investigated through the no-water and half-resolution runs: the water fragment work, extra full-screen composition, richer wall noise and multisampled target add cost. The no-water comparison suggests about 0.87 ms median for the curtain in this sweep; these noisy shared-desktop GPU results are observations, not a stable cost model. All observed GPU p95s remain below the frame budget here. Reference geometry/full resolution/MSAA4 remain defaults for the specified fidelity; reduced curtain removes 75% of its triangles with negligible difference for the current simple bow, while half target resolution softens the entire background and quarters capture storage/pixels. The target's color storage alone is about 52 MB at 1440×900 before depth/canvas/driver overhead. Phone costs and preset selection are still unverified and assigned to the existing M4/M9 device gates; this is not mobile certification.
+
+| Remaining follow-up | Owner | Due |
+| --- | --- | --- |
+| Verify water noise precision after hours of continuous uptime; avoid phase-wrap discontinuities if mitigation is required. | Builder | M9 |
+| Pre-existing Three.js stale disposal warnings when HMR follows forced context restoration. | Builder | M8 |
+| Confirm physical testers/models/browser versions and measure reference geometry/target costs before selecting phone presets. | Coordinator / human tester / builder | M4, final phone certification M9 |
 
 ### M<n> — <summary>
 

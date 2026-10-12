@@ -1,0 +1,291 @@
+{
+ "portrait": {
+  "viewport": {
+   "width": 390,
+   "height": 844
+  },
+  "buffer": {
+   "width": 780,
+   "height": 1688
+  },
+  "dpr": 2,
+  "capture": {
+   "width": 780,
+   "height": 1688,
+   "format": "RGBA16F linear",
+   "generation": 2,
+   "sourceObjects": [
+    "wall"
+   ]
+  },
+  "drawCalls": 5,
+  "triangles": 227078,
+  "restores": 0,
+  "running": true,
+  "contextLost": false
+ },
+ "landscape": {
+  "viewport": {
+   "width": 844,
+   "height": 390
+  },
+  "buffer": {
+   "width": 1688,
+   "height": 780
+  },
+  "dpr": 2,
+  "capture": {
+   "width": 1688,
+   "height": 780,
+   "format": "RGBA16F linear",
+   "generation": 3,
+   "sourceObjects": [
+    "wall"
+   ]
+  },
+  "drawCalls": 5,
+  "triangles": 227078,
+  "restores": 0,
+  "running": true,
+  "contextLost": false
+ },
+ "desktopDpr2": {
+  "viewport": {
+   "width": 1440,
+   "height": 900
+  },
+  "buffer": {
+   "width": 2880,
+   "height": 1800
+  },
+  "dpr": 2,
+  "capture": {
+   "width": 2880,
+   "height": 1800,
+   "format": "RGBA16F linear",
+   "generation": 4,
+   "sourceObjects": [
+    "wall"
+   ]
+  },
+  "drawCalls": 5,
+  "triangles": 227078,
+  "restores": 0,
+  "running": true,
+  "contextLost": false
+ },
+ "desktop": {
+  "viewport": {
+   "width": 1440,
+   "height": 900
+  },
+  "buffer": {
+   "width": 2880,
+   "height": 1800
+  },
+  "dpr": 2,
+  "capture": {
+   "width": 2880,
+   "height": 1800,
+   "format": "RGBA16F linear",
+   "generation": 4,
+   "sourceObjects": [
+    "wall"
+   ]
+  },
+  "drawCalls": 5,
+  "triangles": 227078,
+  "restores": 0,
+  "running": true,
+  "contextLost": false
+ },
+ "beforeLoss": {
+  "viewport": {
+   "width": 1440,
+   "height": 900
+  },
+  "buffer": {
+   "width": 1440,
+   "height": 900
+  },
+  "dpr": 1,
+  "capture": {
+   "width": 1440,
+   "height": 900,
+   "format": "RGBA16F linear",
+   "generation": 5,
+   "sourceObjects": [
+    "wall"
+   ]
+  },
+  "drawCalls": 5,
+  "triangles": 227078,
+  "restores": 0,
+  "running": true,
+  "contextLost": false
+ },
+ "afterRestore": {
+  "viewport": {
+   "width": 1440,
+   "height": 900
+  },
+  "buffer": {
+   "width": 1440,
+   "height": 900
+  },
+  "dpr": 1,
+  "capture": {
+   "width": 1440,
+   "height": 900,
+   "format": "RGBA16F linear",
+   "generation": 8,
+   "sourceObjects": [
+    "wall"
+   ]
+  },
+  "drawCalls": 5,
+  "triangles": 227078,
+  "restores": 3,
+  "running": true,
+  "contextLost": false
+ },
+ "byteAfterRestore": {
+  "viewport": {
+   "width": 1440,
+   "height": 900
+  },
+  "buffer": {
+   "width": 1440,
+   "height": 900
+  },
+  "dpr": 1,
+  "capture": {
+   "width": 1440,
+   "height": 900,
+   "format": "RGBA8 linear",
+   "generation": 10,
+   "sourceObjects": [
+    "wall"
+   ]
+  },
+  "drawCalls": 5,
+  "triangles": 227078,
+  "restores": 4,
+  "running": true,
+  "contextLost": false
+ },
+ "console": [
+  {
+   "type": "debug",
+   "text": "[vite] connecting..."
+  },
+  {
+   "type": "debug",
+   "text": "[vite] connected."
+  },
+  {
+   "type": "info",
+   "text": "[Walden] Wall capture: RGBA16F linear"
+  },
+  {
+   "type": "debug",
+   "text": "[vite] connecting..."
+  },
+  {
+   "type": "debug",
+   "text": "[vite] connected."
+  },
+  {
+   "type": "info",
+   "text": "[Walden] Wall capture: RGBA16F linear"
+  },
+  {
+   "type": "log",
+   "text": "THREE.WebGLRenderer: Context Lost."
+  },
+  {
+   "type": "log",
+   "text": "THREE.WebGLRenderer: Context Restored."
+  },
+  {
+   "level": "warning",
+   "text": "WebGL: INVALID_OPERATION: delete: object does not belong to this context"
+  },
+  {
+   "level": "warning",
+   "text": "WebGL: INVALID_OPERATION: delete: object does not belong to this context"
+  },
+  {
+   "level": "warning",
+   "text": "WebGL: INVALID_OPERATION: delete: object does not belong to this context"
+  },
+  {
+   "type": "log",
+   "text": "THREE.WebGLRenderer: Context Lost."
+  },
+  {
+   "type": "log",
+   "text": "THREE.WebGLRenderer: Context Restored."
+  },
+  {
+   "level": "warning",
+   "text": "WebGL: INVALID_OPERATION: delete: object does not belong to this context"
+  },
+  {
+   "level": "warning",
+   "text": "WebGL: INVALID_OPERATION: delete: object does not belong to this context"
+  },
+  {
+   "level": "warning",
+   "text": "WebGL: INVALID_OPERATION: delete: object does not belong to this context"
+  },
+  {
+   "type": "log",
+   "text": "THREE.WebGLRenderer: Context Lost."
+  },
+  {
+   "type": "log",
+   "text": "THREE.WebGLRenderer: Context Restored."
+  },
+  {
+   "level": "warning",
+   "text": "WebGL: INVALID_OPERATION: delete: object does not belong to this context"
+  },
+  {
+   "level": "warning",
+   "text": "WebGL: INVALID_OPERATION: delete: object does not belong to this context"
+  },
+  {
+   "level": "warning",
+   "text": "WebGL: INVALID_OPERATION: delete: object does not belong to this context"
+  },
+  {
+   "type": "info",
+   "text": "[Walden] Wall capture: RGBA8 linear (HDR clipped)"
+  },
+  {
+   "type": "log",
+   "text": "THREE.WebGLRenderer: Context Lost."
+  },
+  {
+   "type": "log",
+   "text": "THREE.WebGLRenderer: Context Restored."
+  },
+  {
+   "level": "warning",
+   "text": "WebGL: INVALID_OPERATION: delete: object does not belong to this context"
+  },
+  {
+   "level": "warning",
+   "text": "WebGL: INVALID_OPERATION: delete: object does not belong to this context"
+  },
+  {
+   "level": "warning",
+   "text": "WebGL: INVALID_OPERATION: delete: object does not belong to this context"
+  },
+  {
+   "type": "info",
+   "text": "[Walden] Wall capture: RGBA16F linear"
+  }
+ ]
+}

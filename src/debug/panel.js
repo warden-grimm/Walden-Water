@@ -4,7 +4,7 @@ import { createProfiler } from './profiler.js';
 import { createRenderTimer } from './renderTimer.js';
 
 export function createDebugPanel({ config, resize, snapshot, renderer }) {
-  const gui = new GUI({ title: 'Walden · M2', width: 280 });
+  const gui = new GUI({ title: 'Walden · M3', width: 280 });
   const profiler = createProfiler(config.diagnostics, snapshot);
   const timer = createRenderTimer(renderer.getContext(), config.diagnostics.querySlots, profiler.recordGpu, profiler.invalidateGpu);
   for (const [name, values] of Object.entries(config)) {

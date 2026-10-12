@@ -26,7 +26,11 @@ with `normalStep` in world metres. There is no independent bump surface.
 Turning displacement off makes both position and normal flat. The wall uses
 translation only; adding a nonuniform model scale would require an inverse
 transpose normal transform. Wet streaks are confined to the curtain footprint
-plus a soft margin. The phase `(worldY + time * speed)` moves downward.
+plus a soft horizontal margin, with a configurable vertical fade inside y=0
+and y=height. Wetness is zero beyond the lip/pool. The phase
+`(worldY + time * speed)` moves downward. Layered rotated albedo and warped
+wet noise avoid the former single-octave square cells. Softer, less frequent
+shelves and a smaller fold reduce undersampled rims on the reference grid.
 
 Reference quality is 256×256 segments (131,072 wall triangles); reduced is
 128×128 (32,768). The grid changes only on the GUI control's finished edit and
@@ -92,13 +96,20 @@ The flow coordinate is travelTime((1−v)×height)−time×flowSpeed, where trav
 is the rationalized positive root of d=v0×t+½g×t². A constant phase travels
 down and accelerates from 0.7 m/s at the lip to about 5.41 m/s at the pool at
 defaults. Debug flow bands expose that sign/stretch; the water view uses
-stretched fBm in the same coordinate. Noise-based normals affect shading only.
+stretched fBm in the same coordinate. Noise-based normals affect shading only;
+central differences divide by 2×step×width/height to measure slopes per metre,
+with `normalStrength` a height scale in metres. `normalStep` remains a finite
+sampling/filter width, so very large steps can smooth fine detail. Ragged edge
+coverage, lip fade and lower tears modulate opacity. Long-uptime noise precision
+is an explicit builder follow-up due M9; no wrapped phase discontinuity is added.
 
 ## Wall capture, color, and transparency
 
 Render order: (1) wall-only Scene into a linear render target; (2) fullscreen
 background sampling that completed target, then the front-facing transparent
-curtain and temporary framing markers. The costly wall geometry draws once.
+curtain and optional framing markers (hidden by default, renderOrder 2 when
+enabled). The costly wall geometry draws once. The wall target uses 4× MSAA,
+clamped to renderer capability; the debug `samples` rebuild control permits 0/2/4.
 The wall source material never samples the target; curtain/background are
 absent from the source Scene. No target reads itself. The pass restores the
 prior target, cube face, mip and autoClear in finally, including on exceptions;
@@ -109,10 +120,16 @@ tone mapping. The final background and water each apply ACES and sRGB once.
 Water premultiplies after output conversion, uses normal premultiplied blending,
 depthWrite=false and FrontSide, avoiding a second transparent backface draw.
 Its screen coordinates come from gl_FragCoord / actual canvas buffer dimensions;
-target sampling clamps half a texel at the edges. Capture scale follows DPR and
-resizing. Refraction disabled removes the offset but retains the background pass.
+target sampling clamps half a texel at the edges. `refraction.wallResolution`
+scales the entire wall/background target after DPR (default 1, minimum 0.5),
+not just the distortion. Reduced resolution softens the whole background.
+Refraction disabled removes the offset but retains the background pass.
 
 RGBA16F is preferred after extension and framebuffer completeness checks.
-Forced/unsupported byte mode is normalized linear RGBA8; values above one clip
-(a documented LDR fidelity fallback, not M4 signed-field encoding). The selected
-format is logged on changes. Context restoration reselects and checks the target.
+Forced/unsupported byte mode uses SRGB8_ALPHA8: WebGL2 encodes storage and decodes
+sampling in hardware, retaining more precision in dark rock than linear RGBA8.
+The shader still receives linear values; values above one clip (a documented
+LDR fidelity fallback, not M4 signed-field encoding). The selected format is
+logged on changes. Context restoration abandons the old target (whose GPU
+objects the lost context destroyed), then reselects and checks a fresh target.
+This avoids invoking Three's stale disposal callbacks on the new context.
