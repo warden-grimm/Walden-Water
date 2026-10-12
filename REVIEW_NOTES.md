@@ -261,6 +261,15 @@
 - Published `ca51121763ff1f4cf178bc1c523807d3bcd003e4` through [successful run 38306224283](https://github.com/warden-grimm/Walden-Water/actions/runs/38306224283) to the [live Pages site](https://warden-grimm.github.io/Walden-Water/). [Live verification](docs/evidence/M4/contrast-deployment/README.md) confirms matching HTML/asset hashes, clean normal/debug routes and desktop/portrait/landscape two-contact/recovery checks including forced byte, without console errors. Application files are identical to reviewed `19d5bfd`.
 - Archive follow-up preserves original reviewer file bytes with a local `.gitattributes`; all 16 artifacts in the Git index match their original SHA-256 manifest. The deployment verification script now takes optional output/commit arguments to preserve historical results. These evidence-only updates do not change the published app.
 
+### M4 — slightly faster water and further contrast tuning
+
+- User requested a slight speed increase and a little more contrast after the first contrast release. Flow speed `1` → `1.15` (+15%); rock `#4b555e` → `#48525b`; curtain `#9cbdc6` → `#a6c6ce`; opacity `0.40` → `0.43`. Four existing config/GUI defaults only; the shared speed also carries touch wakes faster. Existing acceleration, lighting, contact response and recovery settings remain.
+- Accepted BASE remains M3 `a4b55164809c009fbb12b7d10929150ebc3ce3b0`; prior code-reviewed M4 contrast implementation `19d5bfd2f94da5e9e4e41ca3b0a74d9e1da26cfa`. Submit the new committed head for a focused Claude review in a separate Orca workspace before the existing authorized Pages publication.
+- Validation: `npm test` 17/17 pass; `npm run build` succeeds (572.09 kB / 146.99 kB gzip main bundle; existing >500 kB warning). `git diff --check` passes. No new tests for numeric defaults or new dependencies.
+- [Evidence and reproduction](docs/evidence/M4/flow-contrast/README.md): matched before/after portrait/landscape stills, four short motion clips, and auto/byte two-contact holds/recovery. The probe now asserts loaded defaults and two delivered DOM down/up events (resolving the prior evidence-script nit). Three-second holds remain active; zero pressure by 2.2 seconds after release; no console warnings/errors. Preview is 127.0.0.1:5174 with `--strictPort`.
+- Manual script: (1) reload and compare flow: modestly faster with downward acceleration; (2) check brighter streaks against darker rocks in both orientations, retaining detail/transparency; (3) hold two fingers for three seconds, release and observe healing within about 1–2 seconds; (4) repeat with forced byte. Desktop emulation checks are recorded; physical-phone confirmation is still pending and is not inferred from this visual request.
+- Cost/limits: same passes/geometry/programs and no hot-loop change; existing M4 cost evidence applies. Capture cadence is not measured FPS. No scope deviation or M5 work; current M4 phone-evidence gate and other owned nits remain.
+
 ### M<n> — <summary>
 
 - Status:

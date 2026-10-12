@@ -1,0 +1,6 @@
+{
+  "output": "./flow-contrast/",
+  "old": { "rock": "#4b555e", "water": "#9cbdc6", "opacity": 0.40, "flowSpeed": 1 },
+  "next": { "rock": "#48525b", "water": "#a6c6ce", "opacity": 0.43, "flowSpeed": 1.15 },
+  "clipSeconds": 4
+}
