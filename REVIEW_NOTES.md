@@ -252,6 +252,14 @@
 - Cost: same 4 draws / 227076 triangles, target sizes and programs. Previous matched M4 performance evidence remains applicable to the unchanged pipeline; no new phone FPS claim.
 - Validation: `npm test` 17/17 pass; `npm run build` passes (572.09 kB / 146.98 kB gzip main bundle, existing >500 kB warning); `git diff --check` passes. No new unit tests for color defaults; no spec deviations. Existing M5/M6/M8/M9 nits retain their owners/deadlines.
 
+### M4 — contrast review outcome and publication
+
+- Claude reviewed exact `19d5bfd2f94da5e9e4e41ca3b0a74d9e1da26cfa` in the separate `claude-m4-contrast-review` Orca workspace. [Unchanged report](docs/reviews/M4-review-r2.md), committed as `eb0aa7b`; [independent evidence archive](docs/evidence/M4/claude-contrast-review/README.md). Worker `ctx_3d23202e5cc0` settled successfully and was released after committing its report; workspace preserved.
+- Publication has **no code blocker**. Independent install, 17 tests, build and four portrait/landscape × auto/byte touch runs pass. Two DOM contacts delivered per run; exact neutral in 1.31–1.45 seconds; no console warnings/errors. Visual comparison confirms more readable streaks with wet rock detail and translucency preserved.
+- M4 verdict remains **CHANGES REQUESTED (phone evidence only)**: the user's Chrome/iOS no-lag observation is accepted qualitatively, but simultaneous two-finger use is not yet explicitly confirmed. Device versions and revised contrast on the phone remain unreported. An optional two-finger clarification was sent during this task; do not infer an answer. No M5 advancement.
+- Nits: contrast is improved but composite brightness remains near the prior level; builder will use the user's phone feedback to decide if more brightening is wanted (due before M4 acceptance). Add DOM-delivery counters to future evidence scripts (builder, M5). Prior velocity-saturation and idle-pass nits retain their deadlines.
+- Publish this reviewed visual revision through the existing authorized GitHub Pages workflow. Record deployment URL/run and live verification after it completes.
+
 ### M<n> — <summary>
 
 - Status:

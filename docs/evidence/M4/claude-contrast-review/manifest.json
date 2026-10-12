@@ -1,0 +1,66 @@
+﻿[
+    {
+        "path":  "cdp.mjs",
+        "sha256":  "62312E5491BED2813209C83604D4DCE3428F62309F819C8B73188A5DD197836E"
+    },
+    {
+        "path":  "review.mjs",
+        "sha256":  "0131A8460F28F9D6BECE7F2A894880B1CB62F9D69A9F277AE344DB3FBDDD252D"
+    },
+    {
+        "path":  "iso.mjs",
+        "sha256":  "35F56EFCC3C62D57069CC0A6C6E175A6AF6C3A439A590F1F3673A4DD4889E3BF"
+    },
+    {
+        "path":  "iso.py",
+        "sha256":  "D91435AE67CE0A81A79594E34CA576F5B0B2E216F7238F06F59E883868E22E3C"
+    },
+    {
+        "path":  "lum.py",
+        "sha256":  "FAC7015BF82BC20823C978D97E876368878A1D454EA943065F2B4B2CCB516987"
+    },
+    {
+        "path":  "out/results.json",
+        "sha256":  "E031FDFC6A678BC886205437CDDB1059FFB72A36924E71C46FDA90BB7FE9718D"
+    },
+    {
+        "path":  "out/iso.json",
+        "sha256":  "72CD44B9219A2C73B370EF41B8B0C9EDABEB267CEEA76E5404FCCC60EDBBE489"
+    },
+    {
+        "path":  "out/luminance.json",
+        "sha256":  "9D597D89D514110C97B0D326573D074DDCAE3CEDB5E0053C984B92AC7D98C532"
+    },
+    {
+        "path":  "out/iso-390x844-after-rockonly.png",
+        "sha256":  "4BBAA7A323AC9BADB0A1339C5DD842BFB4EB1A1FB361F39E3E735BB63E0E9B81"
+    },
+    {
+        "path":  "out/iso-390x844-after-water.png",
+        "sha256":  "3D95D6B93053E28CA5EABEA6CC4DA1AFA28FEEA83B8E8AE9677B14016DD3A56E"
+    },
+    {
+        "path":  "out/iso-390x844-before-rockonly.png",
+        "sha256":  "41871E96386C8DD94B611B892AF7C1A1D8CD7EBD4CF46F45AF30275ECB2B3A9C"
+    },
+    {
+        "path":  "out/iso-390x844-before-water.png",
+        "sha256":  "F5AE5AED83AF6B6DEBFF55EE1CC3FD278623E71C4D0494DD6617EFCD5806B798"
+    },
+    {
+        "path":  "out/iso-844x390-after-rockonly.png",
+        "sha256":  "472CE4BC0C07DCE002473B7C15D8A573D616D0EAF3FC15884BA63B1D530D659F"
+    },
+    {
+        "path":  "out/iso-844x390-after-water.png",
+        "sha256":  "DF616EB335CB9EC33F7D479D4FAC15ACEA239758B09201573A1AF70F6F7EEE06"
+    },
+    {
+        "path":  "out/iso-844x390-before-rockonly.png",
+        "sha256":  "8FC2362896BB2B07E74FA3A3DF414A1C3A398A4BD242165AF7165619BD02BF14"
+    },
+    {
+        "path":  "out/iso-844x390-before-water.png",
+        "sha256":  "F085AF565D5F2BE1F2DCC7FE7A247AF4C6467D694845F051DFDAA15E777D3F5E"
+    }
+]

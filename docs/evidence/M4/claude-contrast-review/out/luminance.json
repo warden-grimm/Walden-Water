@@ -1,0 +1,42 @@
+{
+ "390x844 auto": {
+  "before": {
+   "beamWater": 82.16,
+   "lowerOffBeamWater": 30.7,
+   "rockLeftOutside": 9.49,
+   "rockBelow": 8.76,
+   "pct>=240": 0.0,
+   "max": 212
+  },
+  "after": {
+   "beamWater": 80.38,
+   "lowerOffBeamWater": 28.94,
+   "rockLeftOutside": 7.51,
+   "rockBelow": 6.85,
+   "pct>=240": 0.0,
+   "max": 212
+  },
+  "maxAbsDiff": 11,
+  "meanAbsDiff": 2.63
+ },
+ "844x390 byte": {
+  "before": {
+   "beamWater": 68.88,
+   "lowerOffBeamWater": 32.47,
+   "rockOutside": 8.78,
+   "rockRightOutside": 10.19,
+   "pct>=240": 0.0,
+   "max": 211
+  },
+  "after": {
+   "beamWater": 68.56,
+   "lowerOffBeamWater": 31.69,
+   "rockOutside": 6.85,
+   "rockRightOutside": 7.98,
+   "pct>=240": 0.0,
+   "max": 210
+  },
+  "maxAbsDiff": 11,
+  "meanAbsDiff": 2.32
+ }
+}

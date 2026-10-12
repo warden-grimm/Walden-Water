@@ -1,0 +1,402 @@
+{
+  "measuredAt": "2026-10-12T20:40:32.076Z",
+  "views": [
+    {
+      "w": 390,
+      "h": 844,
+      "mode": "auto",
+      "deliveredDown": 2,
+      "deliveredUp": 2,
+      "held": {
+        "snapshot": {
+          "available": true,
+          "disabledReason": null,
+          "width": 256,
+          "height": 512,
+          "format": "RGBA16F / manual bilinear",
+          "generation": 1,
+          "steps": 268,
+          "distinctTargets": true,
+          "readId": 9,
+          "writeId": 11,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 2,
+          "pointers": [
+            {
+              "id": 2,
+              "held": true,
+              "valid": true,
+              "uv": [
+                0.41479465433016105,
+                0.6344552494045822
+              ]
+            },
+            {
+              "id": 3,
+              "held": true,
+              "valid": true,
+              "uv": [
+                0.6538410996778717,
+                0.36547522347343536
+              ]
+            }
+          ]
+        },
+        "field": {
+          "max": 0.8491187914854658,
+          "sum": 3570.3762874800404,
+          "centroidU": 0.5418401690132524,
+          "centroidV": 0.40763355633161646,
+          "minX": -0.5151219214453566,
+          "maxX": 0.5136570329905087
+        },
+        "pd": 2,
+        "pu": 0
+      },
+      "healed": {
+        "snapshot": {
+          "available": true,
+          "disabledReason": null,
+          "width": 256,
+          "height": 512,
+          "format": "RGBA16F / manual bilinear",
+          "generation": 1,
+          "steps": 362,
+          "distinctTargets": true,
+          "readId": 9,
+          "writeId": 11,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 0,
+          "pointers": []
+        },
+        "field": {
+          "max": 0,
+          "sum": 0,
+          "centroidU": null,
+          "centroidV": null,
+          "minX": 0,
+          "maxX": 0
+        },
+        "pd": 2,
+        "pu": 2
+      },
+      "healedAtMs": 1449,
+      "ok": true
+    },
+    {
+      "w": 844,
+      "h": 390,
+      "mode": "byte",
+      "deliveredDown": 2,
+      "deliveredUp": 2,
+      "held": {
+        "snapshot": {
+          "available": true,
+          "disabledReason": null,
+          "width": 256,
+          "height": 512,
+          "format": "RGBA8 packed16 / manual bilinear",
+          "generation": 2,
+          "steps": 501,
+          "distinctTargets": true,
+          "readId": 49,
+          "writeId": 47,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 2,
+          "pointers": [
+            {
+              "id": 4,
+              "held": true,
+              "valid": true,
+              "uv": [
+                0.3373471357978099,
+                0.6184386486905638
+              ]
+            },
+            {
+              "id": 5,
+              "held": true,
+              "valid": true,
+              "uv": [
+                0.7939632251143742,
+                0.38112789490415294
+              ]
+            }
+          ]
+        },
+        "field": {
+          "max": 0.8498664835584039,
+          "sum": 3716.8489662012043,
+          "centroidU": 0.5821497911092424,
+          "centroidV": 0.4014102280992172,
+          "minX": -0.5155186620685446,
+          "maxX": 0.5137485885189368
+        },
+        "pd": 4,
+        "pu": 2
+      },
+      "healed": {
+        "snapshot": {
+          "available": true,
+          "disabledReason": null,
+          "width": 256,
+          "height": 512,
+          "format": "RGBA8 packed16 / manual bilinear",
+          "generation": 2,
+          "steps": 589,
+          "distinctTargets": true,
+          "readId": 49,
+          "writeId": 47,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 0,
+          "pointers": []
+        },
+        "field": {
+          "max": 0,
+          "sum": 0,
+          "centroidU": null,
+          "centroidV": null,
+          "minX": 0,
+          "maxX": 0
+        },
+        "pd": 4,
+        "pu": 4
+      },
+      "healedAtMs": 1334,
+      "ok": true
+    },
+    {
+      "w": 390,
+      "h": 844,
+      "mode": "byte",
+      "deliveredDown": 2,
+      "deliveredUp": 2,
+      "held": {
+        "snapshot": {
+          "available": true,
+          "disabledReason": null,
+          "width": 256,
+          "height": 512,
+          "format": "RGBA8 packed16 / manual bilinear",
+          "generation": 2,
+          "steps": 729,
+          "distinctTargets": true,
+          "readId": 49,
+          "writeId": 47,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 2,
+          "pointers": [
+            {
+              "id": 6,
+              "held": true,
+              "valid": true,
+              "uv": [
+                0.4145575451147737,
+                0.6344199424363671
+              ]
+            },
+            {
+              "id": 7,
+              "held": true,
+              "valid": true,
+              "uv": [
+                0.6536313079821547,
+                0.36543140867037677
+              ]
+            }
+          ]
+        },
+        "field": {
+          "max": 0.8493629358358129,
+          "sum": 3587.469001296962,
+          "centroidU": 0.5414700619051355,
+          "centroidV": 0.40712549512174784,
+          "minX": -0.5152134769737846,
+          "maxX": 0.5143589587084567
+        },
+        "pd": 6,
+        "pu": 4
+      },
+      "healed": {
+        "snapshot": {
+          "available": true,
+          "disabledReason": null,
+          "width": 256,
+          "height": 512,
+          "format": "RGBA8 packed16 / manual bilinear",
+          "generation": 2,
+          "steps": 822,
+          "distinctTargets": true,
+          "readId": 47,
+          "writeId": 49,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 0,
+          "pointers": []
+        },
+        "field": {
+          "max": 0,
+          "sum": 0,
+          "centroidU": null,
+          "centroidV": null,
+          "minX": 0,
+          "maxX": 0
+        },
+        "pd": 6,
+        "pu": 6
+      },
+      "healedAtMs": 1429,
+      "ok": true
+    },
+    {
+      "w": 844,
+      "h": 390,
+      "mode": "auto",
+      "deliveredDown": 2,
+      "deliveredUp": 2,
+      "held": {
+        "snapshot": {
+          "available": true,
+          "disabledReason": null,
+          "width": 256,
+          "height": 512,
+          "format": "RGBA16F / manual bilinear",
+          "generation": 3,
+          "steps": 964,
+          "distinctTargets": true,
+          "readId": 111,
+          "writeId": 113,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 2,
+          "pointers": [
+            {
+              "id": 8,
+              "held": true,
+              "valid": true,
+              "uv": [
+                0.33728579070108916,
+                0.6183990394410687
+              ]
+            },
+            {
+              "id": 9,
+              "held": true,
+              "valid": true,
+              "uv": [
+                0.7938953444753911,
+                0.3811015612174688
+              ]
+            }
+          ]
+        },
+        "field": {
+          "max": 0.84960708018616,
+          "sum": 3695.666636148647,
+          "centroidU": 0.5819630860697492,
+          "centroidV": 0.4018343909937307,
+          "minX": -0.5151219214453566,
+          "maxX": 0.5136570329905087
+        },
+        "pd": 8,
+        "pu": 6
+      },
+      "healed": {
+        "snapshot": {
+          "available": true,
+          "disabledReason": null,
+          "width": 256,
+          "height": 512,
+          "format": "RGBA16F / manual bilinear",
+          "generation": 3,
+          "steps": 1049,
+          "distinctTargets": true,
+          "readId": 113,
+          "writeId": 111,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 0,
+          "pointers": []
+        },
+        "field": {
+          "max": 0,
+          "sum": 0,
+          "centroidU": null,
+          "centroidV": null,
+          "minX": 0,
+          "maxX": 0
+        },
+        "pd": 8,
+        "pu": 8
+      },
+      "healedAtMs": 1306,
+      "ok": true
+    }
+  ],
+  "plain": [
+    {
+      "w": 390,
+      "h": 844,
+      "gui": 0,
+      "canvas": [
+        390,
+        844,
+        780,
+        1688
+      ]
+    },
+    {
+      "w": 844,
+      "h": 390,
+      "gui": 0,
+      "canvas": [
+        844,
+        390,
+        1688,
+        780
+      ]
+    }
+  ],
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0",
+  "loadedDefaults": {
+    "rock": "#4b555e",
+    "water": "#9cbdc6",
+    "opacity": 0.4,
+    "wet": {
+      "sheen": true,
+      "margin": 0.65,
+      "verticalFade": 0.3,
+      "warp": 1.5,
+      "frequency": 6,
+      "threshold": 0.38,
+      "softness": 0.3,
+      "trickleSpeed": 0.35,
+      "trickleFrequency": 11,
+      "trickleContrast": 0.85,
+      "specular": 0.4,
+      "drySpecular": 0.015,
+      "gloss": 55
+    },
+    "light": {
+      "x": -3.5,
+      "y": 8,
+      "z": 3,
+      "targetX": 0,
+      "targetY": 4,
+      "targetZ": 0,
+      "angle": 21,
+      "penumbra": 0.55,
+      "intensity": 1.5,
+      "color": "#fff1d5",
+      "range": 10,
+      "fadeStart": 6,
+      "bounce": 0.25,
+      "bounceColor": "#b3c1cd"
+    }
+  },
+  "fieldLog": [
+    "[Walden] Touch field: RGBA16F / manual bilinear; framebuffer, vertex sampling and neutral checks passed",
+    "[Walden] Touch field: RGBA16F / manual bilinear; framebuffer, vertex sampling and neutral checks passed",
+    "[Walden] Touch field: RGBA16F / manual bilinear; framebuffer, vertex sampling and neutral checks passed",
+    "[Walden] Touch field: RGBA8 packed16 / manual bilinear; framebuffer, vertex sampling and neutral checks passed",
+    "[Walden] Touch field: RGBA16F / manual bilinear; framebuffer, vertex sampling and neutral checks passed"
+  ],
+  "console": []
+}

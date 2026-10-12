@@ -1,6 +1,6 @@
 # Walden Water
 
-A static Three.js page using plain JavaScript, Vite, and GitHub Pages. Accepted M3 includes a curved falling water curtain, accelerated streaks, wall refraction and localized glints over a displaced wet rock wall. The M4 device-test candidate adds multi-touch parting, downward wakes and rim foam. Claude found no code defect; acceptance still requires the physical-phone touch and latency check. Spray, the visible light volume and the pool follow in later milestones.
+A static Three.js page using plain JavaScript, Vite, and GitHub Pages. Accepted M3 includes a curved falling water curtain, accelerated streaks, wall refraction and localized glints over a displaced wet rock wall. The M4 device-test candidate adds multi-touch parting, downward wakes and rim foam, with a contrast adjustment following positive Chrome-on-iOS feedback. Claude found no code blocker to publication; acceptance still requires explicit confirmation of simultaneous two-finger use on the phone. Spray, the visible light volume and the pool follow in later milestones.
 
 ## Waterfall build and review
 

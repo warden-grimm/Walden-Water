@@ -1,0 +1,94 @@
+{
+ "390x844 before": {
+  "beam": {
+   "composite": 82.16,
+   "rockOnly": 62.76,
+   "waterAdded": 19.41,
+   "p95": 129,
+   "p50": 85
+  },
+  "lower": {
+   "composite": 30.7,
+   "rockOnly": 24.35,
+   "waterAdded": 6.34,
+   "p95": 73,
+   "p50": 26
+  },
+  "rockOut": {
+   "composite": 9.49,
+   "rockOnly": 9.49,
+   "waterAdded": 0.0,
+   "p95": 18,
+   "p50": 8
+  }
+ },
+ "390x844 after": {
+  "beam": {
+   "composite": 80.38,
+   "rockOnly": 55.67,
+   "waterAdded": 24.71,
+   "p95": 125,
+   "p50": 81
+  },
+  "lower": {
+   "composite": 28.94,
+   "rockOnly": 20.64,
+   "waterAdded": 8.3,
+   "p95": 72,
+   "p50": 23
+  },
+  "rockOut": {
+   "composite": 7.51,
+   "rockOnly": 7.51,
+   "waterAdded": 0.0,
+   "p95": 14,
+   "p50": 7
+  }
+ },
+ "844x390 before": {
+  "beam": {
+   "composite": 68.88,
+   "rockOnly": 46.58,
+   "waterAdded": 22.31,
+   "p95": 121,
+   "p50": 64
+  },
+  "lower": {
+   "composite": 32.47,
+   "rockOnly": 23.3,
+   "waterAdded": 9.16,
+   "p95": 72,
+   "p50": 29
+  },
+  "rockOut": {
+   "composite": 8.78,
+   "rockOnly": 8.78,
+   "waterAdded": 0.0,
+   "p95": 13,
+   "p50": 9
+  }
+ },
+ "844x390 after": {
+  "beam": {
+   "composite": 68.56,
+   "rockOnly": 40.93,
+   "waterAdded": 27.63,
+   "p95": 118,
+   "p50": 66
+  },
+  "lower": {
+   "composite": 31.69,
+   "rockOnly": 19.79,
+   "waterAdded": 11.9,
+   "p95": 73,
+   "p50": 28
+  },
+  "rockOut": {
+   "composite": 6.85,
+   "rockOnly": 6.85,
+   "waterAdded": 0.0,
+   "p95": 11,
+   "p50": 7
+  }
+ }
+}
