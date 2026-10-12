@@ -18,13 +18,21 @@ void main() {
   float travel = uDelta * uFlowSpeed * uTransport;
   float speed = sqrt(uLipSpeed * uLipSpeed + 2.0 * uGravity * distance);
   float upstream = distance - speed * travel + 0.5 * uGravity * travel * travel;
+  // A characteristic that crosses the lip comes from outside the field;
+  // continuing the parabola past launch would reverse transport near the lip.
+  if (travel > 2.0 * distance / (speed + uLipSpeed)) upstream = -uWorldSize.y;
   vec2 source = vec2(vUv.x, 1.0 - upstream / uWorldSize.y);
   vec2 texel = 1.0 / uFieldSize;
   vec2 field = sampleField(source);
   vec2 neighbors = (sampleField(source + vec2(texel.x, 0.0)) + sampleField(source - vec2(texel.x, 0.0))
     + sampleField(source + vec2(0.0, texel.y)) + sampleField(source - vec2(0.0, texel.y))) * 0.25;
   field = mix(field, neighbors, 1.0 - exp(-uDiffusion * uDelta));
-  field *= exp(log(uNeutralThreshold) * uDelta / uRecovery);
+  vec2 magnitude = abs(field);
+  vec2 loss = magnitude * (1.0 - exp(log(uNeutralThreshold) * uDelta / uRecovery));
+  // Packed rounding must not cancel tiny decay steps on fast displays.
+  // One code point is the smallest representable change in each channel.
+  if (uFieldByte && uDelta > 0.0) loss = max(loss, vec2(1.0 / 32767.0, 1.0 / 65535.0));
+  field = sign(field) * max(vec2(0.0), magnitude - loss);
   if (abs(field.x) < uNeutralThreshold) field.x = 0.0;
   if (field.y < uNeutralThreshold) field.y = 0.0;
   vec2 injection = vec2(0.0);

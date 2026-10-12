@@ -1,0 +1,451 @@
+{
+  "measuredAt": "2026-10-12T19:11:58.653Z",
+  "initial": {
+    "viewport": {
+      "width": 1416,
+      "height": 908
+    },
+    "buffer": {
+      "width": 1416,
+      "height": 908
+    },
+    "dpr": 1,
+    "running": true,
+    "contextLost": false,
+    "restores": 0,
+    "frames": 80,
+    "elapsed": 1.3501999999999996,
+    "reducedMotion": false,
+    "camera": [
+      0.011379402943097656,
+      3.0050726127817184,
+      9.388320632897686
+    ],
+    "drawCalls": 4,
+    "triangles": 227076,
+    "geometries": 4,
+    "textures": 3,
+    "programs": 4,
+    "wall": {
+      "segments": 256,
+      "size": [
+        20,
+        12
+      ],
+      "quality": "reference",
+      "displacement": true,
+      "sheen": true,
+      "view": "rock"
+    },
+    "curtain": {
+      "quality": "reference",
+      "columns": 120,
+      "rows": 400,
+      "visible": true,
+      "view": "water",
+      "refraction": true,
+      "uv": "u left-to-right, v bottom-to-top",
+      "geometryMatchesRaycast": true
+    },
+    "capture": {
+      "width": 1416,
+      "height": 908,
+      "samples": 4,
+      "format": "RGBA16F linear",
+      "generation": 1,
+      "sourceObjects": [
+        "wall"
+      ]
+    },
+    "touch": {
+      "available": true,
+      "disabledReason": null,
+      "width": 256,
+      "height": 512,
+      "format": "RGBA16F / manual bilinear",
+      "generation": 1,
+      "steps": 81,
+      "distinctTargets": true,
+      "readId": 11,
+      "writeId": 9,
+      "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+      "count": 0,
+      "pointers": []
+    },
+    "effects": "M4 checkpoint: touch field and overlay; M3 water; no postprocessing",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+  },
+  "decay": [
+    {
+      "precision": "auto",
+      "hz": 60,
+      "recovery": 1.6,
+      "threshold": 0.001,
+      "elapsed": 1.75,
+      "max": 0,
+      "sum": 0,
+      "centroidU": null,
+      "centroidV": null,
+      "minX": 0,
+      "maxX": 0
+    },
+    {
+      "precision": "auto",
+      "hz": 480,
+      "recovery": 1.6,
+      "threshold": 0.001,
+      "elapsed": 1.75,
+      "max": 0,
+      "sum": 0,
+      "centroidU": null,
+      "centroidV": null,
+      "minX": 0,
+      "maxX": 0
+    },
+    {
+      "precision": "auto",
+      "hz": 165,
+      "recovery": 3,
+      "threshold": 0.001,
+      "elapsed": 2.981818181818182,
+      "max": 0,
+      "sum": 0,
+      "centroidU": null,
+      "centroidV": null,
+      "minX": 0,
+      "maxX": 0
+    },
+    {
+      "precision": "auto",
+      "hz": 240,
+      "recovery": 3,
+      "threshold": 0.001,
+      "elapsed": 3,
+      "max": 0,
+      "sum": 0,
+      "centroidU": null,
+      "centroidV": null,
+      "minX": 0,
+      "maxX": 0
+    },
+    {
+      "precision": "auto",
+      "hz": 144,
+      "recovery": 3,
+      "threshold": 0.0005,
+      "elapsed": 3,
+      "max": 0,
+      "sum": 0,
+      "centroidU": null,
+      "centroidV": null,
+      "minX": 0,
+      "maxX": 0
+    },
+    {
+      "precision": "byte",
+      "hz": 60,
+      "recovery": 1.6,
+      "threshold": 0.001,
+      "elapsed": 1.75,
+      "max": 0,
+      "sum": 0,
+      "centroidU": null,
+      "centroidV": null,
+      "minX": 0,
+      "maxX": 0
+    },
+    {
+      "precision": "byte",
+      "hz": 480,
+      "recovery": 1.6,
+      "threshold": 0.001,
+      "elapsed": 1.75,
+      "max": 0,
+      "sum": 0,
+      "centroidU": null,
+      "centroidV": null,
+      "minX": 0,
+      "maxX": 0
+    },
+    {
+      "precision": "byte",
+      "hz": 165,
+      "recovery": 3,
+      "threshold": 0.001,
+      "elapsed": 3.2303030303030305,
+      "max": 0,
+      "sum": 0,
+      "centroidU": null,
+      "centroidV": null,
+      "minX": 0,
+      "maxX": 0
+    },
+    {
+      "precision": "byte",
+      "hz": 240,
+      "recovery": 3,
+      "threshold": 0.001,
+      "elapsed": 3,
+      "max": 0,
+      "sum": 0,
+      "centroidU": null,
+      "centroidV": null,
+      "minX": 0,
+      "maxX": 0
+    },
+    {
+      "precision": "byte",
+      "hz": 144,
+      "recovery": 3,
+      "threshold": 0.0005,
+      "elapsed": 3,
+      "max": 0,
+      "sum": 0,
+      "centroidU": null,
+      "centroidV": null,
+      "minX": 0,
+      "maxX": 0
+    }
+  ],
+  "unusable": {
+    "snapshot": {
+      "viewport": {
+        "width": 1416,
+        "height": 908
+      },
+      "buffer": {
+        "width": 1416,
+        "height": 908
+      },
+      "dpr": 1,
+      "running": true,
+      "contextLost": false,
+      "restores": 0,
+      "frames": 68,
+      "elapsed": 1.1501000000000003,
+      "reducedMotion": false,
+      "camera": [
+        0.009793799454585526,
+        3.0043445979311323,
+        9.388320632897686
+      ],
+      "drawCalls": 3,
+      "triangles": 227074,
+      "geometries": 4,
+      "textures": 2,
+      "programs": 4,
+      "wall": {
+        "segments": 256,
+        "size": [
+          20,
+          12
+        ],
+        "quality": "reference",
+        "displacement": true,
+        "sheen": true,
+        "view": "rock"
+      },
+      "curtain": {
+        "quality": "reference",
+        "columns": 120,
+        "rows": 400,
+        "visible": true,
+        "view": "water",
+        "refraction": true,
+        "uv": "u left-to-right, v bottom-to-top",
+        "geometryMatchesRaycast": true
+      },
+      "capture": {
+        "width": 1416,
+        "height": 908,
+        "samples": 4,
+        "format": "RGBA16F linear",
+        "generation": 1,
+        "sourceObjects": [
+          "wall"
+        ]
+      },
+      "touch": {
+        "available": false,
+        "disabledReason": "No usable touch field framebuffer/sampling path.",
+        "format": "disabled / neutral texture",
+        "generation": 0,
+        "steps": 0,
+        "distinctTargets": false,
+        "validation": "failed",
+        "count": 0,
+        "pointers": []
+      },
+      "effects": "M4 checkpoint: touch field and overlay; M3 water; no postprocessing",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+    },
+    "neutral": {
+      "max": 0,
+      "sum": 0,
+      "centroidU": null,
+      "centroidV": null,
+      "minX": 0,
+      "maxX": 0,
+      "disabledReason": "No usable touch field framebuffer/sampling path."
+    },
+    "noticeHidden": true
+  },
+  "failedRestore": {
+    "snapshot": {
+      "viewport": {
+        "width": 1416,
+        "height": 908
+      },
+      "buffer": {
+        "width": 1416,
+        "height": 908
+      },
+      "dpr": 1,
+      "running": true,
+      "contextLost": false,
+      "restores": 1,
+      "frames": 137,
+      "elapsed": 2.3168999999999977,
+      "reducedMotion": false,
+      "camera": [
+        0.018122944053815405,
+        3.0083699279133302,
+        9.388320632897686
+      ],
+      "drawCalls": 3,
+      "triangles": 227074,
+      "geometries": 4,
+      "textures": 2,
+      "programs": 4,
+      "wall": {
+        "segments": 256,
+        "size": [
+          20,
+          12
+        ],
+        "quality": "reference",
+        "displacement": true,
+        "sheen": true,
+        "view": "rock"
+      },
+      "curtain": {
+        "quality": "reference",
+        "columns": 120,
+        "rows": 400,
+        "visible": true,
+        "view": "water",
+        "refraction": true,
+        "uv": "u left-to-right, v bottom-to-top",
+        "geometryMatchesRaycast": true
+      },
+      "capture": {
+        "width": 1416,
+        "height": 908,
+        "samples": 4,
+        "format": "RGBA16F linear",
+        "generation": 2,
+        "sourceObjects": [
+          "wall"
+        ]
+      },
+      "touch": {
+        "available": false,
+        "disabledReason": "No usable touch field framebuffer/sampling path.",
+        "format": "disabled / neutral texture",
+        "generation": 0,
+        "steps": 0,
+        "distinctTargets": false,
+        "validation": "failed",
+        "count": 0,
+        "pointers": []
+      },
+      "effects": "M4 checkpoint: touch field and overlay; M3 water; no postprocessing",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+    },
+    "noticeHidden": true
+  },
+  "console": [
+    {
+      "method": "Runtime.consoleAPICalled",
+      "type": "warning",
+      "args": [
+        "[Walden] Touch disabled: No usable touch field framebuffer/sampling path. Water rendering continues."
+      ]
+    }
+  ],
+  "recovered": {
+    "viewport": {
+      "width": 1416,
+      "height": 908
+    },
+    "buffer": {
+      "width": 1416,
+      "height": 908
+    },
+    "dpr": 1,
+    "running": true,
+    "contextLost": false,
+    "restores": 0,
+    "frames": 49,
+    "elapsed": 0.8334000000000004,
+    "reducedMotion": false,
+    "camera": [
+      0.007189281203239942,
+      3.0031699237194074,
+      9.388320632897686
+    ],
+    "drawCalls": 4,
+    "triangles": 227076,
+    "geometries": 4,
+    "textures": 3,
+    "programs": 4,
+    "wall": {
+      "segments": 256,
+      "size": [
+        20,
+        12
+      ],
+      "quality": "reference",
+      "displacement": true,
+      "sheen": true,
+      "view": "rock"
+    },
+    "curtain": {
+      "quality": "reference",
+      "columns": 120,
+      "rows": 400,
+      "visible": true,
+      "view": "water",
+      "refraction": true,
+      "uv": "u left-to-right, v bottom-to-top",
+      "geometryMatchesRaycast": true
+    },
+    "capture": {
+      "width": 1416,
+      "height": 908,
+      "samples": 4,
+      "format": "RGBA16F linear",
+      "generation": 1,
+      "sourceObjects": [
+        "wall"
+      ]
+    },
+    "touch": {
+      "available": true,
+      "disabledReason": null,
+      "width": 256,
+      "height": 512,
+      "format": "RGBA16F / manual bilinear",
+      "generation": 1,
+      "steps": 50,
+      "distinctTargets": true,
+      "readId": 9,
+      "writeId": 11,
+      "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+      "count": 0,
+      "pointers": []
+    },
+    "effects": "M4 checkpoint: touch field and overlay; M3 water; no postprocessing",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+  }
+}

@@ -41,8 +41,9 @@ class Surface extends EventTarget {
   hasPointerCapture(id) { return this.captures.has(id); }
   setPointerCapture(id) { this.captures.add(id); }
   releasePointerCapture(id) { this.captures.delete(id); }
-  send(type, id = 1, x = 500, y = 500, pointerType = 'touch', buttons = 1) {
+  send(type, id = 1, x = 500, y = 500, pointerType = 'touch', buttons = 1, timestamp = performance.now()) {
     const event = new Event(type, { cancelable: true });
+    Object.defineProperty(event, 'timeStamp', { value: timestamp });
     Object.assign(event, { pointerId: id, clientX: x, clientY: y, pointerType, buttons, button: 0 });
     this.dispatchEvent(event);
   }
@@ -76,8 +77,8 @@ test('swipe strength follows speed rather than refresh count, and pointer capaci
     const settings = structuredClone(config); settings.touch.holdStrength = 0.2; settings.touch.velocityGain = 0.02;
     const view = createCamera(settings, { value: 0 }); view.configure(1, true);
     const canvas = new Surface(), tracker = createPointerTracker(canvas, settings, new Surface(), new Surface());
-    canvas.send('pointerdown'); tracker.update(view.camera, 1 / hz);
-    canvas.send('pointermove', 1, 500 + 120 / hz, 500); tracker.update(view.camera, 1 / hz);
+    canvas.send('pointerdown', 1, 500, 500, 'touch', 1, 0); tracker.update(view.camera, 0);
+    canvas.send('pointermove', 1, 500 + 120 / hz, 500, 'touch', 1, 1000 / hz); tracker.update(view.camera, 1000 / hz);
     const value = tracker.strengths[0]; tracker.dispose(); return value;
   }
   const a = strength(30), b = strength(60), c = strength(120);
@@ -87,4 +88,45 @@ test('swipe strength follows speed rather than refresh count, and pointer capaci
   for (let id = 0; id < 15; id++) canvas.send('pointerdown', id);
   tracker.update(view.camera, 1 / 60); assert.equal(tracker.count.value, 10);
   assert.equal(canvas.captures.size, 10); tracker.dispose(); assert.equal(canvas.captures.size, 0);
+});
+
+test('event-time velocity survives uneven display cadence and expires when motion stops', () => {
+  const values = [];
+  for (const inputHz of [30, 60, 125]) for (const hz of [30, 60, 120, 144, 240]) {
+    const settings = structuredClone(config); settings.curtain.bow = 0;
+    // A plane gives a constant world speed for this constant screen speed.
+    // Curved-surface projection/drift has separate coverage above.
+    const view = createCamera(settings, { value: 0 }); view.configure(1, true);
+    const canvas = new Surface(), tracker = createPointerTracker(canvas, settings, new Surface(), new Surface());
+    canvas.send('pointerdown', 1, 400, 500, 'touch', 1, 0);
+    tracker.update(view.camera, 0);
+    let nextEvent = 1;
+    for (let frame = 1; frame <= hz / 2; frame++) {
+      const seconds = frame / hz;
+      while (nextEvent / inputHz <= seconds + 1e-9) {
+        const t = nextEvent++ / inputHz;
+        canvas.send('pointermove', 1, 400 + 100 * t, 500, 'touch', 1, t * 1000);
+      }
+      tracker.update(view.camera, seconds * 1000);
+      if (seconds >= 1 / inputHz) values.push(tracker.strengths[0]);
+    }
+    tracker.update(view.camera, 500 + settings.touch.velocityHold * 1000 + 1);
+    assert.ok(Math.abs(tracker.strengths[0] - settings.touch.holdStrength) < 1e-6, 'stationary hold loses the swipe boost');
+    tracker.dispose();
+  }
+  assert.ok(Math.min(...values) > config.touch.holdStrength);
+  assert.ok(Math.max(...values) < 1, 'slow swipe must not saturate on a fast display');
+  assert.ok(Math.max(...values) - Math.min(...values) < 0.0002, 'same speed across input/display combinations');
+});
+
+test('rapid re-press re-arms a pending ID and another finger does not erase a sweep', () => {
+  const settings = structuredClone(config), view = createCamera(settings, { value: 0 }); view.configure(1, true);
+  const canvas = new Surface(), tracker = createPointerTracker(canvas, settings, new Surface(), new Surface());
+  canvas.send('pointerdown', 1); canvas.send('pointerup', 1); canvas.send('pointerdown', 1);
+  tracker.update(view.camera); assert.equal(tracker.snapshot().pointers[0].held, true);
+  canvas.send('pointermove', 1, 550, 500); canvas.send('pointerdown', 2, 450, 400);
+  tracker.update(view.camera); assert.equal(tracker.count.value, 2);
+  assert.ok(tracker.segments[0].z > tracker.segments[0].x, 'new finger preserves first finger sweep');
+  canvas.send('pointerup', 1); tracker.update(view.camera); assert.equal(tracker.count.value, 1);
+  tracker.dispose();
 });

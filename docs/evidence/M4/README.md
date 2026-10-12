@@ -29,3 +29,25 @@ meshes, full wall target/MSAA4. Checkpoint adds one 256×512 field pass at 60Hz,
 4 draws / 227,076 triangles total; no water deformation yet. Physical-phone
 M4 interaction remains unverified. User's iPhone 15 Pro Max report covers M3
 rendering only; OS/browser details have been requested.
+
+## Checkpoint fixes
+
+`fixes.mjs` and `fixes/results.json` exercise the actual shaders on a separate
+renderer in the builder browser. Ten auto/byte decay runs include the reported
+165/240 Hz long-recovery, 144 Hz low-cutoff and 480 Hz default cases. All reach
+exact signed/pressure neutral. Samples occur about every 0.25 seconds: default
+no-transport/no-diffusion runs first report neutral at 1.75 seconds; recovery=3
+runs at 2.98–3.23 seconds. These are simulated timesteps, not display refresh or
+phone latency measurements.
+
+Corrupting both validation readbacks disables touch and overlay at startup and
+after context restoration; water keeps rendering and the failure notice stays
+hidden. One expected diagnostic is logged, with no runtime/shader errors. The
+capture shows the scene after failed restoration. Removing the hook and loading
+normally restores the half-float path. Two initial evidence-script errors (regex
+escaping and retaining the context-loss extension) were repaired before this run;
+neither changed application code.
+
+Node regression tests now cover 30/60/125 Hz input against 30/60/120/144/240 Hz
+rendering, event-velocity expiry at rest, same-frame re-press and a second finger
+arriving during the first finger's sweep. Physical-phone checks remain due.

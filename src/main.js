@@ -47,7 +47,7 @@ function onDprChange() { resize(); watchDpr(); }
 function render(timestamp) {
   const rawDelta = timeline.tick(timestamp);
   world.updateCamera(motionPreference.matches);
-  pointers.update(world.camera, rawDelta);
+  pointers.update(world.camera, timestamp);
   renderer.info.reset();
   debug?.begin(timestamp);
   world.render(Math.min(rawDelta, config.timing.maxDelta));

@@ -151,7 +151,11 @@ contact surface continues through holes instead of losing the finger when
 water parts. M4's next step must preserve screen alignment under displacement;
 the checkpoint does not claim exact raycasts against future GPU-deformed triangles.
 Both ends of a swept segment use the current camera, so drift creates no false
-swipe speed. Velocity uses world metres per second, not events or frames.
+swipe speed. Velocity uses projected world distance between input samples divided
+by their event timestamp interval, independently of the rendering interval.
+That velocity persists through intervening display frames and expires after
+`touch.velocityHold` seconds without a new event (default 50 ms). Contact is
+never extrapolated ahead of the finger. A reused pending pointer ID is re-armed.
 
 The default 256×512 targets have no depth, MSAA or color conversion. RGBA16F
 stores signed lateral force in R and pressure in G. The fallback packs signed
@@ -165,7 +169,11 @@ integer representation definitions, not art controls.
 Allocation checks both framebuffers, then renders known signed/positive values
 and validates their interpolation through a **vertex texture sample** and byte
 readback, including exact neutral. Auto mode falls back to packed bytes if
-half-float support or this actual path fails. These reads happen only during
+half-float support or this actual path fails; either float or half-float color
+buffer extension is considered, then actual renderability is tested. If both
+paths fail, touch/overlay are disabled, one diagnostic is logged, and a neutral
+1×1 CPU texture keeps the water rendering. Changing format/size, explicitly
+re-enabling touch, or restoring context retries validation. These reads happen only during
 allocation, not the render loop. `?debug` exposes an explicit `inspectTouch()`
 readback for evidence; normal rendering never calls it.
 
@@ -179,6 +187,10 @@ Backtracing uses the same gravity/lip speed as the water, with the configurable
 transport multiplier. Negative v is downward; the sampled source is above each
 destination. Exponential neighbor mixing diffuses and exponential decay reaches
 the neutral cutoff in `touch.recovery` seconds. Bounded substeps limit large
-deltas. Swept Gaussian capsules pin a held obstacle using max pressure rather
+deltas. Backtraces crossing the launch lip sample the neutral exterior rather
+than continuing the trajectory backward past launch. Packed-byte decay removes
+at least one code point per nonzero step, preventing rounding from retaining a
+tiny lateral force indefinitely at high refresh rates; this only changes the
+quantized low-amplitude tail. Swept Gaussian capsules pin a held obstacle using max pressure rather
 than repeatedly adding energy per refresh; swipe strength is velocity-scaled.
 The overlay maps left force to red, pressure to green and right force to blue.

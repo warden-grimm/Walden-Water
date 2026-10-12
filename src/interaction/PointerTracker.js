@@ -6,15 +6,19 @@ import { intersectCurtain } from './curtainContact.js';
 export const POINTER_CAPACITY = 10;
 export function createPointerTracker(canvas, config, ownerWindow = window, ownerDocument = document) {
   const slots = Array.from({ length: POINTER_CAPACITY }, () => ({ id: null, held: false, pending: false,
-    x: 0, y: 0, previousX: 0, previousY: 0, uv: new Vector2(), valid: false }));
+    x: 0, y: 0, previousX: 0, previousY: 0, eventX: 0, eventY: 0,
+    eventTime: 0, eventSeconds: 0, uv: new Vector2(), valid: false }));
   const segments = Array.from({ length: POINTER_CAPACITY }, () => new Vector4());
   const strengths = new Float32Array(POINTER_CAPACITY);
   const count = { value: 0 }, raycaster = new Raycaster(), ndc = new Vector2(), startUv = new Vector2();
   let left = 0, top = 0, width = 1, height = 1;
-  function resize() {
+  function readBounds() {
     const rect = canvas.getBoundingClientRect();
     left = rect.left; top = rect.top; width = rect.width; height = rect.height;
-    for (const slot of slots) { slot.previousX = slot.x; slot.previousY = slot.y; }
+  }
+  function resize() {
+    readBounds();
+    for (const slot of slots) { slot.previousX = slot.x; slot.previousY = slot.y; slot.eventSeconds = 0; }
   }
   function find(id) { for (const slot of slots) if (slot.id === id) return slot; }
   function release(slot, pending = false) {
@@ -26,25 +30,34 @@ export function createPointerTracker(canvas, config, ownerWindow = window, owner
   function clear() { for (const slot of slots) release(slot); count.value = 0; }
   function down(event) {
     if (!config.touch.enabled || (event.pointerType === 'mouse' && event.button !== 0)) return;
-    if (find(event.pointerId)) return;
-    let slot;
-    for (const candidate of slots) if (candidate.id === null) { slot = candidate; break; }
+    let slot = find(event.pointerId);
+    if (slot?.held) return;
+    // Re-arm a pending tap when a mouse/pen ID is reused before the next frame.
+    if (!slot) for (const candidate of slots) if (candidate.id === null) { slot = candidate; break; }
     if (!slot) return;
-    event.preventDefault(); resize();
+    event.preventDefault(); readBounds();
     slot.id = event.pointerId; slot.held = true; slot.pending = true;
-    slot.x = slot.previousX = event.clientX; slot.y = slot.previousY = event.clientY;
+    slot.x = slot.previousX = slot.eventX = event.clientX;
+    slot.y = slot.previousY = slot.eventY = event.clientY;
+    slot.eventTime = event.timeStamp; slot.eventSeconds = 0;
     try { canvas.setPointerCapture(event.pointerId); } catch { release(slot); }
+  }
+  function sample(slot, event) {
+    slot.eventX = slot.x; slot.eventY = slot.y;
+    slot.eventSeconds = Math.max(0, (event.timeStamp - slot.eventTime) / 1000);
+    slot.eventTime = event.timeStamp;
+    slot.x = event.clientX; slot.y = event.clientY;
   }
   function move(event) {
     const slot = find(event.pointerId);
     if (!slot?.held) return;
     if (event.pointerType === 'mouse' && !(event.buttons & 1)) { release(slot); return; }
-    event.preventDefault(); slot.x = event.clientX; slot.y = event.clientY; slot.pending = true;
+    event.preventDefault(); sample(slot, event); slot.pending = true;
   }
   function up(event) {
     const slot = find(event.pointerId);
     if (!slot) return;
-    slot.x = event.clientX; slot.y = event.clientY;
+    if (slot.x !== event.clientX || slot.y !== event.clientY) sample(slot, event);
     release(slot, slot.pending); // Preserve a tap that began and ended between frames.
   }
   function cancel(event) { const slot = find(event.pointerId); if (slot) release(slot); }
@@ -56,7 +69,7 @@ export function createPointerTracker(canvas, config, ownerWindow = window, owner
     raycaster.setFromCamera(ndc, camera);
     return intersectCurtain(raycaster.ray, config.curtain, result);
   }
-  function update(camera, delta) {
+  function update(camera, timestamp = performance.now()) {
     count.value = 0;
     if (!config.touch.enabled) { clear(); return; }
     for (const slot of slots) {
@@ -64,13 +77,18 @@ export function createPointerTracker(canvas, config, ownerWindow = window, owner
       slot.valid = contact(slot.x, slot.y, camera, slot.uv);
       if (slot.valid) {
         if (!contact(slot.previousX, slot.previousY, camera, startUv)) startUv.copy(slot.uv);
-        // Reproject both screen positions using THIS frame's camera. Drift alone
-        // therefore does not invent swipe velocity for a stationary finger.
-        const distance = Math.hypot((slot.uv.x - startUv.x) * config.curtain.width,
-          (slot.uv.y - startUv.y) * config.curtain.height);
-        const speed = delta > 0 ? distance / delta : 0;
         const index = count.value++;
         segments[index].set(startUv.x, startUv.y, slot.uv.x, slot.uv.y);
+        // Sweep uses render positions; speed uses INPUT timestamps. Carry the
+        // event velocity across faster display frames, then expire it at rest.
+        // Reproject both event points with the current camera so drift alone
+        // cannot create movement. No movement is extrapolated ahead of contact.
+        let speed = 0;
+        if (slot.eventSeconds > 0 && timestamp - slot.eventTime < config.touch.velocityHold * 1000 &&
+            contact(slot.eventX, slot.eventY, camera, startUv)) {
+          speed = Math.hypot((slot.uv.x - startUv.x) * config.curtain.width,
+            (slot.uv.y - startUv.y) * config.curtain.height) / slot.eventSeconds;
+        }
         strengths[index] = Math.min(config.touch.maxStrength, config.touch.holdStrength + speed * config.touch.velocityGain);
       }
       slot.previousX = slot.x; slot.previousY = slot.y; slot.pending = false;

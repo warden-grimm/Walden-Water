@@ -1,5 +1,5 @@
-import { HalfFloatType, Mesh, NearestFilter, NoBlending, NoColorSpace, OrthographicCamera,
-  PlaneGeometry, Scene, ShaderMaterial, UnsignedByteType, Vector2, WebGLRenderTarget } from 'three';
+import { DataTexture, HalfFloatType, Mesh, NearestFilter, NoBlending, NoColorSpace, OrthographicCamera,
+  PlaneGeometry, RGBAFormat, Scene, ShaderMaterial, UnsignedByteType, Vector2, WebGLRenderTarget } from 'three';
 import common from '../shaders/field-common.glsl?raw';
 import vertex from '../shaders/field.vert.glsl?raw';
 import fragment from '../shaders/field.frag.glsl?raw';
@@ -19,7 +19,11 @@ export function createTouchField(renderer, config, pointers) {
   mesh.frustumCulled = false; scene.add(mesh);
   // Stable objects consumed by curtain/overlay. Only .value changes at a swap.
   const shared = { uFieldTexture: { value: null }, uFieldSize: uniforms.uFieldSize, uFieldByte: uniforms.uFieldByte };
-  let read, write, key = '', generation = 0, steps = 0, dirty = false, format, validation, enabled = settings.enabled;
+  // A neutral CPU texture lets the existing water keep rendering even on a
+  // device where neither field framebuffer/sampling path is usable.
+  const neutral = new DataTexture(new Uint8Array([128, 0, 0, 0]), 1, 1, RGBAFormat, UnsignedByteType);
+  neutral.colorSpace = NoColorSpace; neutral.needsUpdate = true;
+  let read, write, key = '', generation = 0, steps = 0, dirty = false, format, validation, failure = null, enabled = settings.enabled;
   const probeBytes = new Uint8Array(4);
   function draw(target) {
     if (uniforms.uFieldTexture.value === target.texture) throw new Error('Touch field feedback loop rejected.');
@@ -64,32 +68,44 @@ export function createTouchField(renderer, config, pointers) {
     } finally { probe.dispose(); if (!valid) { a.dispose(); b.dispose(); } }
   }
   function configure() {
-    if (enabled !== settings.enabled) { enabled = settings.enabled; dirty = true; pointers.clear(); }
+    if (enabled !== settings.enabled) {
+      enabled = settings.enabled; dirty = true; pointers.clear();
+      if (enabled && !read) key = ''; // Explicit debug re-enable retries validation.
+    }
     uniforms.uWorldSize.value.set(config.curtain.width, config.curtain.height);
     uniforms.uRadius.value = settings.radius; uniforms.uRecovery.value = settings.recovery;
     uniforms.uDiffusion.value = settings.diffusion; uniforms.uNeutralThreshold.value = settings.neutralThreshold;
     uniforms.uLipSpeed.value = config.water.lipSpeed; uniforms.uGravity.value = config.water.gravity;
     uniforms.uFlowSpeed.value = config.water.flowSpeed; uniforms.uTransport.value = settings.transport;
     const nextKey = `${settings.width}:${settings.height}:${settings.precision}`;
-    if (read && nextKey === key) return;
+    if (nextKey === key) return;
     const previous = renderer.getRenderTarget(), face = renderer.getActiveCubeFace(), mip = renderer.getActiveMipmapLevel(), autoClear = renderer.autoClear;
     if (previous && (previous === read || previous === write)) throw new Error('Cannot rebuild an active field target.');
     let pair;
     try {
       renderer.autoClear = false;
-      if (settings.precision !== 'byte' && renderer.extensions.has('EXT_color_buffer_float')) pair = allocate(HalfFloatType);
+      if (settings.precision !== 'byte' && (renderer.extensions.has('EXT_color_buffer_float') || renderer.extensions.has('EXT_color_buffer_half_float'))) pair = allocate(HalfFloatType);
       if (!pair) pair = allocate(UnsignedByteType);
       if (!pair) throw new Error('No usable touch field framebuffer/sampling path.');
       read?.dispose(); write?.dispose();
-      [read, write] = pair; key = nextKey; generation++; dirty = false;
+      [read, write] = pair; key = nextKey; generation++; dirty = false; failure = null;
       const nextFormat = read.texture.type === HalfFloatType ? 'RGBA16F / manual bilinear' : 'RGBA8 packed16 / manual bilinear';
       if (format !== nextFormat) { format = nextFormat; console.info(`[Walden] Touch field: ${format}; framebuffer, vertex sampling and neutral checks passed`); }
       validation = 'render + signed/pressure interpolation + vertex sampling + neutral passed';
+    } catch (error) {
+      read?.dispose(); write?.dispose(); read = write = null;
+      key = nextKey; dirty = false; settings.enabled = enabled = false; settings.overlay = false; pointers.clear();
+      const reason = error instanceof Error ? error.message : String(error);
+      if (failure !== reason) console.warn(`[Walden] Touch disabled: ${reason} Water rendering continues.`);
+      failure = reason; format = 'disabled / neutral texture'; validation = 'failed';
     } finally {
       if (read) {
         shared.uFieldTexture.value = uniforms.uFieldTexture.value = read.texture;
         uniforms.uFieldByte.value = read.texture.type === UnsignedByteType;
         uniforms.uFieldSize.value.set(read.width, read.height);
+      } else {
+        shared.uFieldTexture.value = uniforms.uFieldTexture.value = neutral;
+        uniforms.uFieldByte.value = true; uniforms.uFieldSize.value.set(1, 1);
       }
       uniforms.uMode.value = 0;
       renderer.autoClear = autoClear; renderer.setRenderTarget(previous, face, mip);
@@ -116,6 +132,7 @@ export function createTouchField(renderer, config, pointers) {
   // Explicit debug request only: never called by the animation loop. Encode
   // into a temporary byte target to inspect either native format identically.
   function inspect() {
+    if (!read) return { max: 0, sum: 0, centroidU: null, centroidV: null, minX: 0, maxX: 0, disabledReason: failure };
     const previous = renderer.getRenderTarget(), face = renderer.getActiveCubeFace(), mip = renderer.getActiveMipmapLevel(), autoClear = renderer.autoClear;
     const target = createTarget(read.width, read.height, UnsignedByteType);
     const pixels = new Uint8Array(read.width * read.height * 4);
@@ -137,7 +154,7 @@ export function createTouchField(renderer, config, pointers) {
   return { uniforms: shared, configure, update, reset() { dirty = true; pointers.clear(); },
     inspect,
     contextRestored() { read = write = null; key = ''; shared.uFieldTexture.value = uniforms.uFieldTexture.value = null; },
-    snapshot: () => ({ width: read?.width, height: read?.height, format, generation, steps,
+    snapshot: () => ({ available: !!read, disabledReason: failure, width: read?.width, height: read?.height, format, generation, steps,
       distinctTargets: read !== write, readId: read?.texture.id, writeId: write?.texture.id, validation }),
-    dispose() { read?.dispose(); write?.dispose(); geometry.dispose(); material.dispose(); shared.uFieldTexture.value = null; } };
+    dispose() { read?.dispose(); write?.dispose(); neutral.dispose(); geometry.dispose(); material.dispose(); shared.uFieldTexture.value = null; } };
 }
