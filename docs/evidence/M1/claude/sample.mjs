@@ -1,0 +1,10 @@
+import { connect, sleep } from './cdp.mjs';
+const p = await connect();
+await p.send('Page.enable'); await p.send('Runtime.enable');
+await p.send('Emulation.setDeviceMetricsOverride', { width: 1440, height: 900, deviceScaleFactor: 1, mobile: false });
+await p.send('Page.navigate', { url: 'http://127.0.0.1:5175/?debug' }); await sleep(2500);
+await p.ev('__WALDEN_DEBUG__.hidePanel(); __WALDEN_DEBUG__.sample(); true');
+let st; do { await sleep(5000); st = await p.ev('(({state,count,reason})=>({state,count,reason}))(__WALDEN_DEBUG__.sampleStatus())'); } while (st.state === 'warming' || st.state === 'sampling');
+const r = await p.ev(`(()=>{const s=__WALDEN_DEBUG__.sampleStatus(); if(!s.result) return s; const {rawFrameTimesMs, userAgent, ...rest}=s.result; const over=rawFrameTimesMs.filter(x=>x>25).length; return {...rest, over25ms: over, max: Math.max(...rawFrameTimesMs)}; })()`);
+console.log(JSON.stringify(r));
+p.close();

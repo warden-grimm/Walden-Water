@@ -1,0 +1,27 @@
+import { connect, sleep, browserSend } from './cdp.mjs';
+const p = await connect();
+await p.send('Page.enable'); await p.send('Runtime.enable');
+await p.send('Page.navigate', { url: 'http://127.0.0.1:5175/?debug' });
+await sleep(2500);
+const ACT = p.target.id;
+await browserSend('Target.activateTarget', { targetId: ACT });
+await sleep(1000);
+console.log('initial', await p.ev(`({hidden:document.hidden, ...(({frames,elapsed,running,dpr,buffer})=>({frames,elapsed,running,dpr,buffer}))(__WALDEN_DEBUG__.snapshot())})`));
+// page-side logger: every rAF record perf time, frames, elapsed
+await p.ev(`window.__log=[]; (function L(t){ const s=__WALDEN_DEBUG__.snapshot(); __log.push([Math.round(performance.now()), s.frames, +s.elapsed.toFixed(4), document.hidden]); requestAnimationFrame(L); })(); document.addEventListener('visibilitychange',()=>__log.push(['vis',Math.round(performance.now()),document.hidden, __WALDEN_DEBUG__.snapshot().running, __WALDEN_DEBUG__.snapshot().frames])); true`);
+await sleep(1000);
+const other = await browserSend('Target.createTarget', { url: 'about:blank', background: false });
+await sleep(3000);
+console.log('while other tab active', await p.ev(`({hidden:document.hidden, vs:document.visibilityState, running:__WALDEN_DEBUG__.snapshot().running, frames:__WALDEN_DEBUG__.snapshot().frames, elapsed:__WALDEN_DEBUG__.snapshot().elapsed})`));
+await sleep(1000);
+console.log('still', await p.ev(`({frames:__WALDEN_DEBUG__.snapshot().frames, elapsed:__WALDEN_DEBUG__.snapshot().elapsed})`));
+await browserSend('Target.activateTarget', { targetId: ACT });
+await sleep(1500);
+const log = await p.ev(`__log`);
+const vi = log.findIndex(x => x[0] === 'vis');
+console.log('events', JSON.stringify(log.filter(x => x[0] === 'vis')));
+const resumeIdx = log.findIndex((x, i) => i > vi && x[0] === 'vis' && x[2] === false);
+console.log('before hide', JSON.stringify(log.slice(Math.max(0, vi - 3), vi)));
+console.log('around resume', JSON.stringify(log.slice(resumeIdx - 1, resumeIdx + 6)));
+await browserSend('Target.closeTarget', { targetId: other.targetId });
+p.close();

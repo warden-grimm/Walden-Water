@@ -1,0 +1,586 @@
+{
+ "ordinary": {
+  "gui": 0,
+  "api": "undefined",
+  "canvases": 1,
+  "buffer": [
+   1416,
+   908
+  ]
+ },
+ "debugTitles": [
+  "Walden · M1",
+  "renderer",
+  "camera",
+  "wall",
+  "curtain",
+  "markers",
+  "timing",
+  "Diagnostics"
+ ],
+ "controllers": [
+  "renderer.background",
+  "renderer.exposure",
+  "renderer.maxDpr",
+  "camera.fov",
+  "camera.near",
+  "camera.far",
+  "camera.frameFill",
+  "camera.drift",
+  "camera.driftX",
+  "camera.driftY",
+  "camera.driftSpeed",
+  "camera.verticalRate",
+  "wall.width",
+  "wall.height",
+  "wall.depth",
+  "wall.color",
+  "curtain.width",
+  "curtain.height",
+  "curtain.color",
+  "curtain.opacity",
+  "markers.color",
+  "markers.opacity",
+  "markers.thickness",
+  "markers.overhang",
+  "markers.depth",
+  "timing.maxDelta",
+  "Diagnostics.Sample: 10s warmup + 60s",
+  "Diagnostics.Lose graphics context",
+  "Diagnostics.Restore graphics context",
+  "Diagnostics.state(disabled)",
+  "Diagnostics.frames(disabled)",
+  "Diagnostics.medianMs(disabled)",
+  "Diagnostics.p95Ms(disabled)"
+ ],
+ "portrait-dpr3": {
+  "s": {
+   "viewport": {
+    "width": 390,
+    "height": 844
+   },
+   "buffer": {
+    "width": 780,
+    "height": 1688
+   },
+   "dpr": 2,
+   "frames": 153,
+   "elapsed": 2.7091000000000025,
+   "reducedMotion": false,
+   "camera": [
+    0.02030896026937921,
+    3.0095731976079936,
+    10.647765095859238
+   ],
+   "running": true,
+   "drawCalls": 4,
+   "triangles": 8,
+   "geometries": 1,
+   "programs": 2,
+   "textures": 0,
+   "contextLost": false,
+   "restores": 0
+  },
+  "proj": {
+   "markers": [
+    [
+     -0.838,
+     -0.737
+    ],
+    [
+     0.816,
+     -0.737
+    ],
+    [
+     -0.838,
+     0.732
+    ],
+    [
+     0.816,
+     0.732
+    ]
+   ],
+   "wallHalfWidthNdc": 5.012,
+   "wallBottomNdc": -1.392,
+   "wallTopNdc": 1.387
+  },
+  "sc": {
+   "sw": 390,
+   "sh": 844,
+   "iw": 390,
+   "ih": 844
+  }
+ },
+ "landscape-dpr3": {
+  "s": {
+   "viewport": {
+    "width": 844,
+    "height": 390
+   },
+   "buffer": {
+    "width": 1688,
+    "height": 780
+   },
+   "dpr": 2,
+   "frames": 193,
+   "elapsed": 3.4095000000000026,
+   "reducedMotion": false,
+   "camera": [
+    0.02323999005506369,
+    3.0114758299797515,
+    9.388320632897686
+   ],
+   "running": true,
+   "drawCalls": 4,
+   "triangles": 8,
+   "geometries": 1,
+   "programs": 2,
+   "textures": 0,
+   "contextLost": false,
+   "restores": 0
+  },
+  "proj": {
+   "markers": [
+    [
+     -0.203,
+     -0.837
+    ],
+    [
+     0.197,
+     -0.837
+    ],
+    [
+     -0.203,
+     0.83
+    ],
+    [
+     0.197,
+     0.83
+    ]
+   ],
+   "wallHalfWidthNdc": 1.205,
+   "wallBottomNdc": -1.568,
+   "wallTopNdc": 1.562
+  },
+  "sc": {
+   "sw": 844,
+   "sh": 390,
+   "iw": 844,
+   "ih": 390
+  }
+ },
+ "portrait": {
+  "s": {
+   "viewport": {
+    "width": 390,
+    "height": 844
+   },
+   "buffer": {
+    "width": 390,
+    "height": 844
+   },
+   "dpr": 1,
+   "frames": 234,
+   "elapsed": 4.131600000000003,
+   "reducedMotion": false,
+   "camera": [
+    0.024805762653123477,
+    3.013053116008309,
+    10.647765095859238
+   ],
+   "running": true,
+   "drawCalls": 4,
+   "triangles": 8,
+   "geometries": 1,
+   "programs": 2,
+   "textures": 0,
+   "contextLost": false,
+   "restores": 0
+  },
+  "proj": {
+   "markers": [
+    [
+     -0.84,
+     -0.738
+    ],
+    [
+     0.814,
+     -0.738
+    ],
+    [
+     -0.84,
+     0.731
+    ],
+    [
+     0.814,
+     0.731
+    ]
+   ],
+   "wallHalfWidthNdc": 5.012,
+   "wallBottomNdc": -1.393,
+   "wallTopNdc": 1.387
+  },
+  "sc": {
+   "sw": 390,
+   "sh": 844,
+   "iw": 390,
+   "ih": 844
+  }
+ },
+ "landscape": {
+  "s": {
+   "viewport": {
+    "width": 844,
+    "height": 390
+   },
+   "buffer": {
+    "width": 844,
+    "height": 390
+   },
+   "dpr": 1,
+   "frames": 279,
+   "elapsed": 4.930500000000009,
+   "reducedMotion": false,
+   "camera": [
+    0.024700756348624425,
+    3.014280174580323,
+    9.388320632897686
+   ],
+   "running": true,
+   "drawCalls": 4,
+   "triangles": 8,
+   "geometries": 1,
+   "programs": 2,
+   "textures": 0,
+   "contextLost": false,
+   "restores": 0
+  },
+  "proj": {
+   "markers": [
+    [
+     -0.203,
+     -0.837
+    ],
+    [
+     0.197,
+     -0.837
+    ],
+    [
+     -0.203,
+     0.829
+    ],
+    [
+     0.197,
+     0.829
+    ]
+   ],
+   "wallHalfWidthNdc": 1.205,
+   "wallBottomNdc": -1.569,
+   "wallTopNdc": 1.561
+  },
+  "sc": {
+   "sw": 844,
+   "sh": 390,
+   "iw": 844,
+   "ih": 390
+  }
+ },
+ "desktop": {
+  "s": {
+   "viewport": {
+    "width": 1440,
+    "height": 900
+   },
+   "buffer": {
+    "width": 1440,
+    "height": 900
+   },
+   "dpr": 1,
+   "frames": 324,
+   "elapsed": 5.7241000000000115,
+   "reducedMotion": false,
+   "camera": [
+    0.022696565018901087,
+    3.0149121374662182,
+    9.388320632897686
+   ],
+   "running": true,
+   "drawCalls": 4,
+   "triangles": 8,
+   "geometries": 1,
+   "programs": 2,
+   "textures": 0,
+   "contextLost": false,
+   "restores": 0
+  },
+  "proj": {
+   "markers": [
+    [
+     -0.275,
+     -0.837
+    ],
+    [
+     0.267,
+     -0.837
+    ],
+    [
+     -0.275,
+     0.829
+    ],
+    [
+     0.267,
+     0.829
+    ]
+   ],
+   "wallHalfWidthNdc": 1.63,
+   "wallBottomNdc": -1.569,
+   "wallTopNdc": 1.561
+  },
+  "sc": {
+   "sw": 1440,
+   "sh": 900,
+   "iw": 1440,
+   "ih": 900
+  }
+ },
+ "ultrawide": {
+  "s": {
+   "viewport": {
+    "width": 2560,
+    "height": 1080
+   },
+   "buffer": {
+    "width": 2560,
+    "height": 1080
+   },
+   "dpr": 1,
+   "frames": 370,
+   "elapsed": 6.534300000000014,
+   "reducedMotion": false,
+   "camera": [
+    0.018857506566144225,
+    3.0149269710109463,
+    9.388320632897686
+   ],
+   "running": true,
+   "drawCalls": 4,
+   "triangles": 8,
+   "geometries": 1,
+   "programs": 2,
+   "textures": 0,
+   "contextLost": false,
+   "restores": 0
+  },
+  "proj": {
+   "markers": [
+    [
+     -0.185,
+     -0.837
+    ],
+    [
+     0.181,
+     -0.837
+    ],
+    [
+     -0.185,
+     0.829
+    ],
+    [
+     0.181,
+     0.829
+    ]
+   ],
+   "wallHalfWidthNdc": 1.1,
+   "wallBottomNdc": -1.569,
+   "wallTopNdc": 1.561
+  },
+  "sc": {
+   "sw": 2560,
+   "sh": 1080,
+   "iw": 2560,
+   "ih": 1080
+  }
+ },
+ "maxDpr15": {
+  "width": 585,
+  "height": 1266
+ },
+ "afterPinch": {
+  "scale": 1,
+  "sw": 390
+ },
+ "afterScroll": {
+  "scrollY": 0,
+  "scale": 1,
+  "offTop": 0
+ },
+ "wheel": {
+  "defaultPrevented": true
+ },
+ "driftCams": [
+  [
+   -0.006766831913389943,
+   3.0090556007921117,
+   9.388320632897686
+  ],
+  [
+   -0.01093875330609744,
+   3.007422371951247,
+   9.388320632897686
+  ],
+  [
+   -0.014774685514157344,
+   3.0056565107909,
+   9.388320632897686
+  ],
+  [
+   -0.018107392178635943,
+   3.0038115574009656,
+   9.388320632897686
+  ],
+  [
+   -0.020867218346012024,
+   3.0019044339369807,
+   9.388320632897686
+  ],
+  [
+   -0.02299639143263303,
+   2.999937000239066,
+   9.388320632897686
+  ]
+ ],
+ "dragDrift": {
+  "before": [
+   -0.024372170983356988,
+   2.9979885030776687,
+   9.388320632897686
+  ],
+  "after": [
+   -0.024739688322736295,
+   2.997122725790443,
+   9.388320632897686
+  ],
+  "scroll": [
+   0,
+   0
+  ]
+ },
+ "reducedMotion": [
+  [
+   true,
+   [
+    0,
+    3,
+    9.388320632897686
+   ]
+  ],
+  [
+   true,
+   [
+    0,
+    3,
+    9.388320632897686
+   ]
+  ],
+  [
+   true,
+   [
+    0,
+    3,
+    9.388320632897686
+   ]
+  ],
+  [
+   true,
+   [
+    0,
+    3,
+    9.388320632897686
+   ]
+  ],
+  [
+   "afterDrag",
+   [
+    0,
+    3,
+    9.388320632897686
+   ]
+  ]
+ ],
+ "rmOff": false,
+ "driftOff": [
+  [
+   0,
+   3,
+   9.388320632897686
+  ],
+  [
+   0,
+   3,
+   9.388320632897686
+  ]
+ ],
+ "guiDom": {
+  "configOpacity": 0.6
+ },
+ "context": [
+  {
+   "lost": {
+    "running": false,
+    "contextLost": true,
+    "notice": true,
+    "framesHeld": true
+   },
+   "restored": {
+    "running": true,
+    "notice": false,
+    "restores": 1,
+    "framesAdv": true,
+    "geometries": 1,
+    "programs": 2,
+    "textures": 0,
+    "drawCalls": 4,
+    "triangles": 8
+   }
+  },
+  {
+   "lost": {
+    "running": false,
+    "contextLost": true,
+    "notice": true,
+    "framesHeld": true
+   },
+   "restored": {
+    "running": true,
+    "notice": false,
+    "restores": 2,
+    "framesAdv": true,
+    "geometries": 1,
+    "programs": 2,
+    "textures": 0,
+    "drawCalls": 4,
+    "triangles": 8
+   }
+  },
+  {
+   "lost": {
+    "running": false,
+    "contextLost": true,
+    "notice": true,
+    "framesHeld": true
+   },
+   "restored": {
+    "running": true,
+    "notice": false,
+    "restores": 3,
+    "framesAdv": true,
+    "geometries": 1,
+    "programs": 2,
+    "textures": 0,
+    "drawCalls": 4,
+    "triangles": 8
+   }
+  }
+ ],
+ "errors": []
+}
