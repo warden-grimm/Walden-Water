@@ -114,6 +114,19 @@
 | Add CHECKPOINT / DRAFT FEEDBACK / not-approved-by-checkpoint to the report template. | Coordinator/builder | Before first M3 checkpoint |
 | Arrange confirmed iPhone/Safari and Android/Chrome testers and evidence access; assignments remain unconfirmed. | Coordinator / human tester | Before M4 |
 
+### M3 — Early curtain checkpoint
+
+- **Status:** Draft submitted for CHECKPOINT / DRAFT FEEDBACK; this does not approve M3. Final milestone review follows polish and complete evidence.
+- **BASE_SHA:** `0354151a78de0eaa228d58591d3618aa43358c51`, accepted M2 implementation. Exact checkpoint head supplied in dispatch.
+- **Changed:** CPU curved ribbon at reference 120×400/reduced 60×200, travel-time downward acceleration, streak/coverage/Fresnel/glint shading with shared light/time, isolated linear wall capture and premultiplied final composition. Debug views and refraction/quality controls are wired; mesh/target rebuilds are labeled and disposed.
+- **M2 diagnostic/contract nits:** Shared wall view choices, removed createScene BOM, warmup disjoint no longer poisons a later valid sample, explicit invalid GPU label, corrected bounce wording. CHECKPOINT values added to report template.
+- **Validation:** `npm test` 10/10; `npm run build` passes (existing bundle warning). Native Edge shader compilation clean. Zero-offset refraction exactly matches wall-only pixels. Render-target/viewport/scissor/clear state survives successful and throwing captures. Evidence: [checkpoint index](docs/evidence/M3/checkpoint/README.md). Strict builder 5174; Claude must use its own checkout on 5175.
+- **Manual:** (1) Observe flow bands moving down and spreading toward base. (2) Compare wall-only, zero-offset and offset refraction views. (3) Inspect UV orientation and actual curved mesh/raycast tests. (4) Read source isolation/state proof and resource ownership. (5) Check debug light moves the water mask; do not treat draft art as final acceptance.
+- **Baseline:** Fresh accepted M2-equivalent runtime recorded before M3 edits at 1440×900 DPR1, Edge155/RTX A4500, 10s warmup +60s: 3,600 frames, median16.7/p9516.8ms; GPU median0.502/p954.676ms. [Raw baseline](docs/evidence/M3/baseline-timing.json). Final matched M3 cost remains pending.
+- **Known gaps:** Art/quality-cost review, M2 wet-mask/noise polish nits, final portrait/landscape clips, lifecycle checks and full final review still due within M3. Touch, splashes, visible shaft and pool are later milestones.
+- **Phone evidence:** Coordinator asked the user for iPhone/Safari and Android/Chrome testers/models/versions at M3 start; no confirmation yet. Assignments and evidence location remain pending. M3 can proceed; no phone performance claim.
+- **Deviation:** Wall target also supplies the final background to avoid drawing reference wall geometry twice. Byte fallback is normalized linear RGBA8 with HDR clipping documented; signed field encoding remains M4 work. Static CPU bow ensures current raycasts match visible geometry exactly.
+
 ### M<n> — <summary>
 
 - Status:

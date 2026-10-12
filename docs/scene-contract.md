@@ -1,11 +1,13 @@
-# Scene contract through M2
+# Scene contract through M3
 
 World units are metres. +Y points up and +Z points toward the camera. The
 curtain is centred at x=0, z=0, extends from y=0 (pool) to y=6 (lip), and is
 2.8 m wide at defaults. `config.curtain` remains the authoritative dimensions.
-The M1 curtain is still a flat translucent placeholder until M3.
+The curved curtain adds positive z bow, zero at all four edges and 0.16 m at
+its centre. Width, height and bow rebuild its CPU geometry. No model scaling
+or shader vertex deformation is applied, so raycasting sees the visible surface.
 
-`createScene()` owns the wall, placeholder resources, camera, and shared light.
+`createScene()` owns the wall, curtain, wall capture, markers, camera, and shared light.
 `main.js` owns the renderer and lifecycle. `time.js` provides the single elapsed
 time uniform: hidden time is excluded and stalled deltas are clamped. New
 materials must reuse this object, not run independent clocks.
@@ -49,7 +51,7 @@ Defaults: source (-3.5, 8, 3), target (0, 4, 0), half-angle 21 degrees, penumbra
 6 to 10 metres, with zero behind the source. The axis crosses the upper-middle
 curtain at y=4. The fade is almost gone near the pool. `fadeStart` is clamped
 below `range` to keep GUI edits well defined. Intensity and light colour are
-separate from the mask. Faint blue-grey bounce illuminates unlit rock only;
+separate from the mask. Faint blue-grey bounce adds fill across the rock;
 there is no volume mesh until M6.
 
 The debug wall views show normals, the shared light mask, or the moving wet
@@ -61,7 +63,7 @@ contract rather than interpreting the cone in UV or camera space.
 
 `?debug` lazily loads GUI, fixed sample buffers, and a reusable GPU query pool.
 The 10-second warmup/60-second frame-interval protocol remains the gate metric.
-`renderCost.cpuSubmit` measures CPU time inside `renderer.render()` only;
+`renderCost.cpuSubmit` measures CPU submission across both render passes;
 `renderCost.gpu` measures GPU elapsed time with
 `EXT_disjoint_timer_query_webgl2`. Results are read on later frames only after
 availability. Samples crossing a disjoint event reject GPU data; absent GPU
@@ -71,5 +73,46 @@ loss, recreated on restore, and deleted on disposal. The last in-flight GPU
 query may finish after the sample ends and is omitted from its count.
 
 GPU measurements reveal cost hidden by vsync, but this desktop evidence does
-not establish physical-phone frame rate. No targets, textures, synchronous
-pixel readback, or application allocations are added to the production loop.
+not establish physical-phone frame rate. No synchronous pixel readback or
+application allocations are added to the production loop. Targets resize only
+when their dimensions/format change, and replaced resources are disposed.
+
+## Curtain and M4 interface
+
+Reference tessellation is 120 columns × 400 rows (96,000 triangles), reduced
+60 × 200 (24,000). `curtain.mesh` is the future raycast object. It uses translation
+only: world x=(u−0.5)×width, world y=v×height, and
+z=bow×(1−(2u−1)²)×sin(πv). UV (0,0) is bottom-left at the pool;
+(1,1) is upper-right at the lip. Downward transport is **negative v**. M4 field
+textures should keep this bottom-up orientation and avoid a second flip.
+After M4 shader displacement, raycasting will require an explicit matching
+surface strategy; the present exact agreement does not claim that future work.
+
+The flow coordinate is travelTime((1−v)×height)−time×flowSpeed, where travelTime
+is the rationalized positive root of d=v0×t+½g×t². A constant phase travels
+down and accelerates from 0.7 m/s at the lip to about 5.41 m/s at the pool at
+defaults. Debug flow bands expose that sign/stretch; the water view uses
+stretched fBm in the same coordinate. Noise-based normals affect shading only.
+
+## Wall capture, color, and transparency
+
+Render order: (1) wall-only Scene into a linear render target; (2) fullscreen
+background sampling that completed target, then the front-facing transparent
+curtain and temporary framing markers. The costly wall geometry draws once.
+The wall source material never samples the target; curtain/background are
+absent from the source Scene. No target reads itself. The pass restores the
+prior target, cube face, mip and autoClear in finally, including on exceptions;
+global viewport/scissor, exposure and camera are not changed.
+
+With Three r186, ordinary offscreen targets use linear working color and no
+tone mapping. The final background and water each apply ACES and sRGB once.
+Water premultiplies after output conversion, uses normal premultiplied blending,
+depthWrite=false and FrontSide, avoiding a second transparent backface draw.
+Its screen coordinates come from gl_FragCoord / actual canvas buffer dimensions;
+target sampling clamps half a texel at the edges. Capture scale follows DPR and
+resizing. Refraction disabled removes the offset but retains the background pass.
+
+RGBA16F is preferred after extension and framebuffer completeness checks.
+Forced/unsupported byte mode is normalized linear RGBA8; values above one clip
+(a documented LDR fidelity fallback, not M4 signed-field encoding). The selected
+format is logged on changes. Context restoration reselects and checks the target.

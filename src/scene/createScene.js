@@ -1,28 +1,38 @@
-﻿import { Color, Mesh, MeshBasicMaterial, PlaneGeometry, Scene } from 'three';
+import { Color, Mesh, MeshBasicMaterial, PlaneGeometry, Scene, ShaderMaterial } from 'three';
 import { createCamera } from './camera.js';
 import { createLight } from './light.js';
 import { createWall } from './Wall.js';
+import { createWallCapture } from './WallCapture.js';
+import { createWaterCurtain } from './WaterCurtain.js';
+import backgroundVertex from '../shaders/background.vert.glsl?raw';
+import backgroundFragment from '../shaders/background.frag.glsl?raw';
 
-export function createScene(config, time) {
-  const scene = new Scene();
-  scene.background = new Color();
+export function createScene(config, time, renderer) {
+  const scene = new Scene(), wallScene = new Scene();
+  wallScene.background = new Color();
   const view = createCamera(config, time);
   const light = createLight(config.light);
   const wall = createWall(config, time, light);
+  wall.mesh.name = 'wall'; wallScene.add(wall.mesh);
+  const capture = createWallCapture(renderer, wallScene, view.camera, config.refraction);
+  const curtain = createWaterCurtain(config, time, light, capture.texture);
+  curtain.mesh.name = 'curtain';
   const geometry = new PlaneGeometry(1, 1);
-  const curtain = new Mesh(geometry, new MeshBasicMaterial({ transparent: true, depthWrite: false }));
+  const backgroundMaterial = new ShaderMaterial({ uniforms: { uWallTexture: capture.texture },
+    vertexShader: backgroundVertex, fragmentShader: backgroundFragment, depthTest: false, depthWrite: false });
+  const background = new Mesh(geometry, backgroundMaterial);
+  background.frustumCulled = false; background.renderOrder = -1;
   const markerMaterial = new MeshBasicMaterial({ transparent: true, depthWrite: false });
   const lip = new Mesh(geometry, markerMaterial), poolLine = new Mesh(geometry, markerMaterial);
-  scene.add(wall.mesh, curtain, lip, poolLine, view.camera);
-  function configure(aspect, reducedMotion) {
-    scene.background.set(config.renderer.background);
+  scene.add(background, curtain.mesh, lip, poolLine, view.camera);
+  function configure(aspect, reducedMotion, bufferWidth, bufferHeight) {
+    wallScene.background.set(config.renderer.background);
     view.configure(aspect, reducedMotion);
     light.configure();
     wall.configure(aspect);
-    curtain.material.color.set(config.curtain.color);
-    curtain.material.opacity = config.curtain.opacity;
-    curtain.position.y = config.curtain.height / 2;
-    curtain.scale.set(config.curtain.width, config.curtain.height, 1);
+    capture.resize(bufferWidth, bufferHeight);
+    const target = capture.snapshot();
+    curtain.configure(bufferWidth, bufferHeight, target.width, target.height);
     markerMaterial.color.set(config.markers.color);
     markerMaterial.opacity = config.markers.opacity;
     lip.position.set(0, config.curtain.height, config.markers.depth);
@@ -30,6 +40,8 @@ export function createScene(config, time) {
     lip.scale.set(config.curtain.width + 2 * config.markers.overhang, config.markers.thickness, 1);
     poolLine.scale.copy(lip.scale);
   }
-  return { scene, camera: view.camera, updateCamera: view.updateCamera, configure, light, wall,
-    dispose() { wall.dispose(); geometry.dispose(); curtain.material.dispose(); markerMaterial.dispose(); scene.clear(); } };
+  return { scene, camera: view.camera, updateCamera: view.updateCamera, configure, light, wall, curtain, capture,
+    render() { capture.render(); renderer.render(scene, view.camera); },
+    contextRestored: capture.contextRestored,
+    dispose() { capture.dispose(); curtain.dispose(); wall.dispose(); geometry.dispose(); backgroundMaterial.dispose(); markerMaterial.dispose(); scene.clear(); wallScene.clear(); } };
 }

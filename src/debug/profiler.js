@@ -30,7 +30,7 @@ export function createProfiler(settings, snapshot) {
       if (state === 'sampling' && timestamp > samplingAt && !gpuInvalid && gpuCount < gpu.length) gpu[gpuCount++] = ms;
     },
     invalidateGpu(message) {
-      if (state === 'sampling' || state === 'warming') { gpuInvalid = message; gpuCount = 0; }
+      if (state === 'sampling') { gpuInvalid = message; gpuCount = 0; }
     },
     status() {
       if (state === 'complete' && !result) {
@@ -40,7 +40,7 @@ export function createProfiler(settings, snapshot) {
           count, medianMs: ordered[Math.floor(count / 2)], p95Ms: ordered[Math.ceil(count * 0.95) - 1],
           rawFrameTimesMs: Array.from(samples.subarray(0, count)),
           renderCost: { cpuSubmit: summarize(cpu, cpuCount), gpu: summarize(gpu, gpuCount), gpuInvalid,
-            note: 'CPU is renderer.render submission only, not GPU completion. GPU uses asynchronous elapsed queries; unavailable/disjoint falls back to CPU.' },
+            note: 'CPU is all render-pass submission, not GPU completion. GPU uses asynchronous elapsed queries across all passes; unavailable/disjoint falls back to CPU.' },
         };
       }
       return { state, count, reason, result };

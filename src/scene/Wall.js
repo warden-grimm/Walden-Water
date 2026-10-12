@@ -4,6 +4,7 @@ import fragmentSource from '../shaders/wall.frag.glsl?raw';
 import noise from '../shaders/noise.glsl?raw';
 import lightSource from '../shaders/light.glsl?raw';
 import { wallSize } from './framing.js';
+import { choices } from '../config.js';
 
 export function createWall(config, time, light) {
   const uniforms = { ...light.uniforms, uTime: time, uWallSize: { value: new Vector2() } };
@@ -49,7 +50,7 @@ export function createWall(config, time, light) {
       if (typeof value === 'string') uniforms[name].value.set(value);
       else uniforms[name].value = value;
     }
-    uniforms.uView.value = ['rock', 'normals', 'light mask', 'wet mask'].indexOf(config.wall.view);
+    uniforms.uView.value = choices.wall.view.indexOf(config.wall.view);
   }
   return { mesh, configure, snapshot: () => ({ segments, size: uniforms.uWallSize.value.toArray(), quality: config.wall.quality, displacement: config.wall.displacement, sheen: config.wet.sheen, view: config.wall.view }),
     dispose() { mesh.geometry.dispose(); material.dispose(); } };

@@ -15,7 +15,7 @@ export function createDebugPanel({ config, resize, snapshot, renderer }) {
       const controller = options ? folder.add(values, key, options) : typeof value === 'string'
         ? folder.addColor(values, key)
         : typeof value === 'number' ? folder.add(values, key, ...ranges[name][key]) : folder.add(values, key);
-      if (name === 'wall' && rebuildControls.has(key)) controller.name(`${key} (rebuild)`).onFinishChange(resize);
+      if (rebuildControls[name]?.has(key)) controller.name(`${key} (rebuild)`).onFinishChange(resize);
       else controller.onChange(resize);
     }
   }
@@ -36,7 +36,7 @@ export function createDebugPanel({ config, resize, snapshot, renderer }) {
     info.frames = status.count;
     info.medianMs = status.result?.medianMs.toFixed(2) ?? '';
     info.p95Ms = status.result?.p95Ms.toFixed(2) ?? '';
-    info.gpuMs = status.result?.renderCost.gpu?.medianMs.toFixed(3) ?? (timer.supported ? '' : 'unavailable');
+    info.gpuMs = status.result?.renderCost.gpu?.medianMs.toFixed(3) ?? (status.result?.renderCost.gpuInvalid ? 'invalid (disjoint)' : timer.supported ? '' : 'unavailable');
     info.cpuMs = status.result?.renderCost.cpuSubmit?.medianMs.toFixed(3) ?? '';
     for (const output of outputs) output.updateDisplay();
   }, config.diagnostics.refreshMs);

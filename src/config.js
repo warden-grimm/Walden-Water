@@ -11,14 +11,30 @@ export const config = {
   light: { x: -3.5, y: 8, z: 3, targetX: 0, targetY: 4, targetZ: 0,
     angle: 21, penumbra: 0.55, intensity: 1.5, color: '#fff1d5', range: 10, fadeStart: 6,
     bounce: 0.25, bounceColor: '#b3c1cd' },
-  curtain: { width: 2.8, height: 6, color: '#88adb7', opacity: 0.28 },
+  curtain: { width: 2.8, height: 6, bow: 0.16, color: '#88adb7', opacity: 0.5, visible: true,
+    quality: 'reference', referenceColumns: 120, referenceRows: 400, reducedColumns: 60, reducedRows: 200 },
+  water: { view: 'water', lipSpeed: 0.7, gravity: 2.4, flowSpeed: 1, flowFrequency: 4,
+    streakFrequency: 65, streakStretch: 5, warp: 4, lacunarity: 2.03, gain: 0.45,
+    edgeWidth: 0.08, breakup: 0.65, breakupStart: 0.6, breakupSoftness: 0.18, streakContrast: 0.65,
+    normalStrength: 0.6, normalStep: 0.006, fresnel: 0.25, fresnelPower: 4,
+    transmission: 0.94, glint: 2, gloss: 80, ambient: 0.025 },
+  refraction: { enabled: true, strength: 0.018, scale: 1, precision: 'auto' },
   markers: { color: '#819598', opacity: 0.6, thickness: 0.018, overhang: 0.16, depth: 0.01 },
   timing: { maxDelta: 0.05 },
   // Fixed diagnostic protocol, not adjustable mid-sample; buffers allocated only in debug.
   diagnostics: { warmupSeconds: 10, sampleSeconds: 60, capacity: 24000, refreshMs: 500, querySlots: 8 },
 };
-export const choices = { wall: { quality: ['reference', 'reduced'], view: ['rock', 'normals', 'light mask', 'wet mask'] } };
-export const rebuildControls = new Set(['quality', 'referenceSegments', 'reducedSegments']);
+export const choices = {
+  wall: { quality: ['reference', 'reduced'], view: ['rock', 'normals', 'light mask', 'wet mask'] },
+  curtain: { quality: ['reference', 'reduced'] },
+  water: { view: ['water', 'flow bands', 'uv', 'refraction', 'coverage', 'light mask'] },
+  refraction: { precision: ['auto', 'byte'] },
+};
+export const rebuildControls = {
+  wall: new Set(['quality', 'referenceSegments', 'reducedSegments']),
+  curtain: new Set(['width', 'height', 'bow', 'quality', 'referenceColumns', 'referenceRows', 'reducedColumns', 'reducedRows']),
+  refraction: new Set(['scale', 'precision']),
+};
 export const ranges = {
   renderer: { exposure: [0.1, 2, 0.01], maxDpr: [0.5, 2, 0.1] },
   camera: { fov: [25, 65, 1], near: [0.01, 0.5, 0.01], far: [30, 200, 1], frameFill: [0.5, 0.9, 0.01], driftX: [0, 0.05, 0.001], driftY: [0, 0.05, 0.001], driftSpeed: [0.05, 1, 0.01], verticalRate: [0.1, 1, 0.01] },
@@ -26,7 +42,14 @@ export const ranges = {
   rock: { relief: [0, 1.5, 0.01], scale: [0.1, 2, 0.01], ridgeMix: [0, 1, 0.01], lacunarity: [1.1, 3, 0.01], gain: [0.1, 0.8, 0.01], strataFrequency: [1, 12, 0.1], strataWarp: [0, 16, 0.1], ledgeDepth: [0, 0.8, 0.01], ledgeSharpness: [1, 8, 0.1], overhang: [0, 0.3, 0.01], normalStep: [0.005, 0.05, 0.001], albedoScale: [1, 20, 0.1], albedoVariation: [0, 0.8, 0.01], moss: [0, 0.5, 0.01], mossThreshold: [0, 0.7, 0.01], mossSoftness: [0.05, 0.5, 0.01], creviceShade: [0, 0.9, 0.01] },
   wet: { margin: [0.1, 2, 0.01], frequency: [1, 16, 0.1], threshold: [0, 0.7, 0.01], softness: [0.05, 0.5, 0.01], trickleSpeed: [0, 1, 0.01], trickleFrequency: [1, 20, 0.1], trickleContrast: [0, 1, 0.01], specular: [0, 2, 0.01], drySpecular: [0, 0.1, 0.001], gloss: [10, 120, 1] },
   light: { x: [-8, -1, 0.1], y: [6, 12, 0.1], z: [1, 6, 0.1], targetX: [-2, 2, 0.1], targetY: [2, 6, 0.1], targetZ: [-2, 1, 0.1], angle: [5, 40, 1], penumbra: [0.05, 0.95, 0.01], intensity: [0, 4, 0.01], range: [3, 16, 0.1], fadeStart: [0, 15, 0.1], bounce: [0, 0.5, 0.01] },
-  curtain: { width: [1, 4, 0.1], height: [3, 8, 0.1], opacity: [0, 0.8, 0.01] },
+  curtain: { width: [1, 4, 0.1], height: [3, 8, 0.1], bow: [0, 0.4, 0.01], opacity: [0, 1, 0.01],
+    referenceColumns: [30, 180, 10], referenceRows: [100, 500, 20], reducedColumns: [20, 120, 10], reducedRows: [50, 300, 10] },
+  water: { lipSpeed: [0.1, 2, 0.01], gravity: [0, 5, 0.1], flowSpeed: [0, 2, 0.01], flowFrequency: [1, 12, 0.1],
+    streakFrequency: [10, 120, 1], streakStretch: [1, 10, 0.1], warp: [0, 10, 0.1], lacunarity: [1.1, 3, 0.01], gain: [0.1, 0.8, 0.01],
+    edgeWidth: [0.01, 0.3, 0.01], breakup: [0, 0.9, 0.01], breakupStart: [0, 0.95, 0.01], breakupSoftness: [0.02, 0.5, 0.01], streakContrast: [0, 1, 0.01],
+    normalStrength: [0, 3, 0.01], normalStep: [0.001, 0.02, 0.001], fresnel: [0, 2, 0.01], fresnelPower: [1, 8, 0.1],
+    transmission: [0, 1, 0.01], glint: [0, 8, 0.1], gloss: [5, 180, 1], ambient: [0, 0.2, 0.001] },
+  refraction: { strength: [0, 0.08, 0.001], scale: [0.5, 1, 0.1] },
   markers: { opacity: [0, 1, 0.01], thickness: [0.005, 0.05, 0.001], overhang: [0, 0.4, 0.01], depth: [0.001, 0.05, 0.001] },
   timing: { maxDelta: [0.016, 0.1, 0.001] },
 };

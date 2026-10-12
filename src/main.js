@@ -32,7 +32,7 @@ function resize() {
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, config.renderer.maxDpr, 2));
   renderer.setSize(width, height, false);
   renderer.toneMappingExposure = config.renderer.exposure;
-  world.configure(width / height, motionPreference.matches);
+  world.configure(width / height, motionPreference.matches, canvas.width, canvas.height);
 }
 
 function watchDpr() {
@@ -45,8 +45,9 @@ function onDprChange() { resize(); watchDpr(); }
 function render(timestamp) {
   const rawDelta = timeline.tick(timestamp);
   world.updateCamera(motionPreference.matches);
+  renderer.info.reset();
   debug?.begin(timestamp);
-  renderer.render(world.scene, world.camera);
+  world.render();
   debug?.end();
   frames++;
   debug?.record(timestamp, rawDelta);
@@ -74,6 +75,7 @@ function onContextRestored() {
   contextLost = false;
   restores++;
   debug?.contextRestored();
+  world.contextRestored();
   // Three.js restores its internal renderer first; scene resources upload lazily.
   resize();
   notice.hidden = true;
@@ -92,7 +94,8 @@ function snapshot() {
     geometries: renderer.info.memory.geometries, textures: renderer.info.memory.textures,
     programs: renderer.info.programs.length,
     wall: world.wall.snapshot(),
-    effects: 'M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing',
+    curtain: world.curtain.snapshot(), capture: world.capture.snapshot(),
+    effects: 'M3 curved flowing curtain; isolated wall capture/refraction; shared shaft light; no postprocessing',
     userAgent: navigator.userAgent,
   };
 }
@@ -122,7 +125,8 @@ try {
   renderer = new WebGLRenderer({ canvas, antialias: true });
   renderer.outputColorSpace = SRGBColorSpace;
   renderer.toneMapping = ACESFilmicToneMapping;
-  world = createScene(config, timeline.uniform);
+  renderer.info.autoReset = false; // Count the wall capture and final composite together.
+  world = createScene(config, timeline.uniform, renderer);
   observer = new ResizeObserver(resize);
   observer.observe(canvas);
   window.addEventListener('resize', resize);
