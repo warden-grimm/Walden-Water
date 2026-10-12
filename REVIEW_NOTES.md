@@ -171,6 +171,12 @@
 | Check water noise precision after hours of continuous uptime. | Builder | M9 |
 | Confirm physical testers/models/browser versions and evidence access; demonstrate real multi-touch/latency and evaluate geometry/target costs before selecting phone presets. | Coordinator / human tester / builder | M4; final named-phone certification M9 |
 
+### M3 — First public device-testing deployment
+
+- User authorized GitHub push and Pages publication on 2026-10-12 before M4. Public repository: [warden-grimm/Walden-Water](https://github.com/warden-grimm/Walden-Water). Live site: [Walden Water](https://warden-grimm.github.io/Walden-Water/); [debug diagnostics](https://warden-grimm.github.io/Walden-Water/?debug).
+- Deployed `b8e91e1901de8472baf1c09c98ce2b5e7ac602a3` through [successful Actions run](https://github.com/warden-grimm/Walden-Water/actions/runs/38289697290). Tests 10/10 and production build passed locally and in CI. Application code is unchanged from accepted M3 `a4b5516`; CI now runs tests before deploying.
+- [Deployment checks and captures](docs/evidence/M3/deployment/README.md): live assets match the local build, desktop/emulated portrait/landscape render and animate, normal/debug routes work, and no browser errors were observed. Physical-phone models, browsers, performance and tester evidence remain pending; M4 has not started.
+
 ### M<n> — <summary>
 
 - Status:

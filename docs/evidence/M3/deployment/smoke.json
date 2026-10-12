@@ -1,0 +1,422 @@
+{
+  "url": "https://warden-grimm.github.io/Walden-Water/",
+  "ordinary": {
+    "canvas": 1,
+    "debug": false,
+    "errorVisible": false
+  },
+  "results": [
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900,
+        "deviceScaleFactor": 1,
+        "mobile": false
+      },
+      "dom": {
+        "title": "Walden Water",
+        "canvasCount": 1,
+        "errorVisible": false,
+        "canvas": {
+          "width": 1440,
+          "height": 900
+        }
+      },
+      "before": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "buffer": {
+          "width": 1440,
+          "height": 900
+        },
+        "dpr": 1,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 35,
+        "elapsed": 0.6,
+        "reducedMotion": false,
+        "camera": [
+          0.00521149749615249,
+          3.0022905038612797,
+          9.388320632897686
+        ],
+        "drawCalls": 3,
+        "triangles": 227074,
+        "geometries": 3,
+        "textures": 1,
+        "programs": 3,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "water",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "geometryMatchesRaycast": true
+        },
+        "capture": {
+          "width": 1440,
+          "height": 900,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 1,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "effects": "M3 curved flowing curtain; isolated wall capture/refraction; shared shaft light; no postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      },
+      "after": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "buffer": {
+          "width": 1440,
+          "height": 900
+        },
+        "dpr": 1,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 65,
+        "elapsed": 1.0999999999999999,
+        "reducedMotion": false,
+        "camera": [
+          0.00938897841868753,
+          3.0041604690637183,
+          9.388320632897686
+        ],
+        "drawCalls": 3,
+        "triangles": 227074,
+        "geometries": 3,
+        "textures": 1,
+        "programs": 3,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "water",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "geometryMatchesRaycast": true
+        },
+        "capture": {
+          "width": 1440,
+          "height": 900,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 1,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "effects": "M3 curved flowing curtain; isolated wall capture/refraction; shared shaft light; no postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      }
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "deviceScaleFactor": 3,
+        "mobile": true
+      },
+      "dom": {
+        "title": "Walden Water",
+        "canvasCount": 1,
+        "errorVisible": false,
+        "canvas": {
+          "width": 780,
+          "height": 1688
+        }
+      },
+      "before": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "buffer": {
+          "width": 780,
+          "height": 1688
+        },
+        "dpr": 2,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 36,
+        "elapsed": 0.6334000000000001,
+        "reducedMotion": false,
+        "camera": [
+          0.005496964433560517,
+          3.002416923246287,
+          10.647765095859238
+        ],
+        "drawCalls": 3,
+        "triangles": 227074,
+        "geometries": 3,
+        "textures": 1,
+        "programs": 3,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "water",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "geometryMatchesRaycast": true
+        },
+        "capture": {
+          "width": 780,
+          "height": 1688,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 1,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "effects": "M3 curved flowing curtain; isolated wall capture/refraction; shared shaft light; no postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      },
+      "after": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "buffer": {
+          "width": 780,
+          "height": 1688
+        },
+        "dpr": 2,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 67,
+        "elapsed": 1.1501000000000001,
+        "reducedMotion": false,
+        "camera": [
+          0.009793799454585524,
+          3.0043445979311323,
+          10.647765095859238
+        ],
+        "drawCalls": 3,
+        "triangles": 227074,
+        "geometries": 3,
+        "textures": 1,
+        "programs": 3,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "water",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "geometryMatchesRaycast": true
+        },
+        "capture": {
+          "width": 780,
+          "height": 1688,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 1,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "effects": "M3 curved flowing curtain; isolated wall capture/refraction; shared shaft light; no postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      }
+    },
+    {
+      "viewport": {
+        "width": 844,
+        "height": 390,
+        "deviceScaleFactor": 2,
+        "mobile": true
+      },
+      "dom": {
+        "title": "Walden Water",
+        "canvasCount": 1,
+        "errorVisible": false,
+        "canvas": {
+          "width": 1688,
+          "height": 780
+        }
+      },
+      "before": {
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "buffer": {
+          "width": 1688,
+          "height": 780
+        },
+        "dpr": 2,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 35,
+        "elapsed": 0.5999000000000001,
+        "reducedMotion": false,
+        "camera": [
+          0.005210641715910239,
+          3.0022901251050778,
+          9.388320632897686
+        ],
+        "drawCalls": 3,
+        "triangles": 227074,
+        "geometries": 3,
+        "textures": 1,
+        "programs": 3,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "water",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "geometryMatchesRaycast": true
+        },
+        "capture": {
+          "width": 1688,
+          "height": 780,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 1,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "effects": "M3 curved flowing curtain; isolated wall capture/refraction; shared shaft light; no postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      },
+      "after": {
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "buffer": {
+          "width": 1688,
+          "height": 780
+        },
+        "dpr": 2,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 65,
+        "elapsed": 1.0999999999999999,
+        "reducedMotion": false,
+        "camera": [
+          0.00938897841868753,
+          3.0041604690637183,
+          9.388320632897686
+        ],
+        "drawCalls": 3,
+        "triangles": 227074,
+        "geometries": 3,
+        "textures": 1,
+        "programs": 3,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "water",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "geometryMatchesRaycast": true
+        },
+        "capture": {
+          "width": 1688,
+          "height": 780,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 1,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "effects": "M3 curved flowing curtain; isolated wall capture/refraction; shared shaft light; no postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      }
+    }
+  ],
+  "errors": []
+}
