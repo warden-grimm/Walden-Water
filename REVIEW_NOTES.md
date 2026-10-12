@@ -237,6 +237,12 @@
 - **Orca:** Run `run_be8c890ffaab`, task `task_7f3dd1209428`, dispatch `ctx_c200dd2c0cd5`. Report committed unchanged as `67ad9d1` before worker release and fast-forwarded into builder. Reviewer preview/browser stopped, worktree preserved. Task completion means review completed, not M4 acceptance.
 - **Release step:** Continue the user's existing GitHub Pages device-testing deployment on the same repository/site to make the reviewed M4 implementation reachable on the iPhone. This is a device-test publication, separate from milestone acceptance. Application source stays identical to `e2a4583`; only review/evidence/documentation follows. Record deployment verification below once complete. Required phone observation and OS/browser details remain pending.
 
+### M4 — Device-test candidate live
+
+- Published `6c856e5db73cad7d74e90f4959ab87486bb10607` to the [existing Pages site](https://warden-grimm.github.io/Walden-Water/) via [successful run 38302433649](https://github.com/warden-grimm/Walden-Water/actions/runs/38302433649). CI install/tests/build/deploy pass. Application files are unchanged from Claude-reviewed `e2a4583`; report and evidence commits follow it.
+- [Live verification](docs/evidence/M4/deployment/README.md): HTML and JS/CSS hashes match the local build; normal/debug routes work; desktop and emulated portrait/landscape deliver two contacts and recover to exact neutral, including forced byte. No browser warnings/errors. This proves publication and desktop behavior, not physical-phone acceptance.
+- User remains the intended iPhone15 Pro Max tester. iOS/browser versions and M4 multi-touch/latency observations are pending. Ask the user to reload the live candidate and run the linked phone script, including slow/fast swipe feel to disposition the strength-saturation nit. M4 is still **CHANGES REQUESTED (phone evidence only)**; no M5 advancement.
+
 ### M<n> — <summary>
 
 - Status:
