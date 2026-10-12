@@ -1,0 +1,20 @@
+
+> walden-water@0.1.0 build
+> vite build
+
+[36mvite v8.3.4 [32mbuilding client environment for production...[36m[39m
+transforming...
+✓ 37 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   1.14 kB │ gzip:   0.60 kB
+dist/assets/index-d2Q0I7JR.css    1.03 kB │ gzip:   0.55 kB
+dist/assets/panel-CI3UJQ9L.js    34.81 kB │ gzip:   9.84 kB
+dist/assets/index-CiWr8CKr.js   568.96 kB │ gzip: 145.98 kB
+
+[32m✓ built in 360ms[39m
+[33m[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.[39m

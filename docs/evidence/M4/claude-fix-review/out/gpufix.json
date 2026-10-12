@@ -1,0 +1,413 @@
+{
+ "decay": {
+  "auto_480Hz_R1.6_th0.001_tr0": {
+   "tNeutral": 1.55,
+   "minX": 0,
+   "maxX": 0,
+   "max": 0
+  },
+  "auto_480Hz_R1.6_th0.001_tr0.7": {
+   "tNeutral": 1.2,
+   "minX": 0,
+   "maxX": 0,
+   "max": 0
+  },
+  "auto_360Hz_R1.6_th0.001_tr0.7": {
+   "tNeutral": 1.25,
+   "minX": 0,
+   "maxX": 0,
+   "max": 0
+  },
+  "auto_165Hz_R3_th0.001_tr0": {
+   "tNeutral": 3.05,
+   "minX": 0,
+   "maxX": 0,
+   "max": 0
+  },
+  "auto_240Hz_R3_th0.001_tr0": {
+   "tNeutral": 2.9,
+   "minX": 0,
+   "maxX": 0,
+   "max": 0
+  },
+  "auto_144Hz_R3_th0.0005_tr0": {
+   "tNeutral": 3.05,
+   "minX": 0,
+   "maxX": 0,
+   "max": 0
+  },
+  "auto_60Hz_R1.6_th0.001_tr0.7": {
+   "tNeutral": 1.25,
+   "minX": 0,
+   "maxX": 0,
+   "max": 0
+  },
+  "byte_480Hz_R1.6_th0.001_tr0": {
+   "tNeutral": 1.6,
+   "minX": 0,
+   "maxX": 0,
+   "max": 0
+  },
+  "byte_480Hz_R1.6_th0.001_tr0.7": {
+   "tNeutral": 1.25,
+   "minX": 0,
+   "maxX": 0,
+   "max": 0
+  },
+  "byte_360Hz_R1.6_th0.001_tr0.7": {
+   "tNeutral": 1.25,
+   "minX": 0,
+   "maxX": 0,
+   "max": 0
+  },
+  "byte_165Hz_R3_th0.001_tr0": {
+   "tNeutral": 3.15,
+   "minX": 0,
+   "maxX": 0,
+   "max": 0
+  },
+  "byte_240Hz_R3_th0.001_tr0": {
+   "tNeutral": 3,
+   "minX": 0,
+   "maxX": 0,
+   "max": 0
+  },
+  "byte_144Hz_R3_th0.0005_tr0": {
+   "tNeutral": 3.1,
+   "minX": 0,
+   "maxX": 0,
+   "max": 0
+  },
+  "byte_60Hz_R1.6_th0.001_tr0.7": {
+   "tNeutral": 1.3,
+   "minX": 0,
+   "maxX": 0,
+   "max": 0
+  }
+ },
+ "visible": {
+  "60Hz": {
+   "auto": [
+    {
+     "T": 0.25,
+     "max": 0.33399,
+     "sum": 1676.704,
+     "maxX": 0.2002,
+     "cV": 0.4485
+    },
+    {
+     "T": 0.5,
+     "max": 0.11231,
+     "sum": 624.441,
+     "maxX": 0.06696,
+     "cV": 0.3249
+    },
+    {
+     "T": 1,
+     "max": 0.01268,
+     "sum": 59.352,
+     "maxX": 0.00748,
+     "cV": 0.0783
+    }
+   ],
+   "byte": [
+    {
+     "T": 0.25,
+     "max": 0.3355,
+     "sum": 1688.933,
+     "maxX": 0.20127,
+     "cV": 0.4484
+    },
+    {
+     "T": 0.5,
+     "max": 0.11344,
+     "sum": 632.294,
+     "maxX": 0.06769,
+     "cV": 0.3248
+    },
+    {
+     "T": 1,
+     "max": 0.01295,
+     "sum": 60.7,
+     "maxX": 0.00766,
+     "cV": 0.0783
+    }
+   ]
+  },
+  "144Hz": {
+   "auto": [
+    {
+     "T": 0.25,
+     "max": 0.32569,
+     "sum": 1675.741,
+     "maxX": 0.19544,
+     "cV": 0.4476
+    },
+    {
+     "T": 0.5,
+     "max": 0.10755,
+     "sum": 618.333,
+     "maxX": 0.06415,
+     "cV": 0.3237
+    },
+    {
+     "T": 1,
+     "max": 0.01202,
+     "sum": 57.274,
+     "maxX": 0.00708,
+     "cV": 0.0781
+    }
+   ],
+   "byte": [
+    {
+     "T": 0.25,
+     "max": 0.32982,
+     "sum": 1705.504,
+     "maxX": 0.19785,
+     "cV": 0.4473
+    },
+    {
+     "T": 0.5,
+     "max": 0.11037,
+     "sum": 637.207,
+     "maxX": 0.06586,
+     "cV": 0.3234
+    },
+    {
+     "T": 1,
+     "max": 0.01263,
+     "sum": 60.453,
+     "maxX": 0.00745,
+     "cV": 0.078
+    }
+   ]
+  }
+ },
+ "lip": {
+  "default60_auto": [
+   {
+    "sum": 759.422,
+    "cV": 0.9664,
+    "max": 0.999
+   },
+   {
+    "sum": 744.627,
+    "cV": 0.964,
+    "max": 0.9604
+   },
+   {
+    "sum": 733.53,
+    "cV": 0.9617,
+    "max": 0.9233
+   },
+   {
+    "sum": 722.206,
+    "cV": 0.9594,
+    "max": 0.8872
+   },
+   {
+    "sum": 710.655,
+    "cV": 0.9569,
+    "max": 0.853
+   }
+  ],
+  "default60_byte": [
+   {
+    "sum": 759.678,
+    "cV": 0.9664,
+    "max": 0.999
+   },
+   {
+    "sum": 745.124,
+    "cV": 0.964,
+    "max": 0.9608
+   },
+   {
+    "sum": 734.267,
+    "cV": 0.9617,
+    "max": 0.9237
+   },
+   {
+    "sum": 723.181,
+    "cV": 0.9594,
+    "max": 0.8878
+   },
+   {
+    "sum": 711.864,
+    "cV": 0.9569,
+    "max": 0.8539
+   }
+  ],
+  "extreme_auto": [
+   {
+    "sum": 759.422,
+    "cV": 0.9664,
+    "max": 0.999
+   },
+   {
+    "sum": 1004.423,
+    "cV": 0.9428,
+    "max": 0.9238
+   },
+   {
+    "sum": 1210.586,
+    "cV": 0.911,
+    "max": 0.8555
+   },
+   {
+    "sum": 1380.619,
+    "cV": 0.8709,
+    "max": 0.792
+   },
+   {
+    "sum": 1518.741,
+    "cV": 0.8225,
+    "max": 0.7334
+   }
+  ],
+  "extreme_byte": [
+   {
+    "sum": 759.678,
+    "cV": 0.9664,
+    "max": 0.999
+   },
+   {
+    "sum": 1005.096,
+    "cV": 0.9428,
+    "max": 0.9241
+   },
+   {
+    "sum": 1211.824,
+    "cV": 0.911,
+    "max": 0.8558
+   },
+   {
+    "sum": 1382.53,
+    "cV": 0.8709,
+    "max": 0.7925
+   },
+   {
+    "sum": 1521.39,
+    "cV": 0.8225,
+    "max": 0.7339
+   }
+  ],
+  "extremeNoGravity_auto": [
+   {
+    "sum": 759.422,
+    "cV": 0.9664,
+    "max": 0.999
+   },
+   {
+    "sum": 700.925,
+    "cV": 0.9647,
+    "max": 0.9243
+   },
+   {
+    "sum": 648.83,
+    "cV": 0.963,
+    "max": 0.855
+   },
+   {
+    "sum": 600.6,
+    "cV": 0.9613,
+    "max": 0.791
+   },
+   {
+    "sum": 555.929,
+    "cV": 0.9597,
+    "max": 0.7324
+   }
+  ],
+  "extremeNoGravity_byte": [
+   {
+    "sum": 759.678,
+    "cV": 0.9664,
+    "max": 0.999
+   },
+   {
+    "sum": 701.398,
+    "cV": 0.9647,
+    "max": 0.9245
+   },
+   {
+    "sum": 649.498,
+    "cV": 0.963,
+    "max": 0.8554
+   },
+   {
+    "sum": 601.435,
+    "cV": 0.9613,
+    "max": 0.7919
+   },
+   {
+    "sum": 556.908,
+    "cV": 0.9597,
+    "max": 0.7333
+   }
+  ]
+ },
+ "failure": {
+  "s1": {
+   "available": false,
+   "disabledReason": "No usable touch field framebuffer/sampling path.",
+   "format": "disabled / neutral texture",
+   "generation": 0,
+   "steps": 0,
+   "distinctTargets": false,
+   "validation": "failed"
+  },
+  "state": {
+   "targetRestored": true,
+   "autoClear": true
+  },
+  "texBefore": 1,
+  "texAfterRetries": 1,
+  "texAfterDispose": 0,
+  "inspected": {
+   "max": 0,
+   "sum": 0,
+   "centroidU": null,
+   "centroidV": null,
+   "minX": 0,
+   "maxX": 0,
+   "disabledReason": "No usable touch field framebuffer/sampling path."
+  },
+  "s2": {
+   "available": true,
+   "disabledReason": null,
+   "width": 256,
+   "height": 512,
+   "format": "RGBA16F / manual bilinear",
+   "generation": 1,
+   "steps": 0,
+   "distinctTargets": true,
+   "readId": 1486,
+   "writeId": 1488,
+   "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed"
+  },
+  "enabledAfterRestoreRetry": false,
+  "s3": {
+   "available": true,
+   "disabledReason": null,
+   "width": 256,
+   "height": 512,
+   "format": "RGBA16F / manual bilinear",
+   "generation": 1,
+   "steps": 0,
+   "distinctTargets": true,
+   "readId": 1486,
+   "writeId": 1488,
+   "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed"
+  },
+  "warns": [
+   "[Walden] Touch disabled: No usable touch field framebuffer/sampling path. Water rendering continues."
+  ]
+ },
+ "extensions": [
+  "EXT_color_buffer_float",
+  "EXT_color_buffer_half_float",
+  "EXT_float_blend",
+  "OES_texture_float_linear"
+ ]
+}

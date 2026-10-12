@@ -1,0 +1,66 @@
+﻿[
+    {
+        "path":  "out/build.txt",
+        "sha256":  "02e63452c484039702fd57f1fe4fb6396c2bdbbe8c5080022b2a390ca1f110fb"
+    },
+    {
+        "path":  "out/dev.log",
+        "sha256":  "528b6c01a700ffb5a4d2a7388894c7d1cdf826c05e28dc917e672c4cc8ed48da"
+    },
+    {
+        "path":  "out/gpufix.json",
+        "sha256":  "df598dfd7b28d389d9663ec08afae1b07f608db9248d7fe844fa569a526628cc"
+    },
+    {
+        "path":  "out/gpufix.log",
+        "sha256":  "f416b135a2a52565ca598efcab948a1a96d77a1488035462a7130b6aafc815a5"
+    },
+    {
+        "path":  "out/lifefix.json",
+        "sha256":  "3036a1d98d957f8934b6fb875ed5eea53c43cbbe89db3c6cfb180fad9620b856"
+    },
+    {
+        "path":  "out/lifefix.log",
+        "sha256":  "1c90a1dcd104e4b209d0d0d11ffb8abda504ecc3c7d15c8014643dffc1233a0c"
+    },
+    {
+        "path":  "out/npmci.txt",
+        "sha256":  "cf998f2955f912baf1a178bac936de7799acdffc5f685da8f817ea4e9eebf663"
+    },
+    {
+        "path":  "out/restore-fail.png",
+        "sha256":  "eb1c37a06117321ae25f529acb76fecae98816ddf6c6163ccfd6a2594906891f"
+    },
+    {
+        "path":  "out/startup-fail-recovered.png",
+        "sha256":  "ce63e42f5c5d1cb8c6ceb8cfa08d7540913cdc7fe22e468687229f937d2cd9f7"
+    },
+    {
+        "path":  "out/test.txt",
+        "sha256":  "770b142d0753a5ccc0b1a84cd324f9307b5c1033562d0ddd790218965164b058"
+    },
+    {
+        "path":  "out/velocity2.json",
+        "sha256":  "eeadb94f79161408ecfb09c369cbf272af336281dccaa42a2ceb294f5ea1e4f6"
+    },
+    {
+        "path":  "probes/cdp.mjs",
+        "sha256":  "62312e5491bed2813209c83604d4dce3428f62309f819c8b73188a5dd197836e"
+    },
+    {
+        "path":  "probes/gpufix.mjs",
+        "sha256":  "cd077f6192dee910c8e5fb6e97af12dbe3a2573499bf1192c3e2d8b5c88e8911"
+    },
+    {
+        "path":  "probes/lifefix.mjs",
+        "sha256":  "ddfa9637fdfe7685735963471ad36c883545a3ee94cb9aa527e945be03c415f7"
+    },
+    {
+        "path":  "probes/oldtracker-adapter.md",
+        "sha256":  "d240bb96f11431fb4da1ae355390792cfb2759d65300f68884d8d773f718bb96"
+    },
+    {
+        "path":  "probes/velocity2.mjs",
+        "sha256":  "e760e031592f7abd9d3120069614b57559e740e8fa5cd582d0789faf90cb3ea1"
+    }
+]

@@ -1,0 +1,292 @@
+{
+ "startupFails": {
+  "start": {
+   "running": true,
+   "framesAdvanced": 19,
+   "elapsed": 2.08,
+   "notice": false,
+   "enabled": false,
+   "overlay": false,
+   "available": false,
+   "format": "disabled / neutral texture",
+   "reason": "No usable touch field framebuffer/sampling path.",
+   "validation": "failed",
+   "generation": 0,
+   "textures": 2
+  },
+  "pressWhileDisabled": {
+   "count": 0,
+   "field": 0
+  },
+  "overlayForced": {
+   "running": true,
+   "framesAdvanced": 18,
+   "elapsed": 2.9,
+   "notice": false,
+   "enabled": false,
+   "overlay": true,
+   "available": false,
+   "format": "disabled / neutral texture",
+   "reason": "No usable touch field framebuffer/sampling path.",
+   "validation": "failed",
+   "generation": 0,
+   "textures": 2
+  },
+  "restoreStillCorrupt": {
+   "running": true,
+   "framesAdvanced": 19,
+   "elapsed": 4.27,
+   "notice": false,
+   "enabled": false,
+   "overlay": false,
+   "available": false,
+   "format": "disabled / neutral texture",
+   "reason": "No usable touch field framebuffer/sampling path.",
+   "validation": "failed",
+   "generation": 0,
+   "textures": 2
+  },
+  "restoreHealthy": {
+   "running": true,
+   "framesAdvanced": 19,
+   "elapsed": 5.6,
+   "notice": false,
+   "enabled": false,
+   "overlay": false,
+   "available": true,
+   "format": "RGBA16F / manual bilinear",
+   "reason": null,
+   "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+   "generation": 1,
+   "textures": 3
+  },
+  "pressAfterHealthyRestore": {
+   "count": 0,
+   "field": 0
+  },
+  "explicitReenable": {
+   "running": true,
+   "framesAdvanced": 19,
+   "elapsed": 6.42,
+   "notice": false,
+   "enabled": true,
+   "overlay": false,
+   "available": true,
+   "format": "RGBA16F / manual bilinear",
+   "reason": null,
+   "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+   "generation": 1,
+   "textures": 3
+  },
+  "pressAfterReenable": {
+   "count": 1,
+   "field": 0.8481422140840772
+  },
+  "console": [
+   [
+    "info",
+    "[Walden] Wall capture: RGBA16F linear"
+   ],
+   [
+    "warning",
+    "[Walden] Touch disabled: No usable touch field framebuffer/sampling path. Water rendering continues."
+   ],
+   [
+    "info",
+    "[Walden] Touch field: RGBA16F / manual bilinear; framebuffer, vertex sampling and neutral checks passed"
+   ]
+  ]
+ },
+ "restoreOnlyFails": {
+  "start": {
+   "running": true,
+   "framesAdvanced": 19,
+   "elapsed": 2.15,
+   "notice": false,
+   "enabled": true,
+   "overlay": false,
+   "available": true,
+   "format": "RGBA16F / manual bilinear",
+   "reason": null,
+   "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+   "generation": 1,
+   "textures": 3
+  },
+  "pressHealthy": {
+   "count": 1,
+   "field": 0.8481422140840772
+  },
+  "afterFailedRestore": {
+   "running": true,
+   "framesAdvanced": 18,
+   "elapsed": 3.73,
+   "notice": false,
+   "enabled": false,
+   "overlay": false,
+   "available": false,
+   "format": "disabled / neutral texture",
+   "reason": "No usable touch field framebuffer/sampling path.",
+   "validation": "failed",
+   "generation": 1,
+   "textures": 2
+  },
+  "pressAfterFailedRestore": {
+   "count": 0,
+   "field": 0
+  },
+  "sizeRetryStillCorrupt": {
+   "running": true,
+   "framesAdvanced": 18,
+   "elapsed": 4.95,
+   "notice": false,
+   "enabled": false,
+   "overlay": false,
+   "available": false,
+   "format": "disabled / neutral texture",
+   "reason": "No usable touch field framebuffer/sampling path.",
+   "validation": "failed",
+   "generation": 1,
+   "textures": 2
+  },
+  "sizeRetryHealthy": {
+   "running": true,
+   "framesAdvanced": 19,
+   "elapsed": 5.58,
+   "notice": false,
+   "enabled": false,
+   "overlay": false,
+   "available": true,
+   "format": "RGBA16F / manual bilinear",
+   "reason": null,
+   "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+   "generation": 2,
+   "textures": 4
+  },
+  "twoMoreRestores": {
+   "running": true,
+   "framesAdvanced": 19,
+   "elapsed": 7.97,
+   "notice": false,
+   "enabled": false,
+   "overlay": false,
+   "available": true,
+   "format": "RGBA16F / manual bilinear",
+   "reason": null,
+   "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+   "generation": 4,
+   "textures": 3
+  },
+  "console": [
+   [
+    "info",
+    "[Walden] Wall capture: RGBA16F linear"
+   ],
+   [
+    "info",
+    "[Walden] Touch field: RGBA16F / manual bilinear; framebuffer, vertex sampling and neutral checks passed"
+   ],
+   [
+    "warning",
+    "[Walden] Touch disabled: No usable touch field framebuffer/sampling path. Water rendering continues."
+   ],
+   [
+    "info",
+    "[Walden] Touch field: RGBA16F / manual bilinear; framebuffer, vertex sampling and neutral checks passed"
+   ]
+  ]
+ },
+ "hideFloatExt": {
+  "start": {
+   "running": true,
+   "framesAdvanced": 18,
+   "elapsed": 2.1,
+   "notice": false,
+   "enabled": true,
+   "overlay": false,
+   "available": true,
+   "format": "RGBA16F / manual bilinear",
+   "reason": null,
+   "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+   "generation": 1,
+   "textures": 3
+  },
+  "press": {
+   "count": 1,
+   "field": 0.8481422140840772
+  },
+  "console": [
+   [
+    "info",
+    "[Walden] Wall capture: SRGB8_ALPHA8 (hardware decode; HDR clipped)"
+   ],
+   [
+    "warning",
+    "THREE.WebGLRenderer: EXT_color_buffer_float extension not supported."
+   ],
+   [
+    "info",
+    "[Walden] Touch field: RGBA16F / manual bilinear; framebuffer, vertex sampling and neutral checks passed"
+   ]
+  ]
+ },
+ "hideBothExt": {
+  "start": {
+   "running": true,
+   "framesAdvanced": 18,
+   "elapsed": 2.13,
+   "notice": false,
+   "enabled": true,
+   "overlay": false,
+   "available": true,
+   "format": "RGBA8 packed16 / manual bilinear",
+   "reason": null,
+   "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+   "generation": 1,
+   "textures": 3
+  },
+  "press": {
+   "count": 1,
+   "field": 0.8485084306095979
+  },
+  "console": [
+   [
+    "info",
+    "[Walden] Wall capture: SRGB8_ALPHA8 (hardware decode; HDR clipped)"
+   ],
+   [
+    "info",
+    "[Walden] Touch field: RGBA8 packed16 / manual bilinear; framebuffer, vertex sampling and neutral checks passed"
+   ]
+  ]
+ },
+ "native": {
+  "start": {
+   "running": true,
+   "framesAdvanced": 19,
+   "elapsed": 2.12,
+   "notice": false,
+   "enabled": true,
+   "overlay": false,
+   "available": true,
+   "format": "RGBA16F / manual bilinear",
+   "reason": null,
+   "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+   "generation": 1,
+   "textures": 3
+  },
+  "press": {
+   "count": 1,
+   "field": 0.8481422140840772
+  },
+  "console": [
+   [
+    "info",
+    "[Walden] Wall capture: RGBA16F linear"
+   ],
+   [
+    "info",
+    "[Walden] Touch field: RGBA16F / manual bilinear; framebuffer, vertex sampling and neutral checks passed"
+   ]
+  ]
+ }
+}

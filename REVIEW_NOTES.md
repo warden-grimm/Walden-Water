@@ -203,6 +203,11 @@
 - **Validation:** 15/15 tests and production build pass, 568.96 kB raw / 145.98 kB gzip main bundle (existing size warning). [Focused GPU evidence](docs/evidence/M4/fixes/results.json) clears all ten tested auto/byte recovery cases; no-transport default cases first read neutral at 1.75 s in a 0.25 s sampling grid. Forced startup/restore failure preserves rendering and emits only the expected touch-disabled warning; a normal reload recovers half-float. The input API now receives the rAF timestamp in milliseconds. Full coupled performance remains due; no broad timing repeat for this focused fix.
 - **Manual recheck:** (1) Compare slow swipes with input slower than display updates and stop moving: boost remains steady during motion then expires. (2) Rapidly re-press a mouse ID, add a second finger mid-sweep, and release/cancel. (3) Run deterministic high-refresh byte recovery cases. (4) Corrupt field validation before startup and context restore: water must keep animating. (5) Remove the corruption and retry validation. Final water coupling, real-phone evidence, and full M4 review remain pending.
 
+### M4 — Checkpoint r2 clears coupling
+
+- **Review:** [Claude recheck](docs/reviews/M4-checkpoint-r2.md), DRAFT FEEDBACK at `69e3852e044e60a220c7a6c3c72b1f53534b2632`: blocker 1 resolved, no blockers, coupling may proceed within M4. This does not approve M4. [Archived probes](docs/evidence/M4/claude-fix-review/ARCHIVE.md) include controlled timestamps, mutation checks against the old tracker, 14/14 neutral-decay cases and startup/restore failure tests.
+- **Outcome:** Separate Orca task `task_1ac2e0cc3196`, dispatch `ctx_ece5b6228195`, same M4 run. Report committed unchanged as `42e5772` before release, fast-forwarded to builder; workspace preserved and reviewer resources stopped. Builder owns the remaining successful-retry preference bug and timestamp jitter/expiry robustness before final M4, along with displaced-contact alignment and full cost/phone evidence.
+
 ### M<n> — <summary>
 
 - Status:

@@ -1,0 +1,11 @@
+
+> walden-water@0.1.0 dev
+> vite --host 127.0.0.1 --port 5175 --strictPort
+
+
+  [32m[1mVITE[22m v8.3.4[39m  [2mready in [0m[1m324[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://127.0.0.1:[1m5175[22m/[39m
+[2m3:20:22 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[Walden] Touch disabled: No usable touch field framebuffer/sampling path. Water rendering continues.
+[2m3:20:32 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22m[Walden] Touch disabled: No usable touch field framebuffer/sampling path. Water rendering continues.
+[2m3:20:39 PM[22m [33m[1m[vite][22m[39m [33m[2m(client)[22m[39m [2m[console.warn] [22mTHREE.WebGLRenderer: EXT_color_buffer_float extension not supported.
