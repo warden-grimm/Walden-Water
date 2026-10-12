@@ -1,7 +1,8 @@
 // App-level proof of preference-preserving failure/retry. Dedicated builder browser only.
 import { connect, browserSend, sleep } from '../M3/cdp.mjs';
 import { mkdir, writeFile } from 'node:fs/promises';
-const out = new URL('./retry/',import.meta.url);await mkdir(out,{recursive:true});
+// Optional new output folder preserves earlier evidence when rechecking a later head.
+const out = new URL(process.argv[2] || './retry/',import.meta.url);await mkdir(out,{recursive:true});
 const c=await connect();await c.send('Runtime.enable');await c.send('Page.enable');
 const hook=await c.send('Page.addScriptToEvaluateOnNewDocument',{source:`{
   window.__badField=true;const read=WebGL2RenderingContext.prototype.readPixels;

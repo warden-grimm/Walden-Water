@@ -1,0 +1,16 @@
+import { connect,browserSend,sleep } from '../M3/cdp.mjs';
+import { mkdir,writeFile } from 'node:fs/promises';
+const out=new URL('./coupled-preview/',import.meta.url);await mkdir(out,{recursive:true});
+const c=await connect();await c.send('Runtime.enable');await c.send('Log.enable');await c.send('Page.enable');
+await c.send('Emulation.setDeviceMetricsOverride',{width:1440,height:900,deviceScaleFactor:1,mobile:false});
+await c.send('Page.navigate',{url:'http://127.0.0.1:5174/?debug'});await browserSend('Target.activateTarget',{targetId:c.target.id});await sleep(1500);
+await c.ev('void __WALDEN_DEBUG__.hidePanel()');
+const shot=async name=>writeFile(new URL(name+'.png',out),Buffer.from((await c.send('Page.captureScreenshot')).data,'base64'));
+const mouse=type=>c.send('Input.dispatchMouseEvent',{type,x:700,y:350,button:'left',buttons:type==='mouseReleased'?0:1,clickCount:type==='mousePressed'?1:0});
+await shot('idle');await mouse('mousePressed');await sleep(3000);await shot('held');
+await c.ev('void (()=>{__WALDEN_DEBUG__.config.water.view="touch pressure";__WALDEN_DEBUG__.apply()})()');await sleep(100);await shot('pressure');
+await c.ev('void (()=>{__WALDEN_DEBUG__.config.water.view="normals";__WALDEN_DEBUG__.apply()})()');await sleep(100);await shot('normals');
+await c.ev('void (()=>{__WALDEN_DEBUG__.config.water.view="water";__WALDEN_DEBUG__.apply()})()');await mouse('mouseReleased');await sleep(700);await shot('release700');await sleep(1000);await shot('healed');
+const result=await c.ev('({snapshot:__WALDEN_DEBUG__.snapshot(),field:__WALDEN_DEBUG__.inspectTouch()})');
+result.console=c.events.filter(e=>e.method==='Runtime.exceptionThrown'||(e.method==='Runtime.consoleAPICalled'&&['error','warning','warn'].includes(e.params.type))).map(e=>({method:e.method,args:e.params.args?.map(a=>a.value||a.description),exception:e.params.exceptionDetails?.text}));
+await writeFile(new URL('checks.json',out),JSON.stringify(result,null,2));console.log(JSON.stringify(result,null,2));c.close();

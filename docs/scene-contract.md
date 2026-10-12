@@ -1,11 +1,12 @@
-# Scene contract through M4's field checkpoint
+# Scene contract through M4
 
 World units are metres. +Y points up and +Z points toward the camera. The
 curtain is centred at x=0, z=0, extends from y=0 (pool) to y=6 (lip), and is
 2.8 m wide at defaults. `config.curtain` remains the authoritative dimensions.
 The curved curtain adds positive z bow, zero at all four edges and 0.16 m at
-its centre. Width, height and bow rebuild its CPU geometry. No model scaling
-or shader vertex deformation is applied, so raycasting sees the visible surface.
+its centre. Width, height and bow rebuild its CPU geometry. M4 adds GPU vertex
+deformation; contacts use the stable resting ribbon described below. No model
+scaling is applied.
 
 `createScene()` owns the wall, curtain, wall capture, markers, camera, and shared light.
 `main.js` owns the renderer and lifecycle. `time.js` provides the single elapsed
@@ -67,7 +68,7 @@ contract rather than interpreting the cone in UV or camera space.
 
 `?debug` lazily loads GUI, fixed sample buffers, and a reusable GPU query pool.
 The 10-second warmup/60-second frame-interval protocol remains the gate metric.
-`renderCost.cpuSubmit` measures CPU submission across both render passes;
+`renderCost.cpuSubmit` measures CPU submission across all render passes;
 `renderCost.gpu` measures GPU elapsed time with
 `EXT_disjoint_timer_query_webgl2`. Results are read on later frames only after
 availability. Samples crossing a disjoint event reject GPU data; absent GPU
@@ -84,13 +85,13 @@ when their dimensions/format change, and replaced resources are disposed.
 ## Curtain and M4 interface
 
 Reference tessellation is 120 columns × 400 rows (96,000 triangles), reduced
-60 × 200 (24,000). `curtain.mesh` is the future raycast object. It uses translation
+60 × 200 (24,000). The resting curtain uses translation
 only: world x=(u−0.5)×width, world y=v×height, and
 z=bow×(1−(2u−1)²)×sin(πv). UV (0,0) is bottom-left at the pool;
 (1,1) is upper-right at the lip. Downward transport is **negative v**. M4 field
 textures should keep this bottom-up orientation and avoid a second flip.
-After M4 shader displacement, raycasting will require an explicit matching
-surface strategy; the present exact agreement does not claim that future work.
+After M4 shader displacement, analytical resting-surface contacts preserve
+interaction through the opening. They are not intersections of GPU triangles.
 
 The flow coordinate is travelTime((1−v)×height)−time×flowSpeed, where travelTime
 is the rationalized positive root of d=v0×t+½g×t². A constant phase travels
@@ -134,9 +135,10 @@ logged on changes. Context restoration abandons the old target (whose GPU
 objects the lost context destroyed), then reselects and checks a fresh target.
 This avoids invoking Three's stale disposal callbacks on the new context.
 
-## M4 field checkpoint
+<a id="m4-field-checkpoint"></a>
 
-The checkpoint adds the field and its debug overlay, not water deformation yet.
+## M4 field and contacts
+
 `main.js` owns Pointer Events; `createScene()` owns the ping-pong field. Frame
 order is shared time → current camera/matrices → pointer projection → field
 update → wall capture → curtain. The field is sampled in the same frame that
@@ -148,8 +150,8 @@ Contacts intersect the analytical **resting curved ribbon** with reusable
 ray/vector objects. Tests compare it with the actual reference/reduced meshes
 in both orientations during camera drift (UV error below 0.00001). This stable
 contact surface continues through holes instead of losing the finger when
-water parts. M4's next step must preserve screen alignment under displacement;
-the checkpoint does not claim exact raycasts against future GPU-deformed triangles.
+water parts. The displacement strategy below preserves the projected centre;
+this is not an exact raycast against GPU-deformed triangles.
 Both ends of a swept segment use the current camera, so drift creates no false
 swipe speed. Velocity uses projected world distance over a short event-time
 window (`touch.velocityWindow`, default 50 ms), independently of rendering.
@@ -198,3 +200,31 @@ tiny lateral force indefinitely at high refresh rates; this only changes the
 quantized low-amplitude tail. Swept Gaussian capsules pin a held obstacle using max pressure rather
 than repeatedly adding energy per refresh; swipe strength is velocity-scaled.
 The overlay maps left force to red, pressure to green and right force to blue.
+
+## Field-driven water
+
+The vertex shader samples the completed field at each resting UV, using the same
+decode-before-interpolation function as the simulation. Signed force pushes x
+by `force × radius × sidePush`; pressure pushes toward the camera by
+`pressure × radius × forwardPush`. This latter displacement follows the view ray
+after the x offset, preserving its projected position. Symmetric lateral force
+is zero at a stationary contact centre. The field remains in resting UV space;
+displacing its coordinates would create feedback and move the input target.
+The debug overlay uses resting geometry; the touch-pressure diagnostic uses the
+same deformed vertices as production water so alignment can be checked honestly.
+
+Fragment derivatives measure the deformed and resting triangle normals. Their
+difference is added to the smooth resting bow normal, then to the existing
+flow-noise normal. This preserves the M3 smooth bow at zero field while making
+bulge slopes affect refraction and highlights. It is a shading approximation,
+not a newly computed smooth analytic normal. Reference/reduced geometry remains
+120×400 / 60×200, with measured deformation fidelity in the M4 evidence index.
+
+Interpolated vertex pressure drives a smooth alpha opening between `gapStart`
+and `gapEnd`. The rim weight `4 × gap × (1 − gap)` localizes foam; its color,
+amount and opacity are configurable and inherit the shared shaft illumination.
+The gap reveals the completed wall capture. No separate foam mesh, pass, texture,
+or production fragment-stage field read is added. The diagnostic overlay alone
+samples the full field in the fragment stage. All tunables are in `config.touch`
+and the GUI. An unavailable field is gated to zero in the vertex shader, so its
+neutral fallback continues to render undisturbed water.

@@ -1,0 +1,4238 @@
+{
+  "measuredAt": "2026-10-12T19:31:03.028Z",
+  "clips": {
+    "portrait-auto": {
+      "initial": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "buffer": {
+          "width": 780,
+          "height": 1688
+        },
+        "dpr": 2,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 106,
+        "elapsed": 1.881,
+        "reducedMotion": false,
+        "camera": [
+          0.015295313269444874,
+          3.00693460948663,
+          10.647765095859238
+        ],
+        "drawCalls": 4,
+        "triangles": 227076,
+        "geometries": 4,
+        "textures": 3,
+        "programs": 4,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "water",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+          "sidePush": 0.9,
+          "forwardPush": 0.8
+        },
+        "capture": {
+          "width": 780,
+          "height": 1688,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 2,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "touch": {
+          "available": true,
+          "disabledReason": null,
+          "width": 256,
+          "height": 512,
+          "format": "RGBA16F / manual bilinear",
+          "generation": 1,
+          "steps": 107,
+          "distinctTargets": true,
+          "readId": 11,
+          "writeId": 9,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 0,
+          "pointers": []
+        },
+        "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      },
+      "held": {
+        "snapshot": {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "buffer": {
+            "width": 780,
+            "height": 1688
+          },
+          "dpr": 2,
+          "running": true,
+          "contextLost": false,
+          "restores": 0,
+          "frames": 344,
+          "elapsed": 6.1313,
+          "reducedMotion": false,
+          "camera": [
+            0.020977649996187037,
+            3.014999864583928,
+            10.647765095859238
+          ],
+          "drawCalls": 4,
+          "triangles": 227076,
+          "geometries": 4,
+          "textures": 3,
+          "programs": 4,
+          "wall": {
+            "segments": 256,
+            "size": [
+              20,
+              12
+            ],
+            "quality": "reference",
+            "displacement": true,
+            "sheen": true,
+            "view": "rock"
+          },
+          "curtain": {
+            "quality": "reference",
+            "columns": 120,
+            "rows": 400,
+            "visible": true,
+            "view": "water",
+            "refraction": true,
+            "uv": "u left-to-right, v bottom-to-top",
+            "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+            "sidePush": 0.9,
+            "forwardPush": 0.8
+          },
+          "capture": {
+            "width": 780,
+            "height": 1688,
+            "samples": 4,
+            "format": "RGBA16F linear",
+            "generation": 2,
+            "sourceObjects": [
+              "wall"
+            ]
+          },
+          "touch": {
+            "available": true,
+            "disabledReason": null,
+            "width": 256,
+            "height": 512,
+            "format": "RGBA16F / manual bilinear",
+            "generation": 1,
+            "steps": 346,
+            "distinctTargets": true,
+            "readId": 9,
+            "writeId": 11,
+            "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+            "count": 1,
+            "pointers": [
+              {
+                "id": 2,
+                "held": true,
+                "valid": true,
+                "uv": [
+                  0.4499970256612554,
+                  0.6800013937547845
+                ]
+              }
+            ]
+          },
+          "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+        },
+        "field": {
+          "max": 0.8491187914854658,
+          "sum": 1600.6625314717528,
+          "centroidU": 0.45000093801533586,
+          "centroidV": 0.604314756003076,
+          "minX": -0.5151219214453566,
+          "maxX": 0.5136570329905087
+        }
+      },
+      "two": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "buffer": {
+          "width": 780,
+          "height": 1688
+        },
+        "dpr": 2,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 412,
+        "elapsed": 7.356000000000002,
+        "reducedMotion": false,
+        "camera": [
+          0.013427443110625029,
+          3.0142911147755993,
+          10.647765095859238
+        ],
+        "drawCalls": 4,
+        "triangles": 227076,
+        "geometries": 4,
+        "textures": 3,
+        "programs": 4,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "water",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+          "sidePush": 0.9,
+          "forwardPush": 0.8
+        },
+        "capture": {
+          "width": 780,
+          "height": 1688,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 2,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "touch": {
+          "available": true,
+          "disabledReason": null,
+          "width": 256,
+          "height": 512,
+          "format": "RGBA16F / manual bilinear",
+          "generation": 1,
+          "steps": 415,
+          "distinctTargets": true,
+          "readId": 11,
+          "writeId": 9,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 2,
+          "pointers": [
+            {
+              "id": 2,
+              "held": true,
+              "valid": true,
+              "uv": [
+                0.4499634006428899,
+                0.6799992449974225
+              ]
+            },
+            {
+              "id": 3,
+              "held": true,
+              "valid": true,
+              "uv": [
+                0.6799699484907383,
+                0.4200033412888598
+              ]
+            }
+          ]
+        },
+        "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      },
+      "one": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "buffer": {
+          "width": 780,
+          "height": 1688
+        },
+        "dpr": 2,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 566,
+        "elapsed": 10.158900000000033,
+        "reducedMotion": false,
+        "camera": [
+          -0.010057376777164426,
+          3.0077890136620216,
+          10.647765095859238
+        ],
+        "drawCalls": 4,
+        "triangles": 227076,
+        "geometries": 4,
+        "textures": 3,
+        "programs": 4,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "water",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+          "sidePush": 0.9,
+          "forwardPush": 0.8
+        },
+        "capture": {
+          "width": 780,
+          "height": 1688,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 2,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "touch": {
+          "available": true,
+          "disabledReason": null,
+          "width": 256,
+          "height": 512,
+          "format": "RGBA16F / manual bilinear",
+          "generation": 1,
+          "steps": 571,
+          "distinctTargets": true,
+          "readId": 11,
+          "writeId": 9,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 1,
+          "pointers": [
+            {
+              "id": 2,
+              "held": true,
+              "valid": true,
+              "uv": [
+                0.6499307232160357,
+                0.6800130485247485
+              ]
+            }
+          ]
+        },
+        "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      },
+      "releasedAt": 10.176000000000032,
+      "wake": {
+        "snapshot": {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "buffer": {
+            "width": 780,
+            "height": 1688
+          },
+          "dpr": 2,
+          "running": true,
+          "contextLost": false,
+          "restores": 0,
+          "frames": 607,
+          "elapsed": 10.885900000000044,
+          "reducedMotion": false,
+          "camera": [
+            -0.015494696372884876,
+            3.005287555619151,
+            10.647765095859238
+          ],
+          "drawCalls": 4,
+          "triangles": 227076,
+          "geometries": 4,
+          "textures": 3,
+          "programs": 4,
+          "wall": {
+            "segments": 256,
+            "size": [
+              20,
+              12
+            ],
+            "quality": "reference",
+            "displacement": true,
+            "sheen": true,
+            "view": "rock"
+          },
+          "curtain": {
+            "quality": "reference",
+            "columns": 120,
+            "rows": 400,
+            "visible": true,
+            "view": "water",
+            "refraction": true,
+            "uv": "u left-to-right, v bottom-to-top",
+            "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+            "sidePush": 0.9,
+            "forwardPush": 0.8
+          },
+          "capture": {
+            "width": 780,
+            "height": 1688,
+            "samples": 4,
+            "format": "RGBA16F linear",
+            "generation": 2,
+            "sourceObjects": [
+              "wall"
+            ]
+          },
+          "touch": {
+            "available": true,
+            "disabledReason": null,
+            "width": 256,
+            "height": 512,
+            "format": "RGBA16F / manual bilinear",
+            "generation": 1,
+            "steps": 612,
+            "distinctTargets": true,
+            "readId": 9,
+            "writeId": 11,
+            "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+            "count": 0,
+            "pointers": []
+          },
+          "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+        },
+        "field": {
+          "max": 0.03802548256656748,
+          "sum": 91.81135271229971,
+          "centroidU": 0.649929189631775,
+          "centroidV": 0.298797817083657,
+          "minX": -0.02264473403118992,
+          "maxX": 0.02264473403118992
+        }
+      },
+      "healed": {
+        "snapshot": {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "buffer": {
+            "width": 780,
+            "height": 1688
+          },
+          "dpr": 2,
+          "running": true,
+          "contextLost": false,
+          "restores": 0,
+          "frames": 708,
+          "elapsed": 12.694600000000051,
+          "reducedMotion": false,
+          "camera": [
+            -0.02409907411074179,
+            2.9984744774165395,
+            10.647765095859238
+          ],
+          "drawCalls": 4,
+          "triangles": 227076,
+          "geometries": 4,
+          "textures": 3,
+          "programs": 4,
+          "wall": {
+            "segments": 256,
+            "size": [
+              20,
+              12
+            ],
+            "quality": "reference",
+            "displacement": true,
+            "sheen": true,
+            "view": "rock"
+          },
+          "curtain": {
+            "quality": "reference",
+            "columns": 120,
+            "rows": 400,
+            "visible": true,
+            "view": "water",
+            "refraction": true,
+            "uv": "u left-to-right, v bottom-to-top",
+            "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+            "sidePush": 0.9,
+            "forwardPush": 0.8
+          },
+          "capture": {
+            "width": 780,
+            "height": 1688,
+            "samples": 4,
+            "format": "RGBA16F linear",
+            "generation": 2,
+            "sourceObjects": [
+              "wall"
+            ]
+          },
+          "touch": {
+            "available": true,
+            "disabledReason": null,
+            "width": 256,
+            "height": 512,
+            "format": "RGBA16F / manual bilinear",
+            "generation": 1,
+            "steps": 714,
+            "distinctTargets": true,
+            "readId": 9,
+            "writeId": 11,
+            "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+            "count": 0,
+            "pointers": []
+          },
+          "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+        },
+        "field": {
+          "max": 0,
+          "sum": 0,
+          "centroidU": null,
+          "centroidV": null,
+          "minX": 0,
+          "maxX": 0
+        }
+      }
+    },
+    "portrait-byte": {
+      "initial": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "buffer": {
+          "width": 780,
+          "height": 1688
+        },
+        "dpr": 2,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 1049,
+        "elapsed": 18.93359999999999,
+        "reducedMotion": false,
+        "camera": [
+          0.008421375314487342,
+          2.985117307850115,
+          10.647765095859238
+        ],
+        "drawCalls": 4,
+        "triangles": 227076,
+        "geometries": 4,
+        "textures": 3,
+        "programs": 4,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "water",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+          "sidePush": 0.9,
+          "forwardPush": 0.8
+        },
+        "capture": {
+          "width": 780,
+          "height": 1688,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 2,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "touch": {
+          "available": true,
+          "disabledReason": null,
+          "width": 256,
+          "height": 512,
+          "format": "RGBA8 packed16 / manual bilinear",
+          "generation": 2,
+          "steps": 1061,
+          "distinctTargets": true,
+          "readId": 25,
+          "writeId": 23,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 0,
+          "pointers": []
+        },
+        "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      },
+      "held": {
+        "snapshot": {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "buffer": {
+            "width": 780,
+            "height": 1688
+          },
+          "dpr": 2,
+          "running": true,
+          "contextLost": false,
+          "restores": 0,
+          "frames": 1285,
+          "elapsed": 23.158999999999875,
+          "reducedMotion": false,
+          "camera": [
+            0.0242124578271235,
+            2.994630899720341,
+            10.647765095859238
+          ],
+          "drawCalls": 4,
+          "triangles": 227076,
+          "geometries": 4,
+          "textures": 3,
+          "programs": 4,
+          "wall": {
+            "segments": 256,
+            "size": [
+              20,
+              12
+            ],
+            "quality": "reference",
+            "displacement": true,
+            "sheen": true,
+            "view": "rock"
+          },
+          "curtain": {
+            "quality": "reference",
+            "columns": 120,
+            "rows": 400,
+            "visible": true,
+            "view": "water",
+            "refraction": true,
+            "uv": "u left-to-right, v bottom-to-top",
+            "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+            "sidePush": 0.9,
+            "forwardPush": 0.8
+          },
+          "capture": {
+            "width": 780,
+            "height": 1688,
+            "samples": 4,
+            "format": "RGBA16F linear",
+            "generation": 2,
+            "sourceObjects": [
+              "wall"
+            ]
+          },
+          "touch": {
+            "available": true,
+            "disabledReason": null,
+            "width": 256,
+            "height": 512,
+            "format": "RGBA8 packed16 / manual bilinear",
+            "generation": 2,
+            "steps": 1298,
+            "distinctTargets": true,
+            "readId": 23,
+            "writeId": 25,
+            "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+            "count": 1,
+            "pointers": [
+              {
+                "id": 9,
+                "held": true,
+                "valid": true,
+                "uv": [
+                  0.4500339483377205,
+                  0.6800044017872215
+                ]
+              }
+            ]
+          },
+          "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+        },
+        "field": {
+          "max": 0.8493476768139162,
+          "sum": 1607.091401541153,
+          "centroidU": 0.4500348116510073,
+          "centroidV": 0.6038184132390085,
+          "minX": -0.5151829584643086,
+          "maxX": 0.5139927365947448
+        }
+      },
+      "two": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "buffer": {
+          "width": 780,
+          "height": 1688
+        },
+        "dpr": 2,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 1353,
+        "elapsed": 24.404899999999856,
+        "reducedMotion": false,
+        "camera": [
+          0.019317170734441003,
+          2.9992842715092918,
+          10.647765095859238
+        ],
+        "drawCalls": 4,
+        "triangles": 227076,
+        "geometries": 4,
+        "textures": 3,
+        "programs": 4,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "water",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+          "sidePush": 0.9,
+          "forwardPush": 0.8
+        },
+        "capture": {
+          "width": 780,
+          "height": 1688,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 2,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "touch": {
+          "available": true,
+          "disabledReason": null,
+          "width": 256,
+          "height": 512,
+          "format": "RGBA8 packed16 / manual bilinear",
+          "generation": 2,
+          "steps": 1367,
+          "distinctTargets": true,
+          "readId": 25,
+          "writeId": 23,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 2,
+          "pointers": [
+            {
+              "id": 9,
+              "held": true,
+              "valid": true,
+              "uv": [
+                0.450014637663896,
+                0.6800047396335939
+              ]
+            },
+            {
+              "id": 10,
+              "held": true,
+              "valid": true,
+              "uv": [
+                0.6800169509507273,
+                0.4200237267617782
+              ]
+            }
+          ]
+        },
+        "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      },
+      "one": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "buffer": {
+          "width": 780,
+          "height": 1688
+        },
+        "dpr": 2,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 1508,
+        "elapsed": 27.224799999999785,
+        "reducedMotion": false,
+        "camera": [
+          -0.0025928798013851733,
+          3.009347100007583,
+          10.647765095859238
+        ],
+        "drawCalls": 4,
+        "triangles": 227076,
+        "geometries": 4,
+        "textures": 3,
+        "programs": 4,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "water",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+          "sidePush": 0.9,
+          "forwardPush": 0.8
+        },
+        "capture": {
+          "width": 780,
+          "height": 1688,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 2,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "touch": {
+          "available": true,
+          "disabledReason": null,
+          "width": 256,
+          "height": 512,
+          "format": "RGBA8 packed16 / manual bilinear",
+          "generation": 2,
+          "steps": 1524,
+          "distinctTargets": true,
+          "readId": 23,
+          "writeId": 25,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 1,
+          "pointers": [
+            {
+              "id": 9,
+              "held": true,
+              "valid": true,
+              "uv": [
+                0.6499123982345187,
+                0.6800153777220604
+              ]
+            }
+          ]
+        },
+        "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      },
+      "releasedAt": 27.242299999999783,
+      "wake": {
+        "snapshot": {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "buffer": {
+            "width": 780,
+            "height": 1688
+          },
+          "dpr": 2,
+          "running": true,
+          "contextLost": false,
+          "restores": 0,
+          "frames": 1549,
+          "elapsed": 27.952399999999773,
+          "reducedMotion": false,
+          "camera": [
+            -0.008773202165450546,
+            3.0113544445850398,
+            10.647765095859238
+          ],
+          "drawCalls": 4,
+          "triangles": 227076,
+          "geometries": 4,
+          "textures": 3,
+          "programs": 4,
+          "wall": {
+            "segments": 256,
+            "size": [
+              20,
+              12
+            ],
+            "quality": "reference",
+            "displacement": true,
+            "sheen": true,
+            "view": "rock"
+          },
+          "curtain": {
+            "quality": "reference",
+            "columns": 120,
+            "rows": 400,
+            "visible": true,
+            "view": "water",
+            "refraction": true,
+            "uv": "u left-to-right, v bottom-to-top",
+            "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+            "sidePush": 0.9,
+            "forwardPush": 0.8
+          },
+          "capture": {
+            "width": 780,
+            "height": 1688,
+            "samples": 4,
+            "format": "RGBA16F linear",
+            "generation": 2,
+            "sourceObjects": [
+              "wall"
+            ]
+          },
+          "touch": {
+            "available": true,
+            "disabledReason": null,
+            "width": 256,
+            "height": 512,
+            "format": "RGBA8 packed16 / manual bilinear",
+            "generation": 2,
+            "steps": 1565,
+            "distinctTargets": true,
+            "readId": 25,
+            "writeId": 23,
+            "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+            "count": 0,
+            "pointers": []
+          },
+          "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+        },
+        "field": {
+          "max": 0.03859006637674525,
+          "sum": 93.44121461815146,
+          "centroidU": 0.6499093591444561,
+          "centroidV": 0.2983843038187003,
+          "minX": -0.022980437635425885,
+          "maxX": 0.02294991912594989
+        }
+      },
+      "healed": {
+        "snapshot": {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "buffer": {
+            "width": 780,
+            "height": 1688
+          },
+          "dpr": 2,
+          "running": true,
+          "contextLost": false,
+          "restores": 0,
+          "frames": 1649,
+          "elapsed": 29.760699999999737,
+          "reducedMotion": false,
+          "camera": [
+            -0.020920750705338526,
+            3.0145332305574852,
+            10.647765095859238
+          ],
+          "drawCalls": 4,
+          "triangles": 227076,
+          "geometries": 4,
+          "textures": 3,
+          "programs": 4,
+          "wall": {
+            "segments": 256,
+            "size": [
+              20,
+              12
+            ],
+            "quality": "reference",
+            "displacement": true,
+            "sheen": true,
+            "view": "rock"
+          },
+          "curtain": {
+            "quality": "reference",
+            "columns": 120,
+            "rows": 400,
+            "visible": true,
+            "view": "water",
+            "refraction": true,
+            "uv": "u left-to-right, v bottom-to-top",
+            "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+            "sidePush": 0.9,
+            "forwardPush": 0.8
+          },
+          "capture": {
+            "width": 780,
+            "height": 1688,
+            "samples": 4,
+            "format": "RGBA16F linear",
+            "generation": 2,
+            "sourceObjects": [
+              "wall"
+            ]
+          },
+          "touch": {
+            "available": true,
+            "disabledReason": null,
+            "width": 256,
+            "height": 512,
+            "format": "RGBA8 packed16 / manual bilinear",
+            "generation": 2,
+            "steps": 1666,
+            "distinctTargets": true,
+            "readId": 23,
+            "writeId": 25,
+            "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+            "count": 0,
+            "pointers": []
+          },
+          "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+        },
+        "field": {
+          "max": 0,
+          "sum": 0,
+          "centroidU": null,
+          "centroidV": null,
+          "minX": 0,
+          "maxX": 0
+        }
+      }
+    },
+    "landscape-auto": {
+      "initial": {
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "buffer": {
+          "width": 1688,
+          "height": 780
+        },
+        "dpr": 2,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 1990,
+        "elapsed": 36.01599999999974,
+        "reducedMotion": false,
+        "camera": [
+          0.0009804831109777592,
+          3.0033128093433983,
+          9.388320632897686
+        ],
+        "drawCalls": 4,
+        "triangles": 227076,
+        "geometries": 4,
+        "textures": 3,
+        "programs": 4,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "water",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+          "sidePush": 0.9,
+          "forwardPush": 0.8
+        },
+        "capture": {
+          "width": 1688,
+          "height": 780,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 3,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "touch": {
+          "available": true,
+          "disabledReason": null,
+          "width": 256,
+          "height": 512,
+          "format": "RGBA16F / manual bilinear",
+          "generation": 3,
+          "steps": 2013,
+          "distinctTargets": true,
+          "readId": 37,
+          "writeId": 39,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 0,
+          "pointers": []
+        },
+        "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      },
+      "held": {
+        "snapshot": {
+          "viewport": {
+            "width": 844,
+            "height": 390
+          },
+          "buffer": {
+            "width": 1688,
+            "height": 780
+          },
+          "dpr": 2,
+          "running": true,
+          "contextLost": false,
+          "restores": 0,
+          "frames": 2227,
+          "elapsed": 40.24559999999984,
+          "reducedMotion": false,
+          "camera": [
+            0.024967230276255886,
+            2.9886522238345523,
+            9.388320632897686
+          ],
+          "drawCalls": 4,
+          "triangles": 227076,
+          "geometries": 4,
+          "textures": 3,
+          "programs": 4,
+          "wall": {
+            "segments": 256,
+            "size": [
+              20,
+              12
+            ],
+            "quality": "reference",
+            "displacement": true,
+            "sheen": true,
+            "view": "rock"
+          },
+          "curtain": {
+            "quality": "reference",
+            "columns": 120,
+            "rows": 400,
+            "visible": true,
+            "view": "water",
+            "refraction": true,
+            "uv": "u left-to-right, v bottom-to-top",
+            "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+            "sidePush": 0.9,
+            "forwardPush": 0.8
+          },
+          "capture": {
+            "width": 1688,
+            "height": 780,
+            "samples": 4,
+            "format": "RGBA16F linear",
+            "generation": 3,
+            "sourceObjects": [
+              "wall"
+            ]
+          },
+          "touch": {
+            "available": true,
+            "disabledReason": null,
+            "width": 256,
+            "height": 512,
+            "format": "RGBA16F / manual bilinear",
+            "generation": 3,
+            "steps": 2251,
+            "distinctTargets": true,
+            "readId": 37,
+            "writeId": 39,
+            "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+            "count": 1,
+            "pointers": [
+              {
+                "id": 16,
+                "held": true,
+                "valid": true,
+                "uv": [
+                  0.45006201458234846,
+                  0.6800033901978103
+                ]
+              }
+            ]
+          },
+          "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+        },
+        "field": {
+          "max": 0.8491187914854658,
+          "sum": 1600.5349813077296,
+          "centroidU": 0.4500610565023161,
+          "centroidV": 0.604307725022014,
+          "minX": -0.5151219214453566,
+          "maxX": 0.5136570329905087
+        }
+      },
+      "two": {
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "buffer": {
+          "width": 1688,
+          "height": 780
+        },
+        "dpr": 2,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 2296,
+        "elapsed": 41.50549999999987,
+        "reducedMotion": false,
+        "camera": [
+          0.02312502540025837,
+          2.986131611071972,
+          9.388320632897686
+        ],
+        "drawCalls": 4,
+        "triangles": 227076,
+        "geometries": 4,
+        "textures": 3,
+        "programs": 4,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "water",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+          "sidePush": 0.9,
+          "forwardPush": 0.8
+        },
+        "capture": {
+          "width": 1688,
+          "height": 780,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 3,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "touch": {
+          "available": true,
+          "disabledReason": null,
+          "width": 256,
+          "height": 512,
+          "format": "RGBA16F / manual bilinear",
+          "generation": 3,
+          "steps": 2321,
+          "distinctTargets": true,
+          "readId": 37,
+          "writeId": 39,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 2,
+          "pointers": [
+            {
+              "id": 16,
+              "held": true,
+              "valid": true,
+              "uv": [
+                0.4500512517281664,
+                0.6800025685426524
+              ]
+            },
+            {
+              "id": 17,
+              "held": true,
+              "valid": true,
+              "uv": [
+                0.6800371782058606,
+                0.4199802960454559
+              ]
+            }
+          ]
+        },
+        "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      },
+      "one": {
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "buffer": {
+          "width": 1688,
+          "height": 780
+        },
+        "dpr": 2,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 2448,
+        "elapsed": 44.26849999999992,
+        "reducedMotion": false,
+        "camera": [
+          0.005308972023673151,
+          2.9857381819463913,
+          9.388320632897686
+        ],
+        "drawCalls": 4,
+        "triangles": 227076,
+        "geometries": 4,
+        "textures": 3,
+        "programs": 4,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "water",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+          "sidePush": 0.9,
+          "forwardPush": 0.8
+        },
+        "capture": {
+          "width": 1688,
+          "height": 780,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 3,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "touch": {
+          "available": true,
+          "disabledReason": null,
+          "width": 256,
+          "height": 512,
+          "format": "RGBA16F / manual bilinear",
+          "generation": 3,
+          "steps": 2475,
+          "distinctTargets": true,
+          "readId": 37,
+          "writeId": 39,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 1,
+          "pointers": [
+            {
+              "id": 16,
+              "held": true,
+              "valid": true,
+              "uv": [
+                0.6499318541963762,
+                0.6800143720674686
+              ]
+            }
+          ]
+        },
+        "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      },
+      "releasedAt": 44.28619999999992,
+      "wake": {
+        "snapshot": {
+          "viewport": {
+            "width": 844,
+            "height": 390
+          },
+          "buffer": {
+            "width": 1688,
+            "height": 780
+          },
+          "dpr": 2,
+          "running": true,
+          "contextLost": false,
+          "restores": 0,
+          "frames": 2488,
+          "elapsed": 44.98209999999994,
+          "reducedMotion": false,
+          "camera": [
+            -0.0008941025880202117,
+            2.9868172668410353,
+            9.388320632897686
+          ],
+          "drawCalls": 4,
+          "triangles": 227076,
+          "geometries": 4,
+          "textures": 3,
+          "programs": 4,
+          "wall": {
+            "segments": 256,
+            "size": [
+              20,
+              12
+            ],
+            "quality": "reference",
+            "displacement": true,
+            "sheen": true,
+            "view": "rock"
+          },
+          "curtain": {
+            "quality": "reference",
+            "columns": 120,
+            "rows": 400,
+            "visible": true,
+            "view": "water",
+            "refraction": true,
+            "uv": "u left-to-right, v bottom-to-top",
+            "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+            "sidePush": 0.9,
+            "forwardPush": 0.8
+          },
+          "capture": {
+            "width": 1688,
+            "height": 780,
+            "samples": 4,
+            "format": "RGBA16F linear",
+            "generation": 3,
+            "sourceObjects": [
+              "wall"
+            ]
+          },
+          "touch": {
+            "available": true,
+            "disabledReason": null,
+            "width": 256,
+            "height": 512,
+            "format": "RGBA16F / manual bilinear",
+            "generation": 3,
+            "steps": 2515,
+            "distinctTargets": true,
+            "readId": 37,
+            "writeId": 39,
+            "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+            "count": 0,
+            "pointers": []
+          },
+          "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+        },
+        "field": {
+          "max": 0.04046692607003891,
+          "sum": 97.53734645610112,
+          "centroidU": 0.6499355064289608,
+          "centroidV": 0.305226174032783,
+          "minX": -0.02414014099551378,
+          "maxX": 0.024079103976561784
+        }
+      },
+      "healed": {
+        "snapshot": {
+          "viewport": {
+            "width": 844,
+            "height": 390
+          },
+          "buffer": {
+            "width": 1688,
+            "height": 780
+          },
+          "dpr": 2,
+          "running": true,
+          "contextLost": false,
+          "restores": 0,
+          "frames": 2589,
+          "elapsed": 46.811,
+          "reducedMotion": false,
+          "camera": [
+            -0.015639733720915143,
+            2.991454261652996,
+            9.388320632897686
+          ],
+          "drawCalls": 4,
+          "triangles": 227076,
+          "geometries": 4,
+          "textures": 3,
+          "programs": 4,
+          "wall": {
+            "segments": 256,
+            "size": [
+              20,
+              12
+            ],
+            "quality": "reference",
+            "displacement": true,
+            "sheen": true,
+            "view": "rock"
+          },
+          "curtain": {
+            "quality": "reference",
+            "columns": 120,
+            "rows": 400,
+            "visible": true,
+            "view": "water",
+            "refraction": true,
+            "uv": "u left-to-right, v bottom-to-top",
+            "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+            "sidePush": 0.9,
+            "forwardPush": 0.8
+          },
+          "capture": {
+            "width": 1688,
+            "height": 780,
+            "samples": 4,
+            "format": "RGBA16F linear",
+            "generation": 3,
+            "sourceObjects": [
+              "wall"
+            ]
+          },
+          "touch": {
+            "available": true,
+            "disabledReason": null,
+            "width": 256,
+            "height": 512,
+            "format": "RGBA16F / manual bilinear",
+            "generation": 3,
+            "steps": 2617,
+            "distinctTargets": true,
+            "readId": 37,
+            "writeId": 39,
+            "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+            "count": 0,
+            "pointers": []
+          },
+          "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+        },
+        "field": {
+          "max": 0,
+          "sum": 0,
+          "centroidU": null,
+          "centroidV": null,
+          "minX": 0,
+          "maxX": 0
+        }
+      }
+    },
+    "landscape-byte": {
+      "initial": {
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "buffer": {
+          "width": 1688,
+          "height": 780
+        },
+        "dpr": 2,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 2936,
+        "elapsed": 53.14560000000016,
+        "reducedMotion": false,
+        "camera": [
+          -0.006151082169219553,
+          3.012721033179966,
+          9.388320632897686
+        ],
+        "drawCalls": 4,
+        "triangles": 227076,
+        "geometries": 4,
+        "textures": 3,
+        "programs": 4,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "water",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+          "sidePush": 0.9,
+          "forwardPush": 0.8
+        },
+        "capture": {
+          "width": 1688,
+          "height": 780,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 3,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "touch": {
+          "available": true,
+          "disabledReason": null,
+          "width": 256,
+          "height": 512,
+          "format": "RGBA8 packed16 / manual bilinear",
+          "generation": 4,
+          "steps": 2970,
+          "distinctTargets": true,
+          "readId": 51,
+          "writeId": 49,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 0,
+          "pointers": []
+        },
+        "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      },
+      "held": {
+        "snapshot": {
+          "viewport": {
+            "width": 844,
+            "height": 390
+          },
+          "buffer": {
+            "width": 1688,
+            "height": 780
+          },
+          "dpr": 2,
+          "running": true,
+          "contextLost": false,
+          "restores": 0,
+          "frames": 3174,
+          "elapsed": 57.407000000000274,
+          "reducedMotion": false,
+          "camera": [
+            0.02366800058185972,
+            3.0129396670078887,
+            9.388320632897686
+          ],
+          "drawCalls": 4,
+          "triangles": 227076,
+          "geometries": 4,
+          "textures": 3,
+          "programs": 4,
+          "wall": {
+            "segments": 256,
+            "size": [
+              20,
+              12
+            ],
+            "quality": "reference",
+            "displacement": true,
+            "sheen": true,
+            "view": "rock"
+          },
+          "curtain": {
+            "quality": "reference",
+            "columns": 120,
+            "rows": 400,
+            "visible": true,
+            "view": "water",
+            "refraction": true,
+            "uv": "u left-to-right, v bottom-to-top",
+            "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+            "sidePush": 0.9,
+            "forwardPush": 0.8
+          },
+          "capture": {
+            "width": 1688,
+            "height": 780,
+            "samples": 4,
+            "format": "RGBA16F linear",
+            "generation": 3,
+            "sourceObjects": [
+              "wall"
+            ]
+          },
+          "touch": {
+            "available": true,
+            "disabledReason": null,
+            "width": 256,
+            "height": 512,
+            "format": "RGBA8 packed16 / manual bilinear",
+            "generation": 4,
+            "steps": 3209,
+            "distinctTargets": true,
+            "readId": 49,
+            "writeId": 51,
+            "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+            "count": 1,
+            "pointers": [
+              {
+                "id": 23,
+                "held": true,
+                "valid": true,
+                "uv": [
+                  0.45009408198080847,
+                  0.6800056128361766
+                ]
+              }
+            ]
+          },
+          "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+        },
+        "field": {
+          "max": 0.8493781948577096,
+          "sum": 1607.074799725325,
+          "centroidU": 0.450090583804331,
+          "centroidV": 0.6038210385369238,
+          "minX": -0.5152134769737846,
+          "maxX": 0.5139316995757928
+        }
+      },
+      "two": {
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "buffer": {
+          "width": 1688,
+          "height": 780
+        },
+        "dpr": 2,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 3242,
+        "elapsed": 58.6491000000003,
+        "reducedMotion": false,
+        "camera": [
+          0.024857470177587996,
+          3.0099258863490266,
+          9.388320632897686
+        ],
+        "drawCalls": 4,
+        "triangles": 227076,
+        "geometries": 4,
+        "textures": 3,
+        "programs": 4,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "water",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+          "sidePush": 0.9,
+          "forwardPush": 0.8
+        },
+        "capture": {
+          "width": 1688,
+          "height": 780,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 3,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "touch": {
+          "available": true,
+          "disabledReason": null,
+          "width": 256,
+          "height": 512,
+          "format": "RGBA8 packed16 / manual bilinear",
+          "generation": 4,
+          "steps": 3278,
+          "distinctTargets": true,
+          "readId": 51,
+          "writeId": 49,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 2,
+          "pointers": [
+            {
+              "id": 23,
+              "held": true,
+              "valid": true,
+              "uv": [
+                0.4500981523980073,
+                0.6800054728288148
+              ]
+            },
+            {
+              "id": 24,
+              "held": true,
+              "valid": true,
+              "uv": [
+                0.6800794376482407,
+                0.4200001962679442
+              ]
+            }
+          ]
+        },
+        "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      },
+      "one": {
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "buffer": {
+          "width": 1688,
+          "height": 780
+        },
+        "dpr": 2,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 3396,
+        "elapsed": 61.44120000000041,
+        "reducedMotion": false,
+        "camera": [
+          0.011693422232307484,
+          3.000146047711588,
+          9.388320632897686
+        ],
+        "drawCalls": 4,
+        "triangles": 227076,
+        "geometries": 4,
+        "textures": 3,
+        "programs": 4,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "water",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+          "sidePush": 0.9,
+          "forwardPush": 0.8
+        },
+        "capture": {
+          "width": 1688,
+          "height": 780,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 3,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "touch": {
+          "available": true,
+          "disabledReason": null,
+          "width": 256,
+          "height": 512,
+          "format": "RGBA8 packed16 / manual bilinear",
+          "generation": 4,
+          "steps": 3434,
+          "distinctTargets": true,
+          "readId": 51,
+          "writeId": 49,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 1,
+          "pointers": [
+            {
+              "id": 23,
+              "held": true,
+              "valid": true,
+              "uv": [
+                0.6499651462441308,
+                0.6800107814493698
+              ]
+            }
+          ]
+        },
+        "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      },
+      "releasedAt": 61.458700000000405,
+      "wake": {
+        "snapshot": {
+          "viewport": {
+            "width": 844,
+            "height": 390
+          },
+          "buffer": {
+            "width": 1688,
+            "height": 780
+          },
+          "dpr": 2,
+          "running": true,
+          "contextLost": false,
+          "restores": 0,
+          "frames": 3436,
+          "elapsed": 62.15160000000042,
+          "reducedMotion": false,
+          "camera": [
+            0.0058961388441334285,
+            2.997436093614011,
+            9.388320632897686
+          ],
+          "drawCalls": 4,
+          "triangles": 227076,
+          "geometries": 4,
+          "textures": 3,
+          "programs": 4,
+          "wall": {
+            "segments": 256,
+            "size": [
+              20,
+              12
+            ],
+            "quality": "reference",
+            "displacement": true,
+            "sheen": true,
+            "view": "rock"
+          },
+          "curtain": {
+            "quality": "reference",
+            "columns": 120,
+            "rows": 400,
+            "visible": true,
+            "view": "water",
+            "refraction": true,
+            "uv": "u left-to-right, v bottom-to-top",
+            "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+            "sidePush": 0.9,
+            "forwardPush": 0.8
+          },
+          "capture": {
+            "width": 1688,
+            "height": 780,
+            "samples": 4,
+            "format": "RGBA16F linear",
+            "generation": 3,
+            "sourceObjects": [
+              "wall"
+            ]
+          },
+          "touch": {
+            "available": true,
+            "disabledReason": null,
+            "width": 256,
+            "height": 512,
+            "format": "RGBA8 packed16 / manual bilinear",
+            "generation": 4,
+            "steps": 3474,
+            "distinctTargets": true,
+            "readId": 51,
+            "writeId": 49,
+            "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+            "count": 0,
+            "pointers": []
+          },
+          "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+        },
+        "field": {
+          "max": 0.041550316624704355,
+          "sum": 100.54196993973576,
+          "centroidU": 0.649964789185902,
+          "centroidV": 0.30623984004281085,
+          "minX": -0.02478102969450972,
+          "maxX": 0.024750511185033724
+        }
+      },
+      "healed": {
+        "snapshot": {
+          "viewport": {
+            "width": 844,
+            "height": 390
+          },
+          "buffer": {
+            "width": 1688,
+            "height": 780
+          },
+          "dpr": 2,
+          "running": true,
+          "contextLost": false,
+          "restores": 0,
+          "frames": 3538,
+          "elapsed": 63.989200000000494,
+          "reducedMotion": false,
+          "camera": [
+            -0.009852110153409992,
+            2.991026707552226,
+            9.388320632897686
+          ],
+          "drawCalls": 4,
+          "triangles": 227076,
+          "geometries": 4,
+          "textures": 3,
+          "programs": 4,
+          "wall": {
+            "segments": 256,
+            "size": [
+              20,
+              12
+            ],
+            "quality": "reference",
+            "displacement": true,
+            "sheen": true,
+            "view": "rock"
+          },
+          "curtain": {
+            "quality": "reference",
+            "columns": 120,
+            "rows": 400,
+            "visible": true,
+            "view": "water",
+            "refraction": true,
+            "uv": "u left-to-right, v bottom-to-top",
+            "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+            "sidePush": 0.9,
+            "forwardPush": 0.8
+          },
+          "capture": {
+            "width": 1688,
+            "height": 780,
+            "samples": 4,
+            "format": "RGBA16F linear",
+            "generation": 3,
+            "sourceObjects": [
+              "wall"
+            ]
+          },
+          "touch": {
+            "available": true,
+            "disabledReason": null,
+            "width": 256,
+            "height": 512,
+            "format": "RGBA8 packed16 / manual bilinear",
+            "generation": 4,
+            "steps": 3577,
+            "distinctTargets": true,
+            "readId": 49,
+            "writeId": 51,
+            "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+            "count": 0,
+            "pointers": []
+          },
+          "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+        },
+        "field": {
+          "max": 0,
+          "sum": 0,
+          "centroidU": null,
+          "centroidV": null,
+          "minX": 0,
+          "maxX": 0
+        }
+      }
+    }
+  },
+  "alignment": [
+    {
+      "name": "portrait-auto-align-0.08-0.9",
+      "u": 0.08,
+      "v": 0.9,
+      "pointer": {
+        "x": 73.42198422812176,
+        "y": 173.87398836829448
+      },
+      "snapshot": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "buffer": {
+          "width": 780,
+          "height": 1688
+        },
+        "dpr": 2,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 884,
+        "elapsed": 15.878200000000072,
+        "reducedMotion": false,
+        "camera": [
+          -0.016593636978669037,
+          2.9881089324563788,
+          10.647765095859238
+        ],
+        "drawCalls": 5,
+        "triangles": 227078,
+        "geometries": 4,
+        "textures": 3,
+        "programs": 4,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "touch pressure",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+          "sidePush": 0.9,
+          "forwardPush": 0.8
+        },
+        "capture": {
+          "width": 780,
+          "height": 1688,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 2,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "touch": {
+          "available": true,
+          "disabledReason": null,
+          "width": 256,
+          "height": 512,
+          "format": "RGBA16F / manual bilinear",
+          "generation": 1,
+          "steps": 892,
+          "distinctTargets": true,
+          "readId": 9,
+          "writeId": 11,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 1,
+          "pointers": [
+            {
+              "id": 4,
+              "held": true,
+              "valid": true,
+              "uv": [
+                0.07997906236714075,
+                0.9000211996212989
+              ]
+            }
+          ]
+        },
+        "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      }
+    },
+    {
+      "name": "portrait-auto-align-0.92-0.9",
+      "u": 0.92,
+      "v": 0.9,
+      "pointer": {
+        "x": 316.5349794251154,
+        "y": 173.97242532525163
+      },
+      "snapshot": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "buffer": {
+          "width": 780,
+          "height": 1688
+        },
+        "dpr": 2,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 913,
+        "elapsed": 16.423500000000065,
+        "reducedMotion": false,
+        "camera": [
+          -0.01274517231347111,
+          2.9869543711399786,
+          10.647765095859238
+        ],
+        "drawCalls": 5,
+        "triangles": 227078,
+        "geometries": 4,
+        "textures": 3,
+        "programs": 4,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "touch pressure",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+          "sidePush": 0.9,
+          "forwardPush": 0.8
+        },
+        "capture": {
+          "width": 780,
+          "height": 1688,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 2,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "touch": {
+          "available": true,
+          "disabledReason": null,
+          "width": 256,
+          "height": 512,
+          "format": "RGBA16F / manual bilinear",
+          "generation": 1,
+          "steps": 922,
+          "distinctTargets": true,
+          "readId": 9,
+          "writeId": 11,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 1,
+          "pointers": [
+            {
+              "id": 5,
+              "held": true,
+              "valid": true,
+              "uv": [
+                0.9199954351304083,
+                0.8999940942424152
+              ]
+            }
+          ]
+        },
+        "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      }
+    },
+    {
+      "name": "portrait-auto-align-0.5-0.5",
+      "u": 0.5,
+      "v": 0.5,
+      "pointer": {
+        "x": 195.01901514167034,
+        "y": 421.9791929497528
+      },
+      "snapshot": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "buffer": {
+          "width": 780,
+          "height": 1688
+        },
+        "dpr": 2,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 942,
+        "elapsed": 16.969800000000053,
+        "reducedMotion": false,
+        "camera": [
+          -0.008425626642840162,
+          2.9860512220996855,
+          10.647765095859238
+        ],
+        "drawCalls": 5,
+        "triangles": 227078,
+        "geometries": 4,
+        "textures": 3,
+        "programs": 4,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "touch pressure",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+          "sidePush": 0.9,
+          "forwardPush": 0.8
+        },
+        "capture": {
+          "width": 780,
+          "height": 1688,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 2,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "touch": {
+          "available": true,
+          "disabledReason": null,
+          "width": 256,
+          "height": 512,
+          "format": "RGBA16F / manual bilinear",
+          "generation": 1,
+          "steps": 952,
+          "distinctTargets": true,
+          "readId": 9,
+          "writeId": 11,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 1,
+          "pointers": [
+            {
+              "id": 6,
+              "held": true,
+              "valid": true,
+              "uv": [
+                0.5000195607569444,
+                0.49999815886858606
+              ]
+            }
+          ]
+        },
+        "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      }
+    },
+    {
+      "name": "portrait-auto-align-0.08-0.1",
+      "u": 0.08,
+      "v": 0.1,
+      "pointer": {
+        "x": 73.37092638275958,
+        "y": 670.222515326542
+      },
+      "snapshot": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "buffer": {
+          "width": 780,
+          "height": 1688
+        },
+        "dpr": 2,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 972,
+        "elapsed": 17.533300000000033,
+        "reducedMotion": false,
+        "camera": [
+          -0.003650162698061175,
+          2.9854040511600006,
+          10.647765095859238
+        ],
+        "drawCalls": 5,
+        "triangles": 227078,
+        "geometries": 4,
+        "textures": 3,
+        "programs": 4,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "touch pressure",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+          "sidePush": 0.9,
+          "forwardPush": 0.8
+        },
+        "capture": {
+          "width": 780,
+          "height": 1688,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 2,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "touch": {
+          "available": true,
+          "disabledReason": null,
+          "width": 256,
+          "height": 512,
+          "format": "RGBA16F / manual bilinear",
+          "generation": 1,
+          "steps": 983,
+          "distinctTargets": true,
+          "readId": 11,
+          "writeId": 9,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 1,
+          "pointers": [
+            {
+              "id": 7,
+              "held": true,
+              "valid": true,
+              "uv": [
+                0.07998937545892254,
+                0.09998791544384322
+              ]
+            }
+          ]
+        },
+        "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      }
+    },
+    {
+      "name": "portrait-auto-align-0.92-0.1",
+      "u": 0.92,
+      "v": 0.1,
+      "pointer": {
+        "x": 316.61910514606905,
+        "y": 670.1992063599606
+      },
+      "snapshot": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "buffer": {
+          "width": 780,
+          "height": 1688
+        },
+        "dpr": 2,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 1002,
+        "elapsed": 18.09790000000002,
+        "reducedMotion": false,
+        "camera": [
+          0.0012764370853859596,
+          2.9850585386428543,
+          10.647765095859238
+        ],
+        "drawCalls": 5,
+        "triangles": 227078,
+        "geometries": 4,
+        "textures": 3,
+        "programs": 4,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "touch pressure",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+          "sidePush": 0.9,
+          "forwardPush": 0.8
+        },
+        "capture": {
+          "width": 780,
+          "height": 1688,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 2,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "touch": {
+          "available": true,
+          "disabledReason": null,
+          "width": 256,
+          "height": 512,
+          "format": "RGBA16F / manual bilinear",
+          "generation": 1,
+          "steps": 1014,
+          "distinctTargets": true,
+          "readId": 9,
+          "writeId": 11,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 1,
+          "pointers": [
+            {
+              "id": 8,
+              "held": true,
+              "valid": true,
+              "uv": [
+                0.9199819662792463,
+                0.10001884916963603
+              ]
+            }
+          ]
+        },
+        "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      }
+    },
+    {
+      "name": "portrait-byte-align-0.08-0.9",
+      "u": 0.08,
+      "v": 0.9,
+      "pointer": {
+        "x": 73.35523357688471,
+        "y": 173.74051837922553
+      },
+      "snapshot": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "buffer": {
+          "width": 780,
+          "height": 1688
+        },
+        "dpr": 2,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 1825,
+        "elapsed": 32.94299999999967,
+        "reducedMotion": false,
+        "camera": [
+          -0.02151339535862696,
+          3.0126852274568967,
+          10.647765095859238
+        ],
+        "drawCalls": 5,
+        "triangles": 227078,
+        "geometries": 4,
+        "textures": 3,
+        "programs": 4,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "touch pressure",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+          "sidePush": 0.9,
+          "forwardPush": 0.8
+        },
+        "capture": {
+          "width": 780,
+          "height": 1688,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 2,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "touch": {
+          "available": true,
+          "disabledReason": null,
+          "width": 256,
+          "height": 512,
+          "format": "RGBA8 packed16 / manual bilinear",
+          "generation": 2,
+          "steps": 1844,
+          "distinctTargets": true,
+          "readId": 23,
+          "writeId": 25,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 1,
+          "pointers": [
+            {
+              "id": 11,
+              "held": true,
+              "valid": true,
+              "uv": [
+                0.07998580707917108,
+                0.9000141560813693
+              ]
+            }
+          ]
+        },
+        "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      }
+    },
+    {
+      "name": "portrait-byte-align-0.92-0.9",
+      "u": 0.92,
+      "v": 0.9,
+      "pointer": {
+        "x": 316.5924204321412,
+        "y": 173.8594586704119
+      },
+      "snapshot": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "buffer": {
+          "width": 780,
+          "height": 1688
+        },
+        "dpr": 2,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 1854,
+        "elapsed": 33.493199999999675,
+        "reducedMotion": false,
+        "camera": [
+          -0.0186785318069754,
+          3.0114384406999504,
+          10.647765095859238
+        ],
+        "drawCalls": 5,
+        "triangles": 227078,
+        "geometries": 4,
+        "textures": 3,
+        "programs": 4,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "touch pressure",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+          "sidePush": 0.9,
+          "forwardPush": 0.8
+        },
+        "capture": {
+          "width": 780,
+          "height": 1688,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 2,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "touch": {
+          "available": true,
+          "disabledReason": null,
+          "width": 256,
+          "height": 512,
+          "format": "RGBA8 packed16 / manual bilinear",
+          "generation": 2,
+          "steps": 1874,
+          "distinctTargets": true,
+          "readId": 23,
+          "writeId": 25,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 1,
+          "pointers": [
+            {
+              "id": 12,
+              "held": true,
+              "valid": true,
+              "uv": [
+                0.9199995823306537,
+                0.8999984993934859
+              ]
+            }
+          ]
+        },
+        "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      }
+    },
+    {
+      "name": "portrait-byte-align-0.5-0.5",
+      "u": 0.5,
+      "v": 0.5,
+      "pointer": {
+        "x": 195.02843168600432,
+        "y": 422.01759711696656
+      },
+      "snapshot": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "buffer": {
+          "width": 780,
+          "height": 1688
+        },
+        "dpr": 2,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 1884,
+        "elapsed": 34.06249999999968,
+        "reducedMotion": false,
+        "camera": [
+          -0.015019882690232026,
+          3.0099111565063215,
+          10.647765095859238
+        ],
+        "drawCalls": 5,
+        "triangles": 227078,
+        "geometries": 4,
+        "textures": 3,
+        "programs": 4,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "touch pressure",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+          "sidePush": 0.9,
+          "forwardPush": 0.8
+        },
+        "capture": {
+          "width": 780,
+          "height": 1688,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 2,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "touch": {
+          "available": true,
+          "disabledReason": null,
+          "width": 256,
+          "height": 512,
+          "format": "RGBA8 packed16 / manual bilinear",
+          "generation": 2,
+          "steps": 1905,
+          "distinctTargets": true,
+          "readId": 25,
+          "writeId": 23,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 1,
+          "pointers": [
+            {
+              "id": 13,
+              "held": true,
+              "valid": true,
+              "uv": [
+                0.5000162489181812,
+                0.4999968240505683
+              ]
+            }
+          ]
+        },
+        "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      }
+    },
+    {
+      "name": "portrait-byte-align-0.08-0.1",
+      "u": 0.08,
+      "v": 0.1,
+      "pointer": {
+        "x": 73.42457261462445,
+        "y": 670.1189023095301
+      },
+      "snapshot": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "buffer": {
+          "width": 780,
+          "height": 1688
+        },
+        "dpr": 2,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 1913,
+        "elapsed": 34.60999999999969,
+        "reducedMotion": false,
+        "camera": [
+          -0.010938714369835068,
+          3.0082444711113947,
+          10.647765095859238
+        ],
+        "drawCalls": 5,
+        "triangles": 227078,
+        "geometries": 4,
+        "textures": 3,
+        "programs": 4,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "touch pressure",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+          "sidePush": 0.9,
+          "forwardPush": 0.8
+        },
+        "capture": {
+          "width": 780,
+          "height": 1688,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 2,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "touch": {
+          "available": true,
+          "disabledReason": null,
+          "width": 256,
+          "height": 512,
+          "format": "RGBA8 packed16 / manual bilinear",
+          "generation": 2,
+          "steps": 1935,
+          "distinctTargets": true,
+          "readId": 25,
+          "writeId": 23,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 1,
+          "pointers": [
+            {
+              "id": 14,
+              "held": true,
+              "valid": true,
+              "uv": [
+                0.07999953022587669,
+                0.0999974364658891
+              ]
+            }
+          ]
+        },
+        "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      }
+    },
+    {
+      "name": "portrait-byte-align-0.92-0.1",
+      "u": 0.92,
+      "v": 0.1,
+      "pointer": {
+        "x": 316.5526216473394,
+        "y": 670.0647382381162
+      },
+      "snapshot": {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "buffer": {
+          "width": 780,
+          "height": 1688
+        },
+        "dpr": 2,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 1943,
+        "elapsed": 35.1784999999997,
+        "reducedMotion": false,
+        "camera": [
+          -0.006279414539375957,
+          3.0063438807473153,
+          10.647765095859238
+        ],
+        "drawCalls": 5,
+        "triangles": 227078,
+        "geometries": 4,
+        "textures": 3,
+        "programs": 4,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "touch pressure",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+          "sidePush": 0.9,
+          "forwardPush": 0.8
+        },
+        "capture": {
+          "width": 780,
+          "height": 1688,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 2,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "touch": {
+          "available": true,
+          "disabledReason": null,
+          "width": 256,
+          "height": 512,
+          "format": "RGBA8 packed16 / manual bilinear",
+          "generation": 2,
+          "steps": 1966,
+          "distinctTargets": true,
+          "readId": 23,
+          "writeId": 25,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 1,
+          "pointers": [
+            {
+              "id": 15,
+              "held": true,
+              "valid": true,
+              "uv": [
+                0.919970705544596,
+                0.10002925197207742
+              ]
+            }
+          ]
+        },
+        "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      }
+    },
+    {
+      "name": "landscape-auto-align-0.08-0.9",
+      "u": 0.08,
+      "v": 0.9,
+      "pointer": {
+        "x": 358.2481595665688,
+        "y": 64.88958761677385
+      },
+      "snapshot": {
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "buffer": {
+          "width": 1688,
+          "height": 780
+        },
+        "dpr": 2,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 2765,
+        "elapsed": 50.00400000000007,
+        "reducedMotion": false,
+        "camera": [
+          -0.02438294583766712,
+          3.0031217839734774,
+          9.388320632897686
+        ],
+        "drawCalls": 4,
+        "triangles": 227076,
+        "geometries": 4,
+        "textures": 3,
+        "programs": 4,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "touch pressure",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+          "sidePush": 0.9,
+          "forwardPush": 0.8
+        },
+        "capture": {
+          "width": 1688,
+          "height": 780,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 3,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "touch": {
+          "available": true,
+          "disabledReason": null,
+          "width": 256,
+          "height": 512,
+          "format": "RGBA16F / manual bilinear",
+          "generation": 3,
+          "steps": 2795,
+          "distinctTargets": true,
+          "readId": 37,
+          "writeId": 39,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 1,
+          "pointers": [
+            {
+              "id": 18,
+              "held": true,
+              "valid": true,
+              "uv": [
+                0.08001899183815508,
+                0.899982947120401
+              ]
+            }
+          ]
+        },
+        "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      }
+    },
+    {
+      "name": "landscape-auto-align-0.92-0.9",
+      "u": 0.92,
+      "v": 0.9,
+      "pointer": {
+        "x": 485.7181076434587,
+        "y": 64.96700028999545
+      },
+      "snapshot": {
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "buffer": {
+          "width": 1688,
+          "height": 780
+        },
+        "dpr": 2,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 2796,
+        "elapsed": 50.58460000000007,
+        "reducedMotion": false,
+        "camera": [
+          -0.02276719409524143,
+          3.0052559513834445,
+          9.388320632897686
+        ],
+        "drawCalls": 4,
+        "triangles": 227076,
+        "geometries": 4,
+        "textures": 3,
+        "programs": 4,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "touch pressure",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+          "sidePush": 0.9,
+          "forwardPush": 0.8
+        },
+        "capture": {
+          "width": 1688,
+          "height": 780,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 3,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "touch": {
+          "available": true,
+          "disabledReason": null,
+          "width": 256,
+          "height": 512,
+          "format": "RGBA16F / manual bilinear",
+          "generation": 3,
+          "steps": 2827,
+          "distinctTargets": true,
+          "readId": 37,
+          "writeId": 39,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 1,
+          "pointers": [
+            {
+              "id": 19,
+              "held": true,
+              "valid": true,
+              "uv": [
+                0.9199724229563453,
+                0.89997354730514
+              ]
+            }
+          ]
+        },
+        "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      }
+    },
+    {
+      "name": "landscape-auto-align-0.5-0.5",
+      "u": 0.5,
+      "v": 0.5,
+      "pointer": {
+        "x": 422.0209867779377,
+        "y": 195.00528385904505
+      },
+      "snapshot": {
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "buffer": {
+          "width": 1688,
+          "height": 780
+        },
+        "dpr": 2,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 2827,
+        "elapsed": 51.162800000000104,
+        "reducedMotion": false,
+        "camera": [
+          -0.02022686667948284,
+          3.007266624406279,
+          9.388320632897686
+        ],
+        "drawCalls": 4,
+        "triangles": 227076,
+        "geometries": 4,
+        "textures": 3,
+        "programs": 4,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "touch pressure",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+          "sidePush": 0.9,
+          "forwardPush": 0.8
+        },
+        "capture": {
+          "width": 1688,
+          "height": 780,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 3,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "touch": {
+          "available": true,
+          "disabledReason": null,
+          "width": 256,
+          "height": 512,
+          "format": "RGBA16F / manual bilinear",
+          "generation": 3,
+          "steps": 2859,
+          "distinctTargets": true,
+          "readId": 37,
+          "writeId": 39,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 1,
+          "pointers": [
+            {
+              "id": 20,
+              "held": true,
+              "valid": true,
+              "uv": [
+                0.5000131096395635,
+                0.5000046551104548
+              ]
+            }
+          ]
+        },
+        "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      }
+    },
+    {
+      "name": "landscape-auto-align-0.08-0.1",
+      "u": 0.08,
+      "v": 0.1,
+      "pointer": {
+        "x": 358.2674861505971,
+        "y": 325.0707186908828
+      },
+      "snapshot": {
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "buffer": {
+          "width": 1688,
+          "height": 780
+        },
+        "dpr": 2,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 2858,
+        "elapsed": 51.742900000000105,
+        "reducedMotion": false,
+        "camera": [
+          -0.016848720639407504,
+          3.0091247780527985,
+          9.388320632897686
+        ],
+        "drawCalls": 4,
+        "triangles": 227076,
+        "geometries": 4,
+        "textures": 3,
+        "programs": 4,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "touch pressure",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+          "sidePush": 0.9,
+          "forwardPush": 0.8
+        },
+        "capture": {
+          "width": 1688,
+          "height": 780,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 3,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "touch": {
+          "available": true,
+          "disabledReason": null,
+          "width": 256,
+          "height": 512,
+          "format": "RGBA16F / manual bilinear",
+          "generation": 3,
+          "steps": 2891,
+          "distinctTargets": true,
+          "readId": 37,
+          "writeId": 39,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 1,
+          "pointers": [
+            {
+              "id": 21,
+              "held": true,
+              "valid": true,
+              "uv": [
+                0.07996850036248354,
+                0.09996863845672872
+              ]
+            }
+          ]
+        },
+        "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      }
+    },
+    {
+      "name": "landscape-auto-align-0.92-0.1",
+      "u": 0.92,
+      "v": 0.1,
+      "pointer": {
+        "x": 485.70193925829403,
+        "y": 325.00197802903557
+      },
+      "snapshot": {
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "buffer": {
+          "width": 1688,
+          "height": 780
+        },
+        "dpr": 2,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 2889,
+        "elapsed": 52.31990000000013,
+        "reducedMotion": false,
+        "camera": [
+          -0.012801705355179492,
+          3.0107745842533236,
+          9.388320632897686
+        ],
+        "drawCalls": 4,
+        "triangles": 227076,
+        "geometries": 4,
+        "textures": 3,
+        "programs": 4,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "touch pressure",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+          "sidePush": 0.9,
+          "forwardPush": 0.8
+        },
+        "capture": {
+          "width": 1688,
+          "height": 780,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 3,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "touch": {
+          "available": true,
+          "disabledReason": null,
+          "width": 256,
+          "height": 512,
+          "format": "RGBA16F / manual bilinear",
+          "generation": 3,
+          "steps": 2923,
+          "distinctTargets": true,
+          "readId": 37,
+          "writeId": 39,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 1,
+          "pointers": [
+            {
+              "id": 22,
+              "held": true,
+              "valid": true,
+              "uv": [
+                0.9199978170928806,
+                0.10000395947339975
+              ]
+            }
+          ]
+        },
+        "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      }
+    },
+    {
+      "name": "landscape-byte-align-0.08-0.9",
+      "u": 0.08,
+      "v": 0.9,
+      "pointer": {
+        "x": 358.2761521464378,
+        "y": 64.94537393515384
+      },
+      "snapshot": {
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "buffer": {
+          "width": 1688,
+          "height": 780
+        },
+        "dpr": 2,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 3715,
+        "elapsed": 67.18570000000032,
+        "reducedMotion": false,
+        "camera": [
+          -0.024972451394858937,
+          2.9850953500217607,
+          9.388320632897686
+        ],
+        "drawCalls": 4,
+        "triangles": 227076,
+        "geometries": 4,
+        "textures": 3,
+        "programs": 4,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "touch pressure",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+          "sidePush": 0.9,
+          "forwardPush": 0.8
+        },
+        "capture": {
+          "width": 1688,
+          "height": 780,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 3,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "touch": {
+          "available": true,
+          "disabledReason": null,
+          "width": 256,
+          "height": 512,
+          "format": "RGBA8 packed16 / manual bilinear",
+          "generation": 4,
+          "steps": 3756,
+          "distinctTargets": true,
+          "readId": 51,
+          "writeId": 49,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 1,
+          "pointers": [
+            {
+              "id": 25,
+              "held": true,
+              "valid": true,
+              "uv": [
+                0.07999897782987747,
+                0.900000546164295
+              ]
+            }
+          ]
+        },
+        "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      }
+    },
+    {
+      "name": "landscape-byte-align-0.92-0.9",
+      "u": 0.92,
+      "v": 0.9,
+      "pointer": {
+        "x": 485.6853077027289,
+        "y": 65.03298679320953
+      },
+      "snapshot": {
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "buffer": {
+          "width": 1688,
+          "height": 780
+        },
+        "dpr": 2,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 3744,
+        "elapsed": 67.73260000000029,
+        "reducedMotion": false,
+        "camera": [
+          -0.02473957633971314,
+          2.9850054347007737,
+          9.388320632897686
+        ],
+        "drawCalls": 5,
+        "triangles": 227078,
+        "geometries": 4,
+        "textures": 3,
+        "programs": 4,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "touch pressure",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+          "sidePush": 0.9,
+          "forwardPush": 0.8
+        },
+        "capture": {
+          "width": 1688,
+          "height": 780,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 3,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "touch": {
+          "available": true,
+          "disabledReason": null,
+          "width": 256,
+          "height": 512,
+          "format": "RGBA8 packed16 / manual bilinear",
+          "generation": 4,
+          "steps": 3786,
+          "distinctTargets": true,
+          "readId": 51,
+          "writeId": 49,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 1,
+          "pointers": [
+            {
+              "id": 26,
+              "held": true,
+              "valid": true,
+              "uv": [
+                0.9199992291791019,
+                0.8999991662199572
+              ]
+            }
+          ]
+        },
+        "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      }
+    },
+    {
+      "name": "landscape-byte-align-0.5-0.5",
+      "u": 0.5,
+      "v": 0.5,
+      "pointer": {
+        "x": 422.0230671367145,
+        "y": 194.98594870922352
+      },
+      "snapshot": {
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "buffer": {
+          "width": 1688,
+          "height": 780
+        },
+        "dpr": 2,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 3775,
+        "elapsed": 68.31280000000027,
+        "reducedMotion": false,
+        "camera": [
+          -0.02350537669412934,
+          2.9852295220699547,
+          9.388320632897686
+        ],
+        "drawCalls": 4,
+        "triangles": 227076,
+        "geometries": 4,
+        "textures": 3,
+        "programs": 4,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "touch pressure",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+          "sidePush": 0.9,
+          "forwardPush": 0.8
+        },
+        "capture": {
+          "width": 1688,
+          "height": 780,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 3,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "touch": {
+          "available": true,
+          "disabledReason": null,
+          "width": 256,
+          "height": 512,
+          "format": "RGBA8 packed16 / manual bilinear",
+          "generation": 4,
+          "steps": 3818,
+          "distinctTargets": true,
+          "readId": 51,
+          "writeId": 49,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 1,
+          "pointers": [
+            {
+              "id": 27,
+              "held": true,
+              "valid": true,
+              "uv": [
+                0.5000066189166972,
+                0.5000005957766818
+              ]
+            }
+          ]
+        },
+        "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      }
+    },
+    {
+      "name": "landscape-byte-align-0.08-0.1",
+      "u": 0.08,
+      "v": 0.1,
+      "pointer": {
+        "x": 358.22614755120276,
+        "y": 325.1534511643483
+      },
+      "snapshot": {
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "buffer": {
+          "width": 1688,
+          "height": 780
+        },
+        "dpr": 2,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 3807,
+        "elapsed": 68.91080000000024,
+        "reducedMotion": false,
+        "camera": [
+          -0.021223300428007682,
+          2.985799429408079,
+          9.388320632897686
+        ],
+        "drawCalls": 4,
+        "triangles": 227076,
+        "geometries": 4,
+        "textures": 3,
+        "programs": 4,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "touch pressure",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+          "sidePush": 0.9,
+          "forwardPush": 0.8
+        },
+        "capture": {
+          "width": 1688,
+          "height": 780,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 3,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "touch": {
+          "available": true,
+          "disabledReason": null,
+          "width": 256,
+          "height": 512,
+          "format": "RGBA8 packed16 / manual bilinear",
+          "generation": 4,
+          "steps": 3851,
+          "distinctTargets": true,
+          "readId": 49,
+          "writeId": 51,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 1,
+          "pointers": [
+            {
+              "id": 28,
+              "held": true,
+              "valid": true,
+              "uv": [
+                0.0799846253007746,
+                0.09998448005059386
+              ]
+            }
+          ]
+        },
+        "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      }
+    },
+    {
+      "name": "landscape-byte-align-0.92-0.1",
+      "u": 0.92,
+      "v": 0.1,
+      "pointer": {
+        "x": 485.73908981147315,
+        "y": 325.0754078808013
+      },
+      "snapshot": {
+        "viewport": {
+          "width": 844,
+          "height": 390
+        },
+        "buffer": {
+          "width": 1688,
+          "height": 780
+        },
+        "dpr": 2,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 3836,
+        "elapsed": 69.4557000000002,
+        "reducedMotion": false,
+        "camera": [
+          -0.018333915487705892,
+          2.9866073160910047,
+          9.388320632897686
+        ],
+        "drawCalls": 5,
+        "triangles": 227078,
+        "geometries": 4,
+        "textures": 3,
+        "programs": 4,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "touch pressure",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+          "sidePush": 0.9,
+          "forwardPush": 0.8
+        },
+        "capture": {
+          "width": 1688,
+          "height": 780,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 3,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "touch": {
+          "available": true,
+          "disabledReason": null,
+          "width": 256,
+          "height": 512,
+          "format": "RGBA8 packed16 / manual bilinear",
+          "generation": 4,
+          "steps": 3881,
+          "distinctTargets": true,
+          "readId": 49,
+          "writeId": 51,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 1,
+          "pointers": [
+            {
+              "id": 29,
+              "held": true,
+              "valid": true,
+              "uv": [
+                0.9199947723687543,
+                0.10000608117666943
+              ]
+            }
+          ]
+        },
+        "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      }
+    }
+  ],
+  "reference": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "buffer": {
+      "width": 1440,
+      "height": 900
+    },
+    "dpr": 1,
+    "running": true,
+    "contextLost": false,
+    "restores": 0,
+    "frames": 4054,
+    "elapsed": 73.32300000000008,
+    "reducedMotion": false,
+    "camera": [
+      0,
+      3,
+      9.388320632897686
+    ],
+    "drawCalls": 4,
+    "triangles": 227076,
+    "geometries": 4,
+    "textures": 3,
+    "programs": 4,
+    "wall": {
+      "segments": 256,
+      "size": [
+        20,
+        12
+      ],
+      "quality": "reference",
+      "displacement": true,
+      "sheen": true,
+      "view": "rock"
+    },
+    "curtain": {
+      "quality": "reference",
+      "columns": 120,
+      "rows": 400,
+      "visible": true,
+      "view": "normals",
+      "refraction": true,
+      "uv": "u left-to-right, v bottom-to-top",
+      "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+      "sidePush": 0.9,
+      "forwardPush": 0.8
+    },
+    "capture": {
+      "width": 1440,
+      "height": 900,
+      "samples": 4,
+      "format": "RGBA16F linear",
+      "generation": 4,
+      "sourceObjects": [
+        "wall"
+      ]
+    },
+    "touch": {
+      "available": true,
+      "disabledReason": null,
+      "width": 256,
+      "height": 512,
+      "format": "RGBA16F / manual bilinear",
+      "generation": 5,
+      "steps": 4099,
+      "distinctTargets": true,
+      "readId": 63,
+      "writeId": 65,
+      "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+      "count": 1,
+      "pointers": [
+        {
+          "id": 30,
+          "held": true,
+          "valid": true,
+          "uv": [
+            0.4436778595982562,
+            0.6314183276040689
+          ]
+        }
+      ]
+    },
+    "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+  },
+  "reduced": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "buffer": {
+      "width": 1440,
+      "height": 900
+    },
+    "dpr": 1,
+    "running": true,
+    "contextLost": false,
+    "restores": 0,
+    "frames": 4102,
+    "elapsed": 74.17610000000005,
+    "reducedMotion": false,
+    "camera": [
+      0,
+      3,
+      9.388320632897686
+    ],
+    "drawCalls": 4,
+    "triangles": 155076,
+    "geometries": 4,
+    "textures": 3,
+    "programs": 4,
+    "wall": {
+      "segments": 256,
+      "size": [
+        20,
+        12
+      ],
+      "quality": "reference",
+      "displacement": true,
+      "sheen": true,
+      "view": "rock"
+    },
+    "curtain": {
+      "quality": "reduced",
+      "columns": 60,
+      "rows": 200,
+      "visible": true,
+      "view": "normals",
+      "refraction": true,
+      "uv": "u left-to-right, v bottom-to-top",
+      "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+      "sidePush": 0.9,
+      "forwardPush": 0.8
+    },
+    "capture": {
+      "width": 1440,
+      "height": 900,
+      "samples": 4,
+      "format": "RGBA16F linear",
+      "generation": 4,
+      "sourceObjects": [
+        "wall"
+      ]
+    },
+    "touch": {
+      "available": true,
+      "disabledReason": null,
+      "width": 256,
+      "height": 512,
+      "format": "RGBA16F / manual bilinear",
+      "generation": 5,
+      "steps": 4147,
+      "distinctTargets": true,
+      "readId": 63,
+      "writeId": 65,
+      "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+      "count": 1,
+      "pointers": [
+        {
+          "id": 30,
+          "held": true,
+          "valid": true,
+          "uv": [
+            0.4436778595982562,
+            0.6314183276040689
+          ]
+        }
+      ]
+    },
+    "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+  },
+  "console": []
+}

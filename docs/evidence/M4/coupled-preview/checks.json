@@ -1,0 +1,88 @@
+{
+  "snapshot": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "buffer": {
+      "width": 1440,
+      "height": 900
+    },
+    "dpr": 1,
+    "running": true,
+    "contextLost": false,
+    "restores": 0,
+    "frames": 484,
+    "elapsed": 8.595300000000007,
+    "reducedMotion": false,
+    "camera": [
+      0.0033210947874447814,
+      3.012161788519395,
+      9.388320632897686
+    ],
+    "drawCalls": 4,
+    "triangles": 227076,
+    "geometries": 4,
+    "textures": 3,
+    "programs": 4,
+    "wall": {
+      "segments": 256,
+      "size": [
+        20,
+        12
+      ],
+      "quality": "reference",
+      "displacement": true,
+      "sheen": true,
+      "view": "rock"
+    },
+    "curtain": {
+      "quality": "reference",
+      "columns": 120,
+      "rows": 400,
+      "visible": true,
+      "view": "water",
+      "refraction": true,
+      "uv": "u left-to-right, v bottom-to-top",
+      "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+      "sidePush": 0.9,
+      "forwardPush": 0.8
+    },
+    "capture": {
+      "width": 1440,
+      "height": 900,
+      "samples": 4,
+      "format": "RGBA16F linear",
+      "generation": 1,
+      "sourceObjects": [
+        "wall"
+      ]
+    },
+    "touch": {
+      "available": true,
+      "disabledReason": null,
+      "width": 256,
+      "height": 512,
+      "format": "RGBA16F / manual bilinear",
+      "generation": 1,
+      "steps": 485,
+      "distinctTargets": true,
+      "readId": 11,
+      "writeId": 9,
+      "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+      "count": 0,
+      "pointers": []
+    },
+    "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+  },
+  "field": {
+    "max": 0,
+    "sum": 0,
+    "centroidU": null,
+    "centroidV": null,
+    "minX": 0,
+    "maxX": 0
+  },
+  "console": []
+}

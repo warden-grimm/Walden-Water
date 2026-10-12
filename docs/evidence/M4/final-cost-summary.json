@@ -1,0 +1,97 @@
+[
+  {
+    "label": "final-m3-idle",
+    "frames": 3389,
+    "deliveredTouchStarts": 0,
+    "frameMedianMs": 17.69999999999709,
+    "frameP95Ms": 18.100000000002183,
+    "gpu": {
+      "count": 3388,
+      "medianMs": 1.5616,
+      "p95Ms": 5.787648
+    },
+    "cpu": {
+      "count": 3389,
+      "medianMs": 0.09999999403953552,
+      "p95Ms": 0.19999998807907104
+    },
+    "drawCalls": 3,
+    "triangles": 227074
+  },
+  {
+    "label": "final-m4-idle",
+    "frames": 3391,
+    "deliveredTouchStarts": 0,
+    "frameMedianMs": 17.60000000000582,
+    "frameP95Ms": 18.100000000002183,
+    "gpu": {
+      "count": 3390,
+      "medianMs": 3.079168,
+      "p95Ms": 5.620736
+    },
+    "cpu": {
+      "count": 3391,
+      "medianMs": 0.09999999403953552,
+      "p95Ms": 0.20000001788139343
+    },
+    "drawCalls": 4,
+    "triangles": 227076
+  },
+  {
+    "label": "final-m3-interaction",
+    "frames": 3380,
+    "deliveredTouchStarts": 2,
+    "frameMedianMs": 17.89999999999418,
+    "frameP95Ms": 18.10000000000582,
+    "gpu": {
+      "count": 3379,
+      "medianMs": 1.267712,
+      "p95Ms": 4.70016
+    },
+    "cpu": {
+      "count": 3380,
+      "medianMs": 0.09999999403953552,
+      "p95Ms": 0.20000001788139343
+    },
+    "drawCalls": 3,
+    "triangles": 227074
+  },
+  {
+    "label": "final-m4-interaction",
+    "frames": 3380,
+    "deliveredTouchStarts": 2,
+    "frameMedianMs": 17.89999999999418,
+    "frameP95Ms": 18.100000000002183,
+    "gpu": {
+      "count": 3379,
+      "medianMs": 3.38944,
+      "p95Ms": 5.566464
+    },
+    "cpu": {
+      "count": 3380,
+      "medianMs": 0.10000002384185791,
+      "p95Ms": 0.20000001788139343
+    },
+    "drawCalls": 4,
+    "triangles": 227076
+  },
+  {
+    "label": "final-m4-byte-interaction",
+    "frames": 3383,
+    "deliveredTouchStarts": 2,
+    "frameMedianMs": 17.80000000000291,
+    "frameP95Ms": 18.100000000002183,
+    "gpu": {
+      "count": 3382,
+      "medianMs": 3.385344,
+      "p95Ms": 5.905408
+    },
+    "cpu": {
+      "count": 3383,
+      "medianMs": 0.10000002384185791,
+      "p95Ms": 0.20000001788139343
+    },
+    "drawCalls": 4,
+    "triangles": 227076
+  }
+]

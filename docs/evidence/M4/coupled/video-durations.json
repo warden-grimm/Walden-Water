@@ -1,0 +1,22 @@
+[
+    {
+        "file":  "landscape-auto.webm",
+        "durationSeconds":  13.915172,
+        "bytes":  3191895
+    },
+    {
+        "file":  "landscape-byte.webm",
+        "durationSeconds":  14.025396,
+        "bytes":  3201857
+    },
+    {
+        "file":  "portrait-auto.webm",
+        "durationSeconds":  13.838827,
+        "bytes":  3249336
+    },
+    {
+        "file":  "portrait-byte.webm",
+        "durationSeconds":  13.874089,
+        "bytes":  3275049
+    }
+]

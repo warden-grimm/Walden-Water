@@ -1,7 +1,7 @@
 import { Color, Mesh, ShaderMaterial, Vector2 } from 'three';
 import { choices } from '../config.js';
 import { createCurtainGeometry } from './curtainGeometry.js';
-import vertexShader from '../shaders/water.vert.glsl?raw';
+import vertexSource from '../shaders/water.vert.glsl?raw';
 import fragmentSource from '../shaders/water.frag.glsl?raw';
 import common from '../shaders/water-common.glsl?raw';
 import noise from '../shaders/noise.glsl?raw';
@@ -25,12 +25,15 @@ export function createWaterCurtain(config, time, light, wallTexture, fieldUnifor
     uFresnel: ['water', 'fresnel'], uFresnelPower: ['water', 'fresnelPower'],
     uRefraction: ['refraction', 'enabled'], uRefractionStrength: ['refraction', 'strength'],
     uTransmission: ['water', 'transmission'], uGlint: ['water', 'glint'], uGloss: ['water', 'gloss'], uAmbient: ['water', 'ambient'],
+    uTouchRadius: ['touch', 'radius'], uSidePush: ['touch', 'sidePush'], uForwardPush: ['touch', 'forwardPush'],
+    uGapStart: ['touch', 'gapStart'], uGapEnd: ['touch', 'gapEnd'], uFoam: ['touch', 'foam'],
+    uFoamOpacity: ['touch', 'foamOpacity'], uFoamColor: ['touch', 'foamColor'],
   };
   for (const [name, [group, key]] of Object.entries(bindings)) {
     const value = config[group][key];
     uniforms[name] = { value: typeof value === 'string' ? new Color(value) : value };
   }
-  const material = new ShaderMaterial({ uniforms, vertexShader,
+  const material = new ShaderMaterial({ uniforms, vertexShader: vertexSource.replace('// __FIELD__', fieldSource),
     fragmentShader: fragmentSource.replace('// __WATER__', common.replace('// __NOISE__', noise)).replace('// __LIGHT__', lightSource).replace('// __FIELD__', fieldSource),
     transparent: true, depthWrite: false, premultipliedAlpha: true });
   // One front-facing sheet, one transparent draw: no back/front sorting passes.
@@ -58,6 +61,7 @@ export function createWaterCurtain(config, time, light, wallTexture, fieldUnifor
   }
   return { mesh, configure,
     snapshot: () => ({ quality: config.curtain.quality, columns: mesh.geometry.parameters.widthSegments, rows: mesh.geometry.parameters.heightSegments,
-      visible: mesh.visible, view: config.water.view, refraction: config.refraction.enabled, uv: 'u left-to-right, v bottom-to-top', geometryMatchesRaycast: true }),
+      visible: mesh.visible, view: config.water.view, refraction: config.refraction.enabled, uv: 'u left-to-right, v bottom-to-top',
+      contactSurface: 'analytical resting ribbon; GPU deformation uses rest UV', sidePush: config.touch.sidePush, forwardPush: config.touch.forwardPush }),
     dispose() { mesh.geometry.dispose(); material.dispose(); } };
 }

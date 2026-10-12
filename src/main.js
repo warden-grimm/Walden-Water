@@ -99,7 +99,7 @@ function snapshot() {
     wall: world.wall.snapshot(),
     curtain: world.curtain.snapshot(), capture: world.capture.snapshot(),
     touch: { ...world.field.snapshot(), ...pointers.snapshot() },
-    effects: 'M4 checkpoint: touch field and overlay; M3 water; no postprocessing',
+    effects: 'M4: touch field, water parting and foam; no particles or postprocessing',
     userAgent: navigator.userAgent,
   };
 }

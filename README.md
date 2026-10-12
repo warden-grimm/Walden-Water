@@ -1,6 +1,6 @@
 # Walden Water
 
-A static Three.js page using plain JavaScript, Vite, and GitHub Pages. Accepted M3 includes a curved falling water curtain, accelerated streaks, wall refraction and localized glints over a displaced wet rock wall. Touch interaction, spray, the visible light volume and the pool follow in later milestones.
+A static Three.js page using plain JavaScript, Vite, and GitHub Pages. Accepted M3 includes a curved falling water curtain, accelerated streaks, wall refraction and localized glints over a displaced wet rock wall. The local M4 candidate adds multi-touch parting, downward wakes and rim foam; its review and physical-phone gate are pending. The public site still runs M3. Spray, the visible light volume and the pool follow in later milestones.
 
 ## Waterfall build and review
 
@@ -38,6 +38,7 @@ src/
   config.js                   Implemented tunables and GUI ranges
   time.js                     Shared simulation timeline/uniform
   debug/                      Lazy-loaded lil-gui and bounded frame-time sampling
+  interaction/                Pointer tracking, resting contacts and TouchField
   styles.css                  Page layout and styling
   scene/
     createScene.js            Scene assembly and resource ownership
@@ -100,5 +101,26 @@ Use the published Pages URL in Safari or Chrome directly, then repeat with `?deb
 4. Compare the curtain's reference/reduced quality, refraction's full/half `wallResolution`, and auto/byte precision. Reload to restore defaults. The half-resolution option softens the entire wall background.
 
 Touching the curtain does not disturb it yet; that is M4. These M3 checks establish real-device rendering and cost evidence before interaction work, and do not replace M4's multi-touch/latency review or M9's final phone certification.
+
+## M4 candidate device check
+
+Use this script only after an M4 candidate has been deployed or otherwise made
+reachable on the phone. The current public M3 page cannot supply this evidence.
+Record tester, device model, OS and browser versions, and whether each check passes.
+
+1. In portrait, hold one finger on the curtain for three seconds, add a second,
+   then lift each separately. Each opening should follow its own finger; after
+   release the wake should travel down and heal in about one to two seconds.
+2. Drag slowly, then quickly, at the top, centre and corners. Observe whether
+   parting stays under contact without visible trailing lag. A short external
+   slow-motion recording is useful; a direct observation is acceptable. Report
+   numeric latency only if it was measured.
+3. Repeat in landscape and rotate while holding. Switch apps while touching,
+   return, and touch again. No stuck opening, unintended scroll or zoom should remain.
+4. In `?debug`, set **touch → precision** to **byte**, hide the panel if needed,
+   and repeat the two-finger and drag checks. The opening and recovery should
+   remain comparable. **touch → overlay** exposes the field; reload for defaults.
+
+M4 acceptance requires this real-phone evidence and Claude's exact-commit review.
 
 References: [Vite relative base paths](https://vite.dev/guide/build.html#relative-base), [Vite GitHub Pages deployment](https://vite.dev/guide/static-deploy.html#github-pages), [Three.js documentation](https://threejs.org/docs/).

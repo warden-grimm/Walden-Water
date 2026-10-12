@@ -1,0 +1,7 @@
+{
+  "measuredAt": "2026-10-12T19:48:33.787Z",
+  "rebuilds": [],
+  "hmr": [],
+  "restores": [],
+  "error": "{\"code\":-32602,\"message\":\"Must send a TouchStart first to start a new touch.\"}"
+}

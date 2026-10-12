@@ -21,6 +21,7 @@ export const config = {
   refraction: { enabled: true, strength: 0.018, wallResolution: 1, precision: 'auto', samples: 4 },
   touch: { enabled: true, overlay: false, width: 256, height: 512, precision: 'auto',
     radius: 0.13, holdStrength: 0.85, velocityGain: 0.12, velocityHold: 0.05, velocityWindow: 0.05, maxStrength: 1,
+    sidePush: 0.9, forwardPush: 0.8, gapStart: 0.001, gapEnd: 0.12, foam: 0.6, foamOpacity: 0.35, foamColor: '#bad0d0',
     recovery: 1.6, diffusion: 3, transport: 0.7, neutralThreshold: 0.001, maxStep: 1 / 30 },
   markers: { color: '#819598', opacity: 0, thickness: 0.018, overhang: 0.16, depth: 0.01 },
   timing: { maxDelta: 0.05 },
@@ -30,7 +31,7 @@ export const config = {
 export const choices = {
   wall: { quality: ['reference', 'reduced'], view: ['rock', 'normals', 'light mask', 'wet mask'] },
   curtain: { quality: ['reference', 'reduced'] },
-  water: { view: ['water', 'flow bands', 'uv', 'refraction', 'coverage', 'light mask'] },
+  water: { view: ['water', 'flow bands', 'uv', 'refraction', 'coverage', 'light mask', 'touch pressure', 'normals'] },
   refraction: { precision: ['auto', 'byte'] },
   touch: { precision: ['auto', 'byte'] },
 };
@@ -57,6 +58,7 @@ export const ranges = {
   refraction: { strength: [0, 0.08, 0.001], wallResolution: [0.5, 1, 0.1], samples: [0, 4, 2] },
   touch: { width: [64, 512, 64], height: [128, 1024, 128], radius: [0.06, 0.3, 0.01],
     holdStrength: [0.1, 1, 0.01], velocityGain: [0, 0.5, 0.01], velocityHold: [0.02, 0.15, 0.005], velocityWindow: [0.02, 0.1, 0.005], maxStrength: [0.1, 1, 0.01],
+    sidePush: [0, 1.5, 0.01], forwardPush: [0, 1.5, 0.01], gapStart: [0.0005, 0.1, 0.0005], gapEnd: [0.02, 0.5, 0.005], foam: [0, 1, 0.01], foamOpacity: [0, 1, 0.01],
     recovery: [0.5, 3, 0.1], diffusion: [0, 12, 0.1], transport: [0, 1.5, 0.05],
     neutralThreshold: [0.0005, 0.005, 0.0005], maxStep: [1 / 120, 1 / 30, 1 / 120] },
   markers: { opacity: [0, 1, 0.01], thickness: [0.005, 0.05, 0.001], overhang: [0, 0.4, 0.01], depth: [0.001, 0.05, 0.001] },
