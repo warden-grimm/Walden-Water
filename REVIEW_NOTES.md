@@ -243,6 +243,15 @@
 - [Live verification](docs/evidence/M4/deployment/README.md): HTML and JS/CSS hashes match the local build; normal/debug routes work; desktop and emulated portrait/landscape deliver two contacts and recover to exact neutral, including forced byte. No browser warnings/errors. This proves publication and desktop behavior, not physical-phone acceptance.
 - User remains the intended iPhone15 Pro Max tester. iOS/browser versions and M4 multi-touch/latency observations are pending. Ask the user to reload the live candidate and run the linked phone script, including slow/fast swipe feel to disposition the strength-saturation nit. M4 is still **CHANGES REQUESTED (phone evidence only)**; no M5 advancement.
 
+### M4 — contrast follow-up after Chrome on iOS feedback
+
+- User reports the deployed M4 candidate works great in Chrome on iOS with no lag or bugs; requested a modest contrast increase. [Exact feedback and limits](docs/evidence/M4/contrast/README.md). Previously named device: iPhone 15 Pro Max; same-device assumption, versions and individually confirmed phone-script steps remain unspecified. Do not infer a recording, measured latency or forced-byte phone test.
+- Application delta: only rock color `#525c66` → `#4b555e`, curtain color `#88adb7` → `#9cbdc6`, opacity `0.36` → `0.40` in `src/config.js`. All remain GUI controls. No interaction/lighting/shader/geometry/dependency change, and no M5 work.
+- Last accepted implementation BASE is M3 `a4b55164809c009fbb12b7d10929150ebc3ce3b0`; previous full M4 code review covers `e2a45837b75a1f4c0b135c229dd265a682428867`. Re-review the focused contrast delta and new qualitative phone evidence; M4 acceptance remains subject to Claude's verdict.
+- Preview: `npm run dev -- --host 127.0.0.1 --port 5174 --strictPort`. [Matched portrait/landscape and two-contact evidence](docs/evidence/M4/contrast/README.md), captured via `node docs/evidence/M4/contrast-verify.mjs`. Both auto and forced byte deliver two contacts and recover to exact neutral; no browser errors/warnings. Manual visual check: water streaks are clearer, rock detail/wet sheen remains, and off-beam water stays subdued.
+- Cost: same 4 draws / 227076 triangles, target sizes and programs. Previous matched M4 performance evidence remains applicable to the unchanged pipeline; no new phone FPS claim.
+- Validation: `npm test` 17/17 pass; `npm run build` passes (572.09 kB / 146.98 kB gzip main bundle, existing >500 kB warning); `git diff --check` passes. No new unit tests for color defaults; no spec deviations. Existing M5/M6/M8/M9 nits retain their owners/deadlines.
+
 ### M<n> — <summary>
 
 - Status:
