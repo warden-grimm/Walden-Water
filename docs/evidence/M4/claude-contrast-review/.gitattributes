@@ -1,0 +1,2 @@
+# Preserve the reviewer's exact artifact bytes, including JSON line endings.
+* -text

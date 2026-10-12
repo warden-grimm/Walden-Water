@@ -1,9 +1,10 @@
 import {connect,browserSend,sleep} from '../M3/cdp.mjs';
 import {mkdir,readFile,writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
-const base='https://warden-grimm.github.io/Walden-Water/',out=new URL('./deployment/',import.meta.url);
+// Optional output directory and SHAs keep subsequent releases separate from the original evidence.
+const base='https://warden-grimm.github.io/Walden-Water/',out=new URL(process.argv[2]||'./deployment/',import.meta.url);
 await mkdir(out,{recursive:true});
-const result={measuredAt:new Date().toISOString(),deployment:'6c856e5db73cad7d74e90f4959ab87486bb10607',reviewedImplementation:'e2a45837b75a1f4c0b135c229dd265a682428867',assets:[],views:[]};
+const result={measuredAt:new Date().toISOString(),deployment:process.argv[3]||'6c856e5db73cad7d74e90f4959ab87486bb10607',reviewedImplementation:process.argv[4]||'e2a45837b75a1f4c0b135c229dd265a682428867',assets:[],views:[]};
 const html=await(await fetch(base,{headers:{'Cache-Control':'no-cache'}})).text();
 const localHtml=await readFile(new URL('../../../dist/index.html',import.meta.url),'utf8');
 if(html.trim()!==localHtml.trim())throw new Error('Live HTML differs from reviewed local build');
