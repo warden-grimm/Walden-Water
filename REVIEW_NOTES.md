@@ -208,6 +208,12 @@
 - **Review:** [Claude recheck](docs/reviews/M4-checkpoint-r2.md), DRAFT FEEDBACK at `69e3852e044e60a220c7a6c3c72b1f53534b2632`: blocker 1 resolved, no blockers, coupling may proceed within M4. This does not approve M4. [Archived probes](docs/evidence/M4/claude-fix-review/ARCHIVE.md) include controlled timestamps, mutation checks against the old tracker, 14/14 neutral-decay cases and startup/restore failure tests.
 - **Outcome:** Separate Orca task `task_1ac2e0cc3196`, dispatch `ctx_ece5b6228195`, same M4 run. Report committed unchanged as `42e5772` before release, fast-forwarded to builder; workspace preserved and reviewer resources stopped. Builder owns the remaining successful-retry preference bug and timestamp jitter/expiry robustness before final M4, along with displaced-contact alignment and full cost/phone evidence.
 
+### M4 — Remaining checkpoint nits addressed
+
+- Field availability now gates pointer input and overlay separately from user preferences. A healthy size/format/context retry restores requested touch/overlay automatically; an intentional disabled setting remains disabled. GUI settings therefore stay truthful. [App retry evidence](docs/evidence/M4/retry/results.json) demonstrates pressure 0.8496 and one pointer after both healthy retry paths, zero input while unavailable or intentionally disabled, and only the expected warnings.
+- A fixed, reusable 16-sample input ring estimates velocity over a configurable 50 ms window. Expiry uses render-clock elapsed time after the last consumed event, so event-clock offsets cannot prolong a boost. [Adapted reviewer probe](docs/evidence/M4/retry/velocity.json) and new regression tests cover timestamp jitter and a +200 ms skew. No predicted positions or per-frame allocation added.
+- 17/17 tests and build pass (569.77 kB raw / 146.22 kB gzip main bundle; existing warning). Coupling remains the next implementation step; these nits will be included in the full exact-head M4 review. Physical-phone evidence remains pending.
+
 ### M<n> — <summary>
 
 - Status:

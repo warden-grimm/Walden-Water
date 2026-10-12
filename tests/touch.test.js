@@ -130,3 +130,36 @@ test('rapid re-press re-arms a pending ID and another finger does not erase a sw
   canvas.send('pointerup', 1); tracker.update(view.camera); assert.equal(tracker.count.value, 1);
   tracker.dispose();
 });
+
+test('velocity history reduces timestamp jitter and expires despite an event-clock offset', () => {
+  const settings = structuredClone(config); settings.curtain.bow = 0;
+  const view = createCamera(settings, { value: 0 }); view.configure(1, true);
+  const canvas = new Surface(), tracker = createPointerTracker(canvas, settings, new Surface(), new Surface());
+  canvas.send('pointerdown', 1, 400, 500, 'touch', 1, 200); tracker.update(view.camera, 0);
+  let event = 1; const strengths = [];
+  for (let frame = 1; frame <= 144; frame++) {
+    const seconds = frame / 144;
+    while (event / 60 <= seconds + 1e-9) {
+      const t = event / 60, jitter = event % 2 ? 4 : -4;
+      canvas.send('pointermove', 1, 400 + 100 * t, 500, 'touch', 1, 200 + t * 1000 + jitter); event++;
+    }
+    tracker.update(view.camera, seconds * 1000);
+    if (seconds > 0.1) strengths.push(tracker.strengths[0]);
+  }
+  assert.ok(Math.max(...strengths) - Math.min(...strengths) < 0.035, 'window reduces the old 0.073 jitter spread');
+  tracker.update(view.camera, 1000 + settings.touch.velocityHold * 1000 + 1);
+  assert.ok(Math.abs(tracker.strengths[0] - settings.touch.holdStrength) < 1e-6, 'future event clock cannot retain stale velocity');
+  tracker.dispose();
+});
+
+test('temporary field unavailability preserves the requested input setting', () => {
+  const settings = structuredClone(config), view = createCamera(settings, { value: 0 }); view.configure(1, true);
+  const canvas = new Surface(), tracker = createPointerTracker(canvas, settings, new Surface(), new Surface());
+  tracker.setAvailable(false); canvas.send('pointerdown'); tracker.update(view.camera);
+  assert.equal(tracker.count.value, 0); assert.equal(settings.touch.enabled, true);
+  tracker.setAvailable(true); canvas.send('pointerdown'); tracker.update(view.camera);
+  assert.equal(tracker.count.value, 1);
+  settings.touch.enabled = false; tracker.setAvailable(false); tracker.setAvailable(true);
+  canvas.send('pointerdown'); tracker.update(view.camera); assert.equal(tracker.count.value, 0);
+  tracker.dispose();
+});

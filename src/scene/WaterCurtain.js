@@ -50,7 +50,7 @@ export function createWaterCurtain(config, time, light, wallTexture, fieldUnifor
     uniforms.uBufferSize.value.set(bufferWidth, bufferHeight);
     uniforms.uTargetSize.value.set(targetWidth, targetHeight);
     uniforms.uView.value = choices.water.view.indexOf(config.water.view);
-    uniforms.uFieldOverlay.value = config.touch.overlay;
+    uniforms.uFieldOverlay.value = config.touch.overlay && fieldUniforms.uFieldAvailable.value;
     for (const [name, [group, field]] of Object.entries(bindings)) {
       const value = config[group][field];
       if (typeof value === 'string') uniforms[name].value.set(value); else uniforms[name].value = value;

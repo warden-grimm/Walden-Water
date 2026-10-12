@@ -1,0 +1,371 @@
+﻿{
+ "hold": 0.85,
+ "gain": 0.12,
+ "velocityHold": 0.05,
+ "cadence": {
+  "50px/s 60Hz-in 60Hz-render": {
+   "moving": {
+    "n": 30,
+    "min": 0.89269,
+    "max": 0.89287,
+    "range": 0.00018
+   },
+   "maxEndErrorUv": 0,
+   "afterStop": []
+  },
+  "50px/s 60Hz-in 120Hz-render": {
+   "moving": {
+    "n": 59,
+    "min": 0.89269,
+    "max": 0.89287,
+    "range": 0.00018
+   },
+   "maxEndErrorUv": 0,
+   "afterStop": []
+  },
+  "50px/s 60Hz-in 144Hz-render": {
+   "moving": {
+    "n": 70,
+    "min": 0.89269,
+    "max": 0.89287,
+    "range": 0.00018
+   },
+   "maxEndErrorUv": 0,
+   "afterStop": []
+  },
+  "100px/s 60Hz-in 60Hz-render": {
+   "moving": {
+    "n": 30,
+    "min": 0.93514,
+    "max": 0.93573,
+    "range": 0.0006
+   },
+   "maxEndErrorUv": 0,
+   "afterStop": []
+  },
+  "100px/s 60Hz-in 120Hz-render": {
+   "moving": {
+    "n": 59,
+    "min": 0.93514,
+    "max": 0.93573,
+    "range": 0.0006
+   },
+   "maxEndErrorUv": 0,
+   "afterStop": []
+  },
+  "100px/s 60Hz-in 144Hz-render": {
+   "moving": {
+    "n": 70,
+    "min": 0.93514,
+    "max": 0.93573,
+    "range": 0.0006
+   },
+   "maxEndErrorUv": 0,
+   "afterStop": []
+  },
+  "1000px/s 60Hz-in 60Hz-render": {
+   "moving": {
+    "n": 15,
+    "min": 1,
+    "max": 1,
+    "range": 0
+   },
+   "maxEndErrorUv": 0,
+   "afterStop": []
+  },
+  "1000px/s 60Hz-in 120Hz-render": {
+   "moving": {
+    "n": 29,
+    "min": 1,
+    "max": 1,
+    "range": 0
+   },
+   "maxEndErrorUv": 0,
+   "afterStop": []
+  },
+  "1000px/s 60Hz-in 144Hz-render": {
+   "moving": {
+    "n": 34,
+    "min": 1,
+    "max": 1,
+    "range": 0
+   },
+   "maxEndErrorUv": 0,
+   "afterStop": []
+  },
+  "100px/s 125Hz-in 60Hz-render": {
+   "moving": {
+    "n": 30,
+    "min": 0.93514,
+    "max": 0.93574,
+    "range": 0.00059
+   },
+   "maxEndErrorUv": 0,
+   "afterStop": []
+  },
+  "100px/s 125Hz-in 144Hz-render": {
+   "moving": {
+    "n": 71,
+    "min": 0.93514,
+    "max": 0.93574,
+    "range": 0.0006
+   },
+   "maxEndErrorUv": 0,
+   "afterStop": []
+  }
+ },
+ "drift": {
+  "100px/s drift x3 60Hz": {
+   "moving": {
+    "n": 30,
+    "min": 0.93516,
+    "max": 0.93574,
+    "range": 0.00058
+   },
+   "maxEndErrorUv": 0,
+   "afterStop": []
+  },
+  "100px/s drift x3 120Hz": {
+   "moving": {
+    "n": 59,
+    "min": 0.93516,
+    "max": 0.93574,
+    "range": 0.00058
+   },
+   "maxEndErrorUv": 0,
+   "afterStop": []
+  },
+  "100px/s drift x3 144Hz": {
+   "moving": {
+    "n": 70,
+    "min": 0.93516,
+    "max": 0.93574,
+    "range": 0.00058
+   },
+   "maxEndErrorUv": 0,
+   "afterStop": []
+  },
+  "stationary held, drift x6, 144Hz, repeated same-position moves": {
+   "n": 288,
+   "min": 0.85,
+   "max": 0.85,
+   "range": 0
+  }
+ },
+ "expiry": {
+  "100px/s stop at 0.25s 120Hz": [
+   [
+    8.3,
+    0.9354
+   ],
+   [
+    16.7,
+    0.9354
+   ],
+   [
+    25,
+    0.9354
+   ],
+   [
+    33.3,
+    0.9354
+   ],
+   [
+    41.7,
+    0.9354
+   ],
+   [
+    50,
+    0.85
+   ],
+   [
+    58.3,
+    0.85
+   ],
+   [
+    66.7,
+    0.85
+   ],
+   [
+    75,
+    0.85
+   ],
+   [
+    83.3,
+    0.85
+   ],
+   [
+    91.7,
+    0.85
+   ],
+   [
+    100,
+    0.85
+   ]
+  ],
+  "100px/s stop at 0.25s 144Hz": [
+   [
+    6.9,
+    0.9354
+   ],
+   [
+    13.9,
+    0.9354
+   ],
+   [
+    20.8,
+    0.9354
+   ],
+   [
+    27.8,
+    0.9354
+   ],
+   [
+    34.7,
+    0.9354
+   ],
+   [
+    41.7,
+    0.9354
+   ],
+   [
+    48.6,
+    0.9354
+   ],
+   [
+    55.6,
+    0.85
+   ],
+   [
+    62.5,
+    0.85
+   ],
+   [
+    69.4,
+    0.85
+   ],
+   [
+    76.4,
+    0.85
+   ],
+   [
+    83.3,
+    0.85
+   ]
+  ]
+ },
+ "jitter": {
+  "+-1ms timestamp jitter 60Hz-in 144Hz, 100px/s": {
+   "n": 70,
+   "min": 0.93197,
+   "max": 0.94121,
+   "range": 0.00923
+  },
+  "+-2ms timestamp jitter 60Hz-in 144Hz, 100px/s": {
+   "n": 70,
+   "min": 0.92857,
+   "max": 0.94743,
+   "range": 0.01886
+  },
+  "+-4ms timestamp jitter 60Hz-in 144Hz, 100px/s": {
+   "n": 70,
+   "min": 0.92254,
+   "max": 0.96281,
+   "range": 0.04027
+  }
+ },
+ "skew": {
+  "events +200ms ahead of rAF clock, stop 0.25s (last 3 frames)": [
+   [
+    69.4,
+    0.85
+   ],
+   [
+    76.4,
+    0.85
+   ],
+   [
+    83.3,
+    0.85
+   ]
+  ],
+  "events -1000ms behind rAF clock": {
+   "n": 70,
+   "min": 0.93514,
+   "max": 0.93573,
+   "range": 0.0006
+  }
+ },
+ "pointers": {
+  "sameFrameMouseRepress": {
+   "afterRepress": {
+    "count": 1,
+    "pointers": [
+     {
+      "id": 1,
+      "held": true,
+      "valid": true,
+      "uv": [
+       0.5253041264204568,
+       0.5
+      ]
+     }
+    ]
+   },
+   "afterMove": {
+    "held": true,
+    "count": 1,
+    "captures": 1
+   }
+  },
+  "afterUp": {
+   "count": 0,
+   "ids": 0,
+   "captures": 0
+  },
+  "penRepress": {
+   "count": 1,
+   "pointers": [
+    {
+     "id": 7,
+     "held": true,
+     "valid": true,
+     "uv": [
+      0.5,
+      0.5
+     ]
+    }
+   ]
+  },
+  "afterPenCancel": {
+   "count": 0,
+   "captures": 0
+  },
+  "secondFingerKeepsSweep": {
+   "count": 2,
+   "sweepDu": 0.0508,
+   "strength0": 1
+  },
+  "reentry": {
+   "countOutside": 1,
+   "countBack": 2,
+   "strengthBack": 0.85,
+   "segment": [
+    0.4493,
+    0.6182,
+    0.4493,
+    0.6182
+   ]
+  },
+  "afterBlur": {
+   "count": 0,
+   "ids": 0,
+   "captures": 0
+  },
+  "afterHidden": {
+   "count": 0,
+   "captures": 0
+  },
+  "afterLostCapture": 0
+ }
+}

@@ -151,10 +151,12 @@ contact surface continues through holes instead of losing the finger when
 water parts. M4's next step must preserve screen alignment under displacement;
 the checkpoint does not claim exact raycasts against future GPU-deformed triangles.
 Both ends of a swept segment use the current camera, so drift creates no false
-swipe speed. Velocity uses projected world distance between input samples divided
-by their event timestamp interval, independently of the rendering interval.
-That velocity persists through intervening display frames and expires after
-`touch.velocityHold` seconds without a new event (default 50 ms). Contact is
+swipe speed. Velocity uses projected world distance over a short event-time
+window (`touch.velocityWindow`, default 50 ms), independently of rendering.
+A fixed 16-sample ring per pointer reduces timestamp jitter without hot-path
+allocations. Velocity persists through intervening display frames and expires
+after `touch.velocityHold` seconds without consumed input (default 50 ms),
+measured solely with render time so event-clock skew cannot retain a boost. Contact is
 never extrapolated ahead of the finger. A reused pending pointer ID is re-armed.
 
 The default 256×512 targets have no depth, MSAA or color conversion. RGBA16F
@@ -171,8 +173,10 @@ and validates their interpolation through a **vertex texture sample** and byte
 readback, including exact neutral. Auto mode falls back to packed bytes if
 half-float support or this actual path fails; either float or half-float color
 buffer extension is considered, then actual renderability is tested. If both
-paths fail, touch/overlay are disabled, one diagnostic is logged, and a neutral
-1×1 CPU texture keeps the water rendering. Changing format/size, explicitly
+paths fail, field availability gates touch/overlay, one diagnostic is logged,
+and a neutral 1×1 CPU texture keeps the water rendering. User preferences stay
+intact; a healthy retry automatically restores requested interaction and overlay
+while respecting an intentional disabled setting. Changing format/size, explicitly
 re-enabling touch, or restoring context retries validation. These reads happen only during
 allocation, not the render loop. `?debug` exposes an explicit `inspectTouch()`
 readback for evidence; normal rendering never calls it.

@@ -51,3 +51,19 @@ neither changed application code.
 Node regression tests now cover 30/60/125 Hz input against 30/60/120/144/240 Hz
 rendering, event-velocity expiry at rest, same-frame re-press and a second finger
 arriving during the first finger's sweep. Physical-phone checks remain due.
+
+## Retry and timestamp follow-up
+
+`retry.mjs` / `retry/results.json` exercise unavailable input, a healthy size
+retry, a failed then healthy context restore, and an intentionally disabled
+setting. Availability gates input/overlay independently of the requested
+settings: both healthy retries restore one pointer and pressure 0.8496, while
+the intentional disable remains off. Three expected warnings correspond to
+three failure episodes; no runtime errors. `unavailable-overlay.png` verifies
+that a requested overlay cannot obscure the scene when the field is unavailable.
+
+`retry/velocity.json` reruns the archived r2 Node probe with its explicit builder
+checkout argument. The short input-history window reduces jitter, and the
+render-clock expiry clears the +200 ms event-clock case. New tests cover both
+cases and field availability; 17/17 tests pass. The archive scripts themselves
+remain unchanged. These are controlled input probes, not phone latency evidence.

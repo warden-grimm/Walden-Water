@@ -18,7 +18,8 @@ export function createTouchField(renderer, config, pointers) {
   const geometry = new PlaneGeometry(1, 1), mesh = new Mesh(geometry, material), scene = new Scene(), camera = new OrthographicCamera();
   mesh.frustumCulled = false; scene.add(mesh);
   // Stable objects consumed by curtain/overlay. Only .value changes at a swap.
-  const shared = { uFieldTexture: { value: null }, uFieldSize: uniforms.uFieldSize, uFieldByte: uniforms.uFieldByte };
+  const shared = { uFieldTexture: { value: null }, uFieldSize: uniforms.uFieldSize, uFieldByte: uniforms.uFieldByte,
+    uFieldAvailable: { value: false } };
   // A neutral CPU texture lets the existing water keep rendering even on a
   // device where neither field framebuffer/sampling path is usable.
   const neutral = new DataTexture(new Uint8Array([128, 0, 0, 0]), 1, 1, RGBAFormat, UnsignedByteType);
@@ -89,12 +90,16 @@ export function createTouchField(renderer, config, pointers) {
       if (!pair) throw new Error('No usable touch field framebuffer/sampling path.');
       read?.dispose(); write?.dispose();
       [read, write] = pair; key = nextKey; generation++; dirty = false; failure = null;
+      shared.uFieldAvailable.value = true; pointers.setAvailable?.(true);
       const nextFormat = read.texture.type === HalfFloatType ? 'RGBA16F / manual bilinear' : 'RGBA8 packed16 / manual bilinear';
       if (format !== nextFormat) { format = nextFormat; console.info(`[Walden] Touch field: ${format}; framebuffer, vertex sampling and neutral checks passed`); }
       validation = 'render + signed/pressure interpolation + vertex sampling + neutral passed';
     } catch (error) {
       read?.dispose(); write?.dispose(); read = write = null;
-      key = nextKey; dirty = false; settings.enabled = enabled = false; settings.overlay = false; pointers.clear();
+      key = nextKey; dirty = false; shared.uFieldAvailable.value = false;
+      // Availability is separate from user preferences. Healthy retries resume
+      // requested interaction/overlay without overwriting their GUI settings.
+      pointers.setAvailable?.(false); pointers.clear();
       const reason = error instanceof Error ? error.message : String(error);
       if (failure !== reason) console.warn(`[Walden] Touch disabled: ${reason} Water rendering continues.`);
       failure = reason; format = 'disabled / neutral texture'; validation = 'failed';
@@ -153,7 +158,7 @@ export function createTouchField(renderer, config, pointers) {
   }
   return { uniforms: shared, configure, update, reset() { dirty = true; pointers.clear(); },
     inspect,
-    contextRestored() { read = write = null; key = ''; shared.uFieldTexture.value = uniforms.uFieldTexture.value = null; },
+    contextRestored() { read = write = null; key = ''; shared.uFieldAvailable.value = false; pointers.setAvailable?.(false); shared.uFieldTexture.value = uniforms.uFieldTexture.value = null; },
     snapshot: () => ({ available: !!read, disabledReason: failure, width: read?.width, height: read?.height, format, generation, steps,
       distinctTargets: read !== write, readId: read?.texture.id, writeId: write?.texture.id, validation }),
     dispose() { read?.dispose(); write?.dispose(); neutral.dispose(); geometry.dispose(); material.dispose(); shared.uFieldTexture.value = null; } };
