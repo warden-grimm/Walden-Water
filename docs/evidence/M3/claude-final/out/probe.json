@@ -1,0 +1,294 @@
+{
+ "hidden": false,
+ "initial": {
+  "viewport": {
+   "width": 1440,
+   "height": 900
+  },
+  "buffer": {
+   "width": 1440,
+   "height": 900
+  },
+  "dpr": 1,
+  "running": true,
+  "contextLost": false,
+  "restores": 0,
+  "frames": 134,
+  "elapsed": 2.250199999999998,
+  "reducedMotion": false,
+  "camera": [
+   0.017716020817558,
+   3.008156591593313,
+   9.388320632897686
+  ],
+  "drawCalls": 3,
+  "triangles": 227074,
+  "geometries": 3,
+  "textures": 1,
+  "programs": 3,
+  "wall": {
+   "segments": 256,
+   "size": [
+    20,
+    12
+   ],
+   "quality": "reference",
+   "displacement": true,
+   "sheen": true,
+   "view": "rock"
+  },
+  "curtain": {
+   "quality": "reference",
+   "columns": 120,
+   "rows": 400,
+   "visible": true,
+   "view": "water",
+   "refraction": true,
+   "uv": "u left-to-right, v bottom-to-top",
+   "geometryMatchesRaycast": true
+  },
+  "capture": {
+   "width": 1440,
+   "height": 900,
+   "samples": 4,
+   "format": "RGBA16F linear",
+   "generation": 1,
+   "sourceObjects": [
+    "wall"
+   ]
+  },
+  "effects": "M3 curved flowing curtain; isolated wall capture/refraction; shared shaft light; no postprocessing",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+ },
+ "byteSnap": {
+  "width": 1440,
+  "height": 900,
+  "samples": 4,
+  "format": "SRGB8_ALPHA8",
+  "generation": 2,
+  "sourceObjects": [
+   "wall"
+  ]
+ },
+ "autoVsByte": {
+  "max": 2,
+  "changed": 554074,
+  "mean": 0.16862962962962963,
+  "boundsAbove1": [
+   549,
+   190,
+   924,
+   623
+  ]
+ },
+ "uniqueAuto": 5843,
+ "uniqueByte": 4053,
+ "zeroByteVsWallByte": {
+  "max": 0,
+  "changed": 0,
+  "mean": 0,
+  "boundsAbove1": null
+ },
+ "zeroAutoVsWallAuto": {
+  "max": 0,
+  "changed": 0,
+  "mean": 0,
+  "boundsAbove1": null
+ },
+ "curtainVsWall": {
+  "max": 75,
+  "changed": 191446,
+  "mean": 2.7462291666666667,
+  "boundsAbove1": [
+   556,
+   77,
+   881,
+   824
+  ]
+ },
+ "refractionOnOff": {
+  "max": 11,
+  "changed": 62829,
+  "mean": 0.032021090534979424,
+  "boundsAbove1": [
+   558,
+   192,
+   873,
+   721
+  ]
+ },
+ "lumUpper": {
+  "water": 85.38161538332857,
+  "wall": 65.58691683332482
+ },
+ "lumLower": {
+  "water": 28.35174416071398,
+  "wall": 22.64156786309413
+ },
+ "lightMovedCurtainDelta": {
+  "max": 74,
+  "changed": 189970,
+  "mean": 2.7236923868312757,
+  "boundsAbove1": [
+   557,
+   77,
+   881,
+   823
+  ]
+ },
+ "contexts": [
+  {
+   "prec": "auto",
+   "lostRunning": false,
+   "running": true,
+   "framesAdvanced": 55,
+   "capture": {
+    "width": 1440,
+    "height": 900,
+    "samples": 4,
+    "format": "RGBA16F linear",
+    "generation": 4,
+    "sourceObjects": [
+     "wall"
+    ]
+   },
+   "geometries": 3,
+   "textures": 1,
+   "programs": 3
+  },
+  {
+   "prec": "auto",
+   "lostRunning": false,
+   "running": true,
+   "framesAdvanced": 55,
+   "capture": {
+    "width": 1440,
+    "height": 900,
+    "samples": 4,
+    "format": "RGBA16F linear",
+    "generation": 5,
+    "sourceObjects": [
+     "wall"
+    ]
+   },
+   "geometries": 3,
+   "textures": 1,
+   "programs": 3
+  },
+  {
+   "prec": "byte",
+   "lostRunning": false,
+   "running": true,
+   "framesAdvanced": 55,
+   "capture": {
+    "width": 1440,
+    "height": 900,
+    "samples": 4,
+    "format": "SRGB8_ALPHA8",
+    "generation": 7,
+    "sourceObjects": [
+     "wall"
+    ]
+   },
+   "geometries": 3,
+   "textures": 1,
+   "programs": 3
+  }
+ ],
+ "contextConsole": [],
+ "visibility": {
+  "hidden": true,
+  "frames": [
+   859,
+   859,
+   897
+  ],
+  "elapsed": [
+   14.384399999999964,
+   14.384399999999964,
+   15.001099999999958
+  ],
+  "running": [
+   false,
+   true
+  ]
+ },
+ "final": {
+  "viewport": {
+   "width": 1440,
+   "height": 900
+  },
+  "buffer": {
+   "width": 1440,
+   "height": 900
+  },
+  "dpr": 1,
+  "running": true,
+  "contextLost": false,
+  "restores": 3,
+  "frames": 897,
+  "elapsed": 15.001099999999958,
+  "reducedMotion": false,
+  "camera": [
+   -0.021468431921623753,
+   2.990438200822266,
+   9.388320632897686
+  ],
+  "drawCalls": 3,
+  "triangles": 227074,
+  "geometries": 3,
+  "textures": 1,
+  "programs": 3,
+  "wall": {
+   "segments": 256,
+   "size": [
+    20,
+    12
+   ],
+   "quality": "reference",
+   "displacement": true,
+   "sheen": true,
+   "view": "rock"
+  },
+  "curtain": {
+   "quality": "reference",
+   "columns": 120,
+   "rows": 400,
+   "visible": true,
+   "view": "water",
+   "refraction": true,
+   "uv": "u left-to-right, v bottom-to-top",
+   "geometryMatchesRaycast": true
+  },
+  "capture": {
+   "width": 1440,
+   "height": 900,
+   "samples": 4,
+   "format": "RGBA16F linear",
+   "generation": 8,
+   "sourceObjects": [
+    "wall"
+   ]
+  },
+  "effects": "M3 curved flowing curtain; isolated wall capture/refraction; shared shaft light; no postprocessing",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+ },
+ "console": [
+  "debug [\"[vite] connecting...\"]",
+  "debug [\"[vite] connected.\"]",
+  "info [\"[Walden] Wall capture: RGBA16F linear\"]",
+  "debug [\"[vite] connecting...\"]",
+  "debug [\"[vite] connected.\"]",
+  "info [\"[Walden] Wall capture: RGBA16F linear\"]",
+  "info [\"[Walden] Wall capture: SRGB8_ALPHA8 (hardware decode; HDR clipped)\"]",
+  "info [\"[Walden] Wall capture: RGBA16F linear\"]",
+  "log [\"THREE.WebGLRenderer: Context Lost.\"]",
+  "log [\"THREE.WebGLRenderer: Context Restored.\"]",
+  "log [\"THREE.WebGLRenderer: Context Lost.\"]",
+  "log [\"THREE.WebGLRenderer: Context Restored.\"]",
+  "info [\"[Walden] Wall capture: SRGB8_ALPHA8 (hardware decode; HDR clipped)\"]",
+  "log [\"THREE.WebGLRenderer: Context Lost.\"]",
+  "log [\"THREE.WebGLRenderer: Context Restored.\"]",
+  "info [\"[Walden] Wall capture: RGBA16F linear\"]"
+ ]
+}

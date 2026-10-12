@@ -137,7 +137,7 @@
 - **Evidence:** [Final captures and checks](docs/evidence/M3/final), scripts `verify.mjs`/`measure.mjs`; Edge155/RTX A4500/Windows, builder strict port5174. Physical phone behavior remains unverified. Two initial timing attempts were cancelled by settings/viewport notifications before completion and retained as invalid; completed runs are recorded separately. The repeat reference run has only its initial observer notification, no sampling-period viewport changes.
 - **Build/validation:** `npm test` passes 10/10 including automatic incomplete-float-to-byte fallback; `npm run build` passes, 552.58 kB raw / 140.50 kB gzip main bundle (existing >500 kB warning). No dependencies or Pages configuration changed. Config keeps lip speed positive; the shader clamps negative sampling distance at the lip, and the checkpoint's extreme-value probe found no NaN/Inf. The final normal calculation additionally clamps Fresnel's dot product.
 - **Manual final review:** (1) Preview ordinary URL and `?debug`; inspect portrait, landscape and ultrawide framing. (2) Follow flow bands down, then switch to water and compare the two orientation clips. (3) Freeze flow/drift, compare refraction off/on and zero-offset wall identity in auto/byte formats. (4) Move the light, compare glints, inspect the wet mask's lip/pool boundaries. (5) Compare curtain presets, full/half wall resolution and target MSAA, checking rebuild counts. (6) Run the fixed sampler, visibility/reduced-motion checks, context cycles and HMR; distinguish the pre-existing post-restore HMR warnings from normal recovery.
-- **Final gate status:** Submitted for an exact-head Claude review; head supplied in dispatch, BASE remains `0354151a78de0eaa228d58591d3618aa43358c51`. No M4 work or deployment performed.
+- **Final gate status:** Accepted with **APPROVE WITH NITS**, no blockers, at `a4b55164809c009fbb12b7d10929150ebc3ce3b0`; BASE remains `0354151a78de0eaa228d58591d3618aa43358c51`. [Claude final review](docs/reviews/M3-review-r1.md). No M4 work or deployment performed.
 
 | Completed 10s warmup + 60s sample | Draws / triangles | Frame median / p95 ms | GPU median / p95 ms | CPU submit median / p95 ms |
 | --- | --- | --- | --- | --- |
@@ -154,6 +154,22 @@
 | Verify water noise precision after hours of continuous uptime; avoid phase-wrap discontinuities if mitigation is required. | Builder | M9 |
 | Pre-existing Three.js stale disposal warnings when HMR follows forced context restoration. | Builder | M8 |
 | Confirm physical testers/models/browser versions and measure reference geometry/target costs before selecting phone presets. | Coordinator / human tester / builder | M4, final phone certification M9 |
+
+### Coordinator outcome — M3 accepted
+
+- **Orca run/task/dispatch:** `run_47018a47ebbd` / `task_06f6d400e9a1` / `ctx_a10d79027406`. Claude independently reviewed the exact final head and returned **APPROVE WITH NITS**, no blockers. The report was committed unchanged as `f20b538` in `claude-m3-review` before worker release and fast-forwarded into the builder checkout. Both M3 review workspaces are preserved.
+- **Independent evidence:** [Archived final review probes](docs/evidence/M3/claude-final/ARCHIVE.md), with SHA-256-verified copies and command logs. Independent `npm ci`, 10/10 tests and build passed. Zero-offset wall identity passed exactly in auto and byte modes; byte/float maximum difference was 2/255. Three context restores, including byte, had zero warnings and stable resources; native tab hiding froze frames/time. Refraction stayed inside the ribbon and glints responded to the light source. Claude relied on the builder's recorded ordinary HMR evidence rather than editing the reviewed source.
+- **Independent cost:** Matched 10s warmup +60s runs each captured 3,600 frames at 1440×900/DPR1. Reference frame median/p95 was 16.7/16.8 ms, GPU 1.854/1.922 ms; hidden curtain was 16.7/16.8 ms, GPU 1.283/2.128 ms. These corroborate the documented added cost without triggering the >10% frame regression gate. Physical-phone performance and thermal equivalence remain unverified.
+- **Next implementation base:** `a4b55164809c009fbb12b7d10929150ebc3ce3b0`, not the subsequent report/archive commits. M3 is complete. M4 has not started; no deployment was performed. Testers, phone models, OS/browser versions and evidence access are still awaiting confirmation from the user.
+- **Cleanup:** Review worker released and both workspaces marked completed. Reviewer port 5175/CDP 9334 and builder's temporary port 5174/CDP 9333 are closed. The user's existing preview on port 5173 remains running.
+
+| Accepted follow-up | Owner | Due |
+| --- | --- | --- |
+| Break up the remaining straight lip and silhouette with the planned spray. | Builder | M5 |
+| Retune glints toward the beam crossing when the visible shaft is added; current energy is concentrated high in the curtain. | Builder | M6 |
+| Resolve pre-existing stale disposal warnings when HMR follows forced context restoration. | Builder | M8 |
+| Check water noise precision after hours of continuous uptime. | Builder | M9 |
+| Confirm physical testers/models/browser versions and evidence access; demonstrate real multi-touch/latency and evaluate geometry/target costs before selecting phone presets. | Coordinator / human tester / builder | M4; final named-phone certification M9 |
 
 ### M<n> — <summary>
 

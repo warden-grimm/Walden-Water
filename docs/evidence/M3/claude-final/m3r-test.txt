@@ -1,0 +1,26 @@
+
+> walden-water@0.1.0 test
+> node --test
+
+[Walden] Wall capture: RGBA16F linear
+[Walden] Wall capture: SRGB8_ALPHA8 (hardware decode; HDR clipped)
+[Walden] Wall capture: RGBA16F linear
+✔ ribbon raycasts return bottom-up UVs on the visible curved surface at both qualities (59.6081ms)
+✔ constant flow phase moves down, accelerating; zero gravity remains defined (0.1947ms)
+✔ wall capture restores destination on success/failure, rejects feedback, falls back and disposes replacements (2.1339ms)
+✔ warmup disjoint does not poison subsequent valid GPU sample, sampling disjoint does (0.3996ms)
+✔ shared timeline excludes hidden time and clamps stalled frames (0.7554ms)
+✔ lip and pool corners stay inside framing at all breathing phases (10.7251ms)
+✔ frame sampler excludes warmup, reports percentiles, and rejects interrupted runs (1.1665ms)
+✔ wall covers frustum at farthest displaced depth, including ultrawide and maximum drift (14.9535ms)
+✔ shared light preserves uniform identity and finite ordered cone/fade when tuned (0.5759ms)
+✔ GPU timer waits for availability, rejects disjoint data, restores pool and supports CPU-only fallback (1.7094ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 475.6399
+test=0

@@ -5,6 +5,11 @@ See `../../reviews/M3-checkpoint-r1.md` for Claude's independent early review of
 are historical draft evidence, preserved unchanged. `final/` is the polished
 submission. Final milestone approval is separate from the checkpoint.
 
+Claude's [final review](../../reviews/M3-review-r1.md) approved implementation
+`a4b55164809c009fbb12b7d10929150ebc3ce3b0` with nits and no blockers.
+[Independent final evidence and provenance](claude-final/ARCHIVE.md) are
+preserved alongside the builder's captures below.
+
 ## Reproduce
 
 Run `npm ci`, `npm test`, `npm run build`, then
