@@ -1,0 +1,223 @@
+{
+  "method": "Separate Chromium 151 via CDP for DPR, trusted mouse drag, reduced motion; visibility handler exercised with controlled document.hidden and actual visibilitychange events",
+  "normal": {
+    "gui": 0,
+    "debug": "undefined",
+    "canvas": 1
+  },
+  "dpr3": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "buffer": {
+      "width": 780,
+      "height": 1688
+    },
+    "dpr": 2,
+    "running": true,
+    "contextLost": false,
+    "restores": 0,
+    "frames": 4,
+    "elapsed": 0.15000000000000002,
+    "reducedMotion": false,
+    "camera": [
+      0.0013118971533982952,
+      3.000574734280396,
+      10.647765095859238
+    ],
+    "drawCalls": 4,
+    "triangles": 8,
+    "geometries": 1,
+    "textures": 0,
+    "programs": 2,
+    "effects": "M1 basic wall, translucent curtain, lip/pool markers; no postprocessing",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36"
+  },
+  "reducedBefore": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "buffer": {
+      "width": 780,
+      "height": 1688
+    },
+    "dpr": 2,
+    "running": true,
+    "contextLost": false,
+    "restores": 0,
+    "frames": 4,
+    "elapsed": 0.15000000000000002,
+    "reducedMotion": true,
+    "camera": [
+      0.0013118971533982952,
+      3.000574734280396,
+      10.647765095859238
+    ],
+    "drawCalls": 4,
+    "triangles": 8,
+    "geometries": 1,
+    "textures": 0,
+    "programs": 2,
+    "effects": "M1 basic wall, translucent curtain, lip/pool markers; no postprocessing",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36"
+  },
+  "reducedAfterDrag": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "buffer": {
+      "width": 780,
+      "height": 1688
+    },
+    "dpr": 2,
+    "running": true,
+    "contextLost": false,
+    "restores": 0,
+    "frames": 6,
+    "elapsed": 0.25,
+    "reducedMotion": true,
+    "camera": [
+      0,
+      3,
+      10.647765095859238
+    ],
+    "drawCalls": 4,
+    "triangles": 8,
+    "geometries": 1,
+    "textures": 0,
+    "programs": 2,
+    "effects": "M1 basic wall, translucent curtain, lip/pool markers; no postprocessing",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36"
+  },
+  "layout": {
+    "width": 390,
+    "height": 844,
+    "scrollWidth": 390,
+    "scrollHeight": 844,
+    "scale": 1,
+    "touchAction": "none"
+  },
+  "visibility": {
+    "method": "Controlled document.hidden getter and visibilitychange in separate Chromium; OS window/tab automation did not yield a reliable hide/resume cycle",
+    "hiddenStart": {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "buffer": {
+        "width": 780,
+        "height": 1688
+      },
+      "dpr": 2,
+      "running": false,
+      "contextLost": false,
+      "restores": 0,
+      "frames": 6,
+      "elapsed": 0.25,
+      "reducedMotion": true,
+      "camera": [
+        0,
+        3,
+        10.647765095859238
+      ],
+      "drawCalls": 4,
+      "triangles": 8,
+      "geometries": 1,
+      "textures": 0,
+      "programs": 2,
+      "effects": "M1 basic wall, translucent curtain, lip/pool markers; no postprocessing",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36"
+    },
+    "hiddenEnd": {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "buffer": {
+        "width": 780,
+        "height": 1688
+      },
+      "dpr": 2,
+      "running": false,
+      "contextLost": false,
+      "restores": 0,
+      "frames": 6,
+      "elapsed": 0.25,
+      "reducedMotion": true,
+      "camera": [
+        0,
+        3,
+        10.647765095859238
+      ],
+      "drawCalls": 4,
+      "triangles": 8,
+      "geometries": 1,
+      "textures": 0,
+      "programs": 2,
+      "effects": "M1 basic wall, translucent curtain, lip/pool markers; no postprocessing",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36"
+    },
+    "resumeStart": {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "buffer": {
+        "width": 780,
+        "height": 1688
+      },
+      "dpr": 2,
+      "running": true,
+      "contextLost": false,
+      "restores": 0,
+      "frames": 6,
+      "elapsed": 0.25,
+      "reducedMotion": true,
+      "camera": [
+        0,
+        3,
+        10.647765095859238
+      ],
+      "drawCalls": 4,
+      "triangles": 8,
+      "geometries": 1,
+      "textures": 0,
+      "programs": 2,
+      "effects": "M1 basic wall, translucent curtain, lip/pool markers; no postprocessing",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36"
+    },
+    "firstFrame": {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "buffer": {
+        "width": 780,
+        "height": 1688
+      },
+      "dpr": 2,
+      "running": true,
+      "contextLost": false,
+      "restores": 0,
+      "frames": 7,
+      "elapsed": 0.25,
+      "reducedMotion": true,
+      "camera": [
+        0,
+        3,
+        10.647765095859238
+      ],
+      "drawCalls": 4,
+      "triangles": 8,
+      "geometries": 1,
+      "textures": 0,
+      "programs": 2,
+      "effects": "M1 basic wall, translucent curtain, lip/pool markers; no postprocessing",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/151.0.0.0 Safari/537.36"
+    }
+  },
+  "gpu": "ANGLE (NVIDIA, NVIDIA RTX A4500 (0x00002232) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+}

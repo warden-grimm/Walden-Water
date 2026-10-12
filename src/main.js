@@ -1,55 +1,149 @@
 import './styles.css';
+import { ACESFilmicToneMapping, SRGBColorSpace, WebGLRenderer } from 'three';
+import { config } from './config.js';
 import { createScene } from './scene/createScene.js';
+import { createTimeline } from './time.js';
 
 const canvas = document.querySelector('#scene');
-const toolbar = document.querySelector('#scene-controls');
-const errorMessage = document.querySelector('#scene-error');
-const motionButton = document.querySelector('#toggle-motion');
-const resetButton = document.querySelector('#reset-view');
-const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+const notice = document.querySelector('#scene-error');
+const noticeText = document.querySelector('#scene-error-text');
+const restart = document.querySelector('#restart');
+const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+const timeline = createTimeline(config.timing);
+let renderer, world, observer, debug;
+let disposed = false;
+let contextLost = false;
+let running = false;
+let frames = 0;
+let restores = 0;
+let width = 1, height = 1;
+let dprQuery;
 
-let experience;
-
-function setMotion(enabled) {
-  experience.setMotion(enabled);
-  motionButton.textContent = enabled ? 'Pause motion' : 'Resume motion';
+function showNotice(message) {
+  noticeText.textContent = message;
+  notice.hidden = false;
 }
 
-function toggleMotion() {
-  setMotion(!experience.motionEnabled);
+function resize() {
+  if (disposed || contextLost) return;
+  debug?.cancel('Settings or viewport changed; restart the sample.');
+  width = Math.max(1, canvas.clientWidth);
+  height = Math.max(1, canvas.clientHeight);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, config.renderer.maxDpr, 2));
+  renderer.setSize(width, height, false);
+  renderer.toneMappingExposure = config.renderer.exposure;
+  world.configure(width / height, motionPreference.matches);
 }
 
-function syncMotionPreference() {
-  setMotion(!reducedMotion.matches);
+function watchDpr() {
+  dprQuery?.removeEventListener('change', onDprChange);
+  dprQuery = matchMedia(`(resolution: ${window.devicePixelRatio}dppx)`);
+  dprQuery.addEventListener('change', onDprChange);
+}
+function onDprChange() { resize(); watchDpr(); }
+
+function render(timestamp) {
+  const rawDelta = timeline.tick(timestamp);
+  world.updateCamera(motionPreference.matches);
+  renderer.render(world.scene, world.camera);
+  frames++;
+  debug?.record(timestamp, rawDelta);
 }
 
-function resetView() {
-  experience.resetView();
+function syncLoop() {
+  timeline.pause();
+  running = !disposed && !contextLost && !document.hidden;
+  if (!running) debug?.cancel('Rendering paused; restart the sample.');
+  renderer.setAnimationLoop(running ? render : null);
+}
+
+function onMotionChange() {
+  debug?.cancel('Motion preference changed; restart the sample.');
+  world.updateCamera(motionPreference.matches);
+}
+function onContextLost(event) {
+  event.preventDefault();
+  contextLost = true;
+  syncLoop();
+  showNotice('The graphics connection was interrupted. Reconnecting… You can also reload the scene.');
+}
+function onContextRestored() {
+  contextLost = false;
+  restores++;
+  // Three.js restores its internal renderer first; scene resources upload lazily.
+  resize();
+  notice.hidden = true;
+  syncLoop();
+}
+function preventGesture(event) { event.preventDefault(); }
+function reload() { window.location.reload(); }
+
+function snapshot() {
+  return {
+    viewport: { width, height }, buffer: { width: canvas.width, height: canvas.height },
+    dpr: renderer.getPixelRatio(), running, contextLost, restores, frames,
+    elapsed: timeline.uniform.value, reducedMotion: motionPreference.matches,
+    camera: world.camera.position.toArray(),
+    drawCalls: renderer.info.render.calls, triangles: renderer.info.render.triangles,
+    geometries: renderer.info.memory.geometries, textures: renderer.info.memory.textures,
+    programs: renderer.info.programs.length,
+    effects: 'M1 basic wall, translucent curtain, lip/pool markers; no postprocessing',
+    userAgent: navigator.userAgent,
+  };
+}
+
+function dispose() {
+  restart.onclick = null;
+  if (disposed) return;
+  disposed = true;
+  renderer?.setAnimationLoop(null);
+  running = false;
+  observer?.disconnect();
+  dprQuery?.removeEventListener('change', onDprChange);
+  window.removeEventListener('resize', resize);
+  document.removeEventListener('visibilitychange', syncLoop);
+  motionPreference.removeEventListener('change', onMotionChange);
+  canvas.removeEventListener('webglcontextlost', onContextLost);
+  canvas.removeEventListener('webglcontextrestored', onContextRestored);
+  for (const type of ['wheel', 'gesturestart', 'gesturechange']) canvas.removeEventListener(type, preventGesture);
+  restart.removeEventListener('click', reload);
+  debug?.dispose();
+  world?.dispose();
+  renderer?.dispose();
 }
 
 try {
-  experience = createScene(canvas);
-  syncMotionPreference();
-  motionButton.addEventListener('click', toggleMotion);
-  resetButton.addEventListener('click', resetView);
-  reducedMotion.addEventListener('change', syncMotionPreference);
-  toolbar.hidden = false;
+  notice.hidden = true;
+  renderer = new WebGLRenderer({ canvas, antialias: true });
+  renderer.outputColorSpace = SRGBColorSpace;
+  renderer.toneMapping = ACESFilmicToneMapping;
+  world = createScene(config, timeline.uniform);
+  observer = new ResizeObserver(resize);
+  observer.observe(canvas);
+  window.addEventListener('resize', resize);
+  document.addEventListener('visibilitychange', syncLoop);
+  motionPreference.addEventListener('change', onMotionChange);
+  canvas.addEventListener('webglcontextlost', onContextLost);
+  canvas.addEventListener('webglcontextrestored', onContextRestored);
+  for (const type of ['wheel', 'gesturestart', 'gesturechange']) canvas.addEventListener(type, preventGesture, { passive: false });
+  restart.addEventListener('click', reload);
+  watchDpr();
+  resize();
+  syncLoop();
+  if (new URLSearchParams(location.search).has('debug')) {
+    import('./debug/panel.js').then(({ createDebugPanel }) => {
+      if (disposed) return; // A fast HMR must not leave an orphan asynchronous GUI.
+      debug = createDebugPanel({ config, resize, snapshot, renderer });
+    }).catch(error => console.error('Debug panel could not load.', error));
+  }
 } catch (error) {
-  console.error('Unable to initialize the Three.js scene.', error);
-  canvas.hidden = true;
-  errorMessage.hidden = false;
+  dispose();
+  restart.onclick = reload;
+  showNotice('The 3D view could not start. Enable WebGL 2 and hardware acceleration, then reload.');
+  console.error('Unable to initialize the scene.', error);
 }
 
-// Release GPU resources and event listeners before Vite replaces this module.
 if (import.meta.hot) {
   import.meta.hot.accept();
-  import.meta.hot.dispose(() => {
-    motionButton.removeEventListener('click', toggleMotion);
-    resetButton.removeEventListener('click', resetView);
-    reducedMotion.removeEventListener('change', syncMotionPreference);
-    experience?.dispose();
-    toolbar.hidden = true;
-    errorMessage.hidden = true;
-    canvas.hidden = false;
-  });
+  import.meta.hot.dispose(dispose);
 }

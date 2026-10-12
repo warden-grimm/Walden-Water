@@ -43,6 +43,22 @@
 
 ## Milestone submission template
 
+### M1 — Scaffold and lifecycle submission
+
+- **Status:** Implemented; awaiting independent Claude review of the exact submitted commit. Stop before M2.
+- **BASE_SHA:** `e03aed336d31985206bfb9be0ea88525cead4d64` (no earlier accepted implementation milestone).
+- **Changed:** Replaced the sculpture/orbit demo with a dark wall, translucent curtain and lip/pool markers; fixed responsive camera and configurable breathing; shared simulation timeline; centralized config and lazy `?debug` lil-gui; DPR/resize/media preference handling; visibility/context/HMR cleanup and accessible recovery notice. Added focused Node tests for framing, clock and sample validity; updated README. Only new dependency: permitted `lil-gui@0.21.0`.
+- **Validation:** `npm test` passes all 3 tests; `npm run build` passes; `git diff --check` passes. Main bundle warning remains documented (530.42 kB raw). `vite.config.js` and Pages workflow are unchanged; generated assets remain relative. No publication.
+- **Preview:** Builder checkout at `http://127.0.0.1:5174/?debug`, strict port 5174. Reviewer must serve its own checkout on port 5175 with `--strictPort`.
+- **Evidence:** [M1 evidence index](docs/evidence/M1/README.md), three viewport PNGs, drift/reduced-motion WebM, raw frame intervals, DPR/drag/layout checks, four HMR cycles, three context cycles and console log. Windows / Chromium 150 (Orca) and 151 (separate CDP), NVIDIA RTX A4500. These are desktop observations, not phone certification.
+- **Performance:** First 60-second baseline after 10-second warmup: 3,412 frames, median 17.5 ms, p95 18.1 ms at 1440×900 / DPR 1, default drift on, GUI hidden, four draws/eight triangles and no effects. Workstation thermal/background conditions uncontrolled. No accepted M1 comparison exists yet.
+- **Early verification issue:** Orca overrides page visibility. Separate browser automation also failed to produce a reliable native hide/resume cycle. The actual application visibility handler passes a controlled getter/event test (two paused seconds, first resumed frame adds zero elapsed time), and the clock test covers resume independently. Native OS backgrounding and physical-phone pinch are explicitly **unverified**; Claude must assess this evidence limitation. No implementation workaround was added for the automation environment.
+- **Manual review:** (1) Open ordinary URL, then `?debug`; verify GUI absence/presence and tune implemented controls. (2) Resize to 390×844, 844×390 and desktop; keep both markers visible, no scroll, cap DPR at 2. (3) Observe default drift, enable actual reduced motion, then drag: camera should remain fixed. (4) Hide/resume using a normal browser, checking paused frames and no time jump; inspect the controlled test limitation above. (5) Repeat context loss/restore and HMR, checking one GUI/canvas/loop and stable resources. (6) Run the fixed sample and production build; inspect relative assets.
+- **Expected gaps:** Finished rock/water shaders, touch simulation, light volume, particles, pool and postprocessing are later milestones. Physical testers/devices remain unconfirmed; arrange before M4. No GitHub remote/Pages configuration yet.
+- **Deviations:** None to M1 product scope. Tiny framing markers make the lip/future pool boundary reviewable. The GUI exposes only implemented features; diagnostic sampling protocol is fixed. Visibility test limitations are disclosed rather than counted as native success.
+- **Review report/reviewed SHA:** Pending Orca dispatch and `docs/reviews/M1-review-r1.md`.
+- **Remaining prior nit:** Extend checkpoint report template before M3; coordinator/builder owns it.
+
 ### M<n> — <summary>
 
 - Status:

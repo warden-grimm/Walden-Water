@@ -1,0 +1,265 @@
+﻿{
+  "id": "97de0b9f-ea52-4318-a92c-28fbc476d030",
+  "ok": true,
+  "result": {
+    "messages": [
+      {
+        "args": [
+          {
+            "type": "string",
+            "value": "[vite]"
+          },
+          {
+            "type": "string",
+            "value": "hot updated: /src/main.js"
+          }
+        ],
+        "text": "[vite] hot updated: /src/main.js",
+        "type": "debug"
+      },
+      {
+        "args": [
+          {
+            "type": "string",
+            "value": "THREE.WebGLRenderer: Context Lost."
+          }
+        ],
+        "text": "THREE.WebGLRenderer: Context Lost.",
+        "type": "log"
+      },
+      {
+        "args": [
+          {
+            "type": "string",
+            "value": "THREE.WebGLRenderer: Context Restored."
+          }
+        ],
+        "text": "THREE.WebGLRenderer: Context Restored.",
+        "type": "log"
+      },
+      {
+        "args": [
+          {
+            "type": "string",
+            "value": "THREE.WebGLRenderer: Context Lost."
+          }
+        ],
+        "text": "THREE.WebGLRenderer: Context Lost.",
+        "type": "log"
+      },
+      {
+        "args": [
+          {
+            "type": "string",
+            "value": "THREE.WebGLRenderer: Context Restored."
+          }
+        ],
+        "text": "THREE.WebGLRenderer: Context Restored.",
+        "type": "log"
+      },
+      {
+        "args": [
+          {
+            "type": "string",
+            "value": "THREE.WebGLRenderer: Context Lost."
+          }
+        ],
+        "text": "THREE.WebGLRenderer: Context Lost.",
+        "type": "log"
+      },
+      {
+        "args": [
+          {
+            "type": "string",
+            "value": "THREE.WebGLRenderer: Context Restored."
+          }
+        ],
+        "text": "THREE.WebGLRenderer: Context Restored.",
+        "type": "log"
+      },
+      {
+        "args": [
+          {
+            "type": "string",
+            "value": "[vite]"
+          },
+          {
+            "type": "string",
+            "value": "hot updated: /src/main.js"
+          }
+        ],
+        "text": "[vite] hot updated: /src/main.js",
+        "type": "debug"
+      },
+      {
+        "args": [
+          {
+            "type": "string",
+            "value": "[vite]"
+          },
+          {
+            "type": "string",
+            "value": "hot updated: /src/main.js"
+          }
+        ],
+        "text": "[vite] hot updated: /src/main.js",
+        "type": "debug"
+      },
+      {
+        "args": [
+          {
+            "type": "string",
+            "value": "[vite]"
+          },
+          {
+            "type": "string",
+            "value": "hot updated: /src/main.js"
+          }
+        ],
+        "text": "[vite] hot updated: /src/main.js",
+        "type": "debug"
+      },
+      {
+        "args": [
+          {
+            "type": "string",
+            "value": "[vite]"
+          },
+          {
+            "type": "string",
+            "value": "hot updated: /src/main.js"
+          }
+        ],
+        "text": "[vite] hot updated: /src/main.js",
+        "type": "debug"
+      },
+      {
+        "args": [
+          {
+            "type": "string",
+            "value": "[vite]"
+          },
+          {
+            "type": "string",
+            "value": "hot updated: /src/main.js"
+          }
+        ],
+        "text": "[vite] hot updated: /src/main.js",
+        "type": "debug"
+      },
+      {
+        "args": [
+          {
+            "type": "string",
+            "value": "[vite] connecting..."
+          }
+        ],
+        "text": "[vite] connecting...",
+        "type": "debug"
+      },
+      {
+        "args": [
+          {
+            "type": "string",
+            "value": "[vite] connected."
+          }
+        ],
+        "text": "[vite] connected.",
+        "type": "debug"
+      },
+      {
+        "args": [
+          {
+            "type": "string",
+            "value": "[vite]"
+          },
+          {
+            "type": "string",
+            "value": "hot updated: /src/main.js"
+          }
+        ],
+        "text": "[vite] hot updated: /src/main.js",
+        "type": "debug"
+      },
+      {
+        "args": [
+          {
+            "type": "string",
+            "value": "[vite]"
+          },
+          {
+            "type": "string",
+            "value": "hot updated: /src/main.js"
+          }
+        ],
+        "text": "[vite] hot updated: /src/main.js",
+        "type": "debug"
+      },
+      {
+        "args": [
+          {
+            "type": "string",
+            "value": "[vite]"
+          },
+          {
+            "type": "string",
+            "value": "hot updated: /src/main.js"
+          }
+        ],
+        "text": "[vite] hot updated: /src/main.js",
+        "type": "debug"
+      },
+      {
+        "args": [
+          {
+            "type": "string",
+            "value": "[vite]"
+          },
+          {
+            "type": "string",
+            "value": "hot updated: /src/main.js"
+          }
+        ],
+        "text": "[vite] hot updated: /src/main.js",
+        "type": "debug"
+      },
+      {
+        "args": [
+          {
+            "type": "string",
+            "value": "[vite]"
+          },
+          {
+            "type": "string",
+            "value": "hot updated: /src/main.js"
+          }
+        ],
+        "text": "[vite] hot updated: /src/main.js",
+        "type": "debug"
+      },
+      {
+        "args": [
+          {
+            "type": "string",
+            "value": "[vite] connecting..."
+          }
+        ],
+        "text": "[vite] connecting...",
+        "type": "debug"
+      },
+      {
+        "args": [
+          {
+            "type": "string",
+            "value": "[vite] connected."
+          }
+        ],
+        "text": "[vite] connected.",
+        "type": "debug"
+      }
+    ]
+  },
+  "_meta": {
+    "runtimeId": "4d7066e5-ffae-48fd-8838-f839de1ecdd3"
+  }
+}

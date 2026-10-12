@@ -2,31 +2,21 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#edf1eb" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#070b10" />
     <meta name="description" content="Walden Water — an exploration of water, light, and motion." />
     <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
     <title>Walden Water</title>
   </head>
   <body>
     <main class="experience">
-      <canvas id="scene" aria-label="An interactive, rotating blue geometric sculpture" aria-describedby="scene-help"></canvas>
-      <header class="intro">
-        <p class="eyebrow">Water · Light · Motion</p>
-        <h1>Walden Water</h1>
-        <p>A place to begin.</p>
-      </header>
-      <footer class="toolbar" id="scene-controls" hidden>
-        <p id="scene-help">Drag to orbit · Scroll or pinch to zoom</p>
-        <div class="actions">
-          <button id="toggle-motion" type="button">Pause motion</button>
-          <button id="reset-view" type="button">Reset view</button>
-        </div>
-      </footer>
-      <p class="notice" id="scene-error" role="status" hidden>
-        The 3D view could not start. Try a browser with WebGL 2 and hardware acceleration enabled.
-      </p>
-      <noscript><p class="notice">Enable JavaScript to explore this 3D scene.</p></noscript>
+      <canvas id="scene" role="img" aria-label="A dark wall behind a translucent waterfall placeholder, framed from its lip to the future pool line"></canvas>
+      <header class="signature"><h1>Walden Water</h1></header>
+      <div class="notice" id="scene-error" role="status" hidden>
+        <p id="scene-error-text"></p>
+        <button id="restart" type="button">Reload scene</button>
+      </div>
+      <noscript><p class="notice">Enable JavaScript to view this scene.</p></noscript>
     </main>
     <script type="module" src="/src/main.js"></script>
   </body>

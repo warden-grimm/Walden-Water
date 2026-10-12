@@ -1,0 +1,206 @@
+﻿[
+    {
+        "buffer":  {
+                       "height":  1429,
+                       "width":  1517
+                   },
+        "camera":  [
+                       0.011739389477265121,
+                       3.005239603401619,
+                       9.388320632897686
+                   ],
+        "canvasCount":  1,
+        "contextLost":  false,
+        "dpr":  1,
+        "drawCalls":  4,
+        "effects":  "M1 basic wall, translucent curtain, lip/pool markers; no postprocessing",
+        "elapsed":  1.3966000000000058,
+        "frames":  80,
+        "geometries":  1,
+        "guiCount":  1,
+        "listeners":  {
+                          "blur":  33,
+                          "change":  3,
+                          "click":  12,
+                          "focus":  26,
+                          "gesturechange":  1,
+                          "gesturestart":  1,
+                          "input":  33,
+                          "keydown":  58,
+                          "keyup":  33,
+                          "mousedown":  43,
+                          "resize":  1,
+                          "touchstart":  32,
+                          "visibilitychange":  1,
+                          "webglcontextcreationerror":  1,
+                          "webglcontextlost":  2,
+                          "webglcontextrestored":  2,
+                          "wheel":  44
+                      },
+        "pendingAnimationFrames":  1,
+        "programs":  2,
+        "reducedMotion":  false,
+        "restores":  0,
+        "running":  true,
+        "textures":  0,
+        "triangles":  8,
+        "userAgent":  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.7871.250 Safari/537.36",
+        "viewport":  {
+                         "height":  1429,
+                         "width":  1517
+                     }
+    },
+    {
+        "buffer":  {
+                       "height":  1429,
+                       "width":  1517
+                   },
+        "camera":  [
+                       0.01119436657540566,
+                       3.004987041452189,
+                       9.388320632897686
+                   ],
+        "canvasCount":  1,
+        "contextLost":  false,
+        "dpr":  1,
+        "drawCalls":  4,
+        "effects":  "M1 basic wall, translucent curtain, lip/pool markers; no postprocessing",
+        "elapsed":  1.3264999999999996,
+        "frames":  76,
+        "geometries":  1,
+        "guiCount":  1,
+        "listeners":  {
+                          "blur":  33,
+                          "change":  3,
+                          "click":  12,
+                          "focus":  26,
+                          "gesturechange":  1,
+                          "gesturestart":  1,
+                          "input":  33,
+                          "keydown":  58,
+                          "keyup":  33,
+                          "mousedown":  43,
+                          "resize":  1,
+                          "touchstart":  32,
+                          "visibilitychange":  1,
+                          "webglcontextcreationerror":  1,
+                          "webglcontextlost":  2,
+                          "webglcontextrestored":  2,
+                          "wheel":  44
+                      },
+        "pendingAnimationFrames":  1,
+        "programs":  2,
+        "reducedMotion":  false,
+        "restores":  0,
+        "running":  true,
+        "textures":  0,
+        "triangles":  8,
+        "userAgent":  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.7871.250 Safari/537.36",
+        "viewport":  {
+                         "height":  1429,
+                         "width":  1517
+                     }
+    },
+    {
+        "buffer":  {
+                       "height":  1429,
+                       "width":  1517
+                   },
+        "camera":  [
+                       0.011088620960137421,
+                       3.004938216341605,
+                       9.388320632897686
+                   ],
+        "canvasCount":  1,
+        "contextLost":  false,
+        "dpr":  1,
+        "drawCalls":  4,
+        "effects":  "M1 basic wall, translucent curtain, lip/pool markers; no postprocessing",
+        "elapsed":  1.3129999999999997,
+        "frames":  75,
+        "geometries":  1,
+        "guiCount":  1,
+        "listeners":  {
+                          "blur":  33,
+                          "change":  3,
+                          "click":  12,
+                          "focus":  26,
+                          "gesturechange":  1,
+                          "gesturestart":  1,
+                          "input":  33,
+                          "keydown":  58,
+                          "keyup":  33,
+                          "mousedown":  43,
+                          "resize":  1,
+                          "touchstart":  32,
+                          "visibilitychange":  1,
+                          "webglcontextcreationerror":  1,
+                          "webglcontextlost":  2,
+                          "webglcontextrestored":  2,
+                          "wheel":  44
+                      },
+        "pendingAnimationFrames":  1,
+        "programs":  2,
+        "reducedMotion":  false,
+        "restores":  0,
+        "running":  true,
+        "textures":  0,
+        "triangles":  8,
+        "userAgent":  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.7871.250 Safari/537.36",
+        "viewport":  {
+                         "height":  1429,
+                         "width":  1517
+                     }
+    },
+    {
+        "buffer":  {
+                       "height":  1429,
+                       "width":  1517
+                   },
+        "camera":  [
+                       0.0113419900421301,
+                       3.005055296798595,
+                       9.388320632897686
+                   ],
+        "canvasCount":  1,
+        "contextLost":  false,
+        "dpr":  1,
+        "drawCalls":  4,
+        "effects":  "M1 basic wall, translucent curtain, lip/pool markers; no postprocessing",
+        "elapsed":  1.3453999999999935,
+        "frames":  77,
+        "geometries":  1,
+        "guiCount":  1,
+        "listeners":  {
+                          "blur":  33,
+                          "change":  3,
+                          "click":  12,
+                          "focus":  26,
+                          "gesturechange":  1,
+                          "gesturestart":  1,
+                          "input":  33,
+                          "keydown":  58,
+                          "keyup":  33,
+                          "mousedown":  43,
+                          "resize":  1,
+                          "touchstart":  32,
+                          "visibilitychange":  1,
+                          "webglcontextcreationerror":  1,
+                          "webglcontextlost":  2,
+                          "webglcontextrestored":  2,
+                          "wheel":  44
+                      },
+        "pendingAnimationFrames":  1,
+        "programs":  2,
+        "reducedMotion":  false,
+        "restores":  0,
+        "running":  true,
+        "textures":  0,
+        "triangles":  8,
+        "userAgent":  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.7871.250 Safari/537.36",
+        "viewport":  {
+                         "height":  1429,
+                         "width":  1517
+                     }
+    }
+]

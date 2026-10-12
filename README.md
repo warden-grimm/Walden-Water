@@ -1,10 +1,10 @@
 # Walden Water
 
-A static Three.js page using plain JavaScript, Vite, and GitHub Pages. The starter includes a rotating placeholder sculpture, orbit controls, responsive rendering, a motion toggle, and a WebGL fallback message.
+A static Three.js page using plain JavaScript, Vite, and GitHub Pages. M1 provides a dark wall and translucent curtain scaffold, fixed framing with subtle breathing drift, and renderer lifecycle handling. Finished waterfall shaders and interaction follow in later milestones.
 
 ## Waterfall build and review
 
-The waterfall specification is in [docs/goal.md](docs/goal.md). Follow the ordered [milestone plan](docs/milestones.md) and [working agreement](docs/working-agreement.md). Each milestone stops for independent Claude review in a separate Orca workspace, using [the reviewer prompt](docs/reviewer.md). Record evidence and findings in [REVIEW_NOTES.md](REVIEW_NOTES.md). The current starter is a baseline, not an approved M1.
+The waterfall specification is in [docs/goal.md](docs/goal.md). Follow the ordered [milestone plan](docs/milestones.md) and [working agreement](docs/working-agreement.md). Each milestone stops for independent Claude review in a separate Orca workspace, using [the reviewer prompt](docs/reviewer.md). Current acceptance, evidence, and findings are recorded in [REVIEW_NOTES.md](REVIEW_NOTES.md).
 
 ## Local development
 
@@ -20,6 +20,7 @@ Open the local URL printed by Vite. Changes reload automatically.
 ```sh
 npm run build    # Generate the static site in dist/
 npm run preview  # Serve the production build locally
+npm test         # Framing and shared-clock checks
 ```
 
 Commit `package-lock.json` when dependencies change. `node_modules/` and `dist/` are generated and ignored by Git.
@@ -33,19 +34,23 @@ public/
   models/                     GLB/GLTF files copied without bundling
   textures/                   Images and environment maps copied as-is
 src/
-  main.js                     Page startup, controls, fallback, hot reload cleanup
+  main.js                     Renderer, loop, resize, fallback, lifecycle ownership
+  config.js                   Implemented tunables and GUI ranges
+  time.js                     Shared simulation timeline/uniform
+  debug/                      Lazy-loaded lil-gui and bounded frame-time sampling
   styles.css                  Page layout and styling
   scene/
-    createScene.js            Renderer, camera, lights, animation loop, cleanup
-    objects/
-      createDemoObject.js     Replaceable example mesh with update/dispose methods
+    createScene.js            Placeholder geometry, camera drift, GPU disposal
+    framing.js                Orientation-independent camera distance
   shaders/                    Custom GLSL shaders
 index.html                    HTML entry point and accessible page content
 vite.config.js                Portable relative asset paths
 package.json                  Dependencies and development commands
 ```
 
-Start scene work in `src/scene/objects/`; assemble objects in `createScene.js`. Keep page content in `index.html` and styling in `styles.css`. Dispose of new geometries, materials, textures, and controls when their owning scene is removed. Automatic motion respects the visitor's reduced-motion preference; rendering pauses in background tabs.
+Assemble scene components in `createScene.js`; extend `config.js` as each feature arrives. Keep page content in `index.html` and styling in `styles.css`. Dispose of new geometries, materials, and textures when their owning scene is removed. Camera motion respects the visitor's reduced-motion preference; rendering and the shared timeline pause in background tabs.
+
+Append `?debug` to open the tuning panel. Its Diagnostics folder offers a fixed 10-second warmup plus 60-second frame-time sample and context loss/restoration controls. The debug-only `window.__WALDEN_DEBUG__` exposes `snapshot()`, `sample()`, and `sampleStatus()` for reproducible evidence; the last returns raw samples plus median/p95. Changing settings, viewport, visibility, or motion preference cancels an active sample. These are browser frame intervals, not GPU timings or physical-phone certification. The GUI and sample buffers are absent without `?debug`.
 
 ## Assets and shaders
 
