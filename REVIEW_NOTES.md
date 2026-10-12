@@ -45,19 +45,34 @@
 
 ### M1 — Scaffold and lifecycle submission
 
-- **Status:** Implemented; awaiting independent Claude review of the exact submitted commit. Stop before M2.
+- **Status:** Accepted with **APPROVE WITH NITS** by Claude at `6af1797edb83f5677eb46ff49b92b713181e0240`. No blockers. M1 is complete; M2 has not started.
 - **BASE_SHA:** `e03aed336d31985206bfb9be0ea88525cead4d64` (no earlier accepted implementation milestone).
 - **Changed:** Replaced the sculpture/orbit demo with a dark wall, translucent curtain and lip/pool markers; fixed responsive camera and configurable breathing; shared simulation timeline; centralized config and lazy `?debug` lil-gui; DPR/resize/media preference handling; visibility/context/HMR cleanup and accessible recovery notice. Added focused Node tests for framing, clock and sample validity; updated README. Only new dependency: permitted `lil-gui@0.21.0`.
 - **Validation:** `npm test` passes all 3 tests; `npm run build` passes; `git diff --check` passes. Main bundle warning remains documented (530.42 kB raw). `vite.config.js` and Pages workflow are unchanged; generated assets remain relative. No publication.
 - **Preview:** Builder checkout at `http://127.0.0.1:5174/?debug`, strict port 5174. Reviewer must serve its own checkout on port 5175 with `--strictPort`.
 - **Evidence:** [M1 evidence index](docs/evidence/M1/README.md), three viewport PNGs, drift/reduced-motion WebM, raw frame intervals, DPR/drag/layout checks, four HMR cycles, three context cycles and console log. Windows / Chromium 150 (Orca) and 151 (separate CDP), NVIDIA RTX A4500. These are desktop observations, not phone certification.
 - **Performance:** First 60-second baseline after 10-second warmup: 3,412 frames, median 17.5 ms, p95 18.1 ms at 1440×900 / DPR 1, default drift on, GUI hidden, four draws/eight triangles and no effects. Workstation thermal/background conditions uncontrolled. No accepted M1 comparison exists yet.
-- **Early verification issue:** Orca overrides page visibility. Separate browser automation also failed to produce a reliable native hide/resume cycle. The actual application visibility handler passes a controlled getter/event test (two paused seconds, first resumed frame adds zero elapsed time), and the clock test covers resume independently. Native OS backgrounding and physical-phone pinch are explicitly **unverified**; Claude must assess this evidence limitation. No implementation workaround was added for the automation environment.
+- **Early verification issue and resolution:** Orca overrides page visibility, so the builder could only verify the actual handler with a controlled getter/event test plus clock tests. Claude subsequently verified **native desktop tab switching and OS window minimize/resume** in a separate Edge instance: frames freeze and the first resumed frame adds zero elapsed time. This closes the desktop evidence gap without an implementation workaround. Physical-phone pinch/backgrounding remain unverified and due before M4.
 - **Manual review:** (1) Open ordinary URL, then `?debug`; verify GUI absence/presence and tune implemented controls. (2) Resize to 390×844, 844×390 and desktop; keep both markers visible, no scroll, cap DPR at 2. (3) Observe default drift, enable actual reduced motion, then drag: camera should remain fixed. (4) Hide/resume using a normal browser, checking paused frames and no time jump; inspect the controlled test limitation above. (5) Repeat context loss/restore and HMR, checking one GUI/canvas/loop and stable resources. (6) Run the fixed sample and production build; inspect relative assets.
 - **Expected gaps:** Finished rock/water shaders, touch simulation, light volume, particles, pool and postprocessing are later milestones. Physical testers/devices remain unconfirmed; arrange before M4. No GitHub remote/Pages configuration yet.
 - **Deviations:** None to M1 product scope. Tiny framing markers make the lip/future pool boundary reviewable. The GUI exposes only implemented features; diagnostic sampling protocol is fixed. Visibility test limitations are disclosed rather than counted as native success.
-- **Review report/reviewed SHA:** Pending Orca dispatch and `docs/reviews/M1-review-r1.md`.
+- **Review report/reviewed SHA:** [Claude M1 review r1](docs/reviews/M1-review-r1.md), exact head `6af1797edb83f5677eb46ff49b92b713181e0240`. The report is preserved unchanged.
 - **Remaining prior nit:** Extend checkpoint report template before M3; coordinator/builder owns it.
+
+### Coordinator outcome — M1 accepted
+
+- **Orca run/task:** `run_6db9e1fd6f26` / `task_5fbc1a6306c4`; dispatch `ctx_a61438349715`. Claude's separate `claude-m1-review` checkout and committed report are preserved. Review worker released after the report and supporting evidence were committed; its preview and test browser were stopped.
+- **Independent checks:** `npm ci`, 3/3 tests, production build, ordinary/debug URLs, GUI input, required orientations and ultrawide, DPR cap, reduced motion, trusted drag, emulated pinch/scroll, native desktop visibility, 3 context cycles, and 6 HMR cycles. Reviewer baseline: 3,395 frames after the fixed warmup/sample, median 17.6 ms / p95 18.2 ms. See [archived reviewer evidence](docs/evidence/M1/claude/README.md).
+- **M2 baseline:** Use accepted implementation head `6af1797edb83f5677eb46ff49b92b713181e0240`, not later report/evidence/status commits. All follow-ups below must be considered at their stated gate.
+
+| Follow-up | Owner | Due |
+| --- | --- | --- |
+| Add debug GPU timing with a CPU-submit fallback, or document a stress setting, because a refresh-bound frame interval can hide render-cost growth. Retain frame interval as the gating metric. | Builder | M2 |
+| Derive the rock wall's minimum size from camera framing so its edges cannot enter very wide viewports (aspect above about 2.6). | Builder | M2 |
+| Arrange real iPhone/Safari and Android/Chrome pinch, scroll and app-background checks alongside required multi-touch/latency evidence. Devices/testers still unconfirmed. | Coordinator | Before M4 |
+| Add CHECKPOINT/DRAFT FEEDBACK/not-approved-by-checkpoint values to the report template (prior plan nit). | Coordinator/builder | Before M3 |
+
+- **Next:** M2 is permitted by this review but was not started in this M1 task. No deployment was performed; GitHub remote/Pages setup and physical-device certification remain pending.
 
 ### M<n> — <summary>
 
