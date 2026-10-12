@@ -229,6 +229,14 @@
 - **Manual review:** (1) Hold three seconds, add/lift a second finger and inspect downward healing. (2) Slow/fast swipe top/centre/corners with drift, rotate while holding, cancel/blur/hide and return. (3) Force byte and compare water plus overlay; reset/rebuild/restore and exercise failed validation. (4) Compare reference/reduced normals and matched timing; distinguish invalid harness files. (5) Obtain the named physical-phone observation and re-review before accepting M4 or starting M5.
 - **Known future work:** M5 particles/lip breakup, M6 volume/glint balance, M8 pre-existing HMR-after-context-restoration warnings, M9 long-uptime precision and named iPhone/Android sustained-performance evidence retain their existing ownership. None is silently represented as complete.
 
+### M4 — Full review outcome and device-test release
+
+- **Independent verdict:** [Claude full review r1](docs/reviews/M4-review-r1.md) at `e2a45837b75a1f4c0b135c229dd265a682428867`: **CHANGES REQUESTED for missing physical-phone evidence only**. No code defect and no code blocker to publishing this exact implementation as a device-test candidate. M4 advancement remains blocked; M5 has not begun.
+- **Independent checks:** 17/17 tests and build pass; contact alignment within 0.28 CSS px in portrait/landscape with drift; auto/byte neutral recovery, hold/two contacts/cancel/blur/context restoration pass. Matched M3/M4 frame median/p95 changes remain around 1%, below the >10% trigger; GPU median adds about 1.8–1.9 ms. [28 unchanged SHA256-verified reviewer files](docs/evidence/M4/claude-full-review/ARCHIVE.md).
+- **Ownership:** Builder will judge the 1.25 m/s strength saturation during the M4 phone retest, tuning sooner if touch feel warrants it, otherwise with M5 splash velocity. Builder owns skipping neutral idle field updates in M8, sooner if phone timing regresses. Both are non-blocking nits; no speculative source change is made ahead of the physical test.
+- **Orca:** Run `run_be8c890ffaab`, task `task_7f3dd1209428`, dispatch `ctx_c200dd2c0cd5`. Report committed unchanged as `67ad9d1` before worker release and fast-forwarded into builder. Reviewer preview/browser stopped, worktree preserved. Task completion means review completed, not M4 acceptance.
+- **Release step:** Continue the user's existing GitHub Pages device-testing deployment on the same repository/site to make the reviewed M4 implementation reachable on the iPhone. This is a device-test publication, separate from milestone acceptance. Application source stays identical to `e2a4583`; only review/evidence/documentation follows. Record deployment verification below once complete. Required phone observation and OS/browser details remain pending.
+
 ### M<n> — <summary>
 
 - Status:

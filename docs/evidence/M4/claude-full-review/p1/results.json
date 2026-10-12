@@ -1,0 +1,854 @@
+{
+  "steps": [
+    {
+      "name": "start",
+      "count": 0,
+      "pointers": [],
+      "format": "RGBA16F / manual bilinear",
+      "avail": true,
+      "distinct": true,
+      "res": [
+        4,
+        3,
+        4
+      ],
+      "vp": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "name": "align-390x844-0.5-0.2",
+      "count": 1,
+      "pointers": [
+        {
+          "id": 2,
+          "held": true,
+          "valid": true,
+          "uv": [
+            0.5000285141374939,
+            0.9068903042400299
+          ]
+        }
+      ],
+      "format": "RGBA16F / manual bilinear",
+      "avail": true,
+      "distinct": true,
+      "res": [
+        4,
+        3,
+        4
+      ],
+      "vp": {
+        "width": 390,
+        "height": 844
+      },
+      "touchX": 195,
+      "touchY": 168.8
+    },
+    {
+      "name": "align-390x844-0.5-0.5",
+      "count": 1,
+      "pointers": [
+        {
+          "id": 3,
+          "held": true,
+          "valid": true,
+          "uv": [
+            0.5001177596123728,
+            0.500026469984103
+          ]
+        }
+      ],
+      "format": "RGBA16F / manual bilinear",
+      "avail": true,
+      "distinct": true,
+      "res": [
+        4,
+        3,
+        4
+      ],
+      "vp": {
+        "width": 390,
+        "height": 844
+      },
+      "touchX": 195,
+      "touchY": 422
+    },
+    {
+      "name": "align-390x844-0.3-0.75",
+      "count": 1,
+      "pointers": [
+        {
+          "id": 4,
+          "held": true,
+          "valid": true,
+          "uv": [
+            0.23152761888074563,
+            0.16103674766160023
+          ]
+        }
+      ],
+      "format": "RGBA16F / manual bilinear",
+      "avail": true,
+      "distinct": true,
+      "res": [
+        4,
+        3,
+        4
+      ],
+      "vp": {
+        "width": 390,
+        "height": 844
+      },
+      "touchX": 117,
+      "touchY": 633
+    },
+    {
+      "name": "align-390x844-0.62-0.35",
+      "count": 1,
+      "pointers": [
+        {
+          "id": 5,
+          "held": true,
+          "valid": true,
+          "uv": [
+            0.6601877042023309,
+            0.7021219394647306
+          ]
+        }
+      ],
+      "format": "RGBA16F / manual bilinear",
+      "avail": true,
+      "distinct": true,
+      "res": [
+        4,
+        3,
+        4
+      ],
+      "vp": {
+        "width": 390,
+        "height": 844
+      },
+      "touchX": 241.8,
+      "touchY": 295.4
+    },
+    {
+      "name": "align-844x390-0.5-0.2",
+      "count": 1,
+      "pointers": [
+        {
+          "id": 6,
+          "held": true,
+          "valid": true,
+          "uv": [
+            0.500059493915874,
+            0.8576166257303325
+          ]
+        }
+      ],
+      "format": "RGBA16F / manual bilinear",
+      "avail": true,
+      "distinct": true,
+      "res": [
+        4,
+        3,
+        4
+      ],
+      "vp": {
+        "width": 844,
+        "height": 390
+      },
+      "touchX": 422,
+      "touchY": 78
+    },
+    {
+      "name": "align-844x390-0.5-0.5",
+      "count": 1,
+      "pointers": [
+        {
+          "id": 7,
+          "held": true,
+          "valid": true,
+          "uv": [
+            0.5001175094649527,
+            0.5000424751505629
+          ]
+        }
+      ],
+      "format": "RGBA16F / manual bilinear",
+      "avail": true,
+      "distinct": true,
+      "res": [
+        4,
+        3,
+        4
+      ],
+      "vp": {
+        "width": 844,
+        "height": 390
+      },
+      "touchX": 422,
+      "touchY": 195
+    },
+    {
+      "name": "align-844x390-0.3-0.75",
+      "count": 0,
+      "pointers": [
+        {
+          "id": 8,
+          "held": true,
+          "valid": false,
+          "uv": [
+            0.5001168878695419,
+            0.5000424590781009
+          ]
+        }
+      ],
+      "format": "RGBA16F / manual bilinear",
+      "avail": true,
+      "distinct": true,
+      "res": [
+        4,
+        3,
+        4
+      ],
+      "vp": {
+        "width": 844,
+        "height": 390
+      },
+      "touchX": 253.2,
+      "touchY": 292.5
+    },
+    {
+      "name": "align-844x390-0.62-0.35",
+      "count": 0,
+      "pointers": [
+        {
+          "id": 9,
+          "held": true,
+          "valid": false,
+          "uv": [
+            0.5001168878695419,
+            0.5000424590781009
+          ]
+        }
+      ],
+      "format": "RGBA16F / manual bilinear",
+      "avail": true,
+      "distinct": true,
+      "res": [
+        4,
+        3,
+        4
+      ],
+      "vp": {
+        "width": 844,
+        "height": 390
+      },
+      "touchX": 523.3,
+      "touchY": 136.5
+    },
+    {
+      "name": "held3s",
+      "count": 1,
+      "pointers": [
+        {
+          "id": 10,
+          "held": true,
+          "valid": true,
+          "uv": [
+            0.4998899908168929,
+            0.6465125102867592
+          ]
+        }
+      ],
+      "format": "RGBA16F / manual bilinear",
+      "avail": true,
+      "distinct": true,
+      "res": [
+        4,
+        3,
+        4
+      ],
+      "vp": {
+        "width": 390,
+        "height": 844
+      },
+      "field": {
+        "max": 0.8481422140840772,
+        "sum": 1647.3097123674631,
+        "centroidU": 0.4998935639159021,
+        "centroidV": 0.5676728986076949,
+        "minX": -0.5141453291421247,
+        "maxX": 0.5141453291421247
+      }
+    },
+    {
+      "name": "two",
+      "count": 2,
+      "pointers": [
+        {
+          "id": 10,
+          "held": true,
+          "valid": true,
+          "uv": [
+            0.49988312519287453,
+            0.6465104174575762
+          ]
+        },
+        {
+          "id": 11,
+          "held": true,
+          "valid": true,
+          "uv": [
+            0.7223890542940092,
+            0.3434615436712654
+          ]
+        }
+      ],
+      "format": "RGBA16F / manual bilinear",
+      "avail": true,
+      "distinct": true,
+      "res": [
+        4,
+        3,
+        4
+      ],
+      "vp": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "name": "cancelled-all",
+      "count": 0,
+      "pointers": [],
+      "format": "RGBA16F / manual bilinear",
+      "avail": true,
+      "distinct": true,
+      "res": [
+        4,
+        3,
+        4
+      ],
+      "vp": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "name": "c+0.6",
+      "count": 0,
+      "pointers": [],
+      "format": "RGBA16F / manual bilinear",
+      "avail": true,
+      "distinct": true,
+      "res": [
+        4,
+        3,
+        4
+      ],
+      "vp": {
+        "width": 390,
+        "height": 844
+      },
+      "field": {
+        "max": 0.025635156786449988,
+        "sum": 60.78213168536437,
+        "centroidU": 0.49988122308405936,
+        "centroidV": 0.2145566558146458,
+        "minX": -0.015198217719046602,
+        "maxX": 0.015198217719046602
+      }
+    },
+    {
+      "name": "c+2.1",
+      "count": 0,
+      "pointers": [],
+      "format": "RGBA16F / manual bilinear",
+      "avail": true,
+      "distinct": true,
+      "res": [
+        4,
+        3,
+        4
+      ],
+      "vp": {
+        "width": 390,
+        "height": 844
+      },
+      "field": {
+        "max": 0,
+        "sum": 0,
+        "centroidU": null,
+        "centroidV": null,
+        "minX": 0,
+        "maxX": 0
+      }
+    },
+    {
+      "name": "swipe-slow",
+      "count": 1,
+      "pointers": [],
+      "format": "RGBA16F / manual bilinear",
+      "avail": true,
+      "distinct": true,
+      "res": [
+        4,
+        3,
+        4
+      ],
+      "vp": {
+        "width": 390,
+        "height": 844
+      },
+      "field": {
+        "max": 0.9990234225986114,
+        "sum": 2270.2641641870837,
+        "centroidU": 0.7408547071437553,
+        "centroidV": 0.6165401272409116,
+        "minX": -0.6030152287362285,
+        "maxX": 0.6025269325846125
+      }
+    },
+    {
+      "name": "swipe-fast",
+      "count": 1,
+      "pointers": [],
+      "format": "RGBA16F / manual bilinear",
+      "avail": true,
+      "distinct": true,
+      "res": [
+        4,
+        3,
+        4
+      ],
+      "vp": {
+        "width": 390,
+        "height": 844
+      },
+      "field": {
+        "max": 0.9995117112993057,
+        "sum": 4442.301747157881,
+        "centroidU": 0.5517504524688115,
+        "centroidV": 0.6674708662239597,
+        "minX": -0.6030152287362285,
+        "maxX": 0.6025269325846125
+      }
+    },
+    {
+      "name": "held-before-hide",
+      "count": 1,
+      "pointers": [
+        {
+          "id": 14,
+          "held": true,
+          "valid": true,
+          "uv": [
+            0.5000202135830796,
+            0.5349468980944595
+          ]
+        }
+      ],
+      "format": "RGBA16F / manual bilinear",
+      "avail": true,
+      "distinct": true,
+      "res": [
+        4,
+        3,
+        4
+      ],
+      "vp": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "name": "after-blur",
+      "count": 0,
+      "pointers": [],
+      "format": "RGBA16F / manual bilinear",
+      "avail": true,
+      "distinct": true,
+      "res": [
+        4,
+        3,
+        4
+      ],
+      "vp": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "name": "move-after-blur",
+      "count": 0,
+      "pointers": [],
+      "format": "RGBA16F / manual bilinear",
+      "avail": true,
+      "distinct": true,
+      "res": [
+        4,
+        3,
+        4
+      ],
+      "vp": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "name": "byte",
+      "count": 0,
+      "pointers": [],
+      "format": "RGBA8 packed16 / manual bilinear",
+      "avail": true,
+      "distinct": true,
+      "res": [
+        4,
+        3,
+        4
+      ],
+      "vp": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "name": "byte-held",
+      "count": 1,
+      "pointers": [
+        {
+          "id": 15,
+          "held": true,
+          "valid": true,
+          "uv": [
+            0.5000975996787514,
+            0.6464987025310657
+          ]
+        }
+      ],
+      "format": "RGBA8 packed16 / manual bilinear",
+      "avail": true,
+      "distinct": true,
+      "res": [
+        4,
+        3,
+        4
+      ],
+      "vp": {
+        "width": 390,
+        "height": 844
+      },
+      "field": {
+        "max": 0.8484779125658045,
+        "sum": 1653.7119249255986,
+        "centroidU": 0.5000925608976184,
+        "centroidV": 0.5671736852517778,
+        "minX": -0.5145725882747887,
+        "maxX": 0.5144199957274087
+      }
+    },
+    {
+      "name": "byte-healed",
+      "count": 0,
+      "pointers": [],
+      "format": "RGBA8 packed16 / manual bilinear",
+      "avail": true,
+      "distinct": true,
+      "res": [
+        4,
+        3,
+        4
+      ],
+      "vp": {
+        "width": 390,
+        "height": 844
+      },
+      "field": {
+        "max": 0,
+        "sum": 0,
+        "centroidU": null,
+        "centroidV": null,
+        "minX": 0,
+        "maxX": 0
+      }
+    },
+    {
+      "name": "restored-byte",
+      "count": 1,
+      "pointers": [
+        {
+          "id": 17,
+          "held": true,
+          "valid": true,
+          "uv": [
+            0.5000024667194236,
+            0.6465212212776191
+          ]
+        }
+      ],
+      "format": "RGBA8 packed16 / manual bilinear",
+      "avail": true,
+      "distinct": true,
+      "res": [
+        4,
+        3,
+        4
+      ],
+      "vp": {
+        "width": 390,
+        "height": 844
+      },
+      "field": {
+        "max": 0.8484473945220111,
+        "sum": 1439.15075913632,
+        "centroidU": 0.5000078416995124,
+        "centroidV": 0.6004444494208054,
+        "minX": -0.5145115512558367,
+        "maxX": 0.5145115512558367
+      }
+    },
+    {
+      "name": "restored-auto",
+      "count": 1,
+      "pointers": [
+        {
+          "id": 18,
+          "held": true,
+          "valid": true,
+          "uv": [
+            0.49992559558149385,
+            0.6465270107118796
+          ]
+        }
+      ],
+      "format": "RGBA16F / manual bilinear",
+      "avail": true,
+      "distinct": true,
+      "res": [
+        4,
+        3,
+        4
+      ],
+      "vp": {
+        "width": 390,
+        "height": 844
+      },
+      "field": {
+        "max": 0.8481422140840772,
+        "sum": 1452.3874876020443,
+        "centroidU": 0.49993011303461515,
+        "centroidV": 0.5988325590856851,
+        "minX": -0.5141453291421247,
+        "maxX": 0.5141453291421247
+      }
+    },
+    {
+      "name": "rebuild-128x256",
+      "count": 0,
+      "pointers": [],
+      "format": "RGBA16F / manual bilinear",
+      "avail": true,
+      "distinct": true,
+      "res": [
+        4,
+        3,
+        4
+      ],
+      "vp": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "name": "rebuild-512x1024",
+      "count": 0,
+      "pointers": [],
+      "format": "RGBA16F / manual bilinear",
+      "avail": true,
+      "distinct": true,
+      "res": [
+        4,
+        3,
+        4
+      ],
+      "vp": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "name": "rebuild-256x512",
+      "count": 0,
+      "pointers": [],
+      "format": "RGBA16F / manual bilinear",
+      "avail": true,
+      "distinct": true,
+      "res": [
+        4,
+        3,
+        4
+      ],
+      "vp": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "name": "final",
+      "count": 0,
+      "pointers": [],
+      "format": "RGBA16F / manual bilinear",
+      "avail": true,
+      "distinct": true,
+      "res": [
+        4,
+        3,
+        4
+      ],
+      "vp": {
+        "width": 390,
+        "height": 844
+      },
+      "field": {
+        "max": 0,
+        "sum": 0,
+        "centroidU": null,
+        "centroidV": null,
+        "minX": 0,
+        "maxX": 0
+      }
+    }
+  ],
+  "initial": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "buffer": {
+      "width": 780,
+      "height": 1688
+    },
+    "dpr": 2,
+    "running": true,
+    "contextLost": false,
+    "restores": 0,
+    "frames": 62,
+    "elapsed": 1.1097,
+    "reducedMotion": false,
+    "camera": [
+      0.009467586175802673,
+      3.0041961729191264,
+      10.647765095859238
+    ],
+    "drawCalls": 4,
+    "triangles": 227076,
+    "geometries": 4,
+    "textures": 3,
+    "programs": 4,
+    "wall": {
+      "segments": 256,
+      "size": [
+        20,
+        12
+      ],
+      "quality": "reference",
+      "displacement": true,
+      "sheen": true,
+      "view": "rock"
+    },
+    "curtain": {
+      "quality": "reference",
+      "columns": 120,
+      "rows": 400,
+      "visible": true,
+      "view": "water",
+      "refraction": true,
+      "uv": "u left-to-right, v bottom-to-top",
+      "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+      "sidePush": 0.9,
+      "forwardPush": 0.8
+    },
+    "capture": {
+      "width": 780,
+      "height": 1688,
+      "samples": 4,
+      "format": "RGBA16F linear",
+      "generation": 1,
+      "sourceObjects": [
+        "wall"
+      ]
+    },
+    "touch": {
+      "available": true,
+      "disabledReason": null,
+      "width": 256,
+      "height": 512,
+      "format": "RGBA16F / manual bilinear",
+      "generation": 1,
+      "steps": 63,
+      "distinctTargets": true,
+      "readId": 11,
+      "writeId": 9,
+      "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+      "count": 0,
+      "pointers": []
+    },
+    "effects": "M4: touch field, water parting and foam; no particles or postprocessing",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+  },
+  "console": [
+    {
+      "m": "Runtime.consoleAPICalled",
+      "type": "debug",
+      "text": "[vite] connecting..."
+    },
+    {
+      "m": "Runtime.consoleAPICalled",
+      "type": "debug",
+      "text": "[vite] connected."
+    },
+    {
+      "m": "Runtime.consoleAPICalled",
+      "type": "info",
+      "text": "[Walden] Wall capture: RGBA16F linear"
+    },
+    {
+      "m": "Runtime.consoleAPICalled",
+      "type": "info",
+      "text": "[Walden] Touch field: RGBA16F / manual bilinear; framebuffer, vertex sampling and neutral checks passed"
+    },
+    {
+      "m": "Runtime.consoleAPICalled",
+      "type": "info",
+      "text": "[Walden] Touch field: RGBA8 packed16 / manual bilinear; framebuffer, vertex sampling and neutral checks passed"
+    },
+    {
+      "m": "Runtime.consoleAPICalled",
+      "type": "log",
+      "text": "THREE.WebGLRenderer: Context Lost."
+    },
+    {
+      "m": "Runtime.consoleAPICalled",
+      "type": "log",
+      "text": "THREE.WebGLRenderer: Context Restored."
+    },
+    {
+      "m": "Runtime.consoleAPICalled",
+      "type": "info",
+      "text": "[Walden] Touch field: RGBA16F / manual bilinear; framebuffer, vertex sampling and neutral checks passed"
+    },
+    {
+      "m": "Runtime.consoleAPICalled",
+      "type": "log",
+      "text": "THREE.WebGLRenderer: Context Lost."
+    },
+    {
+      "m": "Runtime.consoleAPICalled",
+      "type": "log",
+      "text": "THREE.WebGLRenderer: Context Restored."
+    }
+  ]
+}

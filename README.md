@@ -1,6 +1,6 @@
 # Walden Water
 
-A static Three.js page using plain JavaScript, Vite, and GitHub Pages. Accepted M3 includes a curved falling water curtain, accelerated streaks, wall refraction and localized glints over a displaced wet rock wall. The local M4 candidate adds multi-touch parting, downward wakes and rim foam; its review and physical-phone gate are pending. The public site still runs M3. Spray, the visible light volume and the pool follow in later milestones.
+A static Three.js page using plain JavaScript, Vite, and GitHub Pages. Accepted M3 includes a curved falling water curtain, accelerated streaks, wall refraction and localized glints over a displaced wet rock wall. The M4 device-test candidate adds multi-touch parting, downward wakes and rim foam. Claude found no code defect; acceptance still requires the physical-phone touch and latency check. Spray, the visible light volume and the pool follow in later milestones.
 
 ## Waterfall build and review
 
@@ -78,7 +78,7 @@ import vertexShader from './shaders/water.vert.glsl?raw';
 ## GitHub Pages
 
 - Site: [Walden Water](https://warden-grimm.github.io/Walden-Water/)
-- Device diagnostics: [M3 debug view](https://warden-grimm.github.io/Walden-Water/?debug)
+- Device diagnostics: [debug view](https://warden-grimm.github.io/Walden-Water/?debug)
 - Repository: [warden-grimm/Walden-Water](https://github.com/warden-grimm/Walden-Water)
 - Deployment status: [GitHub Actions](https://github.com/warden-grimm/Walden-Water/actions/workflows/deploy.yml)
 
@@ -91,7 +91,7 @@ The workflow installs the lockfile with `npm ci`, runs `npm test`, builds `dist/
 
 `base: './'` keeps the build usable at `https://<owner>.github.io/<repository>/`, at a user/organization Pages root, or on a custom domain. No repository name is hardcoded. This is a single HTML page; add separate HTML entries or use hash navigation if routing is introduced later.
 
-## M3 device testing
+## Rendering checks carried forward from M3
 
 Use the published Pages URL in Safari or Chrome directly, then repeat with `?debug` to access diagnostics. Record the device model, OS/browser versions, orientation and any changed quality settings alongside screenshots or a short recording.
 
@@ -100,12 +100,12 @@ Use the published Pages URL in Safari or Chrome directly, then repeat with `?deb
 3. Open **Diagnostics → Sample: 10s warmup + 60s**. Keep the tab visible and the orientation/settings unchanged for the full 70 seconds; record the resulting frame median/p95 and GPU timing when available.
 4. Compare the curtain's reference/reduced quality, refraction's full/half `wallResolution`, and auto/byte precision. Reload to restore defaults. The half-resolution option softens the entire wall background.
 
-Touching the curtain does not disturb it yet; that is M4. These M3 checks establish real-device rendering and cost evidence before interaction work, and do not replace M4's multi-touch/latency review or M9's final phone certification.
+These rendering checks do not replace M4's multi-touch/latency review or M9's final phone certification. Test interaction with the M4 script below.
 
 ## M4 candidate device check
 
-Use this script only after an M4 candidate has been deployed or otherwise made
-reachable on the phone. The current public M3 page cannot supply this evidence.
+Use the [Pages candidate](https://warden-grimm.github.io/Walden-Water/), reloading
+after the M4 deployment completes. Check the Actions link above for deployment status.
 Record tester, device model, OS and browser versions, and whether each check passes.
 
 1. In portrait, hold one finger on the curtain for three seconds, add a second,
