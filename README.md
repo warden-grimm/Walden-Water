@@ -1,6 +1,6 @@
 # Walden Water
 
-A static Three.js page using plain JavaScript, Vite, and GitHub Pages. M2 adds a displaced wet rock wall and shared shaft light to the fixed-camera scaffold. Finished water, the visible light volume, and interaction follow in later milestones.
+A static Three.js page using plain JavaScript, Vite, and GitHub Pages. Accepted M3 includes a curved falling water curtain, accelerated streaks, wall refraction and localized glints over a displaced wet rock wall. Touch interaction, spray, the visible light volume and the pool follow in later milestones.
 
 ## Waterfall build and review
 
@@ -42,6 +42,8 @@ src/
   scene/
     createScene.js            Scene assembly and resource ownership
     Wall.js                   Displaced rock, shader uniforms, quality rebuilds
+    WaterCurtain.js            Curved ribbon and falling water material
+    WallCapture.js             Isolated wall target for background and refraction
     camera.js                 Fixed framing and breathing drift
     framing.js                Camera distance and adaptive backdrop coverage
     light.js                  Shared world-space shaft light uniforms
@@ -74,15 +76,29 @@ import vertexShader from './shaders/water.vert.glsl?raw';
 
 ## GitHub Pages
 
+- Site: [Walden Water](https://warden-grimm.github.io/Walden-Water/)
+- Device diagnostics: [M3 debug view](https://warden-grimm.github.io/Walden-Water/?debug)
+- Repository: [warden-grimm/Walden-Water](https://github.com/warden-grimm/Walden-Water)
+- Deployment status: [GitHub Actions](https://github.com/warden-grimm/Walden-Water/actions/workflows/deploy.yml)
+
 1. Create or choose a GitHub repository, add it as the `origin` remote, and push this project to its default branch (`main` or `master`).
 2. In **Settings → Pages → Build and deployment**, set **Source** to **GitHub Actions**.
 3. Open **Actions → Build and deploy to GitHub Pages** and run the workflow on the default branch. Future pushes to that branch deploy automatically. Pull requests build without deploying.
 4. The deployment URL appears in the workflow's `github-pages` environment.
 
-The workflow installs the lockfile with `npm ci`, builds `dist/`, and publishes it with the official Pages actions. It uses the built-in `GITHUB_TOKEN`; no personal access token is required. Deployment permissions are limited to the deployment job. Both `main` and `master` trigger builds, but only the repository's default branch can deploy.
+The workflow installs the lockfile with `npm ci`, runs `npm test`, builds `dist/`, and publishes it with the official Pages actions. It uses the built-in `GITHUB_TOKEN`; no personal access token is required. Deployment permissions are limited to the deployment job. Both `main` and `master` trigger builds, but only the repository's default branch can deploy.
 
 `base: './'` keeps the build usable at `https://<owner>.github.io/<repository>/`, at a user/organization Pages root, or on a custom domain. No repository name is hardcoded. This is a single HTML page; add separate HTML entries or use hash navigation if routing is introduced later.
 
-The repository is currently local: configuring an origin remote and enabling Pages are still required before the first deployment.
+## M3 device testing
+
+Use the published Pages URL in Safari or Chrome directly, then repeat with `?debug` to access diagnostics. Record the device model, OS/browser versions, orientation and any changed quality settings alongside screenshots or a short recording.
+
+1. Watch at least ten seconds in portrait and landscape. Flow should move downward and accelerate; the rock should remain visible through the water. The lip and base should stay in frame.
+2. Switch away from the browser and return. Rendering should resume without a large animation jump. Check for unwanted page scrolling or pinch zoom.
+3. Open **Diagnostics → Sample: 10s warmup + 60s**. Keep the tab visible and the orientation/settings unchanged for the full 70 seconds; record the resulting frame median/p95 and GPU timing when available.
+4. Compare the curtain's reference/reduced quality, refraction's full/half `wallResolution`, and auto/byte precision. Reload to restore defaults. The half-resolution option softens the entire wall background.
+
+Touching the curtain does not disturb it yet; that is M4. These M3 checks establish real-device rendering and cost evidence before interaction work, and do not replace M4's multi-touch/latency review or M9's final phone certification.
 
 References: [Vite relative base paths](https://vite.dev/guide/build.html#relative-base), [Vite GitHub Pages deployment](https://vite.dev/guide/static-deploy.html#github-pages), [Three.js documentation](https://threejs.org/docs/).
