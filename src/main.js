@@ -45,7 +45,9 @@ function onDprChange() { resize(); watchDpr(); }
 function render(timestamp) {
   const rawDelta = timeline.tick(timestamp);
   world.updateCamera(motionPreference.matches);
+  debug?.begin(timestamp);
   renderer.render(world.scene, world.camera);
+  debug?.end();
   frames++;
   debug?.record(timestamp, rawDelta);
 }
@@ -64,12 +66,14 @@ function onMotionChange() {
 function onContextLost(event) {
   event.preventDefault();
   contextLost = true;
+  debug?.contextLost();
   syncLoop();
   showNotice('The graphics connection was interrupted. Reconnecting… You can also reload the scene.');
 }
 function onContextRestored() {
   contextLost = false;
   restores++;
+  debug?.contextRestored();
   // Three.js restores its internal renderer first; scene resources upload lazily.
   resize();
   notice.hidden = true;
@@ -87,7 +91,8 @@ function snapshot() {
     drawCalls: renderer.info.render.calls, triangles: renderer.info.render.triangles,
     geometries: renderer.info.memory.geometries, textures: renderer.info.memory.textures,
     programs: renderer.info.programs.length,
-    effects: 'M1 basic wall, translucent curtain, lip/pool markers; no postprocessing',
+    wall: world.wall.snapshot(),
+    effects: 'M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing',
     userAgent: navigator.userAgent,
   };
 }

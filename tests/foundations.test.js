@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { config } from '../src/config.js';
 import { createTimeline } from '../src/time.js';
-import { createScene } from '../src/scene/createScene.js';
+import { createCamera } from '../src/scene/camera.js';
 import { Vector3 } from 'three';
 import { createProfiler } from '../src/debug/profiler.js';
 
@@ -20,7 +20,7 @@ test('shared timeline excludes hidden time and clamps stalled frames', () => {
 
 test('lip and pool corners stay inside framing at all breathing phases', () => {
   const time = { value: 0 };
-  const world = createScene(config, time);
+  const world = createCamera(config, time);
   for (const [width, height] of [[390, 844], [844, 390], [1440, 900]]) {
     world.configure(width / height, false);
     for (let seconds = 0; seconds < 120; seconds += 0.25) {
@@ -35,7 +35,6 @@ test('lip and pool corners stay inside framing at all breathing phases', () => {
   world.updateCamera(true);
   assert.equal(world.camera.position.x, 0);
   assert.equal(world.camera.position.y, config.curtain.height / 2);
-  world.dispose();
 });
 
 test('frame sampler excludes warmup, reports percentiles, and rejects interrupted runs', () => {

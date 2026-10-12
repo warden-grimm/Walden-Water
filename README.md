@@ -1,6 +1,6 @@
 # Walden Water
 
-A static Three.js page using plain JavaScript, Vite, and GitHub Pages. M1 provides a dark wall and translucent curtain scaffold, fixed framing with subtle breathing drift, and renderer lifecycle handling. Finished waterfall shaders and interaction follow in later milestones.
+A static Three.js page using plain JavaScript, Vite, and GitHub Pages. M2 adds a displaced wet rock wall and shared shaft light to the fixed-camera scaffold. Finished water, the visible light volume, and interaction follow in later milestones.
 
 ## Waterfall build and review
 
@@ -20,7 +20,7 @@ Open the local URL printed by Vite. Changes reload automatically.
 ```sh
 npm run build    # Generate the static site in dist/
 npm run preview  # Serve the production build locally
-npm test         # Framing and shared-clock checks
+npm test         # Framing, clock, light contract, and diagnostic lifecycle checks
 ```
 
 Commit `package-lock.json` when dependencies change. `node_modules/` and `dist/` are generated and ignored by Git.
@@ -40,8 +40,11 @@ src/
   debug/                      Lazy-loaded lil-gui and bounded frame-time sampling
   styles.css                  Page layout and styling
   scene/
-    createScene.js            Placeholder geometry, camera drift, GPU disposal
-    framing.js                Orientation-independent camera distance
+    createScene.js            Scene assembly and resource ownership
+    Wall.js                   Displaced rock, shader uniforms, quality rebuilds
+    camera.js                 Fixed framing and breathing drift
+    framing.js                Camera distance and adaptive backdrop coverage
+    light.js                  Shared world-space shaft light uniforms
   shaders/                    Custom GLSL shaders
 index.html                    HTML entry point and accessible page content
 vite.config.js                Portable relative asset paths
@@ -50,7 +53,9 @@ package.json                  Dependencies and development commands
 
 Assemble scene components in `createScene.js`; extend `config.js` as each feature arrives. Keep page content in `index.html` and styling in `styles.css`. Dispose of new geometries, materials, and textures when their owning scene is removed. Camera motion respects the visitor's reduced-motion preference; rendering and the shared timeline pause in background tabs.
 
-Append `?debug` to open the tuning panel. Its Diagnostics folder offers a fixed 10-second warmup plus 60-second frame-time sample and context loss/restoration controls. The debug-only `window.__WALDEN_DEBUG__` exposes `snapshot()`, `sample()`, and `sampleStatus()` for reproducible evidence; the last returns raw samples plus median/p95. Changing settings, viewport, visibility, or motion preference cancels an active sample. These are browser frame intervals, not GPU timings or physical-phone certification. The GUI and sample buffers are absent without `?debug`.
+Append `?debug` to open the tuning panel. Its Diagnostics folder offers a fixed 10-second warmup plus 60-second frame-time sample and context loss/restoration controls. The debug-only `window.__WALDEN_DEBUG__` exposes `snapshot()`, `sample()`, and `sampleStatus()` for reproducible evidence; the last returns raw frame intervals plus median/p95, CPU render submission time, and asynchronous GPU timing when supported. Changing settings, viewport, visibility, or motion preference cancels an active sample. The GUI, query pool, and sample buffers are absent without `?debug`; these measurements do not certify physical-phone performance.
+
+The wall folder offers reference/reduced geometry, separate displacement and wet-sheen toggles (sheen is in the wet folder), and normal/light/wet mask views. Controls labelled **rebuild** recreate and dispose geometry after editing. All implemented tunables are in `src/config.js`. See the [scene contract](docs/scene-contract.md) for world coordinates, normal math, resource ownership, and the shared light API that later milestones must reuse.
 
 ## Assets and shaders
 

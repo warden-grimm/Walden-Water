@@ -74,6 +74,29 @@
 
 - **Next:** M2 is permitted by this review but was not started in this M1 task. No deployment was performed; GitHub remote/Pages setup and physical-device certification remain pending.
 
+### M2 — Wet rock and shared light submission
+
+- **Status:** Implementation/evidence complete; awaiting Claude's exact-head review. M3 has not started.
+- **BASE_SHA:** `6af1797edb83f5677eb46ff49b92b713181e0240`, the accepted M1 implementation, not its later report commits. Submission head is supplied in the Orca dispatch.
+- **Changed:** Procedural ridged/fBm vertex displacement with warped ledges and folded undersides; smooth normals from the same xyz surface; dark albedo/crevice moss and localized downward-moving wet sheen. Stable shared light uniform objects and a world-space cone/fade function establish the upper-left light. Added reference/reduced mesh controls, separate displacement/sheen toggles, normal/light/wet inspection views, geometry replacement disposal, and camera-derived wall coverage. Extracted existing camera behavior into a shader-independent module so framing remains directly testable.
+- **M1 follow-ups addressed:** Ultrawide wall coverage is derived from the farthest relief depth and all camera drift phases. Debug-only GPU timer queries expose cost beneath the refresh cap, with CPU-render submission fallback, available-only asynchronous reads, disjoint rejection, and context/HMR ownership.
+- **Contract:** [Scene/light contract](docs/scene-contract.md) specifies metres, +Y up, +Z toward camera, curtain z=0/pool y=0, stable shared time/light objects, axis/half-angle/penumbra/fade, normal math, quality and ownership. M3/M5 must consume it; visible shaft remains M6.
+- **Validation:** `npm test` passes 6/6; `npm run build` passes. Main bundle is 541.10 kB raw / 136.89 kB gzip, with the existing >500 kB warning. No new dependency; relative Vite base and Pages workflow unchanged. Browser shader compilation has no errors. Three context cycles and four HMR cycles retain two geometries/two programs and resume rendering; genuine native tab switching pauses frames/time. Physical-phone behavior is still unverified.
+- **Preview/evidence:** Builder strict port 5174; reviewer must serve its separate checkout on strict port 5175. [Evidence index](docs/evidence/M2/README.md) includes required orientations, 3840×720 ultrawide, reference/reduced and toggle captures, an eight-second wet-trickle WebM, raw frame intervals and browser lifecycle JSON. Windows / Edge 155 / NVIDIA RTX A4500 (ANGLE D3D11), 1440×900 / DPR 1 for timings, GUI hidden, default breathing on, idle/no interaction, no postprocessing.
+
+| Final 10s warmup + 60s sample | Frames | Draws / triangles | Frame median / p95 ms | GPU median / p95 ms | CPU submit median / p95 ms |
+| --- | ---: | --- | --- | --- | --- |
+| Accepted M1 code, freshly measured | 3,597 | 4 / 8 | 16.7 / 16.8 | Not exposed in M1 | Not exposed in M1 |
+| M2 reference 256×256 | 3,600 | 4 / 131,078 | 16.7 / 16.8 | 0.227 / 5.372 | 0.1 / 0.2 |
+| M2 reduced 128×128 | 3,600 | 4 / 32,774 | 16.7 / 16.8 | 0.288 / 1.987 | 0.1 / 0.2 |
+
+- **Performance disposition:** Neither frame median nor p95 increases by >10%; no gating frame-interval regression observed. GPU results are variable on this shared desktop: initial reference/reduced medians were 0.382/0.119 ms, and the final reduced median is slightly higher than reference. Do not infer a stable speedup from these refresh-limited runs. The reduced preset removes 75% of wall triangles and loses fine shelf rim/normal detail in matched captures; reference remains default for fidelity. GPU tails remain below the 16.7 ms target here, but temperature/clocks/background activity were not instrumented and thermal equivalence is unverified. Preserve both sweeps; measure real phone cost before selecting a mobile default. This is an explicit cost/fidelity review, not phone certification.
+- **Early problems/fixes:** Flat triangle normals made specular response visibly faceted; central differences of the displacement surface repaired it. The old fixed-width wall exposed its edges on ultrawide views; conservative frustum sizing plus coverage tests through aspect 6:1 repaired it. An evidence-script GUI selector and media-change wait were corrected before submission; they did not require application changes.
+- **Manual review:** (1) Open ordinary URL and `?debug`, then inspect portrait/landscape/ultrawide and DPR cap. (2) Set curtain opacity 0, compare reference/reduced with drift and trickle speed 0, and check rebuild disposal. (3) Toggle displacement and normals view: the normal output becomes flat; toggle sheen separately and restore trickle speed to 0.35. (4) Inspect light mask; move light position/target/cone and verify the rock glints follow it. (5) Repeat context loss/restoration, HMR and native tab switching with stable resources and no time jump. (6) Run the fixed sampler, inspect frame/GPU/CPU distinctions and the production build.
+- **Scope/deviations:** Equivalent shared custom-light uniforms implement the permitted SpotLight alternative. Crevice occlusion is an artistic approximation; no shadow map or visible volume yet. A procedural folded sheet implements rock relief rather than a closed cliff mesh. Remaining water, interaction, particles, pool and postprocessing are future milestones. All implemented art/quality controls live in config/GUI; four fBm octaves and hash coefficients are fixed algorithm bounds/constants.
+- **Outstanding external needs:** Physical testers/devices remain unconfirmed; arrange before M4. Named iPhone/Safari and Android/Chrome evidence is still required at later gates. No remote/Pages publication performed. The prior checkpoint-template nit remains due before the first M3 checkpoint.
+- **Review report/reviewed SHA:** Pending independent Claude review in the M2 Orca child workspace.
+
 ### M<n> — <summary>
 
 - Status:

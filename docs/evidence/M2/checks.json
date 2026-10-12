@@ -1,0 +1,1010 @@
+{
+  "captures": {
+    "desktop": {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "buffer": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "running": true,
+      "contextLost": false,
+      "restores": 0,
+      "frames": 117,
+      "elapsed": 1.9500999999999973,
+      "reducedMotion": false,
+      "camera": [
+        0.01576905370919216,
+        3.007168342783735,
+        9.388320632897686
+      ],
+      "drawCalls": 4,
+      "triangles": 131078,
+      "geometries": 2,
+      "textures": 0,
+      "programs": 2,
+      "wall": {
+        "segments": 256,
+        "size": [
+          20,
+          12
+        ],
+        "quality": "reference",
+        "displacement": true,
+        "sheen": true,
+        "view": "rock"
+      },
+      "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+    },
+    "portrait": {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "buffer": {
+        "width": 780,
+        "height": 1688
+      },
+      "dpr": 2,
+      "running": true,
+      "contextLost": false,
+      "restores": 0,
+      "frames": 167,
+      "elapsed": 2.816699999999995,
+      "reducedMotion": false,
+      "camera": [
+        0.020843474055331362,
+        3.0098870125695787,
+        10.647765095859238
+      ],
+      "drawCalls": 4,
+      "triangles": 131078,
+      "geometries": 2,
+      "textures": 0,
+      "programs": 2,
+      "wall": {
+        "segments": 256,
+        "size": [
+          20,
+          12
+        ],
+        "quality": "reference",
+        "displacement": true,
+        "sheen": true,
+        "view": "rock"
+      },
+      "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+    },
+    "landscape": {
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "buffer": {
+        "width": 1688,
+        "height": 780
+      },
+      "dpr": 2,
+      "running": true,
+      "contextLost": false,
+      "restores": 0,
+      "frames": 215,
+      "elapsed": 3.650099999999995,
+      "reducedMotion": false,
+      "camera": [
+        0.023932654936368165,
+        3.012047578885106,
+        9.388320632897686
+      ],
+      "drawCalls": 4,
+      "triangles": 131078,
+      "geometries": 2,
+      "textures": 0,
+      "programs": 2,
+      "wall": {
+        "segments": 256,
+        "size": [
+          20,
+          12
+        ],
+        "quality": "reference",
+        "displacement": true,
+        "sheen": true,
+        "view": "rock"
+      },
+      "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+    },
+    "ultrawide": {
+      "viewport": {
+        "width": 3840,
+        "height": 720
+      },
+      "buffer": {
+        "width": 3840,
+        "height": 720
+      },
+      "dpr": 1,
+      "running": true,
+      "contextLost": false,
+      "restores": 0,
+      "frames": 295,
+      "elapsed": 4.983600000000006,
+      "reducedMotion": false,
+      "camera": [
+        0.024624821591797408,
+        3.014341143791614,
+        9.388320632897686
+      ],
+      "drawCalls": 4,
+      "triangles": 131078,
+      "geometries": 2,
+      "textures": 0,
+      "programs": 2,
+      "wall": {
+        "segments": 256,
+        "size": [
+          45.941576130761035,
+          12
+        ],
+        "quality": "reference",
+        "displacement": true,
+        "sheen": true,
+        "view": "rock"
+      },
+      "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+    },
+    "rock-reference": {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "buffer": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "running": true,
+      "contextLost": false,
+      "restores": 0,
+      "frames": 354,
+      "elapsed": 5.967000000000021,
+      "reducedMotion": false,
+      "camera": [
+        0,
+        3,
+        9.388320632897686
+      ],
+      "drawCalls": 4,
+      "triangles": 131078,
+      "geometries": 2,
+      "textures": 0,
+      "programs": 2,
+      "wall": {
+        "segments": 256,
+        "size": [
+          20,
+          12
+        ],
+        "quality": "reference",
+        "displacement": true,
+        "sheen": true,
+        "view": "rock"
+      },
+      "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+    },
+    "rock-reduced": {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "buffer": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "running": true,
+      "contextLost": false,
+      "restores": 0,
+      "frames": 393,
+      "elapsed": 6.617100000000027,
+      "reducedMotion": false,
+      "camera": [
+        0,
+        3,
+        9.388320632897686
+      ],
+      "drawCalls": 4,
+      "triangles": 32774,
+      "geometries": 2,
+      "textures": 0,
+      "programs": 2,
+      "wall": {
+        "segments": 128,
+        "size": [
+          20,
+          12
+        ],
+        "quality": "reduced",
+        "displacement": true,
+        "sheen": true,
+        "view": "rock"
+      },
+      "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+    },
+    "normals": {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "buffer": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "running": true,
+      "contextLost": false,
+      "restores": 0,
+      "frames": 438,
+      "elapsed": 7.367100000000034,
+      "reducedMotion": false,
+      "camera": [
+        0,
+        3,
+        9.388320632897686
+      ],
+      "drawCalls": 4,
+      "triangles": 131078,
+      "geometries": 2,
+      "textures": 0,
+      "programs": 2,
+      "wall": {
+        "segments": 256,
+        "size": [
+          20,
+          12
+        ],
+        "quality": "reference",
+        "displacement": true,
+        "sheen": true,
+        "view": "normals"
+      },
+      "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+    },
+    "normals-flat": {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "buffer": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "running": true,
+      "contextLost": false,
+      "restores": 0,
+      "frames": 462,
+      "elapsed": 7.767100000000038,
+      "reducedMotion": false,
+      "camera": [
+        0,
+        3,
+        9.388320632897686
+      ],
+      "drawCalls": 4,
+      "triangles": 131078,
+      "geometries": 2,
+      "textures": 0,
+      "programs": 2,
+      "wall": {
+        "segments": 256,
+        "size": [
+          20,
+          12
+        ],
+        "quality": "reference",
+        "displacement": false,
+        "sheen": true,
+        "view": "normals"
+      },
+      "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+    },
+    "sheen-off": {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "buffer": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "running": true,
+      "contextLost": false,
+      "restores": 0,
+      "frames": 501,
+      "elapsed": 8.417200000000033,
+      "reducedMotion": false,
+      "camera": [
+        0,
+        3,
+        9.388320632897686
+      ],
+      "drawCalls": 4,
+      "triangles": 131078,
+      "geometries": 2,
+      "textures": 0,
+      "programs": 2,
+      "wall": {
+        "segments": 256,
+        "size": [
+          20,
+          12
+        ],
+        "quality": "reference",
+        "displacement": true,
+        "sheen": false,
+        "view": "rock"
+      },
+      "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+    },
+    "light-mask": {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "buffer": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "running": true,
+      "contextLost": false,
+      "restores": 0,
+      "frames": 528,
+      "elapsed": 8.867200000000029,
+      "reducedMotion": false,
+      "camera": [
+        0,
+        3,
+        9.388320632897686
+      ],
+      "drawCalls": 4,
+      "triangles": 131078,
+      "geometries": 2,
+      "textures": 0,
+      "programs": 2,
+      "wall": {
+        "segments": 256,
+        "size": [
+          20,
+          12
+        ],
+        "quality": "reference",
+        "displacement": true,
+        "sheen": true,
+        "view": "light mask"
+      },
+      "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+    }
+  },
+  "context": [
+    {
+      "lost": {
+        "snapshot": {
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "buffer": {
+            "width": 1440,
+            "height": 900
+          },
+          "dpr": 1,
+          "running": false,
+          "contextLost": true,
+          "restores": 0,
+          "frames": 54,
+          "elapsed": 0.9000000000000004,
+          "reducedMotion": false,
+          "camera": [
+            0.007745411780690075,
+            3.003418932598957,
+            9.388320632897686
+          ],
+          "drawCalls": 4,
+          "triangles": 131078,
+          "geometries": 2,
+          "textures": 0,
+          "programs": 2,
+          "wall": {
+            "segments": 256,
+            "size": [
+              20,
+              12
+            ],
+            "quality": "reference",
+            "displacement": true,
+            "sheen": true,
+            "view": "rock"
+          },
+          "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+        },
+        "sample": "cancelled"
+      },
+      "restored": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "buffer": {
+          "width": 1440,
+          "height": 900
+        },
+        "dpr": 1,
+        "running": true,
+        "contextLost": false,
+        "restores": 1,
+        "frames": 103,
+        "elapsed": 1.7001159999999977,
+        "reducedMotion": false,
+        "camera": [
+          0.014013559421645679,
+          3.006312715988998,
+          9.388320632897686
+        ],
+        "drawCalls": 4,
+        "triangles": 131078,
+        "geometries": 2,
+        "textures": 0,
+        "programs": 2,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      }
+    },
+    {
+      "lost": {
+        "snapshot": {
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "buffer": {
+            "width": 1440,
+            "height": 900
+          },
+          "dpr": 1,
+          "running": false,
+          "contextLost": true,
+          "restores": 1,
+          "frames": 103,
+          "elapsed": 1.7001159999999977,
+          "reducedMotion": false,
+          "camera": [
+            0.014013559421645679,
+            3.006312715988998,
+            9.388320632897686
+          ],
+          "drawCalls": 4,
+          "triangles": 131078,
+          "geometries": 2,
+          "textures": 0,
+          "programs": 2,
+          "wall": {
+            "segments": 256,
+            "size": [
+              20,
+              12
+            ],
+            "quality": "reference",
+            "displacement": true,
+            "sheen": true,
+            "view": "rock"
+          },
+          "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+        },
+        "sample": "cancelled"
+      },
+      "restored": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "buffer": {
+          "width": 1440,
+          "height": 900
+        },
+        "dpr": 1,
+        "running": true,
+        "contextLost": false,
+        "restores": 2,
+        "frames": 152,
+        "elapsed": 2.516815999999997,
+        "reducedMotion": false,
+        "camera": [
+          0.019282570940953828,
+          3.008994543620608,
+          9.388320632897686
+        ],
+        "drawCalls": 4,
+        "triangles": 131078,
+        "geometries": 2,
+        "textures": 0,
+        "programs": 2,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      }
+    },
+    {
+      "lost": {
+        "snapshot": {
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "buffer": {
+            "width": 1440,
+            "height": 900
+          },
+          "dpr": 1,
+          "running": false,
+          "contextLost": true,
+          "restores": 2,
+          "frames": 152,
+          "elapsed": 2.516815999999997,
+          "reducedMotion": false,
+          "camera": [
+            0.019282570940953828,
+            3.008994543620608,
+            9.388320632897686
+          ],
+          "drawCalls": 4,
+          "triangles": 131078,
+          "geometries": 2,
+          "textures": 0,
+          "programs": 2,
+          "wall": {
+            "segments": 256,
+            "size": [
+              20,
+              12
+            ],
+            "quality": "reference",
+            "displacement": true,
+            "sheen": true,
+            "view": "rock"
+          },
+          "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+        },
+        "sample": "cancelled"
+      },
+      "restored": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "buffer": {
+          "width": 1440,
+          "height": 900
+        },
+        "dpr": 1,
+        "running": true,
+        "contextLost": false,
+        "restores": 3,
+        "frames": 201,
+        "elapsed": 3.316931999999995,
+        "reducedMotion": false,
+        "camera": [
+          0.02292931459382268,
+          3.0112441844970315,
+          9.388320632897686
+        ],
+        "drawCalls": 4,
+        "triangles": 131078,
+        "geometries": 2,
+        "textures": 0,
+        "programs": 2,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      }
+    }
+  ],
+  "hmr": [
+    {
+      "snapshot": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "buffer": {
+          "width": 1440,
+          "height": 900
+        },
+        "dpr": 1,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 53,
+        "elapsed": 0.8832999999999995,
+        "reducedMotion": false,
+        "camera": [
+          0.007606345144072879,
+          3.003356583609195,
+          9.388320632897686
+        ],
+        "drawCalls": 4,
+        "triangles": 131078,
+        "geometries": 2,
+        "textures": 0,
+        "programs": 2,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      },
+      "canvases": 1,
+      "panels": 1
+    },
+    {
+      "snapshot": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "buffer": {
+          "width": 1440,
+          "height": 900
+        },
+        "dpr": 1,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 53,
+        "elapsed": 0.8667000000000004,
+        "reducedMotion": false,
+        "camera": [
+          0.007467853699206096,
+          3.003294547402327,
+          9.388320632897686
+        ],
+        "drawCalls": 4,
+        "triangles": 131078,
+        "geometries": 2,
+        "textures": 0,
+        "programs": 2,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      },
+      "canvases": 1,
+      "panels": 1
+    },
+    {
+      "snapshot": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "buffer": {
+          "width": 1440,
+          "height": 900
+        },
+        "dpr": 1,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 53,
+        "elapsed": 0.8667000000000001,
+        "reducedMotion": false,
+        "camera": [
+          0.007467853699206094,
+          3.003294547402327,
+          9.388320632897686
+        ],
+        "drawCalls": 4,
+        "triangles": 131078,
+        "geometries": 2,
+        "textures": 0,
+        "programs": 2,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      },
+      "canvases": 1,
+      "panels": 1
+    },
+    {
+      "snapshot": {
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "buffer": {
+          "width": 1440,
+          "height": 900
+        },
+        "dpr": 1,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 53,
+        "elapsed": 0.8666999999999992,
+        "reducedMotion": false,
+        "camera": [
+          0.007467853699206085,
+          3.003294547402327,
+          9.388320632897686
+        ],
+        "drawCalls": 4,
+        "triangles": 131078,
+        "geometries": 2,
+        "textures": 0,
+        "programs": 2,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      },
+      "canvases": 1,
+      "panels": 1
+    }
+  ],
+  "normalUrl": {
+    "debug": false,
+    "gui": 0
+  },
+  "reducedMotion": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "buffer": {
+      "width": 1440,
+      "height": 900
+    },
+    "dpr": 1,
+    "running": true,
+    "contextLost": false,
+    "restores": 0,
+    "frames": 67,
+    "elapsed": 1.1000999999999992,
+    "reducedMotion": true,
+    "camera": [
+      0,
+      3,
+      9.388320632897686
+    ],
+    "drawCalls": 4,
+    "triangles": 131078,
+    "geometries": 2,
+    "textures": 0,
+    "programs": 2,
+    "wall": {
+      "segments": 256,
+      "size": [
+        20,
+        12
+      ],
+      "quality": "reference",
+      "displacement": true,
+      "sheen": true,
+      "view": "rock"
+    },
+    "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+  },
+  "visibility": {
+    "hiddenA": {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "buffer": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "running": false,
+      "contextLost": false,
+      "restores": 0,
+      "frames": 68,
+      "elapsed": 1.1166999999999996,
+      "reducedMotion": false,
+      "camera": [
+        0.00952424568634312,
+        3.004221922589574,
+        9.388320632897686
+      ],
+      "drawCalls": 4,
+      "triangles": 131078,
+      "geometries": 2,
+      "textures": 0,
+      "programs": 2,
+      "wall": {
+        "segments": 256,
+        "size": [
+          20,
+          12
+        ],
+        "quality": "reference",
+        "displacement": true,
+        "sheen": true,
+        "view": "rock"
+      },
+      "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+    },
+    "hiddenB": {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "buffer": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "running": false,
+      "contextLost": false,
+      "restores": 0,
+      "frames": 68,
+      "elapsed": 1.1166999999999996,
+      "reducedMotion": false,
+      "camera": [
+        0.00952424568634312,
+        3.004221922589574,
+        9.388320632897686
+      ],
+      "drawCalls": 4,
+      "triangles": 131078,
+      "geometries": 2,
+      "textures": 0,
+      "programs": 2,
+      "wall": {
+        "segments": 256,
+        "size": [
+          20,
+          12
+        ],
+        "quality": "reference",
+        "displacement": true,
+        "sheen": true,
+        "view": "rock"
+      },
+      "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+    },
+    "resumed": {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "buffer": {
+        "width": 1440,
+        "height": 900
+      },
+      "dpr": 1,
+      "running": true,
+      "contextLost": false,
+      "restores": 0,
+      "frames": 93,
+      "elapsed": 1.5167000000000008,
+      "reducedMotion": false,
+      "camera": [
+        0.012656555815273958,
+        3.0056683583613704,
+        9.388320632897686
+      ],
+      "drawCalls": 4,
+      "triangles": 131078,
+      "geometries": 2,
+      "textures": 0,
+      "programs": 2,
+      "wall": {
+        "segments": 256,
+        "size": [
+          20,
+          12
+        ],
+        "quality": "reference",
+        "displacement": true,
+        "sheen": true,
+        "view": "rock"
+      },
+      "effects": "M2 displaced wet rock and shared shaft light; M1 curtain/markers; no postprocessing",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+    }
+  },
+  "gpu": {
+    "renderer": "ANGLE (NVIDIA, NVIDIA RTX A4500 (0x00002232) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "timer": true
+  },
+  "errors": []
+}
