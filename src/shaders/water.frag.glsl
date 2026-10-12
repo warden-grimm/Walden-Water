@@ -6,11 +6,13 @@ uniform float uWidth, uEdgeRaggedness, uLipFade;
 uniform float uStreakContrast, uNormalStrength, uNormalStep, uFresnel, uFresnelPower;
 uniform float uRefractionStrength, uTransmission, uGlint, uGloss, uAmbient;
 uniform bool uRefraction;
+uniform bool uFieldOverlay;
 uniform int uView;
 varying vec2 vUv;
 varying vec3 vWorld, vNormal;
 // __WATER__
 // __LIGHT__
+// __FIELD__
 void main() {
   float n = waterNoise(vUv);
   vec2 stepUv = vec2(uNormalStep, 0.0);
@@ -44,6 +46,10 @@ void main() {
   if (uView == 3) { color = behind; alpha = 1.0; }
   if (uView == 4) { color = vec3(coverage); alpha = 1.0; }
   if (uView == 5) { color = vec3(beam); alpha = 1.0; }
+  if (uFieldOverlay) {
+    vec2 field = sampleField(vUv);
+    color = vec3(max(-field.x, 0.0), field.y, max(field.x, 0.0)); alpha = 1.0;
+  }
   gl_FragColor = vec4(color, alpha);
   #include <tonemapping_fragment>
   #include <colorspace_fragment>

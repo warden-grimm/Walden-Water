@@ -6,9 +6,11 @@ import fragmentSource from '../shaders/water.frag.glsl?raw';
 import common from '../shaders/water-common.glsl?raw';
 import noise from '../shaders/noise.glsl?raw';
 import lightSource from '../shaders/light.glsl?raw';
+import fieldSource from '../shaders/field-common.glsl?raw';
 
-export function createWaterCurtain(config, time, light, wallTexture) {
-  const uniforms = { ...light.uniforms, uTime: time, uWallTexture: wallTexture,
+export function createWaterCurtain(config, time, light, wallTexture, fieldUniforms) {
+  const uniforms = { ...light.uniforms, ...fieldUniforms, uTime: time, uWallTexture: wallTexture,
+    uFieldOverlay: { value: false },
     uBufferSize: { value: new Vector2() }, uTargetSize: { value: new Vector2() }, uView: { value: 0 } };
   const bindings = {
     uHeight: ['curtain', 'height'], uWidth: ['curtain', 'width'], uWaterColor: ['curtain', 'color'], uOpacity: ['curtain', 'opacity'],
@@ -29,7 +31,7 @@ export function createWaterCurtain(config, time, light, wallTexture) {
     uniforms[name] = { value: typeof value === 'string' ? new Color(value) : value };
   }
   const material = new ShaderMaterial({ uniforms, vertexShader,
-    fragmentShader: fragmentSource.replace('// __WATER__', common.replace('// __NOISE__', noise)).replace('// __LIGHT__', lightSource),
+    fragmentShader: fragmentSource.replace('// __WATER__', common.replace('// __NOISE__', noise)).replace('// __LIGHT__', lightSource).replace('// __FIELD__', fieldSource),
     transparent: true, depthWrite: false, premultipliedAlpha: true });
   // One front-facing sheet, one transparent draw: no back/front sorting passes.
   const mesh = new Mesh(createCurtainGeometry(config.curtain), material);
@@ -48,6 +50,7 @@ export function createWaterCurtain(config, time, light, wallTexture) {
     uniforms.uBufferSize.value.set(bufferWidth, bufferHeight);
     uniforms.uTargetSize.value.set(targetWidth, targetHeight);
     uniforms.uView.value = choices.water.view.indexOf(config.water.view);
+    uniforms.uFieldOverlay.value = config.touch.overlay;
     for (const [name, [group, field]] of Object.entries(bindings)) {
       const value = config[group][field];
       if (typeof value === 'string') uniforms[name].value.set(value); else uniforms[name].value = value;

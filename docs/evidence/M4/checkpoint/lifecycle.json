@@ -1,0 +1,1113 @@
+{
+  "rebuilds": [
+    {
+      "snapshot": {
+        "viewport": {
+          "width": 1416,
+          "height": 908
+        },
+        "buffer": {
+          "width": 1416,
+          "height": 908
+        },
+        "dpr": 1,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 60,
+        "elapsed": 1.0780000000000003,
+        "reducedMotion": false,
+        "camera": [
+          0,
+          3,
+          9.388320632897686
+        ],
+        "drawCalls": 4,
+        "triangles": 227076,
+        "geometries": 4,
+        "textures": 3,
+        "programs": 4,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "water",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "geometryMatchesRaycast": true
+        },
+        "capture": {
+          "width": 1416,
+          "height": 908,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 1,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "touch": {
+          "width": 128,
+          "height": 256,
+          "format": "RGBA16F / manual bilinear",
+          "generation": 2,
+          "steps": 61,
+          "distinctTargets": true,
+          "readId": 16,
+          "writeId": 14,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 0,
+          "pointers": []
+        },
+        "effects": "M4 checkpoint: touch field and overlay; M3 water; no postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      },
+      "field": {
+        "max": 0,
+        "sum": 0,
+        "centroidU": null,
+        "centroidV": null,
+        "minX": 0,
+        "maxX": 0
+      }
+    },
+    {
+      "snapshot": {
+        "viewport": {
+          "width": 1416,
+          "height": 908
+        },
+        "buffer": {
+          "width": 1416,
+          "height": 908
+        },
+        "dpr": 1,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 70,
+        "elapsed": 1.2540000000000004,
+        "reducedMotion": false,
+        "camera": [
+          0,
+          3,
+          9.388320632897686
+        ],
+        "drawCalls": 4,
+        "triangles": 227076,
+        "geometries": 4,
+        "textures": 3,
+        "programs": 4,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "water",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "geometryMatchesRaycast": true
+        },
+        "capture": {
+          "width": 1416,
+          "height": 908,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 1,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "touch": {
+          "width": 512,
+          "height": 1024,
+          "format": "RGBA16F / manual bilinear",
+          "generation": 3,
+          "steps": 71,
+          "distinctTargets": true,
+          "readId": 22,
+          "writeId": 24,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 0,
+          "pointers": []
+        },
+        "effects": "M4 checkpoint: touch field and overlay; M3 water; no postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      },
+      "field": {
+        "max": 0,
+        "sum": 0,
+        "centroidU": null,
+        "centroidV": null,
+        "minX": 0,
+        "maxX": 0
+      }
+    },
+    {
+      "snapshot": {
+        "viewport": {
+          "width": 1416,
+          "height": 908
+        },
+        "buffer": {
+          "width": 1416,
+          "height": 908
+        },
+        "dpr": 1,
+        "running": true,
+        "contextLost": false,
+        "restores": 0,
+        "frames": 80,
+        "elapsed": 1.4296000000000004,
+        "reducedMotion": false,
+        "camera": [
+          0,
+          3,
+          9.388320632897686
+        ],
+        "drawCalls": 4,
+        "triangles": 227076,
+        "geometries": 4,
+        "textures": 3,
+        "programs": 4,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "water",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "geometryMatchesRaycast": true
+        },
+        "capture": {
+          "width": 1416,
+          "height": 908,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 1,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "touch": {
+          "width": 256,
+          "height": 512,
+          "format": "RGBA16F / manual bilinear",
+          "generation": 4,
+          "steps": 81,
+          "distinctTargets": true,
+          "readId": 30,
+          "writeId": 32,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 0,
+          "pointers": []
+        },
+        "effects": "M4 checkpoint: touch field and overlay; M3 water; no postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      },
+      "field": {
+        "max": 0,
+        "sum": 0,
+        "centroidU": null,
+        "centroidV": null,
+        "minX": 0,
+        "maxX": 0
+      }
+    },
+    {
+      "snapshot": {
+        "viewport": {
+          "width": 1416,
+          "height": 908
+        },
+        "buffer": {
+          "width": 1416,
+          "height": 908
+        },
+        "dpr": 1,
+        "running": true,
+        "contextLost": false,
+        "restores": 1,
+        "frames": 278,
+        "elapsed": 4.941300000000001,
+        "reducedMotion": false,
+        "camera": [
+          0,
+          3,
+          9.388320632897686
+        ],
+        "drawCalls": 4,
+        "triangles": 227076,
+        "geometries": 4,
+        "textures": 3,
+        "programs": 4,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "water",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "geometryMatchesRaycast": true
+        },
+        "capture": {
+          "width": 1416,
+          "height": 908,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 2,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "touch": {
+          "width": 128,
+          "height": 256,
+          "format": "RGBA8 packed16 / manual bilinear",
+          "generation": 7,
+          "steps": 280,
+          "distinctTargets": true,
+          "readId": 102,
+          "writeId": 100,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 0,
+          "pointers": []
+        },
+        "effects": "M4 checkpoint: touch field and overlay; M3 water; no postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      },
+      "field": {
+        "max": 0,
+        "sum": 0,
+        "centroidU": null,
+        "centroidV": null,
+        "minX": 0,
+        "maxX": 0
+      }
+    },
+    {
+      "snapshot": {
+        "viewport": {
+          "width": 1416,
+          "height": 908
+        },
+        "buffer": {
+          "width": 1416,
+          "height": 908
+        },
+        "dpr": 1,
+        "running": true,
+        "contextLost": false,
+        "restores": 1,
+        "frames": 287,
+        "elapsed": 5.101700000000001,
+        "reducedMotion": false,
+        "camera": [
+          0,
+          3,
+          9.388320632897686
+        ],
+        "drawCalls": 4,
+        "triangles": 227076,
+        "geometries": 4,
+        "textures": 3,
+        "programs": 4,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "water",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "geometryMatchesRaycast": true
+        },
+        "capture": {
+          "width": 1416,
+          "height": 908,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 2,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "touch": {
+          "width": 512,
+          "height": 1024,
+          "format": "RGBA8 packed16 / manual bilinear",
+          "generation": 8,
+          "steps": 289,
+          "distinctTargets": true,
+          "readId": 110,
+          "writeId": 108,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 0,
+          "pointers": []
+        },
+        "effects": "M4 checkpoint: touch field and overlay; M3 water; no postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      },
+      "field": {
+        "max": 0,
+        "sum": 0,
+        "centroidU": null,
+        "centroidV": null,
+        "minX": 0,
+        "maxX": 0
+      }
+    },
+    {
+      "snapshot": {
+        "viewport": {
+          "width": 1416,
+          "height": 908
+        },
+        "buffer": {
+          "width": 1416,
+          "height": 908
+        },
+        "dpr": 1,
+        "running": true,
+        "contextLost": false,
+        "restores": 1,
+        "frames": 297,
+        "elapsed": 5.2791000000000015,
+        "reducedMotion": false,
+        "camera": [
+          0,
+          3,
+          9.388320632897686
+        ],
+        "drawCalls": 4,
+        "triangles": 227076,
+        "geometries": 4,
+        "textures": 3,
+        "programs": 4,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "water",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "geometryMatchesRaycast": true
+        },
+        "capture": {
+          "width": 1416,
+          "height": 908,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 2,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "touch": {
+          "width": 256,
+          "height": 512,
+          "format": "RGBA8 packed16 / manual bilinear",
+          "generation": 9,
+          "steps": 299,
+          "distinctTargets": true,
+          "readId": 118,
+          "writeId": 116,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 0,
+          "pointers": []
+        },
+        "effects": "M4 checkpoint: touch field and overlay; M3 water; no postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      },
+      "field": {
+        "max": 0,
+        "sum": 0,
+        "centroidU": null,
+        "centroidV": null,
+        "minX": 0,
+        "maxX": 0
+      }
+    }
+  ],
+  "restores": [
+    {
+      "snapshot": {
+        "viewport": {
+          "width": 1416,
+          "height": 908
+        },
+        "buffer": {
+          "width": 1416,
+          "height": 908
+        },
+        "dpr": 1,
+        "running": true,
+        "contextLost": false,
+        "restores": 1,
+        "frames": 263,
+        "elapsed": 4.676099999999999,
+        "reducedMotion": false,
+        "camera": [
+          0,
+          3,
+          9.388320632897686
+        ],
+        "drawCalls": 4,
+        "triangles": 227076,
+        "geometries": 4,
+        "textures": 3,
+        "programs": 4,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "water",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "geometryMatchesRaycast": true
+        },
+        "capture": {
+          "width": 1416,
+          "height": 908,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 2,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "touch": {
+          "width": 256,
+          "height": 512,
+          "format": "RGBA16F / manual bilinear",
+          "generation": 5,
+          "steps": 265,
+          "distinctTargets": true,
+          "readId": 86,
+          "writeId": 88,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 0,
+          "pointers": []
+        },
+        "effects": "M4 checkpoint: touch field and overlay; M3 water; no postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      },
+      "field": {
+        "max": 0,
+        "sum": 0,
+        "centroidU": null,
+        "centroidV": null,
+        "minX": 0,
+        "maxX": 0
+      }
+    },
+    {
+      "snapshot": {
+        "viewport": {
+          "width": 1416,
+          "height": 908
+        },
+        "buffer": {
+          "width": 1416,
+          "height": 908
+        },
+        "dpr": 1,
+        "running": true,
+        "contextLost": false,
+        "restores": 2,
+        "frames": 479,
+        "elapsed": 8.524800000000011,
+        "reducedMotion": false,
+        "camera": [
+          0,
+          3,
+          9.388320632897686
+        ],
+        "drawCalls": 4,
+        "triangles": 227076,
+        "geometries": 4,
+        "textures": 3,
+        "programs": 4,
+        "wall": {
+          "segments": 256,
+          "size": [
+            20,
+            12
+          ],
+          "quality": "reference",
+          "displacement": true,
+          "sheen": true,
+          "view": "rock"
+        },
+        "curtain": {
+          "quality": "reference",
+          "columns": 120,
+          "rows": 400,
+          "visible": true,
+          "view": "water",
+          "refraction": true,
+          "uv": "u left-to-right, v bottom-to-top",
+          "geometryMatchesRaycast": true
+        },
+        "capture": {
+          "width": 1416,
+          "height": 908,
+          "samples": 4,
+          "format": "RGBA16F linear",
+          "generation": 3,
+          "sourceObjects": [
+            "wall"
+          ]
+        },
+        "touch": {
+          "width": 256,
+          "height": 512,
+          "format": "RGBA8 packed16 / manual bilinear",
+          "generation": 10,
+          "steps": 482,
+          "distinctTargets": true,
+          "readId": 174,
+          "writeId": 172,
+          "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+          "count": 0,
+          "pointers": []
+        },
+        "effects": "M4 checkpoint: touch field and overlay; M3 water; no postprocessing",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+      },
+      "field": {
+        "max": 0,
+        "sum": 0,
+        "centroidU": null,
+        "centroidV": null,
+        "minX": 0,
+        "maxX": 0
+      }
+    }
+  ],
+  "recovery": {
+    "auto": [
+      {
+        "elapsed": 0.08689999999999998,
+        "max": 0.5795834287022202,
+        "sum": 941.6012970169007,
+        "centroidU": 0.5335402015414336,
+        "centroidV": 0.6180488862244528,
+        "minX": -0.34962004455702383,
+        "maxX": 0.3491317484054079
+      },
+      {
+        "elapsed": 0.17510000000000003,
+        "max": 0.39380483710994124,
+        "sum": 669.8405737392525,
+        "centroidU": 0.5335407535496758,
+        "centroidV": 0.5826119364423642,
+        "minX": -0.2369457075716422,
+        "maxX": 0.23682363353373823
+      },
+      {
+        "elapsed": 0.2812000000000001,
+        "max": 0.24719615472648204,
+        "sum": 443.44878309302766,
+        "centroidU": 0.5335405647366478,
+        "centroidV": 0.5379940415320268,
+        "minX": -0.14844203009125034,
+        "maxX": 0.14844203009125034
+      },
+      {
+        "elapsed": 0.36929999999999996,
+        "max": 0.16833752956435494,
+        "sum": 314.10681315329373,
+        "centroidU": 0.5335444446945645,
+        "centroidV": 0.4992932294242106,
+        "minX": -0.10083315530869473,
+        "maxX": 0.10089419232764672
+      },
+      {
+        "elapsed": 0.45889999999999986,
+        "max": 0.11389333943694209,
+        "sum": 220.7859159228039,
+        "centroidU": 0.5335410530880148,
+        "centroidV": 0.4584169631053007,
+        "minX": -0.06805627613147373,
+        "maxX": 0.06811731315042574
+      },
+      {
+        "elapsed": 0.5640000000000005,
+        "max": 0.0720225833524071,
+        "sum": 145.475333791114,
+        "centroidU": 0.533540336580461,
+        "centroidV": 0.40857052463994464,
+        "minX": -0.04297006134220405,
+        "maxX": 0.04303109836115604
+      },
+      {
+        "elapsed": 0.6517000000000004,
+        "max": 0.049103532463569084,
+        "sum": 102.35509269856627,
+        "centroidU": 0.5335444774979157,
+        "centroidV": 0.36528024205992593,
+        "minX": -0.029236732078005312,
+        "maxX": 0.029267250587481308
+      },
+      {
+        "elapsed": 0.7397,
+        "max": 0.03341725795376516,
+        "sum": 71.56438544289905,
+        "centroidU": 0.5335432131510681,
+        "centroidV": 0.32044452370928367,
+        "minX": -0.019867549668874173,
+        "maxX": 0.01989806817835017
+      },
+      {
+        "elapsed": 0.8456999999999999,
+        "max": 0.021042191195544367,
+        "sum": 46.131670099950036,
+        "centroidU": 0.5335434044465241,
+        "centroidV": 0.26466854217910113,
+        "minX": -0.012482070375682853,
+        "maxX": 0.012482070375682853
+      },
+      {
+        "elapsed": 0.9357999999999991,
+        "max": 0.014221408407721065,
+        "sum": 31.485587853818462,
+        "centroidU": 0.533542329834308,
+        "centroidV": 0.21604629918531681,
+        "minX": -0.008423108615375225,
+        "maxX": 0.008423108615375225
+      },
+      {
+        "elapsed": 1.0236999999999994,
+        "max": 0.009704737926298924,
+        "sum": 21.282368200198295,
+        "centroidU": 0.5335449533828897,
+        "centroidV": 0.1682866099819684,
+        "minX": -0.005737479781487472,
+        "maxX": 0.005737479781487472
+      },
+      {
+        "elapsed": 1.1121999999999992,
+        "max": 0.006591897459372854,
+        "sum": 13.174319066147815,
+        "centroidU": 0.5335854391763367,
+        "centroidV": 0.128118134487795,
+        "minX": -0.003906369212927641,
+        "maxX": 0.003906369212927641
+      },
+      {
+        "elapsed": 1.219199999999999,
+        "max": 0.00413519493400473,
+        "sum": 6.520088502326979,
+        "centroidU": 0.5336109695549207,
+        "centroidV": 0.08285623635307365,
+        "minX": -0.0024414807580797754,
+        "maxX": 0.0024414807580797754
+      },
+      {
+        "elapsed": 1.3069999999999995,
+        "max": 0.002822919050888838,
+        "sum": 2.958388647287699,
+        "centroidU": 0.5336069711042529,
+        "centroidV": 0.0475995314224672,
+        "minX": -0.0016479995117038484,
+        "maxX": 0.0016785180211798456
+      },
+      {
+        "elapsed": 1.3955999999999995,
+        "max": 0.0018921187151903563,
+        "sum": 0.6000305180437916,
+        "centroidU": 0.5337568324358537,
+        "centroidV": 0.016060967619141466,
+        "minX": -0.0011291848506118961,
+        "maxX": 0.0011291848506118961
+      },
+      {
+        "elapsed": 1.501399999999999,
+        "max": 0,
+        "sum": 0,
+        "centroidU": null,
+        "centroidV": null,
+        "minX": 0,
+        "maxX": 0
+      },
+      {
+        "elapsed": 1.5906999999999987,
+        "max": 0,
+        "sum": 0,
+        "centroidU": null,
+        "centroidV": null,
+        "minX": 0,
+        "maxX": 0
+      },
+      {
+        "elapsed": 1.6798999999999982,
+        "max": 0,
+        "sum": 0,
+        "centroidU": null,
+        "centroidV": null,
+        "minX": 0,
+        "maxX": 0
+      },
+      {
+        "elapsed": 1.768799999999998,
+        "max": 0,
+        "sum": 0,
+        "centroidU": null,
+        "centroidV": null,
+        "minX": 0,
+        "maxX": 0
+      },
+      {
+        "elapsed": 1.8738999999999977,
+        "max": 0,
+        "sum": 0,
+        "centroidU": null,
+        "centroidV": null,
+        "minX": 0,
+        "maxX": 0
+      },
+      {
+        "elapsed": 1.9626999999999977,
+        "max": 0,
+        "sum": 0,
+        "centroidU": null,
+        "centroidV": null,
+        "minX": 0,
+        "maxX": 0
+      },
+      {
+        "elapsed": 2.0512999999999977,
+        "max": 0,
+        "sum": 0,
+        "centroidU": null,
+        "centroidV": null,
+        "minX": 0,
+        "maxX": 0
+      },
+      {
+        "elapsed": 2.1589999999999976,
+        "max": 0,
+        "sum": 0,
+        "centroidU": null,
+        "centroidV": null,
+        "minX": 0,
+        "maxX": 0
+      }
+    ],
+    "byte": [
+      {
+        "elapsed": 0.0884999999999998,
+        "max": 0.5770351720454718,
+        "sum": 942.2089875639061,
+        "centroidU": 0.5335410731860649,
+        "centroidV": 0.6169801456923664,
+        "minX": -0.34781945249794,
+        "maxX": 0.34742271187475204
+      },
+      {
+        "elapsed": 0.17740000000000045,
+        "max": 0.39078355077439536,
+        "sum": 669.6449378194974,
+        "centroidU": 0.5335414242591123,
+        "centroidV": 0.581216038858977,
+        "minX": -0.23514511551255837,
+        "maxX": 0.2349925229651784
+      },
+      {
+        "elapsed": 0.2840000000000007,
+        "max": 0.24551766231784541,
+        "sum": 443.3638818951823,
+        "centroidU": 0.5335391369428204,
+        "centroidV": 0.5363148371351385,
+        "minX": -0.14740440076906644,
+        "maxX": 0.14743491927854244
+      },
+      {
+        "elapsed": 0.3730000000000002,
+        "max": 0.16685740444037536,
+        "sum": 313.523521782266,
+        "centroidU": 0.5335416673231769,
+        "centroidV": 0.4971595476778723,
+        "minX": -0.1000091555528428,
+        "maxX": 0.1000396740623188
+      },
+      {
+        "elapsed": 0.4626000000000001,
+        "max": 0.11314564736400397,
+        "sum": 220.73696498055622,
+        "centroidU": 0.5335367897289709,
+        "centroidV": 0.45620383183371066,
+        "minX": -0.06765953550828578,
+        "maxX": 0.06775109103671377
+      },
+      {
+        "elapsed": 0.5513000000000003,
+        "max": 0.07698176546883345,
+        "sum": 155.55613031205763,
+        "centroidU": 0.5335443844833837,
+        "centroidV": 0.4141508057600505,
+        "minX": -0.045930356761375773,
+        "maxX": 0.045991393780327766
+      },
+      {
+        "elapsed": 0.6577000000000002,
+        "max": 0.04846265354390784,
+        "sum": 101.75107957580725,
+        "centroidU": 0.5335495898117123,
+        "centroidV": 0.3616920637195002,
+        "minX": -0.028839991454817346,
+        "maxX": 0.028901028473769342
+      },
+      {
+        "elapsed": 0.7465000000000002,
+        "max": 0.03292896925307088,
+        "sum": 71.00781261921718,
+        "centroidU": 0.5335473217943221,
+        "centroidV": 0.3162890194040219,
+        "minX": -0.0195623645741142,
+        "maxX": 0.019623401593066195
+      },
+      {
+        "elapsed": 0.8356000000000003,
+        "max": 0.022354467078660258,
+        "sum": 49.20517280842668,
+        "centroidU": 0.5335416937770344,
+        "centroidV": 0.26939923787965564,
+        "minX": -0.01327555162205878,
+        "maxX": 0.013306070131534776
+      },
+      {
+        "elapsed": 0.9421000000000008,
+        "max": 0.014084077210650798,
+        "sum": 31.409506370641534,
+        "centroidU": 0.5335409216835788,
+        "centroidV": 0.21192563462296707,
+        "minX": -0.00836207159642323,
+        "maxX": 0.00836207159642323
+      },
+      {
+        "elapsed": 1.0307000000000004,
+        "max": 0.00959792477302205,
+        "sum": 21.11477836270688,
+        "centroidU": 0.533527451498441,
+        "centroidV": 0.16445241658556267,
+        "minX": -0.005676442762535478,
+        "maxX": 0.005676442762535478
+      },
+      {
+        "elapsed": 1.1188000000000002,
+        "max": 0.006546120393682765,
+        "sum": 13.020111390859801,
+        "centroidU": 0.53355578360106,
+        "centroidV": 0.12517460684293039,
+        "minX": -0.0038758507034516434,
+        "maxX": 0.0038758507034516434
+      },
+      {
+        "elapsed": 1.2264,
+        "max": 0.004104676890211338,
+        "sum": 6.3647516594186095,
+        "centroidU": 0.533587190791966,
+        "centroidV": 0.07983970752749911,
+        "minX": -0.002410962248603778,
+        "maxX": 0.0024414807580797754
+      },
+      {
+        "elapsed": 1.3149000000000006,
+        "max": 0.0028076600289921416,
+        "sum": 2.8045014114595164,
+        "centroidU": 0.533652849690278,
+        "centroidV": 0.04473673018865022,
+        "minX": -0.0016479995117038484,
+        "maxX": 0.0016479995117038484
+      },
+      {
+        "elapsed": 1.4040000000000008,
+        "max": 0.0018310826276035706,
+        "sum": 0.4813153276874938,
+        "centroidU": 0.533485973016995,
+        "centroidV": 0.014008933489601494,
+        "minX": -0.0010681478316599017,
+        "maxX": 0.0010681478316599017
+      },
+      {
+        "elapsed": 1.4931000000000019,
+        "max": 0,
+        "sum": 0,
+        "centroidU": null,
+        "centroidV": null,
+        "minX": 0,
+        "maxX": 0
+      },
+      {
+        "elapsed": 1.599400000000002,
+        "max": 0,
+        "sum": 0,
+        "centroidU": null,
+        "centroidV": null,
+        "minX": 0,
+        "maxX": 0
+      },
+      {
+        "elapsed": 1.688500000000002,
+        "max": 0,
+        "sum": 0,
+        "centroidU": null,
+        "centroidV": null,
+        "minX": 0,
+        "maxX": 0
+      },
+      {
+        "elapsed": 1.7776000000000023,
+        "max": 0,
+        "sum": 0,
+        "centroidU": null,
+        "centroidV": null,
+        "minX": 0,
+        "maxX": 0
+      },
+      {
+        "elapsed": 1.8846000000000025,
+        "max": 0,
+        "sum": 0,
+        "centroidU": null,
+        "centroidV": null,
+        "minX": 0,
+        "maxX": 0
+      },
+      {
+        "elapsed": 1.9737000000000018,
+        "max": 0,
+        "sum": 0,
+        "centroidU": null,
+        "centroidV": null,
+        "minX": 0,
+        "maxX": 0
+      },
+      {
+        "elapsed": 2.063600000000001,
+        "max": 0,
+        "sum": 0,
+        "centroidU": null,
+        "centroidV": null,
+        "minX": 0,
+        "maxX": 0
+      },
+      {
+        "elapsed": 2.153500000000003,
+        "max": 0,
+        "sum": 0,
+        "centroidU": null,
+        "centroidV": null,
+        "minX": 0,
+        "maxX": 0
+      }
+    ]
+  },
+  "console": [
+    {
+      "method": "Runtime.consoleAPICalled",
+      "type": "info",
+      "args": [
+        "[Walden] Wall capture: RGBA16F linear"
+      ]
+    },
+    {
+      "method": "Runtime.consoleAPICalled",
+      "type": "info",
+      "args": [
+        "[Walden] Touch field: RGBA16F / manual bilinear; framebuffer, vertex sampling and neutral checks passed"
+      ]
+    },
+    {
+      "method": "Runtime.consoleAPICalled",
+      "type": "info",
+      "args": [
+        "[Walden] Touch field: RGBA8 packed16 / manual bilinear; framebuffer, vertex sampling and neutral checks passed"
+      ]
+    }
+  ]
+}

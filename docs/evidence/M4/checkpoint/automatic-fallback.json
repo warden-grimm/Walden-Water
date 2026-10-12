@@ -1,0 +1,91 @@
+{
+  "snapshot": {
+    "viewport": {
+      "width": 1416,
+      "height": 908
+    },
+    "buffer": {
+      "width": 1416,
+      "height": 908
+    },
+    "dpr": 1,
+    "running": true,
+    "contextLost": false,
+    "restores": 0,
+    "frames": 56,
+    "elapsed": 1.0061,
+    "reducedMotion": false,
+    "camera": [
+      0.008622564629284141,
+      3.0038135528406587,
+      9.388320632897686
+    ],
+    "drawCalls": 4,
+    "triangles": 227076,
+    "geometries": 4,
+    "textures": 3,
+    "programs": 4,
+    "wall": {
+      "segments": 256,
+      "size": [
+        20,
+        12
+      ],
+      "quality": "reference",
+      "displacement": true,
+      "sheen": true,
+      "view": "rock"
+    },
+    "curtain": {
+      "quality": "reference",
+      "columns": 120,
+      "rows": 400,
+      "visible": true,
+      "view": "water",
+      "refraction": true,
+      "uv": "u left-to-right, v bottom-to-top",
+      "geometryMatchesRaycast": true
+    },
+    "capture": {
+      "width": 1416,
+      "height": 908,
+      "samples": 4,
+      "format": "SRGB8_ALPHA8",
+      "generation": 1,
+      "sourceObjects": [
+        "wall"
+      ]
+    },
+    "touch": {
+      "width": 256,
+      "height": 512,
+      "format": "RGBA8 packed16 / manual bilinear",
+      "generation": 1,
+      "steps": 57,
+      "distinctTargets": true,
+      "readId": 10,
+      "writeId": 8,
+      "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+      "count": 0,
+      "pointers": []
+    },
+    "effects": "M4 checkpoint: touch field and overlay; M3 water; no postprocessing",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+  },
+  "neutral": {
+    "max": 0,
+    "sum": 0,
+    "centroidU": null,
+    "centroidV": null,
+    "minX": 0,
+    "maxX": 0
+  },
+  "contact": {
+    "max": 0.8495918211642633,
+    "sum": 1150.4368810558988,
+    "centroidU": 0.5335870521493717,
+    "centroidV": 0.6640457972110029,
+    "minX": -0.5130161442915128,
+    "maxX": 0.5146641438032167
+  }
+}

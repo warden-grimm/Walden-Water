@@ -3,6 +3,7 @@ import { ACESFilmicToneMapping, SRGBColorSpace, WebGLRenderer } from 'three';
 import { config } from './config.js';
 import { createScene } from './scene/createScene.js';
 import { createTimeline } from './time.js';
+import { createPointerTracker } from './interaction/PointerTracker.js';
 
 const canvas = document.querySelector('#scene');
 const notice = document.querySelector('#scene-error');
@@ -10,7 +11,7 @@ const noticeText = document.querySelector('#scene-error-text');
 const restart = document.querySelector('#restart');
 const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
 const timeline = createTimeline(config.timing);
-let renderer, world, observer, debug;
+let renderer, world, observer, debug, pointers;
 let disposed = false;
 let contextLost = false;
 let running = false;
@@ -33,6 +34,7 @@ function resize() {
   renderer.setSize(width, height, false);
   renderer.toneMappingExposure = config.renderer.exposure;
   world.configure(width / height, motionPreference.matches, canvas.width, canvas.height);
+  pointers.resize();
 }
 
 function watchDpr() {
@@ -45,9 +47,10 @@ function onDprChange() { resize(); watchDpr(); }
 function render(timestamp) {
   const rawDelta = timeline.tick(timestamp);
   world.updateCamera(motionPreference.matches);
+  pointers.update(world.camera, rawDelta);
   renderer.info.reset();
   debug?.begin(timestamp);
-  world.render();
+  world.render(Math.min(rawDelta, config.timing.maxDelta));
   debug?.end();
   frames++;
   debug?.record(timestamp, rawDelta);
@@ -56,7 +59,7 @@ function render(timestamp) {
 function syncLoop() {
   timeline.pause();
   running = !disposed && !contextLost && !document.hidden;
-  if (!running) debug?.cancel('Rendering paused; restart the sample.');
+  if (!running) { pointers?.clear(); debug?.cancel('Rendering paused; restart the sample.'); }
   renderer.setAnimationLoop(running ? render : null);
 }
 
@@ -95,7 +98,8 @@ function snapshot() {
     programs: renderer.info.programs.length,
     wall: world.wall.snapshot(),
     curtain: world.curtain.snapshot(), capture: world.capture.snapshot(),
-    effects: 'M3 curved flowing curtain; isolated wall capture/refraction; shared shaft light; no postprocessing',
+    touch: { ...world.field.snapshot(), ...pointers.snapshot() },
+    effects: 'M4 checkpoint: touch field and overlay; M3 water; no postprocessing',
     userAgent: navigator.userAgent,
   };
 }
@@ -116,6 +120,7 @@ function dispose() {
   for (const type of ['wheel', 'gesturestart', 'gesturechange']) canvas.removeEventListener(type, preventGesture);
   restart.removeEventListener('click', reload);
   debug?.dispose();
+  pointers?.dispose();
   world?.dispose();
   renderer?.dispose();
 }
@@ -126,7 +131,8 @@ try {
   renderer.outputColorSpace = SRGBColorSpace;
   renderer.toneMapping = ACESFilmicToneMapping;
   renderer.info.autoReset = false; // Count the wall capture and final composite together.
-  world = createScene(config, timeline.uniform, renderer);
+  pointers = createPointerTracker(canvas, config);
+  world = createScene(config, timeline.uniform, renderer, pointers);
   observer = new ResizeObserver(resize);
   observer.observe(canvas);
   window.addEventListener('resize', resize);
@@ -142,7 +148,7 @@ try {
   if (new URLSearchParams(location.search).has('debug')) {
     import('./debug/panel.js').then(({ createDebugPanel }) => {
       if (disposed) return; // A fast HMR must not leave an orphan asynchronous GUI.
-      debug = createDebugPanel({ config, resize, snapshot, renderer });
+      debug = createDebugPanel({ config, resize, snapshot, renderer, resetTouch: world.field.reset, inspectTouch: world.field.inspect });
     }).catch(error => console.error('Debug panel could not load.', error));
   }
 } catch (error) {

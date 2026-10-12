@@ -19,6 +19,9 @@ export const config = {
     normalStrength: 0.045, normalStep: 0.006, fresnel: 0.25, fresnelPower: 4,
     transmission: 0.94, glint: 3, gloss: 80, ambient: 0.015 },
   refraction: { enabled: true, strength: 0.018, wallResolution: 1, precision: 'auto', samples: 4 },
+  touch: { enabled: true, overlay: false, width: 256, height: 512, precision: 'auto',
+    radius: 0.13, holdStrength: 0.85, velocityGain: 0.12, maxStrength: 1,
+    recovery: 1.6, diffusion: 3, transport: 0.7, neutralThreshold: 0.001, maxStep: 1 / 30 },
   markers: { color: '#819598', opacity: 0, thickness: 0.018, overhang: 0.16, depth: 0.01 },
   timing: { maxDelta: 0.05 },
   // Fixed diagnostic protocol, not adjustable mid-sample; buffers allocated only in debug.
@@ -29,11 +32,13 @@ export const choices = {
   curtain: { quality: ['reference', 'reduced'] },
   water: { view: ['water', 'flow bands', 'uv', 'refraction', 'coverage', 'light mask'] },
   refraction: { precision: ['auto', 'byte'] },
+  touch: { precision: ['auto', 'byte'] },
 };
 export const rebuildControls = {
   wall: new Set(['quality', 'referenceSegments', 'reducedSegments']),
   curtain: new Set(['width', 'height', 'bow', 'quality', 'referenceColumns', 'referenceRows', 'reducedColumns', 'reducedRows']),
   refraction: new Set(['wallResolution', 'precision', 'samples']),
+  touch: new Set(['width', 'height', 'precision']),
 };
 export const ranges = {
   renderer: { exposure: [0.1, 2, 0.01], maxDpr: [0.5, 2, 0.1] },
@@ -50,6 +55,10 @@ export const ranges = {
     normalStrength: [0, 0.2, 0.001], normalStep: [0.001, 0.02, 0.001], fresnel: [0, 2, 0.01], fresnelPower: [1, 8, 0.1],
     transmission: [0, 1, 0.01], glint: [0, 8, 0.1], gloss: [5, 180, 1], ambient: [0, 0.2, 0.001] },
   refraction: { strength: [0, 0.08, 0.001], wallResolution: [0.5, 1, 0.1], samples: [0, 4, 2] },
+  touch: { width: [64, 512, 64], height: [128, 1024, 128], radius: [0.06, 0.3, 0.01],
+    holdStrength: [0.1, 1, 0.01], velocityGain: [0, 0.5, 0.01], maxStrength: [0.1, 1, 0.01],
+    recovery: [0.5, 3, 0.1], diffusion: [0, 12, 0.1], transport: [0, 1.5, 0.05],
+    neutralThreshold: [0.0005, 0.005, 0.0005], maxStep: [1 / 120, 1 / 30, 1 / 120] },
   markers: { opacity: [0, 1, 0.01], thickness: [0.005, 0.05, 0.001], overhang: [0, 0.4, 0.01], depth: [0.001, 0.05, 0.001] },
   timing: { maxDelta: [0.016, 0.1, 0.001] },
 };

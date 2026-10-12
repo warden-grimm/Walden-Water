@@ -3,8 +3,8 @@ import { ranges, choices, rebuildControls } from '../config.js';
 import { createProfiler } from './profiler.js';
 import { createRenderTimer } from './renderTimer.js';
 
-export function createDebugPanel({ config, resize, snapshot, renderer }) {
-  const gui = new GUI({ title: 'Walden · M3', width: 280 });
+export function createDebugPanel({ config, resize, snapshot, renderer, resetTouch, inspectTouch }) {
+  const gui = new GUI({ title: 'Walden · M4', width: 280 });
   const profiler = createProfiler(config.diagnostics, snapshot);
   const timer = createRenderTimer(renderer.getContext(), config.diagnostics.querySlots, profiler.recordGpu, profiler.invalidateGpu);
   for (const [name, values] of Object.entries(config)) {
@@ -24,11 +24,13 @@ export function createDebugPanel({ config, resize, snapshot, renderer }) {
     sample: () => profiler.start(),
     loseContext: () => renderer.forceContextLoss(),
     restoreContext: () => renderer.forceContextRestore(),
+    resetTouch,
   };
   const diagnostics = gui.addFolder('Diagnostics').close();
   diagnostics.add(actions, 'sample').name('Sample: 10s warmup + 60s');
   diagnostics.add(actions, 'loseContext').name('Lose graphics context');
   diagnostics.add(actions, 'restoreContext').name('Restore graphics context');
+  diagnostics.add(actions, 'resetTouch').name('Reset touch field');
   const outputs = Object.keys(info).map(key => diagnostics.add(info, key).disable());
   const interval = setInterval(() => {
     const status = profiler.status();
@@ -41,7 +43,7 @@ export function createDebugPanel({ config, resize, snapshot, renderer }) {
     for (const output of outputs) output.updateDisplay();
   }, config.diagnostics.refreshMs);
   const api = { snapshot, config, apply: resize, sample: actions.sample, sampleStatus: profiler.status,
-    loseContext: actions.loseContext, restoreContext: actions.restoreContext, hidePanel: () => gui.hide(), showPanel: () => gui.show() };
+    loseContext: actions.loseContext, restoreContext: actions.restoreContext, resetTouch, inspectTouch, hidePanel: () => gui.hide(), showPanel: () => gui.show() };
   window.__WALDEN_DEBUG__ = api;
   return {
     begin: timer.begin, end: timer.end,

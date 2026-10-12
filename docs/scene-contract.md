@@ -1,4 +1,4 @@
-# Scene contract through M3
+# Scene contract through M4's field checkpoint
 
 World units are metres. +Y points up and +Z points toward the camera. The
 curtain is centred at x=0, z=0, extends from y=0 (pool) to y=6 (lip), and is
@@ -133,3 +133,52 @@ LDR fidelity fallback, not M4 signed-field encoding). The selected format is
 logged on changes. Context restoration abandons the old target (whose GPU
 objects the lost context destroyed), then reselects and checks a fresh target.
 This avoids invoking Three's stale disposal callbacks on the new context.
+
+## M4 field checkpoint
+
+The checkpoint adds the field and its debug overlay, not water deformation yet.
+`main.js` owns Pointer Events; `createScene()` owns the ping-pong field. Frame
+order is shared time → current camera/matrices → pointer projection → field
+update → wall capture → curtain. The field is sampled in the same frame that
+consumes current input. Ten reusable pointer slots and uniform segments bound
+the work. Pointer capture, up/cancel/lost capture, blur and hidden-page cleanup
+remove held obstacles; a tap ending between frames is consumed once.
+
+Contacts intersect the analytical **resting curved ribbon** with reusable
+ray/vector objects. Tests compare it with the actual reference/reduced meshes
+in both orientations during camera drift (UV error below 0.00001). This stable
+contact surface continues through holes instead of losing the finger when
+water parts. M4's next step must preserve screen alignment under displacement;
+the checkpoint does not claim exact raycasts against future GPU-deformed triangles.
+Both ends of a swept segment use the current camera, so drift creates no false
+swipe speed. Velocity uses world metres per second, not events or frames.
+
+The default 256×512 targets have no depth, MSAA or color conversion. RGBA16F
+stores signed lateral force in R and pressure in G. The fallback packs signed
+force into RG as a 16-bit integer (zero=32768, range ±32767) and pressure into
+BA (0..65535). All textures use nearest filtering; four decoded samples provide
+manual bilinear interpolation. Packed bytes must never be interpolated before
+decoding. Outside the field returns neutral, never wrapped/clamped disturbances.
+The exact byte neutral is RGBA=(128,0,0,0). Shader constants in this codec are
+integer representation definitions, not art controls.
+
+Allocation checks both framebuffers, then renders known signed/positive values
+and validates their interpolation through a **vertex texture sample** and byte
+readback, including exact neutral. Auto mode falls back to packed bytes if
+half-float support or this actual path fails. These reads happen only during
+allocation, not the render loop. `?debug` exposes an explicit `inspectTouch()`
+readback for evidence; normal rendering never calls it.
+
+Each simulation pass reads one target and writes the other, then swaps their
+stable texture uniform. Both creation and stepping restore target/face/mip and
+autoClear in finally. Rebuilds dispose old targets; context restoration abandons
+objects from the lost context and recreates/validates neutral targets. At defaults
+the pair uses about 2 MB of float color storage, or 1 MB of byte storage.
+
+Backtracing uses the same gravity/lip speed as the water, with the configurable
+transport multiplier. Negative v is downward; the sampled source is above each
+destination. Exponential neighbor mixing diffuses and exponential decay reaches
+the neutral cutoff in `touch.recovery` seconds. Bounded substeps limit large
+deltas. Swept Gaussian capsules pin a held obstacle using max pressure rather
+than repeatedly adding energy per refresh; swipe strength is velocity-scaled.
+The overlay maps left force to red, pressure to green and right force to blue.

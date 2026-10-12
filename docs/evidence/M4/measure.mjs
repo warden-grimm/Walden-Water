@@ -1,0 +1,24 @@
+// Run with the dedicated Edge CDP instance on :9333 and preview on :5174.
+import { connect, browserSend, sleep } from '../M3/cdp.mjs';
+import { writeFile } from 'node:fs/promises';
+const label = process.argv[2];
+const c = await connect();
+await c.send('Page.enable');
+await c.send('Runtime.enable');
+await c.send('Emulation.setDeviceMetricsOverride', { width: 1440, height: 900, deviceScaleFactor: 1, mobile: false });
+await c.send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-reduced-motion', value: 'no-preference' }] });
+await c.send('Page.navigate', { url: 'http://127.0.0.1:5174/?debug' });
+await browserSend('Target.activateTarget', { targetId: c.target.id });
+await sleep(2000);
+await c.ev(`window.__resizeTrace=[];window.addEventListener('resize',()=>__resizeTrace.push({event:'window resize',time:performance.now(),width:innerWidth,height:innerHeight,dpr:devicePixelRatio}));new ResizeObserver(entries=>__resizeTrace.push({event:'observer',time:performance.now(),width:entries[0].contentRect.width,height:entries[0].contentRect.height,dpr:devicePixelRatio})).observe(document.querySelector('canvas'));`);
+if (label === 'curtain-reduced') await c.ev("__WALDEN_DEBUG__.config.curtain.quality = 'reduced'; __WALDEN_DEBUG__.apply()");
+if (label === 'half-wall') await c.ev("__WALDEN_DEBUG__.config.refraction.wallResolution = 0.5; __WALDEN_DEBUG__.apply()");
+if (label === 'no-water') await c.ev("__WALDEN_DEBUG__.config.curtain.visible = false; __WALDEN_DEBUG__.apply()");
+if (label === 'field-off') await c.ev("__WALDEN_DEBUG__.config.touch.enabled = false; __WALDEN_DEBUG__.apply()");
+await c.ev('__WALDEN_DEBUG__.hidePanel(); __WALDEN_DEBUG__.sample()');
+let status;
+do { await sleep(1000); status = await c.ev('__WALDEN_DEBUG__.sampleStatus()'); } while (status.state === 'warming' || status.state === 'sampling');
+await writeFile(new URL(`./${label}-timing.json`, import.meta.url), JSON.stringify({ measuredAt: new Date().toISOString(), status, endSnapshot:await c.ev('__WALDEN_DEBUG__.snapshot()'), resizeTrace:await c.ev('__resizeTrace') }, null, 2));
+console.log(JSON.stringify({ label, state: status.state, count: status.count, median: status.result?.medianMs, p95: status.result?.p95Ms, costs: status.result?.renderCost }));
+c.close();
+if(status.state!=='complete')process.exitCode=1;
