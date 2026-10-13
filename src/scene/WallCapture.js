@@ -1,9 +1,10 @@
-import { HalfFloatType, LinearFilter, LinearSRGBColorSpace, SRGBColorSpace, UnsignedByteType, WebGLRenderTarget } from 'three';
+import { DepthTexture, HalfFloatType, LinearFilter, LinearSRGBColorSpace, SRGBColorSpace, UnsignedByteType, WebGLRenderTarget } from 'three';
 
 // The source Scene contains ONLY the wall. None of its materials sample this
 // target; the background and curtain consume it only after this pass finishes.
 export function createWallCapture(renderer, sourceScene, camera, settings) {
-  const texture = { value: null };
+  // Colour for refraction/background; resolved depth for the M6 shaft volume.
+  const texture = { value: null }, depth = { value: null };
   let target = null, width = 0, height = 0, precision = '', samples = 0, generation = 0, loggedFormat;
   function render() {
     const previous = renderer.getRenderTarget();
@@ -37,7 +38,9 @@ export function createWallCapture(renderer, sourceScene, camera, settings) {
       // This preserves shadow precision; all shader calculations remain linear.
       candidate = new WebGLRenderTarget(nextWidth, nextHeight, { type, colorSpace: type === HalfFloatType ? LinearSRGBColorSpace : SRGBColorSpace,
         minFilter: LinearFilter, magFilter: LinearFilter, generateMipmaps: false,
-        depthBuffer: true, stencilBuffer: false, samples: nextSamples });
+        depthBuffer: true, stencilBuffer: false, samples: nextSamples,
+        // Multisampled depth is blit-resolved into this texture after the pass.
+        depthTexture: new DepthTexture(nextWidth, nextHeight) });
       renderer.setRenderTarget(candidate);
       const gl = renderer.getContext();
       return gl.checkFramebufferStatus(gl.FRAMEBUFFER) === gl.FRAMEBUFFER_COMPLETE;
@@ -48,7 +51,7 @@ export function createWallCapture(renderer, sourceScene, camera, settings) {
       if (!valid) throw new Error('No renderable wall capture format.');
       target?.dispose(); target = candidate; candidate = null;
       width = nextWidth; height = nextHeight; precision = nextPrecision; samples = nextSamples;
-      texture.value = target.texture;
+      texture.value = target.texture; depth.value = target.depthTexture;
       generation++;
       if (loggedFormat !== target.texture.type) {
         loggedFormat = target.texture.type;
@@ -56,11 +59,11 @@ export function createWallCapture(renderer, sourceScene, camera, settings) {
       }
     } finally { renderer.setRenderTarget(previous, face, mip); candidate?.dispose(); }
   }
-  return { texture, resize, render,
+  return { texture, depth, resize, render,
     // The lost context already destroyed its GPU objects. Abandon its target
     // instead of invoking stale Three disposal callbacks in the new context.
-    contextRestored() { target = null; texture.value = null; width = 0; },
+    contextRestored() { target = null; texture.value = depth.value = null; width = 0; },
     snapshot: () => ({ width, height, samples, format: target?.texture.type === HalfFloatType ? 'RGBA16F linear' : 'SRGB8_ALPHA8', generation,
       sourceObjects: sourceScene.children.map(object => object.name) }),
-    dispose() { target?.dispose(); texture.value = null; } };
+    dispose() { target?.dispose(); texture.value = depth.value = null; } };
 }

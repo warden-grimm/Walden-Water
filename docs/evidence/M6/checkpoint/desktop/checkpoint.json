@@ -1,0 +1,112 @@
+{
+  "measuredAt": "2026-10-13T03:21:56.087Z",
+  "width": 1440,
+  "height": 900,
+  "dpr": 1,
+  "snapshot": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "buffer": {
+      "width": 1440,
+      "height": 900
+    },
+    "dpr": 1,
+    "running": true,
+    "contextLost": false,
+    "restores": 0,
+    "frames": 392,
+    "elapsed": 6.964100000000006,
+    "reducedMotion": false,
+    "camera": [
+      0.016184801473737603,
+      3.014675040610833,
+      9.388320632897686
+    ],
+    "drawCalls": 7,
+    "triangles": 227076,
+    "geometries": 8,
+    "textures": 5,
+    "programs": 8,
+    "wall": {
+      "segments": 256,
+      "size": [
+        20,
+        12
+      ],
+      "quality": "reference",
+      "displacement": true,
+      "sheen": true,
+      "view": "rock"
+    },
+    "curtain": {
+      "quality": "reference",
+      "columns": 120,
+      "rows": 400,
+      "visible": true,
+      "view": "water",
+      "refraction": true,
+      "uv": "u left-to-right, v bottom-to-top",
+      "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+      "sidePush": 0.9,
+      "forwardPush": 0.8
+    },
+    "capture": {
+      "width": 1440,
+      "height": 900,
+      "samples": 4,
+      "format": "RGBA16F linear",
+      "generation": 1,
+      "sourceObjects": [
+        "wall"
+      ]
+    },
+    "touch": {
+      "available": true,
+      "disabledReason": null,
+      "width": 256,
+      "height": 512,
+      "format": "RGBA16F / manual bilinear",
+      "generation": 1,
+      "steps": 393,
+      "distinctTargets": true,
+      "readId": 13,
+      "writeId": 11,
+      "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+      "count": 0,
+      "pointers": []
+    },
+    "particles": {
+      "spray": {
+        "points": 720,
+        "visible": true
+      },
+      "bursts": {
+        "slots": 96,
+        "perBurst": 32,
+        "live": 0,
+        "emitted": 0,
+        "overwritten": 0,
+        "maxDroplets": 3072,
+        "visible": true,
+        "points": 3072
+      },
+      "motes": {
+        "points": 1236,
+        "visible": true
+      },
+      "maxPointSize": 1024,
+      "pointScale": 1172.2900791122108
+    },
+    "shaft": {
+      "enabled": false,
+      "view": "shaft",
+      "samples": 14,
+      "depthSource": "wall capture DepthTexture (MSAA resolved)"
+    },
+    "effects": "M6: touch field, water parting/foam, spray, touch bursts, shaft dust/mist, volumetric shaft; no postprocessing",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+  },
+  "console": []
+}
