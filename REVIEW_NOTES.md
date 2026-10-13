@@ -312,6 +312,12 @@
 - The fix delta adds a per-contact hypot on the CPU and one shader branch; no new pass, texture or geometry. The M5 matched timing remains the cost evidence; no new timing claim.
 - Submitted for focused re-review as r2 at the next commit (HEAD named in dispatch), same BASE `86f9fd5`.
 
+### Coordinator outcome — M5 accepted
+
+- Independent reviewer, focused r2 of exact `e2ed56dc0d19a977454fa725e180f4a68e31c8b0`: [report r2](docs/reviews/M5-review-r2.md) **APPROVE WITH NITS**, no blockers. The HMR blocker was verified fixed with the reviewer's own reproductions: each particle system alone and all together; validation readback exact with blending off; byte mode held; repeated context restores. The jitter deadband (±1–4 px holds → 1 press burst) and the lip pool retire were confirmed, and swipe direction is unchanged. 23/23 tests and the build pass.
+- **M5 accepted. Accepted implementation head (next BASE_SHA): `e2ed56dc0d19a977454fa725e180f4a68e31c8b0`.** Physical-phone look, cost and feel of the particles remain unverified (user phone check requested; certification M9).
+- Nits (owner builder): (1) ~70 Three "object does not belong to this context" warnings when HMR follows a forced context restore. Same root cause as the existing item, now with more objects: M8. (2) Distance-spaced emission gives slow/medium drags more (smaller) splashes than a short fast flick (fewer, stronger). Judge on the phone: M5 phone feedback, else M9 presets. (3) Unchanged from r1: ten-finger live-burst overwrite (M9), shader spread constants (M9), motes behind the curtain and mist edge spill (M6). (4) Test indentation at `tests/particles.test.js:62`: next time the file is touched.
+
 ### M<n> — <summary>
 
 - Status:
