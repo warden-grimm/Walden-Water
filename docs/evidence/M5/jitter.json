@@ -1,0 +1,33 @@
+{
+  "measuredAt": "2026-10-13T02:04:00.863Z",
+  "rows": [
+    {
+      "width": 844,
+      "height": 390,
+      "amplitudePx": 1,
+      "contacts": 1,
+      "emitted": 1
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "amplitudePx": 2,
+      "contacts": 1,
+      "emitted": 1
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "amplitudePx": 1,
+      "contacts": 1,
+      "emitted": 1
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "amplitudePx": 2,
+      "contacts": 1,
+      "emitted": 1
+    }
+  ]
+}

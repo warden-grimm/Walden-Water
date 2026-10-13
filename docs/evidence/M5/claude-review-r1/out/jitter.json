@@ -1,0 +1,82 @@
+[
+ {
+  "viewport": "390x844",
+  "jitterCssPx": 0,
+  "seconds": 3.054,
+  "moves": 0,
+  "contacts": 0,
+  "burstsEmitted": 0
+ },
+ {
+  "viewport": "390x844",
+  "jitterCssPx": 0.25,
+  "seconds": 3.055,
+  "moves": 0,
+  "contacts": 0,
+  "burstsEmitted": 0
+ },
+ {
+  "viewport": "390x844",
+  "jitterCssPx": 0.5,
+  "seconds": 3.06,
+  "moves": 0,
+  "contacts": 0,
+  "burstsEmitted": 0
+ },
+ {
+  "viewport": "390x844",
+  "jitterCssPx": 1,
+  "seconds": 3.068,
+  "moves": 0,
+  "contacts": 0,
+  "burstsEmitted": 0
+ },
+ {
+  "viewport": "390x844",
+  "jitterCssPx": 2,
+  "seconds": 3.058,
+  "moves": 0,
+  "contacts": 0,
+  "burstsEmitted": 0
+ },
+ {
+  "viewport": "844x390",
+  "jitterCssPx": 0,
+  "seconds": 3.028,
+  "moves": 0,
+  "contacts": 1,
+  "burstsEmitted": 1
+ },
+ {
+  "viewport": "844x390",
+  "jitterCssPx": 0.25,
+  "seconds": 3.064,
+  "moves": 45,
+  "contacts": 1,
+  "burstsEmitted": 1
+ },
+ {
+  "viewport": "844x390",
+  "jitterCssPx": 0.5,
+  "seconds": 3.063,
+  "moves": 45,
+  "contacts": 1,
+  "burstsEmitted": 1
+ },
+ {
+  "viewport": "844x390",
+  "jitterCssPx": 1,
+  "seconds": 3.055,
+  "moves": 45,
+  "contacts": 1,
+  "burstsEmitted": 25
+ },
+ {
+  "viewport": "844x390",
+  "jitterCssPx": 2,
+  "seconds": 3.057,
+  "moves": 45,
+  "contacts": 1,
+  "burstsEmitted": 40
+ }
+]

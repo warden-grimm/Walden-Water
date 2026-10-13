@@ -28,7 +28,7 @@ export const config = {
     softness: 3.5, minPixels: 1.5, fade: 0.2 },
   spray: { enabled: true, count: 720, lipShare: 0.45, lipLife: 1.1, lipForward: 0.22, lipSide: 0.1, lipDrop: 0.35,
     baseSpeed: 1.2, baseForward: 0.5, baseSide: 0.4, baseSpread: 1.08, baseRest: 0.35, jitter: 0.4, size: 0.022, opacity: 0.5 },
-  bursts: { enabled: true, slots: 96, perBurst: 32, minSpeed: 0.35, fullSpeed: 3, interval: 0.045, press: 0.3, minShare: 0.25,
+  bursts: { enabled: true, slots: 96, perBurst: 32, minSpeed: 0.35, fullSpeed: 3, interval: 0.045, spacing: 0.1, press: 0.3, minShare: 0.25,
     throw: 0.6, outward: 1.1, lift: 0.55, carry: 0.25, spread: 0.4, jitter: 0.45, lifetime: 1.6, size: 0.03, opacity: 0.9 },
   // Motes are sampled inside the shared shaft cone and lit only by its mask.
   dust: { enabled: true, capacity: 1200, density: 0.6, size: 0.014, brightness: 2.6, softness: 3, twinkleRate: 2.2, drift: 0.035, swirl: 0.08,
@@ -80,7 +80,7 @@ export const ranges = {
   spray: { count: [0, 2000, 40], lipShare: [0, 1, 0.01], lipLife: [0.2, 3, 0.05], lipForward: [0, 1, 0.01], lipSide: [0, 0.5, 0.01], lipDrop: [0, 1.5, 0.01],
     baseSpeed: [0, 3, 0.05], baseForward: [0, 1.5, 0.01], baseSide: [0, 1.5, 0.01], baseSpread: [0.5, 1.5, 0.01], baseRest: [0, 2, 0.05],
     jitter: [0, 0.9, 0.01], size: [0.002, 0.05, 0.001], opacity: [0, 1, 0.01] },
-  bursts: { slots: [16, 192, 16], perBurst: [8, 64, 4], minSpeed: [0, 2, 0.05], fullSpeed: [0.5, 8, 0.1], interval: [0.016, 0.25, 0.001],
+  bursts: { slots: [16, 192, 16], perBurst: [8, 64, 4], minSpeed: [0, 2, 0.05], fullSpeed: [0.5, 8, 0.1], interval: [0.016, 0.25, 0.001], spacing: [0, 0.4, 0.005],
     press: [0, 1, 0.01], minShare: [0, 1, 0.01], throw: [0, 2, 0.01], outward: [0, 3, 0.05], lift: [0, 2, 0.05], carry: [0, 1, 0.01],
     spread: [0, 1.5, 0.01], jitter: [0, 0.9, 0.01], lifetime: [0.3, 4, 0.05], size: [0.002, 0.05, 0.001], opacity: [0, 1, 0.01] },
   dust: { capacity: [0, 4000, 100], density: [0, 1, 0.01], size: [0.001, 0.03, 0.001], brightness: [0, 6, 0.05], softness: [0.5, 8, 0.1], twinkleRate: [0, 10, 0.1],

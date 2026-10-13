@@ -1,0 +1,219 @@
+{
+ "initial": {
+  "draws": 7,
+  "geometries": 7,
+  "textures": 4,
+  "programs": 7,
+  "bursts": {
+   "slots": 96,
+   "perBurst": 32,
+   "live": 0,
+   "emitted": 0,
+   "overwritten": 0,
+   "maxDroplets": 3072,
+   "visible": true,
+   "points": 3072
+  },
+  "spray": {
+   "points": 720,
+   "visible": true
+  },
+  "motes": {
+   "points": 1236,
+   "visible": true
+  },
+  "touch": {
+   "count": 0,
+   "format": "RGBA16F / manual bilinear",
+   "available": true
+  }
+ },
+ "jitterHold": {
+  "emitted": 94,
+  "contacts": 1
+ },
+ "slowDrag": {
+  "emitted": 1
+ },
+ "offCurtainEntry": {
+  "emitted": 10
+ },
+ "afterRebuild": {
+  "draws": 7,
+  "geometries": 7,
+  "textures": 4,
+  "programs": 7,
+  "bursts": {
+   "slots": 32,
+   "perBurst": 16,
+   "live": 0,
+   "emitted": 114,
+   "overwritten": 0,
+   "maxDroplets": 512,
+   "visible": true,
+   "points": 512
+  },
+  "spray": {
+   "points": 400,
+   "visible": true
+  },
+  "motes": {
+   "points": 2080,
+   "visible": true
+  },
+  "touch": {
+   "count": 0,
+   "format": "RGBA16F / manual bilinear",
+   "available": true
+  }
+ },
+ "afterRebuildSwipe": {
+  "draws": 7,
+  "geometries": 7,
+  "textures": 4,
+  "programs": 7,
+  "bursts": {
+   "slots": 32,
+   "perBurst": 16,
+   "live": 9,
+   "emitted": 123,
+   "overwritten": 0,
+   "maxDroplets": 512,
+   "visible": true,
+   "points": 512
+  },
+  "spray": {
+   "points": 400,
+   "visible": true
+  },
+  "motes": {
+   "points": 2080,
+   "visible": true
+  },
+  "touch": {
+   "count": 0,
+   "format": "RGBA16F / manual bilinear",
+   "available": true
+  }
+ },
+ "restored": {
+  "draws": 7,
+  "geometries": 7,
+  "textures": 4,
+  "programs": 7,
+  "bursts": {
+   "slots": 96,
+   "perBurst": 32,
+   "live": 0,
+   "emitted": 123,
+   "overwritten": 0,
+   "maxDroplets": 3072,
+   "visible": true,
+   "points": 3072
+  },
+  "spray": {
+   "points": 720,
+   "visible": true
+  },
+  "motes": {
+   "points": 1236,
+   "visible": true
+  },
+  "touch": {
+   "count": 0,
+   "format": "RGBA16F / manual bilinear",
+   "available": true
+  }
+ },
+ "beforeRebuild": {
+  "draws": 7,
+  "geometries": 7,
+  "textures": 4,
+  "programs": 7,
+  "bursts": {
+   "slots": 96,
+   "perBurst": 32,
+   "live": 19,
+   "emitted": 114,
+   "overwritten": 0,
+   "maxDroplets": 3072,
+   "visible": true,
+   "points": 3072
+  },
+  "spray": {
+   "points": 720,
+   "visible": true
+  },
+  "motes": {
+   "points": 1236,
+   "visible": true
+  },
+  "touch": {
+   "count": 0,
+   "format": "RGBA16F / manual bilinear",
+   "available": true
+  }
+ },
+ "disabled": {
+  "emitted": 0,
+  "visible": false
+ },
+ "byte": {
+  "emitted": 10,
+  "count": 0,
+  "format": "RGBA8 packed16 / manual bilinear",
+  "available": true
+ },
+ "touchDisabled": {
+  "emitted": 0
+ },
+ "hidden": {
+  "contacts": 0,
+  "pointers": 0
+ },
+ "afterRestore": {
+  "emitted": 9,
+  "restores": 2,
+  "running": true,
+  "draws": 7,
+  "geometries": 7,
+  "textures": 4,
+  "programs": 7,
+  "bursts": {
+   "slots": 96,
+   "perBurst": 32,
+   "live": 9,
+   "emitted": 143,
+   "overwritten": 0,
+   "maxDroplets": 3072,
+   "visible": true,
+   "points": 3072
+  },
+  "spray": {
+   "points": 720,
+   "visible": true
+  },
+  "motes": {
+   "points": 1236,
+   "visible": true
+  },
+  "touch": {
+   "count": 0,
+   "format": "RGBA16F / manual bilinear",
+   "available": true
+  }
+ },
+ "console": [],
+ "logs": [
+  "debug: [vite] connecting...",
+  "debug: [vite] connected.",
+  "info: [Walden] Wall capture: RGBA16F linear",
+  "info: [Walden] Touch field: RGBA16F / manual bilinear; framebuffer, vertex sampling and neutral checks passed",
+  "info: [Walden] Touch field: RGBA8 packed16 / manual bilinear; framebuffer, vertex sampling and neutral checks passed",
+  "info: [Walden] Touch field: RGBA16F / manual bilinear; framebuffer, vertex sampling and neutral checks passed",
+  "log: THREE.WebGLRenderer: Context Lost.",
+  "log: THREE.WebGLRenderer: Context Restored.",
+  "log: THREE.WebGLRenderer: Context Lost.",
+  "log: THREE.WebGLRenderer: Context Restored."
+ ]
+}

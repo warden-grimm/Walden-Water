@@ -1,0 +1,210 @@
+{
+  "measuredAt": "2026-10-13T01:39:55.717Z",
+  "width": 390,
+  "height": 844,
+  "dpr": 2,
+  "steps": [
+    {
+      "step": "fast swipe",
+      "particles": {
+        "spray": {
+          "points": 720,
+          "visible": true
+        },
+        "bursts": {
+          "slots": 96,
+          "perBurst": 32,
+          "live": 7,
+          "emitted": 7,
+          "overwritten": 0,
+          "maxDroplets": 3072,
+          "visible": true,
+          "points": 3072
+        },
+        "motes": {
+          "points": 1236,
+          "visible": true
+        },
+        "maxPointSize": 1024,
+        "pointScale": 2198.6951706015684
+      }
+    },
+    {
+      "step": "held 3s",
+      "particles": {
+        "spray": {
+          "points": 720,
+          "visible": true
+        },
+        "bursts": {
+          "slots": 96,
+          "perBurst": 32,
+          "live": 0,
+          "emitted": 8,
+          "overwritten": 0,
+          "maxDroplets": 3072,
+          "visible": true,
+          "points": 3072
+        },
+        "motes": {
+          "points": 1236,
+          "visible": true
+        },
+        "maxPointSize": 1024,
+        "pointScale": 2198.6951706015684
+      }
+    },
+    {
+      "step": "released 2s",
+      "particles": {
+        "spray": {
+          "points": 720,
+          "visible": true
+        },
+        "bursts": {
+          "slots": 96,
+          "perBurst": 32,
+          "live": 0,
+          "emitted": 8,
+          "overwritten": 0,
+          "maxDroplets": 3072,
+          "visible": true,
+          "points": 3072
+        },
+        "motes": {
+          "points": 1236,
+          "visible": true
+        },
+        "maxPointSize": 1024,
+        "pointScale": 2198.6951706015684
+      }
+    },
+    {
+      "step": "context restored + swipe",
+      "restores": 1,
+      "running": true,
+      "particles": {
+        "spray": {
+          "points": 720,
+          "visible": true
+        },
+        "bursts": {
+          "slots": 96,
+          "perBurst": 32,
+          "live": 9,
+          "emitted": 17,
+          "overwritten": 0,
+          "maxDroplets": 3072,
+          "visible": true,
+          "points": 3072
+        },
+        "motes": {
+          "points": 1236,
+          "visible": true
+        },
+        "maxPointSize": 1024,
+        "pointScale": 2198.6951706015684
+      }
+    }
+  ],
+  "idle": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "buffer": {
+      "width": 780,
+      "height": 1688
+    },
+    "dpr": 2,
+    "running": true,
+    "contextLost": false,
+    "restores": 0,
+    "frames": 142,
+    "elapsed": 2.416899999999997,
+    "reducedMotion": false,
+    "camera": [
+      0.018714452827592404,
+      3.0086851992875174,
+      10.647765095859238
+    ],
+    "drawCalls": 7,
+    "triangles": 227076,
+    "geometries": 7,
+    "textures": 4,
+    "programs": 7,
+    "wall": {
+      "segments": 256,
+      "size": [
+        20,
+        12
+      ],
+      "quality": "reference",
+      "displacement": true,
+      "sheen": true,
+      "view": "rock"
+    },
+    "curtain": {
+      "quality": "reference",
+      "columns": 120,
+      "rows": 400,
+      "visible": true,
+      "view": "water",
+      "refraction": true,
+      "uv": "u left-to-right, v bottom-to-top",
+      "contactSurface": "analytical resting ribbon; GPU deformation uses rest UV",
+      "sidePush": 0.9,
+      "forwardPush": 0.8
+    },
+    "capture": {
+      "width": 780,
+      "height": 1688,
+      "samples": 4,
+      "format": "RGBA16F linear",
+      "generation": 1,
+      "sourceObjects": [
+        "wall"
+      ]
+    },
+    "touch": {
+      "available": true,
+      "disabledReason": null,
+      "width": 256,
+      "height": 512,
+      "format": "RGBA16F / manual bilinear",
+      "generation": 1,
+      "steps": 144,
+      "distinctTargets": true,
+      "readId": 10,
+      "writeId": 12,
+      "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
+      "count": 0,
+      "pointers": []
+    },
+    "particles": {
+      "spray": {
+        "points": 720,
+        "visible": true
+      },
+      "bursts": {
+        "slots": 96,
+        "perBurst": 32,
+        "live": 0,
+        "emitted": 0,
+        "overwritten": 0,
+        "maxDroplets": 3072,
+        "visible": true,
+        "points": 3072
+      },
+      "motes": {
+        "points": 1236,
+        "visible": true
+      },
+      "maxPointSize": 1024,
+      "pointScale": 2198.6951706015684
+    },
+    "effects": "M5: touch field, water parting/foam, spray, touch bursts, shaft dust/mist; no visible shaft volume or postprocessing",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0"
+  },
+  "console": []
+}

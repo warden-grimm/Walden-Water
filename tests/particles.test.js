@@ -41,12 +41,28 @@ test('a held finger splashes once; it does not keep emitting', () => {
   emitter.dispose();
 });
 
+test('a held finger with touch jitter does not stream splashes', () => {
+  const settings = structuredClone(config), pointers = fakePointers(), emitter = createSplashEmitter(settings, pointers);
+  contact(pointers, 0, { began: 1 });
+  emitter.update(0);
+  // ±0.04 m each 16 ms event (about ±2 CSS px in landscape) reads as 2.5 m/s.
+  for (let frame = 1; frame <= 180; frame++) {
+    const offset = (frame % 2 ? 0.04 : -0.04) / settings.curtain.width;
+    contact(pointers, 0, { u: 0.5 + offset, vx: 2.5 * (frame % 2 ? 1 : -1) });
+    emitter.update(frame / 60);
+  }
+  assert.equal(emitter.snapshot().emitted, 1, 'only the press splash');
+  emitter.dispose();
+});
+
 test('swipes emit directional bursts at a bounded, refresh-independent rate', () => {
   const counts = [];
   for (const hz of [60, 120, 240]) {
     const settings = structuredClone(config), pointers = fakePointers(), emitter = createSplashEmitter(settings, pointers);
-    contact(pointers, 0, { vx: 2.5, vy: 0 });
-    for (let frame = 0; frame < hz; frame++) emitter.update(frame / hz);
+      for (let frame = 0; frame < hz; frame++) {
+      contact(pointers, 0, { u: 0.1 + 0.8 * frame / hz, vx: 2.5, vy: 0 }); // 2.24 m/s across the 2.8 m sheet
+      emitter.update(frame / hz);
+    }
     counts.push(emitter.snapshot().emitted);
     const [vx, , vz, strength] = texel(emitter, 1, 0);
     assert.ok(vx > 0 && vz > 0, 'thrown along the drag and toward the camera');
@@ -65,8 +81,12 @@ test('swipes emit directional bursts at a bounded, refresh-independent rate', ()
 
 test('ten fingers swiping for a minute stay within the fixed ring', () => {
   const settings = structuredClone(config), pointers = fakePointers(), emitter = createSplashEmitter(settings, pointers);
-  for (let i = 0; i < POINTER_CAPACITY; i++) contact(pointers, i, { u: (i + 0.5) / POINTER_CAPACITY, vx: 6, vy: -3 });
-  for (let frame = 0; frame < 60 * 60; frame++) emitter.update(frame / 60);
+  for (let frame = 0; frame < 60 * 60; frame++) {
+    // Each finger sweeps back and forth at about 6 m/s.
+    for (let i = 0; i < POINTER_CAPACITY; i++)
+      contact(pointers, i, { u: 0.5 + 0.4 * Math.sin(frame / 8 + i), v: (i + 0.5) / POINTER_CAPACITY, vx: 6, vy: -3 });
+    emitter.update(frame / 60);
+  }
   const state = emitter.snapshot();
   assert.ok(state.live <= settings.bursts.slots);
   assert.ok(state.overwritten > 0, 'stress recycles the oldest live burst');

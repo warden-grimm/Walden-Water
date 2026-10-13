@@ -302,6 +302,16 @@
 - Review report/reviewed SHA: pending.
 - Remaining nits (owner/due): M8 idle-field skip; M8 HMR stale-disposal warnings; M9 noise precision; M9 phone presets including particle counts.
 
+### M5 — Review r1 outcome and fixes
+
+- Independent reviewer (fresh context, separate detached worktree of exact `f412dac527fe2827de2fb401e20daf1ad1144044`, own preview port): [report r1](docs/reviews/M5-review-r1.md), **CHANGES REQUESTED** with one blocker. [Archived reviewer artifacts](docs/evidence/M5/claude-review-r1/README.md) have a SHA-256 manifest.
+- **Blocker 1, fixed: HMR disabled touch.** A hot-reloaded renderer inherits the old GL context while Three assumes blending is off. M5's final additive draw therefore left blending on, the field's 1×1 validation probes accumulated, and both formats were rejected. Fix: `renderer.resetState()` after construction and before disposal in `src/main.js`. Retest [`docs/evidence/M5/hmr.mjs`](docs/evidence/M5/hmr.mjs) → `hmr.json`: 3 HMR cycles each on `main.js`, `createScene.js` and `Particles.js`, in auto and forced byte. All 18 keep the touch field valid (RGBA16F / packed16), splash on a swipe, keep 7 geometries / 4 textures / 7 programs, one canvas and one GUI, with no console warnings or errors.
+- **Nit, jittery hold, fixed now rather than deferred:** emission also requires `bursts.spacing` (0.1 m) of curtain travel since that finger's last splash. [`jitter.mjs`](docs/evidence/M5/jitter.mjs) → `jitter.json`: ±1/±2 px jitter for 3 s, portrait and landscape DPR2, gives exactly 1 (press) burst each, versus 15–40 in review. Fast swipes are unaffected (8–9 per swipe in the HMR runs). New unit test; the stress and rate tests now move their contacts. `npm test` 23/23 pass, build passes.
+- **Nit, lip spray through the pool, fixed now:** lip life is bounded by the pool-impact time, and any drop below the pool retires.
+- Deferred nits: (a) 10-finger saturation overwrites live bursts (global emit cap or reuse the oldest-finishing slot): builder, M9 presets. (b) Shader distribution constants (0.25 fade-in share, size spreads) to promote or document: builder, M9. (c) Motes not attenuated behind the translucent curtain; mist sprite edge spill past the cone: builder, M6 depth fade.
+- The fix delta adds a per-contact hypot on the CPU and one shader branch; no new pass, texture or geometry. The M5 matched timing remains the cost evidence; no new timing claim.
+- Submitted for focused re-review as r2 at the next commit (HEAD named in dispatch), same BASE `86f9fd5`.
+
 ### M<n> — <summary>
 
 - Status:

@@ -10,6 +10,9 @@ import { curtainPoint } from '../scene/ballistics.js';
 export function createSplashEmitter(config, pointers) {
   const settings = config.bursts;
   const lastEmit = new Float64Array(POINTER_CAPACITY);
+  // Contact UV at each finger's last splash: emission also needs real travel,
+  // so a held finger's jitter cannot read as a stream of tiny swipes.
+  const anchors = new Float32Array(POINTER_CAPACITY * 2);
   const origin = new Vector3();
   let slots = 0, data, texture, next = 0, emitted = 0, overwritten = 0, now = 0;
   function allocate() {
@@ -46,12 +49,13 @@ export function createSplashEmitter(config, pointers) {
       const u = pointers.segments[i].z, v = pointers.segments[i].w;
       const dragX = pointers.velocities[i * 2], dragY = pointers.velocities[i * 2 + 1];
       const speed = Math.hypot(dragX, dragY);
+      const travel = Math.hypot((u - anchors[finger * 2]) * config.curtain.width, (v - anchors[finger * 2 + 1]) * config.curtain.height);
       let strength;
       if (pointers.began[i]) strength = s.press; // A new contact splashes once, even when held.
-      else if (speed >= s.minSpeed && time - lastEmit[finger] >= s.interval)
+      else if (speed >= s.minSpeed && travel >= s.spacing && time - lastEmit[finger] >= s.interval)
         strength = Math.min(1, Math.max(0, (speed - s.minSpeed) / Math.max(s.fullSpeed - s.minSpeed, 1e-3)));
       else continue;
-      lastEmit[finger] = time;
+      lastEmit[finger] = time; anchors[finger * 2] = u; anchors[finger * 2 + 1] = v;
       // Local falling-water speed (the curtain's accelerated flow) carries
       // struck droplets downward; drag throws them along the swipe and the
       // finger kicks them off the sheet toward the camera.

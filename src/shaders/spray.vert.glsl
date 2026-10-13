@@ -19,7 +19,8 @@ void main() {
   bool lip = aKind < 0.5;
   // The loop period may depend only on fixed seeds, never on re-seeded values.
   float baseUp = uBaseSpeed * vary;
-  float flight = lip ? uLipLife * vary : 2.0 * baseUp / max(uGravity, 1e-4);
+  // Lip drops fall at most until the pool, even with a long configured life.
+  float flight = lip ? min(uLipLife * vary, impactTime(uHeight, 0.0)) : 2.0 * baseUp / max(uGravity, 1e-4);
   float period = flight + (lip ? 0.0 : uBaseRest * aSeed.w) + 1e-3;
   float clock = uTime + aSeed.x * period;
   float age = mod(clock, period);
@@ -36,6 +37,8 @@ void main() {
     velocity = vec3((2.0 * fresh.y - 1.0) * uBaseSide, baseUp, uBaseForward * fresh.z);
   }
   vec3 world = ballistic(origin, velocity, age);
+  // Downward-launched lip drops land sooner than the bound above.
+  if (world.y < uPoolHeight) { retire(); return; }
   vec4 viewPosition = viewMatrix * vec4(world, 1.0);
   vAlpha = uOpacity * lifeEnvelope(age, flight);
   gl_PointSize = spriteSize(viewPosition, uSize * vary, vAlpha);

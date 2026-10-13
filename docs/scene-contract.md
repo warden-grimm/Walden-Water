@@ -256,7 +256,8 @@ The fragment profile is exp(−softness·r²)·(1−r²), reaching zero at the r
 lip (y=height, bow zero), the rest are thrown up from the base impact line
 (y=pool). Each point loops with a period fixed by its seeds; each loop
 re-seeds launch values with irrational increments so drops do not repeat.
-Base drops retire exactly when they return to the pool.
+Base drops retire exactly when they return to the pool; lip drops retire at
+the end of their life or on crossing the pool, whichever is first.
 
 **Touch bursts.** `SplashEmitter.js` owns a fixed ring of `bursts.slots`
 descriptors in a slots×2 RGBA32F `DataTexture` (nearest, no mipmaps):
@@ -270,7 +271,10 @@ The CPU writes eight floats only when a burst spawns and flags one texture
 upload that frame; nothing else changes per frame. A new contact (the
 tracker's `began` flag) splashes once at `bursts.press`, so a held finger never
 keeps emitting. A moving contact emits while its event-time drag speed is at
-least `minSpeed`, at most once per `interval` seconds per finger, with
+least `minSpeed` and it has travelled at least `spacing` metres on the curtain
+since that finger's last splash (so touch jitter on a held finger, which reads
+as brief high speed, cannot stream splashes), at most once per `interval`
+seconds per finger, with
 strength (speed − minSpeed)/(fullSpeed − minSpeed). Launch origin is the
 resting-curtain point of the contact UV. Launch velocity = drag × `throw`,
 plus `lift` up and `outward` toward the camera (both scaled by

@@ -123,12 +123,16 @@ function dispose() {
   debug?.dispose();
   pointers?.dispose();
   world?.dispose();
+  // Leave GL state at defaults: an HMR successor reuses this context and Three
+  // assumes a fresh one (blending off). Leaked additive blending broke field validation.
+  renderer?.resetState();
   renderer?.dispose();
 }
 
 try {
   notice.hidden = true;
   renderer = new WebGLRenderer({ canvas, antialias: true });
+  renderer.resetState(); // The canvas context may be inherited from a disposed HMR instance.
   renderer.outputColorSpace = SRGBColorSpace;
   renderer.toneMapping = ACESFilmicToneMapping;
   renderer.info.autoReset = false; // Count the wall capture and final composite together.
