@@ -511,6 +511,21 @@
   - `npm test` 34/34; build passes.
   0 console warnings/errors.
 
+### Coordinator outcome — M8 accepted
+
+- Independent focused review of exact `11eea4be20de18fbb37c84cf8d6bd224dbad8f25`: [report r2](docs/reviews/M8-review-r2.md) **APPROVE**, no blockers and no new nits.
+  - The r1 blocker is fixed: saved settings survive an HMR, and Reset restores defaults.
+  - All three r1 nits are verified closed.
+  - Grain is cleanly removed, and stale saved grain keys are dropped harmlessly.
+  - Toggles, adaptive behaviour, lifecycle and fallback re-verified, with 0 console warnings/errors.
+- **M8 accepted. Accepted implementation head (M9 BASE_SHA): `11eea4be20de18fbb37c84cf8d6bd224dbad8f25`.** Phone look/cost/adaptive behaviour unverified (M9).
+- Carried to M9 (owner builder):
+  - phone presets and fill cost (shaft samples, pool `reflectionSteps`/`rippleResolution`, mist, bloom resolution, adaptive levels);
+  - the haze drift ratio to config;
+  - burst saturation, shader spreads, decorrelated seeds, noise precision;
+  - sideways-reach wording or a throw clamp;
+  - spray single-ring.
+
 ### M<n> — <summary>
 
 - Status:
