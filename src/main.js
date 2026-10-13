@@ -1,16 +1,22 @@
 import './styles.css';
 import { ACESFilmicToneMapping, SRGBColorSpace, WebGLRenderer } from 'three';
 import { config } from './config.js';
+import { loadSavedSettings, resetSettings, saveSettings } from './settings.js';
 import { createScene } from './scene/createScene.js';
 import { createTimeline } from './time.js';
 import { createPointerTracker } from './interaction/PointerTracker.js';
+import { createAdaptiveResolution } from './adaptiveResolution.js';
 
 const canvas = document.querySelector('#scene');
 const notice = document.querySelector('#scene-error');
 const noticeText = document.querySelector('#scene-error-text');
 const restart = document.querySelector('#restart');
 const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+// Shipped defaults, captured before this browser's saved debug settings apply.
+const defaults = structuredClone(config);
+const savedSettings = loadSavedSettings(config);
 const timeline = createTimeline(config.timing);
+const adaptive = createAdaptiveResolution(config.adaptive);
 let renderer, world, observer, debug, pointers;
 let disposed = false;
 let contextLost = false;
@@ -30,7 +36,9 @@ function resize() {
   debug?.cancel('Settings or viewport changed; restart the sample.');
   width = Math.max(1, canvas.clientWidth);
   height = Math.max(1, canvas.clientHeight);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, config.renderer.maxDpr, 2));
+  // Adaptive resolution lowers the cap under sustained overload; every buffer follows this one ratio.
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, config.renderer.maxDpr, 2, adaptive.scale));
+  adaptive.reset();
   renderer.setSize(width, height, false);
   renderer.toneMappingExposure = config.renderer.exposure;
   world.configure(width / height, motionPreference.matches, canvas.width, canvas.height);
@@ -54,10 +62,17 @@ function render(timestamp) {
   debug?.end();
   frames++;
   debug?.record(timestamp, rawDelta);
+  // Debug-only synthetic GPU-like cost (ms per megapixel of buffer) to exercise adaptive resolution.
+  if (debug && config.adaptive.simulateLoad > 0) {
+    const until = performance.now() + config.adaptive.simulateLoad * canvas.width * canvas.height / 1e6;
+    while (performance.now() < until) { /* busy wait */ }
+  }
+  if (adaptive.record(rawDelta, timestamp / 1000)) resize();
 }
 
 function syncLoop() {
   timeline.pause();
+  adaptive.reset(); // a pause or resume is not overload evidence
   running = !disposed && !contextLost && !document.hidden;
   if (!running) { pointers?.clear(); debug?.cancel('Rendering paused; restart the sample.'); }
   renderer.setAnimationLoop(running ? render : null);
@@ -90,7 +105,7 @@ function reload() { window.location.reload(); }
 function snapshot() {
   return {
     viewport: { width, height }, buffer: { width: canvas.width, height: canvas.height },
-    dpr: renderer.getPixelRatio(), running, contextLost, restores, frames,
+    dpr: renderer.getPixelRatio(), adaptive: adaptive.snapshot(), running, contextLost, restores, frames, savedSettings,
     elapsed: timeline.uniform.value, reducedMotion: motionPreference.matches,
     camera: world.camera.position.toArray(),
     drawCalls: renderer.info.render.calls, triangles: renderer.info.render.triangles,
@@ -99,8 +114,8 @@ function snapshot() {
     wall: world.wall.snapshot(),
     curtain: world.curtain.snapshot(), capture: world.capture.snapshot(),
     touch: { ...world.field.snapshot(), ...pointers.snapshot() },
-    particles: world.particles.snapshot(), shaft: world.shaft.snapshot(), pool: world.pool.snapshot(),
-    effects: 'M7: touch field, water parting/foam, spray, touch bursts, shaft dust/mist, volumetric shaft, pool ripples/impact rings, low mist; no postprocessing',
+    particles: world.particles.snapshot(), shaft: world.shaft.snapshot(), pool: world.pool.snapshot(), post: world.post.snapshot(),
+    effects: 'M8: touch field, water parting/foam, spray, touch bursts, shaft dust/mist, volumetric shaft, pool ripples/impact rings, low mist, bloom/vignette/grain post, adaptive DPR',
     userAgent: navigator.userAgent,
   };
 }
@@ -153,7 +168,8 @@ try {
   if (new URLSearchParams(location.search).has('debug')) {
     import('./debug/panel.js').then(({ createDebugPanel }) => {
       if (disposed) return; // A fast HMR must not leave an orphan asynchronous GUI.
-      debug = createDebugPanel({ config, resize, snapshot, renderer, resetTouch: world.field.reset, inspectTouch: world.field.inspect });
+      debug = createDebugPanel({ config, resize, snapshot, renderer, resetTouch: world.field.reset, inspectTouch: world.field.inspect,
+        settings: { save: () => saveSettings(config, defaults), reset: () => resetSettings(config, defaults) } });
     }).catch(error => console.error('Debug panel could not load.', error));
   }
 } catch (error) {
@@ -165,5 +181,12 @@ try {
 
 if (import.meta.hot) {
   import.meta.hot.accept();
-  import.meta.hot.dispose(dispose);
+  import.meta.hot.dispose(() => {
+    // After a context restore, Three's dispose listeners for objects created
+    // before the loss point at GL objects of the lost context; disposing them
+    // logs "object does not belong to this context" warnings. Reload the page
+    // instead of hot-swapping (development only; a reload leaks nothing).
+    if (restores > 0) { renderer?.setAnimationLoop(null); disposed = true; window.location.reload(); return; }
+    dispose();
+  });
 }

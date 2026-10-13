@@ -50,6 +50,14 @@ export const config = {
   // Low mist over the pool: faint ambient haze, brighter only where the shared shaft reaches it.
   mist: { enabled: true, count: 28, size: 1, opacity: 0.05, ambient: 0.35, color: '#c3ccd0', softness: 1.4,
     drift: 0.06, low: 0.05, high: 0.5, back: -0.4, front: 1.8, width: 8, edgeFade: 0.15, swell: 0.25, swellRate: 0.3 },
+  // M8 post-processing in display space, each effect individually toggleable. Bloom threshold is displayed luminance (0-1).
+  post: { enabled: true, bloom: true, bloomStrength: 0.25, bloomRadius: 0.3, bloomThreshold: 0.8, bloomResolution: 0.5,
+    vignette: true, vignetteStrength: 0.35, vignetteStart: 0.45, vignetteEnd: 1.15,
+    grain: true, grainAmount: 0.03, grainRate: 24, grainShadow: 0.08, samples: 0 },
+  // M8 adaptive resolution: pixel-ratio cap steps high -> mid -> low under sustained overload (seconds;
+  // ratios of the estimated display interval). simulateLoad (debug only) busy-waits ms per megapixel each frame.
+  adaptive: { enabled: true, high: 2, mid: 1.5, low: 1, targetFps: 60, minRefreshHz: 50, overloadRatio: 1.25, headroomRatio: 1.1,
+    sustain: 2, recover: 8, maxBackoff: 8, settle: 1, simulateLoad: 0 },
   markers: { color: '#819598', opacity: 0, thickness: 0.018, overhang: 0.16, depth: 0.01 },
   timing: { maxDelta: 0.05 },
   // Fixed diagnostic protocol, not adjustable mid-sample; buffers allocated only in debug.
@@ -74,6 +82,7 @@ export const rebuildControls = {
   dust: new Set(['capacity', 'mistCount']),
   pool: new Set(['precision', 'rippleResolution', 'rippleHalfWidth', 'rippleBack', 'rippleFront', 'impactRings']),
   mist: new Set(['count']),
+  post: new Set(['samples']),
 };
 export const ranges = {
   renderer: { exposure: [0.1, 2, 0.01], maxDpr: [0.5, 2, 0.1] },
@@ -117,6 +126,12 @@ export const ranges = {
     impactRings: [0, 160, 4], impactPeriod: [0.2, 3, 0.05], impactDepth: [0, 0.5, 0.01], impactStrength: [0, 1, 0.01], sprayRing: [0, 1, 0.01], burstRing: [0, 1, 0.01] },
   mist: { count: [0, 120, 2], size: [0.1, 3, 0.05], opacity: [0, 0.3, 0.001], ambient: [0, 2, 0.01], softness: [0.5, 6, 0.1], drift: [0, 0.4, 0.005],
     low: [0, 1, 0.01], high: [0.05, 2, 0.01], back: [-1, 1, 0.05], front: [0, 4, 0.05], width: [2, 16, 0.1], edgeFade: [0.01, 0.5, 0.01], swell: [0, 0.6, 0.01], swellRate: [0, 2, 0.01] },
+  post: { bloomStrength: [0, 2, 0.01], bloomRadius: [0, 1, 0.01], bloomThreshold: [0, 1, 0.01], bloomResolution: [0.25, 1, 0.05],
+    vignetteStrength: [0, 1, 0.01], vignetteStart: [0, 1.5, 0.01], vignetteEnd: [0.1, 2, 0.01],
+    grainAmount: [0, 0.15, 0.001], grainRate: [1, 60, 1], grainShadow: [0.001, 0.5, 0.001], samples: [0, 4, 2] },
+  adaptive: { high: [1, 2, 0.25], mid: [0.75, 2, 0.25], low: [0.5, 2, 0.25], targetFps: [30, 120, 1], minRefreshHz: [30, 120, 1],
+    overloadRatio: [1.05, 2, 0.01], headroomRatio: [1, 1.5, 0.01], sustain: [0.5, 10, 0.1], recover: [1, 60, 0.5], maxBackoff: [1, 32, 1],
+    settle: [0, 5, 0.1], simulateLoad: [0, 60, 0.5] },
   markers: { opacity: [0, 1, 0.01], thickness: [0.005, 0.05, 0.001], overhang: [0, 0.4, 0.01], depth: [0.001, 0.05, 0.001] },
   timing: { maxDelta: [0.016, 0.1, 0.001] },
 };

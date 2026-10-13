@@ -8,6 +8,7 @@ import { createTouchField } from '../interaction/TouchField.js';
 import { createParticles } from './Particles.js';
 import { createLightShaft } from './LightShaft.js';
 import { createPool } from './Pool.js';
+import { createPostProcessing } from './PostProcessing.js';
 import backgroundVertex from '../shaders/background.vert.glsl?raw';
 import backgroundFragment from '../shaders/background.frag.glsl?raw';
 
@@ -26,6 +27,7 @@ export function createScene(config, time, renderer, pointers) {
   const particles = createParticles(config, time, light, pointers, renderer);
   const shaft = createLightShaft(config, time, light, view.camera, capture.depth);
   const pool = createPool(config, time, light, view.camera, capture, curtain, particles, renderer);
+  const post = createPostProcessing(config, time, renderer);
   const geometry = new PlaneGeometry(1, 1);
   const backgroundMaterial = new ShaderMaterial({ uniforms: { uWallTexture: capture.texture },
     vertexShader: backgroundVertex, fragmentShader: backgroundFragment, depthTest: false, depthWrite: false });
@@ -47,6 +49,7 @@ export function createScene(config, time, renderer, pointers) {
     particles.configure(bufferHeight, view.camera);
     shaft.configure();
     pool.configure(aspect);
+    post.configure(bufferWidth, bufferHeight);
     // Shaft debug views are measurements: keep particles from drawing over them.
     if (config.shaft.view !== 'shaft') for (const object of particles.objects) object.visible = false;
     markerMaterial.color.set(config.markers.color);
@@ -57,8 +60,8 @@ export function createScene(config, time, renderer, pointers) {
     lip.scale.set(config.curtain.width + 2 * config.markers.overhang, config.markers.thickness, 1);
     poolLine.scale.copy(lip.scale);
   }
-  return { scene, camera: view.camera, updateCamera: view.updateCamera, configure, light, wall, curtain, capture, field, particles, shaft, pool,
-    render(delta) { field.update(delta); particles.update(); pool.update(); capture.render(); renderer.render(scene, view.camera); },
-    contextRestored() { capture.contextRestored(); field.contextRestored(); particles.contextRestored(); pool.contextRestored(); },
-    dispose() { pool.dispose(); shaft.dispose(); particles.dispose(); field.dispose(); capture.dispose(); curtain.dispose(); wall.dispose(); geometry.dispose(); backgroundMaterial.dispose(); markerMaterial.dispose(); scene.clear(); wallScene.clear(); } };
+  return { scene, camera: view.camera, updateCamera: view.updateCamera, configure, light, wall, curtain, capture, field, particles, shaft, pool, post,
+    render(delta) { field.update(delta); particles.update(); pool.update(); capture.render(); post.render(scene, view.camera); },
+    contextRestored() { capture.contextRestored(); field.contextRestored(); particles.contextRestored(); pool.contextRestored(); post.contextRestored(); },
+    dispose() { post.dispose(); pool.dispose(); shaft.dispose(); particles.dispose(); field.dispose(); capture.dispose(); curtain.dispose(); wall.dispose(); geometry.dispose(); backgroundMaterial.dispose(); markerMaterial.dispose(); scene.clear(); wallScene.clear(); } };
 }

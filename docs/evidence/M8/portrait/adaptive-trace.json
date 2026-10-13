@@ -1,0 +1,5442 @@
+[
+  {
+    "label": "overload",
+    "t": 0,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "overload",
+    "t": 0.5,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "overload",
+    "t": 1,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "overload",
+    "t": 1.5,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "overload",
+    "t": 2,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "overload",
+    "t": 2.5,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "overload",
+    "t": 3,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 1,
+    "meanMs": 52.6
+  },
+  {
+    "label": "overload",
+    "t": 3.5,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 1,
+    "meanMs": 53.5
+  },
+  {
+    "label": "overload",
+    "t": 4,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 1,
+    "meanMs": 53.4
+  },
+  {
+    "label": "overload",
+    "t": 4.5,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 1,
+    "meanMs": 53.4
+  },
+  {
+    "label": "overload",
+    "t": 5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 53.5
+  },
+  {
+    "label": "overload",
+    "t": 5.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 53.5
+  },
+  {
+    "label": "overload",
+    "t": 6,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 53.5
+  },
+  {
+    "label": "overload",
+    "t": 6.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 53.5
+  },
+  {
+    "label": "overload",
+    "t": 7,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 53.5
+  },
+  {
+    "label": "overload",
+    "t": 7.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 30.2
+  },
+  {
+    "label": "overload",
+    "t": 8,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 30.2
+  },
+  {
+    "label": "overload",
+    "t": 8.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 30.5
+  },
+  {
+    "label": "overload",
+    "t": 9,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 30.5
+  },
+  {
+    "label": "overload",
+    "t": 9.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 30.2
+  },
+  {
+    "label": "overload",
+    "t": 10,
+    "dpr": 1,
+    "buffer": [
+      390,
+      844
+    ],
+    "post": [
+      390,
+      844
+    ],
+    "capture": [
+      390,
+      844
+    ],
+    "scale": 1,
+    "backoff": 1,
+    "meanMs": 30.3
+  },
+  {
+    "label": "overload",
+    "t": 10.5,
+    "dpr": 1,
+    "buffer": [
+      390,
+      844
+    ],
+    "post": [
+      390,
+      844
+    ],
+    "capture": [
+      390,
+      844
+    ],
+    "scale": 1,
+    "backoff": 1,
+    "meanMs": 30.3
+  },
+  {
+    "label": "overload",
+    "t": 11,
+    "dpr": 1,
+    "buffer": [
+      390,
+      844
+    ],
+    "post": [
+      390,
+      844
+    ],
+    "capture": [
+      390,
+      844
+    ],
+    "scale": 1,
+    "backoff": 1,
+    "meanMs": 30.3
+  },
+  {
+    "label": "overload",
+    "t": 11.5,
+    "dpr": 1,
+    "buffer": [
+      390,
+      844
+    ],
+    "post": [
+      390,
+      844
+    ],
+    "capture": [
+      390,
+      844
+    ],
+    "scale": 1,
+    "backoff": 1,
+    "meanMs": 30.3
+  },
+  {
+    "label": "recovery",
+    "t": 0,
+    "dpr": 1,
+    "buffer": [
+      390,
+      844
+    ],
+    "post": [
+      390,
+      844
+    ],
+    "capture": [
+      390,
+      844
+    ],
+    "scale": 1,
+    "backoff": 1,
+    "meanMs": 20.4
+  },
+  {
+    "label": "recovery",
+    "t": 0.5,
+    "dpr": 1,
+    "buffer": [
+      390,
+      844
+    ],
+    "post": [
+      390,
+      844
+    ],
+    "capture": [
+      390,
+      844
+    ],
+    "scale": 1,
+    "backoff": 1,
+    "meanMs": 20.4
+  },
+  {
+    "label": "recovery",
+    "t": 1,
+    "dpr": 1,
+    "buffer": [
+      390,
+      844
+    ],
+    "post": [
+      390,
+      844
+    ],
+    "capture": [
+      390,
+      844
+    ],
+    "scale": 1,
+    "backoff": 1,
+    "meanMs": 17.8
+  },
+  {
+    "label": "recovery",
+    "t": 1.5,
+    "dpr": 1,
+    "buffer": [
+      390,
+      844
+    ],
+    "post": [
+      390,
+      844
+    ],
+    "capture": [
+      390,
+      844
+    ],
+    "scale": 1,
+    "backoff": 1,
+    "meanMs": 17.8
+  },
+  {
+    "label": "recovery",
+    "t": 2,
+    "dpr": 1,
+    "buffer": [
+      390,
+      844
+    ],
+    "post": [
+      390,
+      844
+    ],
+    "capture": [
+      390,
+      844
+    ],
+    "scale": 1,
+    "backoff": 1,
+    "meanMs": 17.8
+  },
+  {
+    "label": "recovery",
+    "t": 2.5,
+    "dpr": 1,
+    "buffer": [
+      390,
+      844
+    ],
+    "post": [
+      390,
+      844
+    ],
+    "capture": [
+      390,
+      844
+    ],
+    "scale": 1,
+    "backoff": 1,
+    "meanMs": 17.8
+  },
+  {
+    "label": "recovery",
+    "t": 3,
+    "dpr": 1,
+    "buffer": [
+      390,
+      844
+    ],
+    "post": [
+      390,
+      844
+    ],
+    "capture": [
+      390,
+      844
+    ],
+    "scale": 1,
+    "backoff": 1,
+    "meanMs": 17.8
+  },
+  {
+    "label": "recovery",
+    "t": 3.5,
+    "dpr": 1,
+    "buffer": [
+      390,
+      844
+    ],
+    "post": [
+      390,
+      844
+    ],
+    "capture": [
+      390,
+      844
+    ],
+    "scale": 1,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "recovery",
+    "t": 4,
+    "dpr": 1,
+    "buffer": [
+      390,
+      844
+    ],
+    "post": [
+      390,
+      844
+    ],
+    "capture": [
+      390,
+      844
+    ],
+    "scale": 1,
+    "backoff": 1,
+    "meanMs": 17.8
+  },
+  {
+    "label": "recovery",
+    "t": 4.5,
+    "dpr": 1,
+    "buffer": [
+      390,
+      844
+    ],
+    "post": [
+      390,
+      844
+    ],
+    "capture": [
+      390,
+      844
+    ],
+    "scale": 1,
+    "backoff": 1,
+    "meanMs": 17.8
+  },
+  {
+    "label": "recovery",
+    "t": 5,
+    "dpr": 1,
+    "buffer": [
+      390,
+      844
+    ],
+    "post": [
+      390,
+      844
+    ],
+    "capture": [
+      390,
+      844
+    ],
+    "scale": 1,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "recovery",
+    "t": 5.5,
+    "dpr": 1,
+    "buffer": [
+      390,
+      844
+    ],
+    "post": [
+      390,
+      844
+    ],
+    "capture": [
+      390,
+      844
+    ],
+    "scale": 1,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "recovery",
+    "t": 6,
+    "dpr": 1,
+    "buffer": [
+      390,
+      844
+    ],
+    "post": [
+      390,
+      844
+    ],
+    "capture": [
+      390,
+      844
+    ],
+    "scale": 1,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "recovery",
+    "t": 6.5,
+    "dpr": 1,
+    "buffer": [
+      390,
+      844
+    ],
+    "post": [
+      390,
+      844
+    ],
+    "capture": [
+      390,
+      844
+    ],
+    "scale": 1,
+    "backoff": 1,
+    "meanMs": 17.5
+  },
+  {
+    "label": "recovery",
+    "t": 7,
+    "dpr": 1,
+    "buffer": [
+      390,
+      844
+    ],
+    "post": [
+      390,
+      844
+    ],
+    "capture": [
+      390,
+      844
+    ],
+    "scale": 1,
+    "backoff": 1,
+    "meanMs": 17.6
+  },
+  {
+    "label": "recovery",
+    "t": 7.5,
+    "dpr": 1,
+    "buffer": [
+      390,
+      844
+    ],
+    "post": [
+      390,
+      844
+    ],
+    "capture": [
+      390,
+      844
+    ],
+    "scale": 1,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "recovery",
+    "t": 8,
+    "dpr": 1,
+    "buffer": [
+      390,
+      844
+    ],
+    "post": [
+      390,
+      844
+    ],
+    "capture": [
+      390,
+      844
+    ],
+    "scale": 1,
+    "backoff": 1,
+    "meanMs": 17.8
+  },
+  {
+    "label": "recovery",
+    "t": 8.5,
+    "dpr": 1,
+    "buffer": [
+      390,
+      844
+    ],
+    "post": [
+      390,
+      844
+    ],
+    "capture": [
+      390,
+      844
+    ],
+    "scale": 1,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "recovery",
+    "t": 9,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "recovery",
+    "t": 9.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "recovery",
+    "t": 10,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "recovery",
+    "t": 10.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "recovery",
+    "t": 11,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 17.6
+  },
+  {
+    "label": "recovery",
+    "t": 11.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "recovery",
+    "t": 12,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 17.6
+  },
+  {
+    "label": "recovery",
+    "t": 12.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 17.5
+  },
+  {
+    "label": "recovery",
+    "t": 13,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "recovery",
+    "t": 13.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 17.8
+  },
+  {
+    "label": "recovery",
+    "t": 14,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 17.8
+  },
+  {
+    "label": "recovery",
+    "t": 14.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "recovery",
+    "t": 15,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 17.6
+  },
+  {
+    "label": "recovery",
+    "t": 15.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 17.6
+  },
+  {
+    "label": "recovery",
+    "t": 16,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "recovery",
+    "t": 16.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "recovery",
+    "t": 17,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "recovery",
+    "t": 17.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 17.8
+  },
+  {
+    "label": "recovery",
+    "t": 18,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "recovery",
+    "t": 18.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 17.8
+  },
+  {
+    "label": "recovery",
+    "t": 19,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "recovery",
+    "t": 19.5,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "recovery",
+    "t": 20,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "recovery",
+    "t": 20.5,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "recovery",
+    "t": 21,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "recovery",
+    "t": 21.5,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "recovery",
+    "t": 22,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 1,
+    "meanMs": 17.8
+  },
+  {
+    "label": "recovery",
+    "t": 22.5,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 1,
+    "meanMs": 17.8
+  },
+  {
+    "label": "recovery",
+    "t": 23,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 1,
+    "meanMs": 17.8
+  },
+  {
+    "label": "recovery",
+    "t": 23.5,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 1,
+    "meanMs": 17.8
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 0,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 1,
+    "meanMs": 17.8
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 0.5,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 1,
+    "meanMs": 17.8
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 1,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 1,
+    "meanMs": 24.1
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 1.5,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 1,
+    "meanMs": 24.4
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 2,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 1,
+    "meanMs": 24.3
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 2.5,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 1,
+    "meanMs": 24.6
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 3,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 24.3
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 3.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 24.3
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 4,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 24.3
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 4.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 24.3
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 24.3
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 5.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 6,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 17.6
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 6.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 17.6
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 7,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 7.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 8,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 8.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 9,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 9.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 10,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 10.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 17.6
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 11,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 17.6
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 11.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 12,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 12.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 13,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 13.5,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 14,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 14.5,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 15,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 1,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 15.5,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 1,
+    "meanMs": 24.4
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 16,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 1,
+    "meanMs": 24.4
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 16.5,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 1,
+    "meanMs": 24.3
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 17,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 1,
+    "meanMs": 24.4
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 17.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 2,
+    "meanMs": 24.3
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 18,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 2,
+    "meanMs": 24.3
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 18.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 2,
+    "meanMs": 24.3
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 19,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 2,
+    "meanMs": 24.3
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 19.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 2,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 20,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 2,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 20.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 2,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 21,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 2,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 21.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 2,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 22,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 2,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 22.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 2,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 23,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 2,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 23.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 2,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 24,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 2,
+    "meanMs": 17.8
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 24.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 2,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 25,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 2,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 25.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 2,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 26,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 2,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 26.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 2,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 27,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 2,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 27.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 2,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 28,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 2,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 28.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 2,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 29,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 2,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 29.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 2,
+    "meanMs": 17.6
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 30,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 2,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 30.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 2,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 31,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 2,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 31.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 2,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 32,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 2,
+    "meanMs": 17.8
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 32.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 2,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 33,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 2,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 33.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 2,
+    "meanMs": 17.8
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 34,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 2,
+    "meanMs": 17.9
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 34.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 2,
+    "meanMs": 17.8
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 35,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 2,
+    "meanMs": 17.8
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 35.5,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 2,
+    "meanMs": 17.8
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 36,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 2,
+    "meanMs": 17.8
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 36.5,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 2,
+    "meanMs": 17.8
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 37,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 2,
+    "meanMs": 17.8
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 37.5,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 2,
+    "meanMs": 17.8
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 38,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 2,
+    "meanMs": 24.3
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 38.5,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 2,
+    "meanMs": 24.2
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 39,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 2,
+    "meanMs": 24.5
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 39.5,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 2,
+    "meanMs": 24.3
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 40,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 24.3
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 40.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 24.3
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 41,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 24.3
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 41.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 24.3
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 42,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 42.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.8
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 43,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.8
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 43.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 44,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.8
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 44.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.8
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 45,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.8
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 45.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 46,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 46.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.8
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 47,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 47.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 48,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 48.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 49,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.8
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 49.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.8
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 50,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 50.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 51,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 51.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 52,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 52.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.6
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 53,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 53.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 54,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 54.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.6
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 55,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 55.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 56,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 56.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.6
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 57,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.8
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 57.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 58,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.6
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 58.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 59,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 59.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 60,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 60.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 61,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.8
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 61.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.8
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 62,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 62.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 63,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 63.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 64,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 64.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 65,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.8
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 65.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.8
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 66,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 66.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 67,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 67.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 68,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 68.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.8
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 69,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.8
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 69.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 70,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 70.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.6
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 71,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.6
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 71.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 72,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 72.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.8
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 73,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 17.8
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 73.5,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 74,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 74.5,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 75,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 75.5,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 4,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 76,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 4,
+    "meanMs": 24.1
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 76.5,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 4,
+    "meanMs": 24.5
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 77,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 4,
+    "meanMs": 24.2
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 77.5,
+    "dpr": 2,
+    "buffer": [
+      780,
+      1688
+    ],
+    "post": [
+      780,
+      1688
+    ],
+    "capture": [
+      780,
+      1688
+    ],
+    "scale": 2,
+    "backoff": 4,
+    "meanMs": 24.2
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 78,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 24.5
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 78.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 24.5
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 79,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 24.5
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 79.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 24.5
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 80,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 80.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 17.6
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 81,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 17.6
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 81.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 82,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 82.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 17.6
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 83,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 83.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 84,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 84.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 85,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 17.6
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 85.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 86,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 86.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 87,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 87.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 17.6
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 88,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 17.6
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 88.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 17.6
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 89,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 89.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 17.8
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 90,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 17.8
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 90.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 17.8
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 91,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 17.8
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 91.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 92,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 92.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 93,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 93.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 17.8
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 94,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 17.8
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 94.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 95,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 17.6
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 95.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 96,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 96.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 17.6
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 97,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 17.6
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 97.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 17.6
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 98,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 17.6
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 98.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 99,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 17.7
+  },
+  {
+    "label": "resolution-dependent",
+    "t": 99.5,
+    "dpr": 1.5,
+    "buffer": [
+      585,
+      1266
+    ],
+    "post": [
+      585,
+      1266
+    ],
+    "capture": [
+      585,
+      1266
+    ],
+    "scale": 1.5,
+    "backoff": 8,
+    "meanMs": 17.6
+  }
+]

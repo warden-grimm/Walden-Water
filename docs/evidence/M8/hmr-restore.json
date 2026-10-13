@@ -1,0 +1,27 @@
+{
+  "measuredAt": "2026-10-13T12:45:22.582Z",
+  "rows": [
+    {
+      "file": "src/main.js",
+      "warnings": 0,
+      "sample": [],
+      "running": true,
+      "restores": 0,
+      "post": true,
+      "touch": true,
+      "canvases": 1,
+      "guis": 1
+    },
+    {
+      "file": "src/scene/createScene.js",
+      "warnings": 0,
+      "sample": [],
+      "running": true,
+      "restores": 0,
+      "post": true,
+      "touch": true,
+      "canvases": 1,
+      "guis": 1
+    }
+  ]
+}

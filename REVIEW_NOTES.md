@@ -447,6 +447,48 @@
   2. A spray point keeps only its latest ring. Due M9.
   3. Carried: phone fill cost and presets (now including the 864×384 ripple target, `reflectionSteps` and mist), haze drift ratio, burst saturation, seeds, noise precision (M9); HMR-after-restore warnings (M8).
 
+### M8 — Post-processing and polish submission
+
+- Status: submitted for full independent review. BASE_SHA `99d04e116e76b8eef4ebd47bebb9d3dd191310f1` (accepted M7). HEAD named in dispatch.
+- What changed (contract: [scene-contract § M8](docs/scene-contract.md#m8-post)):
+  - **Post-processing in display space** (`PostProcessing.js`, `composite.frag.glsl`, `config.post`):
+    - the scene renders into an RGBA16F target that Three treats like the canvas, so every material tone maps and encodes once, exactly as on screen;
+    - UnrealBloomPass (Three examples) at half resolution, threshold 0.8 on displayed luminance, strength 0.25;
+    - a composite adds vignette, then shadow-faded zero-mean grain, with no second tone mapping;
+    - each effect toggles; with all off it renders directly (the M7 path).
+    A linear-HDR version was tried first and rejected: it visibly changed the approved water look (evidence images).
+  - **Adaptive resolution** (`adaptiveResolution.js`, `config.adaptive`):
+    - DPR cap 2 → 1.5 → 1 when the mean frame interval stays over budget for 2 s, and back up after 8 s of headroom;
+    - failed upgrades double the wait (up to ×8), so it does not oscillate;
+    - every buffer follows the one ratio, and touch mapping is unchanged;
+    - a debug-only `simulateLoad` exercises it.
+  - **Save/Reset (user request)** (`settings.js`, debug panel):
+    - Save stores the changes from defaults in this browser, so the normal page there uses them, and copies/shows the JSON to bake in for everyone;
+    - Reset restores defaults and clears storage;
+    - saved values are validated (known keys, types, GUI ranges, choices, colours).
+  - **Visibility pause:** unchanged; validated with post on.
+  - **Carried M3 nit closed:** an HMR after a context restore now reloads the page instead of logging 70 stale-dispose warnings.
+- Build/tests: `npm test` 33/33 (new: `settings.test.js` 3, `adaptive.test.js` 4). `npm run build` passes (existing chunk-size warning).
+- Evidence: [M8 evidence](docs/evidence/M8/README.md):
+  - toggle captures in three viewports;
+  - an adaptive overload/recovery/backoff trace with size and UV consistency;
+  - context restore and visibility;
+  - a save/reset round trip through the normal page;
+  - 30-cycle HMR and the HMR-after-restore retest;
+  - matched timing against M7.
+  0 console warnings/errors.
+- Performance: frame median/p95 unchanged in all pairs (display 60 Hz). GPU p95 +0.66–1.54 ms with post on; the median shows no measurable increase. Draws 14 → 28 with bloom; textures +12 (post target + bloom targets).
+- Manual script:
+  1. Reload: same look as M7, with a soft glow on water glints, slightly darker corners and faint moving grain.
+  2. `?debug` → post: switch bloom, vignette and grain off one at a time, then `enabled` off. Each changes only its own effect; all off looks like M7.
+  3. adaptive → `simulateLoad` 40: within about 5–10 s the image softens (1.5×, then 1×). Set it to 0: it returns to 2× after about 8 s per step.
+  4. Change a setting (e.g. pool.reflectivity) → "Save settings". A panel shows the JSON. Open the page without `?debug`: the setting is applied. "Reset to defaults" undoes it.
+  5. Switch tabs and come back: animation resumes without a jump.
+  6. **Phone**: smoothness, whether resolution drops (adaptive) and the bloom/grain look.
+- Known gaps: optional audio/haptics not added (optional per the spec). Bloom is display-space (LDR) by design. Adaptive resolution has been exercised only with a synthetic load; real phone behaviour is unverified. Under a load that only 2× cannot sustain, it still retries 2× about every 64 s once fully backed off (a brief slowdown each time).
+- Deviations: display-space post instead of an HDR linear chain (reason above). The `isXRRenderTarget` flag on the post target is a documented Three workaround (#27868).
+- Nits carried: M9 items as listed in the M7 outcome (phone presets now also include post/bloom resolution and adaptive levels).
+
 ### M<n> — <summary>
 
 - Status:

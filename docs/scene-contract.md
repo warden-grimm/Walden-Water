@@ -1,4 +1,4 @@
-# Scene contract through M7
+# Scene contract through M8
 
 World units are metres. +Y points up and +Z points toward the camera. The
 curtain is centred at x=0, z=0, extends from y=0 (pool) to y=6 (lip), and is
@@ -477,3 +477,87 @@ Shaft motes and low mist that lie behind the resting sheet as seen from the
 camera are dimmed to `droplets.behindCurtain` (0.55). The sheet outline is
 softened by the water's edge width, so a drifting sprite does not pop. The
 shaft now shares the same `curtainDistance()`.
+
+<a id="m8-post"></a>
+
+## M8 post-processing, adaptive resolution and saved settings
+
+**Post-processing** (`src/scene/PostProcessing.js`, `shaders/composite.frag.glsl`,
+`config.post`) works in **display space**. Every scene material already applies
+ACES and sRGB itself, and the water, particles and shaft were tuned blending in
+that encoded space. A first version rendered into a linear target and tone
+mapped once at the end. Even with every effect at zero, that changed the
+approved look: the water turned milky because its alpha blended in linear
+light. So when any effect is on:
+
+1. The scene renders into an RGBA16F target (`post.samples` MSAA, default 0)
+   flagged `isXRRenderTarget` with an sRGB texture colour space. Three then
+   applies renderer tone mapping and encodes exactly as it does for the canvas
+   (three.js #27868). The flag's only other use is an 8-bit MSAA format choice,
+   which does not apply to a half-float target. Each material tone maps once,
+   and the frame is pixel-for-pixel the canvas render, stored in float.
+2. Bloom (`UnrealBloomPass` from Three's examples) at `bloomResolution`
+   extracts displayed luminance above `bloomThreshold` (0.8). It blurs five
+   mips and adds `bloomStrength` × the glow back into the target. Only the
+   water glints and the brightest beam/sparkle exceed the threshold.
+3. The composite draws to the canvas with `toneMapped: false` and no
+   colour-space chunk, so nothing is tone mapped twice. It applies:
+   - a vignette: an aspect-corrected radius (1 at the corners) between
+     `vignetteStart` and `vignetteEnd`, scaled by `vignetteStrength`;
+   - then grain: triangular, zero-mean noise re-seeded `grainRate` times a
+     second, × `grainAmount`, faded out below displayed luminance
+     `grainShadow` so blacks are not lifted.
+
+Each of `bloom`, `vignette` and `grain` toggles alone. With all three off, or
+`post.enabled` off, the scene renders straight to the canvas, the M7 path,
+with no target allocated. Without a renderable RGBA16F target (checked once
+per allocation), post-processing stays off and logs once. The target always
+matches the canvas buffer, so `gl_FragCoord`/`uBufferSize` screen mapping in
+the water and pool is unchanged. Context restoration abandons the target and
+bloom pass; the next configure builds fresh ones.
+
+**Adaptive resolution** (`src/adaptiveResolution.js`, `config.adaptive`). The
+pixel ratio is min(device DPR, `renderer.maxDpr`, 2, adaptive scale), with
+scale levels `high`/`mid`/`low` = 2/1.5/1. Every buffer follows that one ratio:
+canvas, wall capture, depth, post target and bloom, so pointer mapping (CSS
+pixels → curtain UV) is unchanged.
+
+- **Measurement.** Each frame interval goes into a fixed 64-sample ring, with
+  no allocation. Twice a second the controller computes:
+  - the **mean** interval (1/fps). The median cannot be used: rAF timestamps
+    snap to vsync, so frames lost to dropping kept the median at the display
+    interval while the page ran at 41 fps.
+  - the budget: the display interval estimated from the fastest 10% of
+    frames, clamped to [1/`targetFps`, 1/`minRefreshHz`]. A 120 Hz display
+    still targets 60 fps; a slow start still counts as slow.
+- **Decisions.**
+  - Overload (mean > budget × `overloadRatio`) sustained for `sustain` s
+    steps down one level.
+  - Headroom (mean ≤ budget × `headroomRatio`) for `recover` × backoff s
+    steps up one level.
+  - A step down within `recover` s of a step up doubles the backoff, up to
+    `maxBackoff`. Under a load only 2× cannot sustain, retries therefore
+    become rarer instead of oscillating.
+  - Measurement restarts, without changing the level, after any resize, pause
+    or resume, and for `settle` s after a level change.
+- **Testing.** `adaptive.simulateLoad` (debug pages only) busy-waits that many
+  ms per megapixel of buffer each frame, to exercise overload and recovery.
+
+**Saved settings** (`src/settings.js`). The debug panel adds:
+
+- **Save settings (this browser + copy).** Stores the changes from the
+  shipped defaults (excluding diagnostics) in `localStorage`
+  `walden.settings.v1`. It also copies the same JSON to the clipboard and
+  shows it in a small panel; pasted to the builder, it can become the shipped
+  defaults.
+- **Reset to defaults.** Restores every value and forgets the saved settings.
+
+`main.js` captures the shipped defaults, then applies saved settings before
+creating the scene, on every page (with or without `?debug`). Values are
+validated against this build:
+- unknown groups/keys are dropped;
+- types must match;
+- numbers are clamped to the GUI range;
+- choices must be listed and colours must be `#rrggbb`.
+
+Storage failures are caught, so the page renders with defaults.
