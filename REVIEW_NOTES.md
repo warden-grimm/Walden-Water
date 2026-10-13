@@ -337,6 +337,18 @@
 - **Blocker, fixed.** Per-pass tone mapping/sRGB of the split behind/front segments brightened pixels inside the curtain outline. The builder's "wet-sheen" explanation was wrong; the reviewer reproduced the step with the shaft alone. Now both passes integrate identical samples; behind outputs E(behind), front outputs E(total) − E(behind). Retest [`docs/evidence/M6/seam.mjs`](docs/evidence/M6/seam.mjs): shaft only, curtain hidden, black rock/background, intensities 0.05/0.15/0.6. Profiles across the curtain's left edge and lip are smooth and monotonic (e.g. 0.05: 86→109 over x 530–565 with no jump; previously 70→96 at the edge).
 - Nits addressed now: debug views hide particles; beam fBm has its own `shaft.lacunarity/gain`. Remaining: shaft GPU cost (+1.0 ms median desktop in the reviewer's run) and fill-rate options (single pass / half resolution), measured and dispositioned in the full M6 submission.
 
+### M6 — Volumetric shaft submission
+
+- Status: submitted for full independent review. BASE_SHA `900eb9648d58cb68ad735915c9561f454c87aaff` (accepted M5). HEAD named in dispatch. Checkpoint [r2](docs/reviews/M6-checkpoint-r2.md) cleared the r1 seam blocker.
+- What changed: `LightShaft.js` + `shaft.frag.glsl`. Two fullscreen additive passes integrate `pow(shaftMask, core) × streaks × haze` along each view ray inside the shared light cone (analytic forward-nappe interval). Rays are clipped at the wall via a `DepthTexture` now attached to the MSAA wall capture (Three blit-resolves it), with a soft-depth fade. Each ray is split at the resting curtain (behind before the water, front after) and composited as encoded differences, so the curtain outline has no seam. Debug views: depth/segment/split. New `config.shaft` (all GUI tunables). [Scene contract § M6](docs/scene-contract.md#m6-shaft).
+- Art: intensity 0.045 with core 2.5 gives a dim, dusty beam from the upper left onto the upper-middle curtain. God-ray streaks (angular noise, scale 40; 70 aliases) and two-octave drifting haze. The shared axial fade ends the beam before the pool. Moving the light moves the beam, rock/water lighting and dust together.
+- Build/tests: `npm test` 23/23; `npm run build` passes (existing chunk-size warning). No new unit tests: the shaft is shader-only and verified with GPU-rendered evidence.
+- Evidence: [M6 evidence](docs/evidence/M6/README.md). Three-viewport finals, beam clip, shaft on/off, moved light, touch regression, 24-row HMR (auto/byte), seam retest; no console warnings/errors.
+- Performance: frame median/p95 unchanged (≤ +1.7%). Shaft GPU ≈0.63 ms median on desktop after halving the haze octaves (was 0.87). Draws 7→9, +1 depth texture. Phone fill-rate risk is documented, with levers (`samples`, half-res option) owned by the M9 presets.
+- Manual script: (1) reload; a dim warm beam angles down from the upper left onto the upper curtain, with faint streaks drifting slowly, and fades before the pool. (2) `?debug` → shaft → view depth/segment/split, then back. (3) light → move x/targetX/targetY: the beam, lit rock and dust move together, and the beam meets the rock softly. (4) touch in the beam: parting and splashes unchanged. (5) shaft.enabled off/on. (6) **phone**: portrait/landscape look and smoothness.
+- Known gaps: post-processing/bloom (M8); pool (M7); the beam is not occluded by the curtain's own parted holes beyond its alpha. Deviations: no cone mesh (analytic ray integration) and no separate SpotLight, both consistent with the shared-light contract.
+- Nits carried: shaft fill cost at phone resolution (M9); lip gradient with curtain visible (verify after tuning, M6 review).
+
 ### M<n> — <summary>
 
 - Status:

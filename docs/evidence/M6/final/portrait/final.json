@@ -1,0 +1,35 @@
+{
+  "measuredAt": "2026-10-13T03:53:31.668Z",
+  "width": 390,
+  "height": 844,
+  "dpr": 2,
+  "touch": {
+    "available": true,
+    "bursts": 5,
+    "contactsAfterRelease": 0,
+    "field": 0
+  },
+  "pipeline": {
+    "draws": 9,
+    "triangles": 227080,
+    "programs": 8,
+    "textures": 5,
+    "shaft": {
+      "enabled": true,
+      "view": "shaft",
+      "samples": 14,
+      "depthSource": "wall capture DepthTexture (MSAA resolved)"
+    },
+    "capture": {
+      "width": 780,
+      "height": 1688,
+      "samples": 4,
+      "format": "RGBA16F linear",
+      "generation": 1,
+      "sourceObjects": [
+        "wall"
+      ]
+    }
+  },
+  "console": []
+}

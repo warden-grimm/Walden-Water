@@ -73,7 +73,8 @@ float curtainDistance(vec3 ro, vec3 rd) {
   return onSheet ? t : NO_HIT;
 }
 // Uneven dusty density: radial streaks fixed to the beam (angular cone
-// coordinates converge on the source, like god rays) times slow drifting fBm.
+// coordinates converge on the source, like god rays) times slow drifting
+// two-octave haze.
 float beamTexture(vec3 p) {
   vec3 q = p - uLightPosition;
   float along = max(dot(q, uLightDirection), 1e-3);
@@ -81,7 +82,10 @@ float beamTexture(vec3 p) {
   vec3 up = cross(side, uLightDirection);
   vec2 angular = vec2(dot(q, side), dot(q, up)) / along;
   float streak = noise2(angular * uStreakScale + vec2(uTime * uStreakDrift, 0.0));
-  float dust = fbm(vec2(along, dot(q, side) + dot(q, up)) * uNoiseScale + vec2(-uTime * uDrift, uTime * uDrift * 0.5));
+  // Two octaves suffice for this broad haze (fbm's four cost 2x per sample,
+  // and this runs per ray step on a fullscreen pass).
+  vec2 haze = vec2(along, dot(q, side) + dot(q, up)) * uNoiseScale + vec2(-uTime * uDrift, uTime * uDrift * 0.5);
+  float dust = (noise2(haze) + uGain * noise2(haze * uLacunarity)) / (1.0 + uGain);
   return (1.0 - uStreaks + uStreaks * 2.0 * streak) * (1.0 - uNoise + uNoise * 2.0 * dust);
 }
 void main() {
