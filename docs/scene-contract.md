@@ -1,4 +1,4 @@
-# Scene contract through M6
+# Scene contract through M7
 
 World units are metres. +Y points up and +Z points toward the camera. The
 curtain is centred at x=0, z=0, extends from y=0 (pool) to y=6 (lip), and is
@@ -378,3 +378,97 @@ The shaft is not in the wall capture, so refraction never samples it, and
 neither pass renders into a texture it reads. Debug views (`shaft.view`)
 replace the frame and hide particles: `depth` (wall distance, 25 m = white), `segment` (in-cone
 ray length, 6 m = white), `split` (red behind / green front, 4 m = full).
+
+<a id="m7-pool"></a>
+
+## M7 pool, impact rings and low mist
+
+`createPool()` (`src/scene/Pool.js`, layout helpers in `poolLayout.js`) adds a
+flat pool plane at y = `POOL_HEIGHT` (0), the curtain base. It spans the wall
+width, from just behind the deepest rock recess to past the camera, and draws
+in the main scene at renderOrder −0.5: after the background (−1), before the
+shaft segment behind the curtain (0) and the water (1). It neither tests nor
+writes depth. The curtain therefore composites over the pool where the pool
+lies behind the sheet.
+
+**Ripple target.** Each frame, before the wall capture, the pool clears a small
+render target and splats every live ring into it as an additive point sprite.
+The target covers a fixed rectangle of the pool surface (`rippleHalfWidth`,
+`rippleBack`, `rippleFront`) at `rippleResolution` texels per metre: 576 × 384
+at defaults, square texels within 1%. The mapping is u = (x − xMin)/xSize,
+v = (z − zMin)/zSize in both the ring shaders and the pool shader. Signed
+height is split into R (positive) and G (negative), and B holds crest foam.
+This non-negative encoding blends additively in both formats. RGBA16F is
+used after a framebuffer-completeness check; RGBA8 (`pool.precision` `byte`,
+or automatic fallback) only quantizes and clips at 1. The chosen format is
+logged when it changes. The target has no depth, no MSAA and no colour
+conversion. Its scene contains only ring sprites, it never samples itself,
+and render target/face/mip and autoClear are restored in finally. Context
+restoration abandons the lost target; the next configure allocates a new one.
+
+**Ring sources** (`ring-common.glsl`, `ripple.frag.glsl`). Each source is a
+one-wavelength wave packet, h = A·sin(2πx)·exp(−2x²), where
+x = (d − r)/`ringWavelength`. The radius is r = λ/2 + `ringSpeed`·age, and
+A fades as (1 − age/life)² / √(1 + r/λ). A brief foam crest
+(`ringFoam`) shows during the first quarter of the ring's life. Sprites are
+sized to r + 2λ. If the device's point-size limit clamps a sprite, the
+fragment uses the clamped extent, so the ring is clipped rather than
+distorted. Three draws feed the target:
+
+1. **Impact line**: `impactRings` looping sources. Each has a seeded period of
+   `impactPeriod`·(0.6–1.4) and respawns at a fresh x across the curtain
+   width, with z ∈ [0, `impactDepth`] (the bow is zero at the base). It lives
+   for min(`ringLife`, period).
+2. **Spray**: the spray system's own geometry and uniforms, with the shared
+   `spray-launch.glsl` timing and launch. For the latest one or two loops it
+   evaluates impactTime(origin.y, v.y). A drop that lands before its flight
+   ends (every base drop, and any lip drop whose life is long enough) rings at
+   ballistic(origin, v, impactTime) from that moment. Lip drops that retire in
+   the air at defaults make no ring.
+3. **Bursts**: the burst geometry and descriptor texture, with the shared
+   `burst-launch.glsl`. A droplet rings at ballistic(origin, v, impactTime),
+   age − impactTime after landing, only if its lifetime reaches the pool.
+
+Droplets and rings compile from the same GLSL source and read the same seeds,
+so a ring appears exactly where and when its droplet reaches y = 0. There is
+no readback and no CPU particle state. Live rings are bounded by the fixed
+point counts: impact + spray + slots × perBurst = 40 + 720 + 3072 vertices at
+defaults, most retired. `burst-launch.glsl` also clamps the droplet start
+height to the curtain top (the M5 r3 lip nit).
+
+**Pool shading** (`pool.frag.glsl`):
+
+- **Normal**: three slope terms are added together:
+  - two octaves of drifting value-noise ripples (`rippleScale`, `rippleSpeed`, `rippleSlope`);
+  - churn in a band in front of the base line (`churn`, `churnWidth`, `churnScale`, `churnSpeed`), softened at the sheet's ends by the water's edge width;
+  - the ripple-target heights × `ringHeight`, by central differences.
+- **Fresnel**: Schlick (`fresnelBase`), scaled by `reflectivity`. The default 1.8 is a deliberate artistic boost: at the physical value 1, the dark rock's reflection reads as a black void.
+- **Reflection**:
+  - The reflected ray is marched through the rock depth range in `reflectionSteps` planes, from the undisplaced wall back by `rock.relief + rock.ledgeDepth`. It stops at the first plane point that the captured wall depth hides, and that wall-capture pixel is the reflected rock. Rays rise as they go back, so they find rock above the water instead of the submerged rock behind a flat proxy plane.
+  - Where the ray crosses the resting curtain (shared `curtain-common.glsl`), the sheet is shaded with the water's own `waterNoise`, `waterCoverage` (now shared from `water-common.glsl`, used unchanged by the water) and lighting, composited over the rock as the water composites over the wall.
+  - Reflected points that leave the captured frame fade to the background colour.
+  - Not reflected: the touch-field parting, the shaft volume and particles.
+- **Body**: `pool.color` × (bounce + shaft mask).
+- **Specular**: the shared light's highlight, which is zero at defaults because the beam fades before the pool.
+- **Foam**: churn foam above `foamThreshold`, plus ring crests, lit like the rock.
+- **Soft shoreline**: alpha = smoothstep(0, `shoreSoftness`, wall distance − pool distance), using the same resolved wall `DepthTexture` as the shaft. The plane never cuts a hard line through rock.
+- **Debug views** (`pool.view`): `ripples` (target RGB), `normals`, `reflection`.
+
+**Shared-light integration.**
+
+- The rock's shader fades the rock below the waterline to the pool body colour over `submergeDepth` (when the pool is enabled). The curtain's refraction near its base, which samples the wall capture, therefore shows dark water rather than dry rock.
+- With the pool enabled, the shaft's rays end at the pool surface as well as at the rock, with the same soft fade (`softDepth`).
+- Moving the shared light moves the beam, rock, water, pool body, foam and low mist together. Aiming the light low lights the pool, its foam and the mist.
+
+**Low mist** (`lowmist.vert.glsl`, `config.mist`) is a fourth additive
+particle draw (renderOrder 6). It holds `count` large soft sprites in a thin
+layer (y ∈ [`low`, `high`], z ∈ [`back`, `front`]), drifting sideways across
+a wrapped band `width` wide, with an edge fade at the wrap and a slow size
+swell. They are lit by faint bounce light × `ambient`, plus the shared shaft
+mask.
+
+**Behind-curtain attenuation** (`curtain-common.glsl`, closes the M5 nit).
+Shaft motes and low mist that lie behind the resting sheet as seen from the
+camera are dimmed to `droplets.behindCurtain` (0.55). The sheet outline is
+softened by the water's edge width, so a drifting sprite does not pop. The
+shaft now shares the same `curtainDistance()`.

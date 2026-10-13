@@ -1,8 +1,7 @@
 uniform sampler2D uWallTexture;
 uniform vec2 uBufferSize, uTargetSize;
 uniform vec3 uWaterColor;
-uniform float uOpacity, uEdgeWidth, uBreakup, uBreakupStart, uBreakupSoftness;
-uniform float uWidth, uEdgeRaggedness, uLipFade;
+uniform float uOpacity, uWidth;
 uniform float uStreakContrast, uNormalStrength, uNormalStep, uFresnel, uFresnelPower;
 uniform float uRefractionStrength, uTransmission, uGlint, uGloss, uAmbient;
 uniform bool uRefraction;
@@ -31,11 +30,7 @@ void main() {
   vec3 V = normalize(cameraPosition - vWorld);
   vec3 L = normalize(uLightPosition - vWorld);
   vec3 H = normalize(L + V);
-  float edge = min(vUv.x, 1.0 - vUv.x);
-  float edgeFade = smoothstep(0.0, uEdgeWidth, edge - (n - 0.5) * uEdgeRaggedness);
-  float down = 1.0 - vUv.y;
-  float tearing = uBreakup * max(1.0 - edgeFade, smoothstep(uBreakupStart, 1.0, down));
-  float coverage = edgeFade * smoothstep(tearing, tearing + uBreakupSoftness, n) * smoothstep(0.0, uLipFade, down);
+  float coverage = waterCoverage(vUv, n);
   float gap = smoothstep(uGapStart, max(uGapEnd, uGapStart + 1e-6), vTouch.y);
   float foam = 4.0 * gap * (1.0 - gap) * uFoam * coverage;
   float streak = mix(1.0, n, uStreakContrast);

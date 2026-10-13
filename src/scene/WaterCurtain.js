@@ -59,7 +59,7 @@ export function createWaterCurtain(config, time, light, wallTexture, fieldUnifor
       if (typeof value === 'string') uniforms[name].value.set(value); else uniforms[name].value = value;
     }
   }
-  return { mesh, configure,
+  return { mesh, uniforms, configure,
     snapshot: () => ({ quality: config.curtain.quality, columns: mesh.geometry.parameters.widthSegments, rows: mesh.geometry.parameters.heightSegments,
       visible: mesh.visible, view: config.water.view, refraction: config.refraction.enabled, uv: 'u left-to-right, v bottom-to-top',
       contactSurface: 'analytical resting ribbon; GPU deformation uses rest UV', sidePush: config.touch.sidePush, forwardPush: config.touch.forwardPush }),

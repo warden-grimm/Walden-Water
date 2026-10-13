@@ -2,8 +2,9 @@ import { AdditiveBlending, Mesh, NoBlending, PlaneGeometry, ShaderMaterial } fro
 import { choices } from '../config.js';
 import vertexShader from '../shaders/background.vert.glsl?raw';
 import fragmentSource from '../shaders/shaft.frag.glsl?raw';
-import lightSource from '../shaders/light.glsl?raw';
 import noise from '../shaders/noise.glsl?raw';
+import { assemble } from './shaderChunks.js';
+import { POOL_HEIGHT } from './ballistics.js';
 
 // Visible beam as two fullscreen passes over one shader: the ray segment
 // BEHIND the curtain draws before the water (so the translucent sheet dims
@@ -13,11 +14,12 @@ export function createLightShaft(config, time, light, camera, sceneDepth) {
     // Live references: camera drift/resize update these in place, no per-frame copies.
     uProjectionInverse: { value: camera.projectionMatrixInverse }, uCameraWorld: { value: camera.matrixWorld },
     uCameraFar: { value: 0 }, uCurtainWidth: { value: 0 }, uCurtainHeight: { value: 0 }, uCurtainBow: { value: 0 },
+    uCurtainEdgeUv: { value: 0 }, uBehindCurtain: { value: 1 }, uPoolHeight: { value: POOL_HEIGHT }, uPoolClip: { value: true },
     uView: { value: 0 }, uLacunarity: { value: 0 }, uGain: { value: 0 } };
   const bindings = { uIntensity: 'intensity', uCore: 'core', uSamples: 'samples', uSoftDepth: 'softDepth', uNoise: 'noise',
     uNoiseScale: 'noiseScale', uDrift: 'drift', uStreaks: 'streaks', uStreakScale: 'streakScale', uStreakDrift: 'streakDrift' };
   for (const name of Object.keys(bindings)) shared[name] = { value: 0 };
-  const fragmentShader = fragmentSource.replace('// __LIGHT__', lightSource).replace('// __NOISE__', noise);
+  const fragmentShader = assemble(fragmentSource).replace('// __NOISE__', noise);
   const geometry = new PlaneGeometry(1, 1);
   const passes = [0, 1].map(part => {
     const material = new ShaderMaterial({ uniforms: { ...shared, uPart: { value: part } }, vertexShader, fragmentShader,
@@ -34,6 +36,9 @@ export function createLightShaft(config, time, light, camera, sceneDepth) {
     for (const [name, key] of Object.entries(bindings)) shared[name].value = s[key];
     shared.uCameraFar.value = config.camera.far;
     shared.uCurtainWidth.value = config.curtain.width; shared.uCurtainHeight.value = config.curtain.height; shared.uCurtainBow.value = config.curtain.bow;
+    shared.uCurtainEdgeUv.value = config.water.edgeWidth;
+    // With the pool enabled, rays end at the water surface as well as at the rock.
+    shared.uPoolClip.value = config.pool.enabled;
     shared.uLacunarity.value = s.lacunarity; shared.uGain.value = s.gain;
     shared.uView.value = choices.shaft.view.indexOf(s.view);
     // Debug views replace the frame so depth/segment values read directly.

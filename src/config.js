@@ -25,7 +25,9 @@ export const config = {
     recovery: 1.6, diffusion: 3, transport: 0.7, neutralThreshold: 0.001, maxStep: 1 / 30 },
   // Shared droplet look and ballistics for spray and touch bursts (M5) and future pool impacts (M7).
   droplets: { color: '#c9dde2', gravity: 4.2, ambient: 0.06, sparkle: 2.4, twinkle: 0.6, twinkleRate: 9,
-    softness: 3.5, minPixels: 1.5, fade: 0.2 },
+    softness: 3.5, minPixels: 1.5, fade: 0.2,
+    // Share of a mote's or mist sprite's light that passes through the resting curtain when it sits behind it.
+    behindCurtain: 0.55 },
   spray: { enabled: true, count: 720, lipShare: 0.45, lipLife: 1.1, lipForward: 0.22, lipSide: 0.1, lipDrop: 0.35,
     baseSpeed: 1.2, baseForward: 0.5, baseSide: 0.4, baseSpread: 1.08, baseRest: 0.35, jitter: 0.4, size: 0.022, opacity: 0.5 },
   bursts: { enabled: true, slots: 96, perBurst: 32, minSpeed: 0.35, fullSpeed: 3, interval: 0.045, spacing: 0.1, rim: 2, arcRadians: 1.2, bounce: 0.55, press: 0.3, minShare: 0.25,
@@ -37,6 +39,17 @@ export const config = {
   // M6 visible beam: the shared light integrated along each view ray (no separate light model).
   shaft: { enabled: true, view: 'shaft', intensity: 0.0225, core: 2.5, samples: 14, softDepth: 0.35,
     noise: 0.6, noiseScale: 1.2, lacunarity: 2.03, gain: 0.45, drift: 0.06, streaks: 0.6, streakScale: 40, streakDrift: 0.02 },
+  // M7 pool at y=0: dark water reflecting the wall capture and the curtain base, ripple rings from
+  // the continuous impact line and from every spray/burst droplet that lands (same ballistics as M5).
+  pool: { enabled: true, view: 'pool', precision: 'auto', color: '#04070a', fresnelBase: 0.02, reflectivity: 1.8, reflectionSteps: 6, gloss: 120,
+    shoreSoftness: 0.12, submergeDepth: 0.25, rippleScale: 3.2, rippleSpeed: 0.18, rippleSlope: 0.035,
+    churn: 0.12, churnWidth: 0.3, churnScale: 9, churnSpeed: 3.2, foam: 0.35, foamThreshold: 0.55, foamColor: '#9fb2b6', curtainReflection: 1,
+    rippleResolution: 96, rippleHalfWidth: 3, rippleBack: -1, rippleFront: 3, ringHeight: 0.004,
+    ringSpeed: 0.3, ringWavelength: 0.06, ringLife: 1.2, ringFoam: 0.45,
+    impactRings: 40, impactPeriod: 0.8, impactDepth: 0.12, impactStrength: 0.5, sprayRing: 0.25, burstRing: 0.6 },
+  // Low mist over the pool: faint ambient haze, brighter only where the shared shaft reaches it.
+  mist: { enabled: true, count: 28, size: 1, opacity: 0.05, ambient: 0.35, color: '#c3ccd0', softness: 1.4,
+    drift: 0.06, low: 0.05, high: 0.5, back: -0.4, front: 1.8, width: 8, edgeFade: 0.15, swell: 0.25, swellRate: 0.3 },
   markers: { color: '#819598', opacity: 0, thickness: 0.018, overhang: 0.16, depth: 0.01 },
   timing: { maxDelta: 0.05 },
   // Fixed diagnostic protocol, not adjustable mid-sample; buffers allocated only in debug.
@@ -48,6 +61,7 @@ export const choices = {
   water: { view: ['water', 'flow bands', 'uv', 'refraction', 'coverage', 'light mask', 'touch pressure', 'normals'] },
   refraction: { precision: ['auto', 'byte'] },
   shaft: { view: ['shaft', 'depth', 'segment', 'split'] },
+  pool: { view: ['pool', 'ripples', 'normals', 'reflection'], precision: ['auto', 'byte'] },
   touch: { precision: ['auto', 'byte'] },
 };
 export const rebuildControls = {
@@ -58,6 +72,8 @@ export const rebuildControls = {
   spray: new Set(['count', 'lipShare']),
   bursts: new Set(['slots', 'perBurst']),
   dust: new Set(['capacity', 'mistCount']),
+  pool: new Set(['precision', 'rippleResolution', 'rippleHalfWidth', 'rippleBack', 'rippleFront', 'impactRings']),
+  mist: new Set(['count']),
 };
 export const ranges = {
   renderer: { exposure: [0.1, 2, 0.01], maxDpr: [0.5, 2, 0.1] },
@@ -80,7 +96,7 @@ export const ranges = {
     recovery: [0.5, 3, 0.1], diffusion: [0, 12, 0.1], transport: [0, 1.5, 0.05],
     neutralThreshold: [0.0005, 0.005, 0.0005], maxStep: [1 / 120, 1 / 30, 1 / 120] },
   droplets: { gravity: [0.5, 9.8, 0.1], ambient: [0, 0.3, 0.005], sparkle: [0, 8, 0.1], twinkle: [0, 1, 0.01], twinkleRate: [0, 30, 0.5],
-    softness: [0.5, 8, 0.1], minPixels: [1, 4, 0.1], fade: [0.02, 0.5, 0.01] },
+    softness: [0.5, 8, 0.1], minPixels: [1, 4, 0.1], fade: [0.02, 0.5, 0.01], behindCurtain: [0, 1, 0.01] },
   spray: { count: [0, 2000, 40], lipShare: [0, 1, 0.01], lipLife: [0.2, 3, 0.05], lipForward: [0, 1, 0.01], lipSide: [0, 0.5, 0.01], lipDrop: [0, 1.5, 0.01],
     baseSpeed: [0, 3, 0.05], baseForward: [0, 1.5, 0.01], baseSide: [0, 1.5, 0.01], baseSpread: [0.5, 1.5, 0.01], baseRest: [0, 2, 0.05],
     jitter: [0, 0.9, 0.01], size: [0.002, 0.05, 0.001], opacity: [0, 1, 0.01] },
@@ -94,6 +110,13 @@ export const ranges = {
     mistAlongStart: [0, 8, 0.1], mistAlongEnd: [1, 12, 0.1] },
   shaft: { intensity: [0, 1, 0.001], core: [1, 6, 0.05], samples: [4, 48, 1], softDepth: [0.01, 2, 0.01],
     noise: [0, 1, 0.01], noiseScale: [0.1, 6, 0.05], lacunarity: [1.1, 3, 0.01], gain: [0.1, 0.8, 0.01], drift: [0, 0.5, 0.005], streaks: [0, 1, 0.01], streakScale: [1, 40, 0.5], streakDrift: [0, 0.2, 0.001] },
+  pool: { fresnelBase: [0, 0.2, 0.001], reflectivity: [0, 4, 0.01], reflectionSteps: [1, 16, 1], gloss: [10, 400, 1], shoreSoftness: [0.01, 0.5, 0.01], submergeDepth: [0.02, 1, 0.01],
+    rippleScale: [0.5, 10, 0.1], rippleSpeed: [0, 1, 0.01], rippleSlope: [0, 0.2, 0.001], churn: [0, 0.5, 0.005], churnWidth: [0.05, 1, 0.01], churnScale: [1, 30, 0.5], churnSpeed: [0, 10, 0.1],
+    foam: [0, 1, 0.01], foamThreshold: [0, 0.95, 0.01], curtainReflection: [0, 2, 0.01], rippleResolution: [32, 160, 8], rippleHalfWidth: [1, 6, 0.1], rippleBack: [-2, 0, 0.05], rippleFront: [0.5, 6, 0.1],
+    ringHeight: [0, 0.02, 0.0005], ringSpeed: [0.05, 1, 0.01], ringWavelength: [0.02, 0.2, 0.005], ringLife: [0.2, 3, 0.05], ringFoam: [0, 1, 0.01],
+    impactRings: [0, 160, 4], impactPeriod: [0.2, 3, 0.05], impactDepth: [0, 0.5, 0.01], impactStrength: [0, 1, 0.01], sprayRing: [0, 1, 0.01], burstRing: [0, 1, 0.01] },
+  mist: { count: [0, 120, 2], size: [0.1, 3, 0.05], opacity: [0, 0.3, 0.001], ambient: [0, 2, 0.01], softness: [0.5, 6, 0.1], drift: [0, 0.4, 0.005],
+    low: [0, 1, 0.01], high: [0.05, 2, 0.01], back: [-1, 1, 0.05], front: [0, 4, 0.05], width: [2, 16, 0.1], edgeFade: [0.01, 0.5, 0.01], swell: [0, 0.6, 0.01], swellRate: [0, 2, 0.01] },
   markers: { opacity: [0, 1, 0.01], thickness: [0.005, 0.05, 0.001], overhang: [0, 0.4, 0.01], depth: [0.001, 0.05, 0.001] },
   timing: { maxDelta: [0.016, 0.1, 0.001] },
 };

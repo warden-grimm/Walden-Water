@@ -372,6 +372,46 @@
 - Evidence: [before/after captures](docs/evidence/M6/README.md#user-follow-up-beam-halved) in portrait and landscape. `npm test` passes.
 - Review: no separate gate (config-only). It falls inside the M7 review diff (BASE `d02b197`), which covers it as a regression item.
 
+### M7 — Pool and impacts submission
+
+- Status: submitted for full independent review. BASE_SHA `d02b1975ca43f1a9ff323bdfebd36eb3e316d824` (accepted M6). HEAD named in dispatch. The diff also contains `adafab5` (user-requested beam halving, config only); please check it as a regression item.
+- What changed (contract: [scene-contract § M7](docs/scene-contract.md#m7-pool)):
+  - `Pool.js`/`poolLayout.js` + `pool.frag.glsl`: a dark pool plane at y=0. It has a soft shoreline against the resolved wall depth, ripple normals, Fresnel, and an analytic reflection: a ray march through the rock depth range into the wall capture, plus the resting curtain shaded with the water's own noise and coverage. Churn and foam run along the impact line.
+  - Ripple target (576×384 RGBA16F, byte fallback) cleared and splatted every frame by three point draws:
+    - continuous impact rings along the curtain base;
+    - one ring per spray droplet and per burst droplet.
+    These use the droplets' own seeds and launch math via new shared chunks (`spray-launch.glsl`, `burst-launch.glsl`) and `impactTime`, so a ring appears where and when its droplet reaches y=0. No readback.
+  - Low mist (`lowmist.vert.glsl`, `config.mist`): faint bounce-lit sprites drifting sideways above the pool, brightened by the shaft mask.
+  - Integration:
+    - submerged rock fades to the pool body in the wall shader (curtain refraction near the base);
+    - the shaft stops at the pool surface;
+    - shared `curtain-common.glsl` (shaft, motes, mist, pool);
+    - `waterCoverage()` moved into `water-common.glsl` and is used unchanged by the water;
+    - `shaderChunks.js` assembles the shared GLSL.
+  - Carried nits closed: motes and low mist behind the sheet are dimmed to `droplets.behindCurtain` (0.55, soft at the outline) (M5 r1, re-dated to M7). Burst droplets start no higher than the curtain top (M5 r3).
+- Art: pool `reflectivity` 1.8 is a stated artistic boost over physical Fresnel. At 1.0 the dark rock reflection reads as a black void ([comparison](docs/evidence/M7/README.md)). Rings are subtle; the pool stays below the shaft.
+- Build/tests: `npm test` 26/26 (new `tests/pool.test.js`: ripple domain covers the visible pool in every orientation at square texels; the pool plane extent; every pool/mist control has a valid range). `npm run build` passes (existing chunk-size warning).
+- Evidence: [M7 evidence](docs/evidence/M7/README.md):
+  - probes in three viewports (idle, debug views, swipe-to-landing sequences in pool and ripple views, pool off, light aimed low, byte path, rebuilds, context restore);
+  - 24-cycle HMR;
+  - matched timing against M6.
+  No console warnings/errors.
+- Performance: frame median/p95 unchanged in all matched pairs (display ~57 Hz throughout, both builds equal). GPU +0.02–0.22 ms median, +0.4–0.75 ms p95; pool off = M6. Draws 9→14, textures 5→6, programs 8→13.
+- Manual script:
+  1. Reload. Look for a dark, rippled pool below the curtain, with a foam/churn line where the sheet lands, wobbling reflections of its lower strands, and faint low mist. The beam is still the focal point.
+  2. Swipe fast low on the curtain. Droplets arc out, and small rings appear on the pool where they land, then fade within about 2 s.
+  3. `?debug` → pool → view ripples/normals/reflection, then back. Ring positions match the landings.
+  4. light → targetY ~1.2: the beam reaches the pool, and the pool, foam and mist light together.
+  5. pool.enabled off/on; pool.precision byte.
+  6. **Phone**: portrait/landscape look, cropping and smoothness.
+- Known gaps:
+  - The pool does not reflect the shaft volume, particles or the touch parting.
+  - The reflection treats the curtain as the resting sheet.
+  - Rings in the ripple target are limited to its rectangle (±3 m × −1…3 m), which covers the visible pool in all orientations (tested). Landings beyond it are off screen.
+  - Post-processing is M8.
+- Deviations: rings are rendered into a ripple height target rather than as visible ring meshes, so they bend the reflections, which reads as water.
+- Nits carried: shaft phone fill cost and phone presets (now including `pool.reflectionSteps`, `rippleResolution`, `mist`) (M9); haze drift ratio, burst saturation, seeds, noise precision (M9); HMR-after-restore warnings (M8).
+
 ### M<n> — <summary>
 
 - Status:

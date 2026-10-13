@@ -5,6 +5,7 @@ import noise from '../shaders/noise.glsl?raw';
 import lightSource from '../shaders/light.glsl?raw';
 import { wallSize } from './framing.js';
 import { choices } from '../config.js';
+import { POOL_HEIGHT } from './ballistics.js';
 
 export function createWall(config, time, light) {
   const uniforms = { ...light.uniforms, uTime: time, uWallSize: { value: new Vector2() } };
@@ -22,12 +23,14 @@ export function createWall(config, time, light) {
     uWetThreshold: ['wet', 'threshold'], uWetSoftness: ['wet', 'softness'], uTrickleSpeed: ['wet', 'trickleSpeed'],
     uTrickleFrequency: ['wet', 'trickleFrequency'], uTrickleContrast: ['wet', 'trickleContrast'],
     uWetSpecular: ['wet', 'specular'], uDrySpecular: ['wet', 'drySpecular'], uGloss: ['wet', 'gloss'],
+    uSubmerge: ['pool', 'enabled'], uSubmergeDepth: ['pool', 'submergeDepth'], uPoolColor: ['pool', 'color'],
   };
   for (const [name, [group, key]] of Object.entries(bindings)) {
     const value = config[group][key];
     uniforms[name] = { value: typeof value === 'string' ? new Color(value) : value };
   }
   uniforms.uView = { value: 0 };
+  uniforms.uPoolHeight = { value: POOL_HEIGHT };
   const material = new ShaderMaterial({ uniforms, side: DoubleSide,
     vertexShader: vertexSource.replace('// __NOISE__', noise),
     fragmentShader: fragmentSource.replace('// __NOISE__', noise).replace('// __LIGHT__', lightSource) });

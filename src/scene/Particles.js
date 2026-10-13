@@ -1,12 +1,12 @@
 import { AdditiveBlending, BufferAttribute, BufferGeometry, Color, Points, ShaderMaterial } from 'three';
 import { POOL_HEIGHT } from './ballistics.js';
 import { createSplashEmitter } from '../interaction/SplashEmitter.js';
-import common from '../shaders/particles-common.glsl?raw';
-import lightSource from '../shaders/light.glsl?raw';
+import { assemble } from './shaderChunks.js';
 import fragmentShader from '../shaders/particle.frag.glsl?raw';
 import sprayVertex from '../shaders/spray.vert.glsl?raw';
 import burstVertex from '../shaders/burst.vert.glsl?raw';
 import motesVertex from '../shaders/motes.vert.glsl?raw';
+import mistVertex from '../shaders/lowmist.vert.glsl?raw';
 
 // Deterministic per-point seeds (mulberry32): the same layout every load, so
 // captures are comparable. Generated only when a count changes.
@@ -18,7 +18,7 @@ function random(seed) {
     return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
   };
 }
-function pointGeometry(count, seed, extra) {
+export function pointGeometry(count, seed, extra) {
   const geometry = new BufferGeometry(), next = random(seed);
   // Positions are computed in the vertex shader; this only sets the draw count.
   geometry.setAttribute('position', new BufferAttribute(new Float32Array(count * 3), 3));
@@ -41,6 +41,7 @@ const layouts = {
   motes: { key: c => `${c.dust.capacity}:${c.dust.mistCount}`,
     build: c => pointGeometry(c.dust.capacity + c.dust.mistCount, 0x5eed03, {
       aVary: (i, next) => next(), aKind: i => (i < c.dust.capacity ? 0 : 1) }) },
+  mist: { key: c => `${c.mist.count}`, build: c => pointGeometry(c.mist.count, 0x5eed04, { aVary: (i, next) => next() }) },
 };
 
 export function createParticles(config, time, light, pointers, renderer) {
@@ -49,7 +50,9 @@ export function createParticles(config, time, light, pointers, renderer) {
     uPointScale: { value: 1 }, uMaxPointSize: { value: 64 } };
   const sharedBindings = { uGravity: ['droplets', 'gravity'], uMinPixels: ['droplets', 'minPixels'],
     uDropletColor: ['droplets', 'color'], uDropletAmbient: ['droplets', 'ambient'], uSparkle: ['droplets', 'sparkle'],
-    uTwinkle: ['droplets', 'twinkle'], uTwinkleRate: ['droplets', 'twinkleRate'], uFadeShare: ['droplets', 'fade'] };
+    uTwinkle: ['droplets', 'twinkle'], uTwinkleRate: ['droplets', 'twinkleRate'], uFadeShare: ['droplets', 'fade'],
+    uCurtainWidth: ['curtain', 'width'], uCurtainHeight: ['curtain', 'height'], uCurtainBow: ['curtain', 'bow'],
+    uCurtainEdgeUv: ['water', 'edgeWidth'], uBehindCurtain: ['droplets', 'behindCurtain'] };
   const systems = {
     spray: { vertex: sprayVertex, group: 'spray', bindings: { uWidth: ['curtain', 'width'], uHeight: ['curtain', 'height'],
       uLipLife: ['spray', 'lipLife'], uLipForward: ['spray', 'lipForward'], uLipSide: ['spray', 'lipSide'], uLipDrop: ['spray', 'lipDrop'],
@@ -57,7 +60,7 @@ export function createParticles(config, time, light, pointers, renderer) {
       uBaseSpread: ['spray', 'baseSpread'], uBaseRest: ['spray', 'baseRest'], uJitter: ['spray', 'jitter'],
       uSize: ['spray', 'size'], uOpacity: ['spray', 'opacity'], uSoftness: ['droplets', 'softness'] } },
     bursts: { vertex: burstVertex, group: 'bursts', extra: { uBursts: emitter.uniform, uBurstSlots: { value: emitter.slots } },
-      bindings: { uTouchRadius: ['touch', 'radius'], uRim: ['bursts', 'rim'], uArc: ['bursts', 'arcRadians'], uBounce: ['bursts', 'bounce'], uMinShare: ['bursts', 'minShare'], uSpread: ['bursts', 'spread'], uJitter: ['bursts', 'jitter'],
+      bindings: { uHeight: ['curtain', 'height'], uTouchRadius: ['touch', 'radius'], uRim: ['bursts', 'rim'], uArc: ['bursts', 'arcRadians'], uBounce: ['bursts', 'bounce'], uMinShare: ['bursts', 'minShare'], uSpread: ['bursts', 'spread'], uJitter: ['bursts', 'jitter'],
         uLifetime: ['bursts', 'lifetime'], uSize: ['bursts', 'size'], uOpacity: ['bursts', 'opacity'], uSoftness: ['droplets', 'softness'] } },
     motes: { vertex: motesVertex, group: 'dust', bindings: { uWallDepth: ['wall', 'depth'], uWallFade: ['dust', 'wallFade'],
       uEdgeFade: ['dust', 'edgeFade'], uSpread: ['dust', 'spread'], uSwirl: ['dust', 'swirl'], uWobble: ['dust', 'wobble'],
@@ -67,6 +70,11 @@ export function createParticles(config, time, light, pointers, renderer) {
       uMistSize: ['dust', 'mistSize'], uMistOpacity: ['dust', 'mistOpacity'], uMistSoftness: ['dust', 'mistSoftness'],
       uMistDrift: ['dust', 'mistDrift'], uMistAlongStart: ['dust', 'mistAlongStart'], uMistAlongEnd: ['dust', 'mistAlongEnd'],
       uMistColor: ['dust', 'mistColor'], uDustColor: ['dust', 'color'] } },
+    mist: { vertex: mistVertex, group: 'mist', bindings: { uMistSize: ['mist', 'size'], uMistOpacity: ['mist', 'opacity'],
+      uMistAmbient: ['mist', 'ambient'], uMistSoftness: ['mist', 'softness'], uMistDrift: ['mist', 'drift'], uMistLow: ['mist', 'low'],
+      uMistHigh: ['mist', 'high'], uMistBack: ['mist', 'back'], uMistFront: ['mist', 'front'], uMistWidth: ['mist', 'width'],
+      uMistEdgeFade: ['mist', 'edgeFade'], uMistSwell: ['mist', 'swell'], uMistSwellRate: ['mist', 'swellRate'],
+      uMistColor: ['mist', 'color'], uBounceColor: ['light', 'bounceColor'], uBounce: ['light', 'bounce'] } },
   };
   function bind(uniforms, bindings) {
     for (const [name, [group, key]] of Object.entries(bindings)) {
@@ -82,7 +90,7 @@ export function createParticles(config, time, light, pointers, renderer) {
     const uniforms = { ...shared, ...system.extra };
     bind(uniforms, system.bindings);
     system.material = new ShaderMaterial({ uniforms, fragmentShader,
-      vertexShader: system.vertex.replace('// __LIGHT__', lightSource).replace('// __PARTICLES__', common),
+      vertexShader: assemble(system.vertex),
       transparent: true, depthTest: false, depthWrite: false, blending: AdditiveBlending, premultipliedAlpha: true });
     system.key = layouts[name].key(config, emitter.slots);
     system.points = new Points(layouts[name].build(config, emitter.slots), system.material);
@@ -114,7 +122,8 @@ export function createParticles(config, time, light, pointers, renderer) {
       system.points.visible = config[system.group].enabled && system.points.geometry.attributes.position.count > 0;
     }
   }
-  return { objects: group, emitter,
+  // Spray and burst materials/geometry, reused by the pool's ripple rings so each ring follows its droplet.
+  return { objects: group, emitter, shared, systems,
     configure,
     update() { emitter.update(time.value); },
     contextRestored() { emitter.contextRestored(); readPointLimit(); },

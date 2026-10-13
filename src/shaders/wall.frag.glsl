@@ -7,6 +7,10 @@ uniform float uCurtainWidth, uWetMargin, uWetFrequency, uWetThreshold, uWetSoftn
 uniform float uCurtainHeight, uWetVerticalFade, uWetWarp;
 uniform float uTrickleSpeed, uTrickleFrequency, uTrickleContrast, uWetSpecular, uGloss;
 uniform int uView;
+// M7: rock below the pool surface fades to the pool's body colour. The pool
+// covers it in the final image; the curtain's refraction samples it near the base.
+uniform float uPoolHeight, uSubmerge, uSubmergeDepth;
+uniform vec3 uPoolColor;
 varying vec3 vWorld;
 varying vec3 vNormal;
 varying vec2 vRock;
@@ -38,6 +42,8 @@ void main() {
   float specular = pow(max(dot(N, H), 0.0), uGloss) * (uDrySpecular + wet * uWetSpecular);
   vec3 color = albedo * occlusion * (uBounceColor * uBounce + uLightColor * uLightIntensity * beam * max(dot(N, L), 0.0));
   color += uLightColor * uLightIntensity * beam * specular;
+  vec3 poolBody = uPoolColor * (uBounceColor * uBounce + uLightColor * uLightIntensity * beam);
+  color = mix(color, poolBody, uSubmerge * smoothstep(uPoolHeight, uPoolHeight - uSubmergeDepth, vWorld.y));
   if (uView == 1) color = N * 0.5 + 0.5;
   if (uView == 2) color = vec3(beam);
   if (uView == 3) color = vec3(wet);

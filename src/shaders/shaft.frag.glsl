@@ -5,7 +5,9 @@
 // there are no mesh faces to clip against walls: no hard intersection lines.
 uniform sampler2D uSceneDepth;
 uniform mat4 uProjectionInverse, uCameraWorld;
-uniform float uCurtainWidth, uCurtainHeight, uCurtainBow, uCameraFar;
+uniform float uCameraFar;
+uniform float uPoolHeight;
+uniform bool uPoolClip; // the M7 pool surface ends rays that reach the water
 const float DEPTH_VIEW_METRES = 25.0; // debug view: this distance maps to white
 uniform float uIntensity, uCore, uSamples, uSoftDepth;
 uniform float uNoise, uNoiseScale, uDrift, uStreaks, uStreakScale, uStreakDrift, uTime;
@@ -15,6 +17,7 @@ uniform int uView; // 0 shaft, 1 linear wall distance, 2 cone segment length, 3 
 varying vec2 vUv;
 // __LIGHT__
 // __NOISE__
+// __CURTAIN__
 const float NO_HIT = 1e6;
 // Output transform used by every other pass (ACES when enabled, then sRGB).
 vec3 encodeBeam(vec3 linear) {
@@ -58,20 +61,6 @@ vec2 coneInterval(vec3 ro, vec3 rd) {
   else if (r0 < NO_HIT) interval = vec2(r0, NO_HIT);
   return interval;
 }
-// Distance to the resting curtain (bow included by one fixed-point step), or NO_HIT.
-float curtainDistance(vec3 ro, vec3 rd) {
-  if (abs(rd.z) < 1e-5) return NO_HIT;
-  float t = -ro.z / rd.z;
-  for (int i = 0; i < 2; i++) {
-    vec3 p = ro + rd * t;
-    float a = 2.0 * p.x / uCurtainWidth, v = p.y / uCurtainHeight;
-    float z = uCurtainBow * max(1.0 - a * a, 0.0) * sin(3.14159265 * clamp(v, 0.0, 1.0));
-    t = (z - ro.z) / rd.z;
-  }
-  vec3 p = ro + rd * t;
-  bool onSheet = t > 0.0 && abs(p.x) <= 0.5 * uCurtainWidth && p.y >= 0.0 && p.y <= uCurtainHeight;
-  return onSheet ? t : NO_HIT;
-}
 // Uneven dusty density: radial streaks fixed to the beam (angular cone
 // coordinates converge on the source, like god rays) times slow drifting
 // two-octave haze.
@@ -96,7 +85,8 @@ void main() {
   float wall = depth < 1.0 ? distance(unproject(vUv, depth * 2.0 - 1.0), ro) : uCameraFar;
   vec2 cone = coneInterval(ro, rd);
   float curtain = curtainDistance(ro, rd);
-  float start = cone.x, end = min(min(cone.y, wall), uCameraFar);
+  float pool = uPoolClip && rd.y < -1e-5 ? (uPoolHeight - ro.y) / rd.y : NO_HIT;
+  float start = cone.x, end = min(min(min(cone.y, wall), pool), uCameraFar);
   if (uView == 1) { gl_FragColor = vec4(vec3(wall / DEPTH_VIEW_METRES), 1.0); return; }
   if (uView == 2) { gl_FragColor = vec4(vec3(max(end - start, 0.0) / 6.0), 1.0); return; }
   if (uView == 3) {
@@ -119,8 +109,8 @@ void main() {
     float t = start + (float(i) + jitter) * stepLength;
     if (uPart == 0 && t < curtain) continue; // in front: unused by the behind pass
     vec3 p = ro + rd * t;
-    // Soft fade within uSoftDepth of the captured surface (soft-particle style).
-    float soft = smoothstep(0.0, uSoftDepth, wall - t);
+    // Soft fade within uSoftDepth of the captured rock or the pool surface (soft-particle style).
+    float soft = smoothstep(0.0, uSoftDepth, min(wall, pool) - t);
     // uCore > 1 concentrates the visible beam toward the axis of the lit cone.
     float density = pow(shaftMask(p), uCore) * beamTexture(p) * soft;
     total += density;

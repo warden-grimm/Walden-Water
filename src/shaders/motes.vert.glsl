@@ -12,6 +12,7 @@ varying vec3 vColor;
 varying float vAlpha, vSoftness;
 // __LIGHT__
 // __PARTICLES__
+// __CURTAIN__
 // Incommensurate wobble ratios keep each mote's path from visibly repeating.
 const vec3 WOBBLE = vec3(1.0, 0.7718, 0.5873);
 void main() {
@@ -32,7 +33,8 @@ void main() {
   world += uWobble * sin(uTime * uWobbleRate * (0.5 + aVary) * WOBBLE + TAU * aSeed.wzy);
   float envelope = smoothstep(0.0, uEdgeFade, s) * (1.0 - smoothstep(1.0 - uEdgeFade, 1.0, s))
     * smoothstep(uWallDepth, uWallDepth + uWallFade, world.z);
-  float beam = shaftMask(world) * uLightIntensity;
+  // Motes between the rock and the sheet are seen through the water.
+  float beam = shaftMask(world) * uLightIntensity * curtainTransmission(world);
   vec4 viewPosition = viewMatrix * vec4(world, 1.0);
   if (mist) {
     vAlpha = envelope * uMistOpacity;
