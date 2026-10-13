@@ -349,6 +349,23 @@
 - Known gaps: post-processing/bloom (M8); pool (M7); the beam is not occluded by the curtain's own parted holes beyond its alpha. Deviations: no cone mesh (analytic ray integration) and no separate SpotLight, both consistent with the shared-light contract.
 - Nits carried: shaft fill cost at phone resolution (M9); lip gradient with curtain visible (verify after tuning, M6 review).
 
+### Coordinator outcome — M6 accepted
+
+- Independent full review of exact `d02b1975ca43f1a9ff323bdfebd36eb3e316d824`: [report r1](docs/reviews/M6-review-r1.md) **APPROVE WITH NITS**, no blockers. Verified in three viewports:
+  - The default beam is a dim focal point and fades before the pool.
+  - Moving the light (three positions) moves beam, rock/water lighting and dust together, with no hard clipping or sorting.
+  - The curtain seam fix holds.
+  - Depth alignment holds within 0–7/255 across MSAA/byte/half-res/orientation/restore/HMR.
+  - Resource counts stay stable; no M4/M5 regressions.
+  - Matched timing vs M5: frame ≤ +0.6%; shaft GPU ≈ +0.7 ms median / +1.7 ms p95 (off = M5).
+- **M6 accepted. Accepted implementation head (M7 BASE_SHA): `d02b1975ca43f1a9ff323bdfebd36eb3e316d824`.** Phone look/cost unverified.
+- Nit dispositions:
+  1. **Re-dated to M7:** "motes not attenuated behind the translucent curtain" (from M5 r1, due M6). Reason: it is invisible at defaults (the wall–curtain gap is thin and motes are dim). M7 integrates low mist and particle/pool layering against the water, so it is fixed there with one analytic behind-curtain attenuation for motes and pool mist, rather than changing approved code now. Owner builder.
+  2. Shaft phone fill cost (samples / on-off / half-res presets): builder, M9, sooner if the phone stutters.
+  3. Haze cross-drift ratio `uDrift * 0.5` (`shaft.frag.glsl`) to config: builder, M9.
+  4. Lip gradient with curtain visible: **closed** (within 1–2/255 of the neighbouring gradient; it comes from the water's own lip fade).
+  5. Carried: M7 lip-origin clamp for splashes; M8 HMR-after-restore warnings; M9 burst saturation, shader spreads, decorrelated seeds, noise precision.
+
 ### M<n> — <summary>
 
 - Status:
