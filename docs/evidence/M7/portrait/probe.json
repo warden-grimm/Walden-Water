@@ -1,5 +1,5 @@
 {
-  "measuredAt": "2026-10-13T10:49:46.502Z",
+  "measuredAt": "2026-10-13T11:24:36.108Z",
   "viewport": {
     "width": 390,
     "height": 844,
@@ -12,14 +12,14 @@
         "enabled": true,
         "view": "pool",
         "target": {
-          "width": 576,
+          "width": 864,
           "height": 384,
           "format": "RGBA16F"
         },
         "domain": [
-          -3,
+          -4.5,
           -1,
-          6,
+          9,
           4
         ],
         "rings": {
@@ -52,7 +52,7 @@
     },
     {
       "step": "swipe-pool",
-      "splashes": 7
+      "splashes": 8
     },
     {
       "step": "swipe-ripples",
@@ -64,14 +64,14 @@
         "enabled": true,
         "view": "pool",
         "target": {
-          "width": 576,
+          "width": 864,
           "height": 384,
           "format": "RGBA8"
         },
         "domain": [
-          -3,
+          -4.5,
           -1,
-          6,
+          9,
           4
         ],
         "rings": {
@@ -88,7 +88,7 @@
         "slots": 96,
         "perBurst": 32,
         "live": 0,
-        "emitted": 15,
+        "emitted": 16,
         "overwritten": 0,
         "maxDroplets": 3072,
         "visible": true,
@@ -108,14 +108,14 @@
         "enabled": true,
         "view": "pool",
         "target": {
-          "width": 384,
+          "width": 576,
           "height": 256,
           "format": "RGBA16F"
         },
         "domain": [
-          -3,
+          -4.5,
           -1,
-          6,
+          9,
           4
         ],
         "rings": {
@@ -132,7 +132,7 @@
         "slots": 96,
         "perBurst": 32,
         "live": 0,
-        "emitted": 15,
+        "emitted": 16,
         "overwritten": 0,
         "maxDroplets": 3072,
         "visible": true,
@@ -152,14 +152,14 @@
         "enabled": true,
         "view": "pool",
         "target": {
-          "width": 576,
+          "width": 864,
           "height": 384,
           "format": "RGBA16F"
         },
         "domain": [
-          -3,
+          -4.5,
           -1,
-          6,
+          9,
           4
         ],
         "rings": {
@@ -176,7 +176,7 @@
         "slots": 96,
         "perBurst": 32,
         "live": 0,
-        "emitted": 15,
+        "emitted": 16,
         "overwritten": 0,
         "maxDroplets": 3072,
         "visible": true,
@@ -196,14 +196,14 @@
         "enabled": true,
         "view": "pool",
         "target": {
-          "width": 576,
+          "width": 864,
           "height": 384,
           "format": "RGBA16F"
         },
         "domain": [
-          -3,
+          -4.5,
           -1,
-          6,
+          9,
           4
         ],
         "rings": {
@@ -220,7 +220,7 @@
         "slots": 96,
         "perBurst": 32,
         "live": 0,
-        "emitted": 15,
+        "emitted": 16,
         "overwritten": 0,
         "maxDroplets": 3072,
         "visible": true,
@@ -236,14 +236,14 @@
     },
     {
       "step": "restored-pool",
-      "splashes": 7
+      "splashes": 8
     }
   ],
   "info": [
     "[Walden] Wall capture: RGBA16F linear",
     "[Walden] Touch field: RGBA16F / manual bilinear; framebuffer, vertex sampling and neutral checks passed",
-    "[Walden] Pool ripples: RGBA16F 576x384",
-    "[Walden] Pool ripples: RGBA8 (quantized, clipped at 1) 576x384"
+    "[Walden] Pool ripples: RGBA16F 864x384",
+    "[Walden] Pool ripples: RGBA8 (quantized, clipped at 1) 864x384"
   ],
   "console": []
 }

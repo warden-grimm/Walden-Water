@@ -44,7 +44,7 @@ export const config = {
   pool: { enabled: true, view: 'pool', precision: 'auto', color: '#04070a', fresnelBase: 0.02, reflectivity: 1.8, reflectionSteps: 6, gloss: 120,
     shoreSoftness: 0.12, submergeDepth: 0.25, rippleScale: 3.2, rippleSpeed: 0.18, rippleSlope: 0.035,
     churn: 0.12, churnWidth: 0.3, churnScale: 9, churnSpeed: 3.2, foam: 0.35, foamThreshold: 0.55, foamColor: '#9fb2b6', curtainReflection: 1,
-    rippleResolution: 96, rippleHalfWidth: 3, rippleBack: -1, rippleFront: 3, ringHeight: 0.004,
+    rippleResolution: 96, rippleHalfWidth: 4.5, rippleBack: -1, rippleFront: 3, rippleEdge: 0.25, ringHeight: 0.004,
     ringSpeed: 0.3, ringWavelength: 0.06, ringLife: 1.2, ringFoam: 0.45,
     impactRings: 40, impactPeriod: 0.8, impactDepth: 0.12, impactStrength: 0.5, sprayRing: 0.25, burstRing: 0.6 },
   // Low mist over the pool: faint ambient haze, brighter only where the shared shaft reaches it.
@@ -112,7 +112,7 @@ export const ranges = {
     noise: [0, 1, 0.01], noiseScale: [0.1, 6, 0.05], lacunarity: [1.1, 3, 0.01], gain: [0.1, 0.8, 0.01], drift: [0, 0.5, 0.005], streaks: [0, 1, 0.01], streakScale: [1, 40, 0.5], streakDrift: [0, 0.2, 0.001] },
   pool: { fresnelBase: [0, 0.2, 0.001], reflectivity: [0, 4, 0.01], reflectionSteps: [1, 16, 1], gloss: [10, 400, 1], shoreSoftness: [0.01, 0.5, 0.01], submergeDepth: [0.02, 1, 0.01],
     rippleScale: [0.5, 10, 0.1], rippleSpeed: [0, 1, 0.01], rippleSlope: [0, 0.2, 0.001], churn: [0, 0.5, 0.005], churnWidth: [0.05, 1, 0.01], churnScale: [1, 30, 0.5], churnSpeed: [0, 10, 0.1],
-    foam: [0, 1, 0.01], foamThreshold: [0, 0.95, 0.01], curtainReflection: [0, 2, 0.01], rippleResolution: [32, 160, 8], rippleHalfWidth: [1, 6, 0.1], rippleBack: [-2, 0, 0.05], rippleFront: [0.5, 6, 0.1],
+    foam: [0, 1, 0.01], foamThreshold: [0, 0.95, 0.01], curtainReflection: [0, 2, 0.01], rippleResolution: [32, 160, 8], rippleHalfWidth: [1, 6, 0.1], rippleBack: [-2, 0, 0.05], rippleFront: [0.5, 6, 0.1], rippleEdge: [0.01, 1, 0.01],
     ringHeight: [0, 0.02, 0.0005], ringSpeed: [0.05, 1, 0.01], ringWavelength: [0.02, 0.2, 0.005], ringLife: [0.2, 3, 0.05], ringFoam: [0, 1, 0.01],
     impactRings: [0, 160, 4], impactPeriod: [0.2, 3, 0.05], impactDepth: [0, 0.5, 0.01], impactStrength: [0, 1, 0.01], sprayRing: [0, 1, 0.01], burstRing: [0, 1, 0.01] },
   mist: { count: [0, 120, 2], size: [0.1, 3, 0.05], opacity: [0, 0.3, 0.001], ambient: [0, 2, 0.01], softness: [0.5, 6, 0.1], drift: [0, 0.4, 0.005],

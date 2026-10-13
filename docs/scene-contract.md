@@ -394,8 +394,13 @@ lies behind the sheet.
 **Ripple target.** Each frame, before the wall capture, the pool clears a small
 render target and splats every live ring into it as an additive point sprite.
 The target covers a fixed rectangle of the pool surface (`rippleHalfWidth`,
-`rippleBack`, `rippleFront`) at `rippleResolution` texels per metre: 576 × 384
-at defaults, square texels within 1%. The mapping is u = (x − xMin)/xSize,
+`rippleBack`, `rippleFront`) at `rippleResolution` texels per metre: x ∈ ±4.5 m,
+z ∈ [−1, 3] m, 864 × 384 at defaults, square texels within 1%. Depth covers the
+visible pool in every orientation. Landscape/desktop show about ±7.8 m of pool
+sideways, more than droplets reach: a full-strength sideways swipe from the
+sheet's edge at mid height lands about 4.1 m out (tested). Rings fade out over
+`rippleEdge` (0.25 m) inside the target's edges, so a rarer, harder landing
+fades rather than being cut at a seam (M7 r1 blocker). The mapping is u = (x − xMin)/xSize,
 v = (z − zMin)/zSize in both the ring shaders and the pool shader. Signed
 height is split into R (positive) and G (negative), and B holds crest foam.
 This non-negative encoding blends additively in both formats. RGBA16F is

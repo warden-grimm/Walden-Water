@@ -36,9 +36,9 @@ was run for `portrait` (390×844 DPR2), `landscape` (844×390 DPR2) and
 
 | View | Swipe splashes | Ripple target | Byte path | After restore | Console warnings/errors |
 | --- | --- | --- | --- | --- | --- |
-| Portrait | 7 / 8 | RGBA16F 576×384 | RGBA8 576×384 | target reallocated, +7 splashes | 0 |
-| Landscape | 4 / 4 | RGBA16F 576×384 | RGBA8 576×384 | target reallocated, +4 | 0 |
-| Desktop | 5 / 5 | RGBA16F 576×384 | RGBA8 576×384 | target reallocated, +5 | 0 |
+| Portrait | 8 / 8 | RGBA16F 864×384 | RGBA8 864×384 | target reallocated, +8 splashes | 0 |
+| Landscape | 4 / 4 | RGBA16F 864×384 | RGBA8 864×384 | target reallocated, +4 | 0 |
+| Desktop | 5 / 5 | RGBA16F 864×384 | RGBA8 864×384 | target reallocated, +5 | 0 |
 
 Rebuild controls (`impactRings` 80, `rippleResolution` 64 → 384×256 target,
 `mist.count` 60) and a return to defaults leave geometries/textures/programs at
@@ -91,3 +91,38 @@ foam, 1 wall depth, up to 6 reflection depth reads + 1 capture read) and
 applies. On phones, the pool covers about 10–15% of the portrait frame. The
 levers are `pool.reflectionSteps`, `rippleResolution` and `mist.count`/`size`,
 owned by the M9 presets.
+
+## r1 blocker fix: sideways ripple coverage
+
+Review r1 found that the ripple target covered only x ∈ ±3 m. Landscape and
+desktop show about ±7.8 m of pool, so a hard sideways swipe left rings cut at a
+seam near 3 m. The test had checked only depth coverage. Fix:
+
+- `rippleHalfWidth` 3 → 4.5, giving an 864×384 target at the same 96 texels/m.
+- Rings now fade out over `pool.rippleEdge` (0.25 m) inside the target's edges
+  instead of being cut.
+- The test now also checks sideways reach: a full-strength sideways swipe
+  from the sheet's edge at mid height lands about 4.06 m out, inside the fully
+  weighted 4.25 m.
+
+The probe tables above were regenerated on the fixed build.
+
+`edge.mjs` is the reviewer's reproduction (fast right swipe low on the right
+half), pointed at 5174. `edge/landscape` and `edge/desktop` show the ripple and
+pool views at 500/750/1000 ms; the framing markers are switched on. Rings form
+fully out to the right with no seam. Resource counts are unchanged except the
+target size.
+
+Matched timing rerun on the fixed build (same protocol, display ~57 Hz):
+
+| Run | Frames | Median / p95 ms | GPU median / p95 ms |
+| --- | --- | --- | --- |
+| m6-interaction-r2 | 3388 | 17.7 / 18.3 | 4.463 / 7.208 |
+| m7-interaction-r2 | 3387 | 17.7 / 18.4 | 4.634 / 7.653 |
+| m6-stress-r2 | 3391 | 17.6 / 18.3 | 4.483 / 7.194 |
+| m7-stress-r2 | 3389 | 17.7 / 18.3 | 4.574 / 7.771 |
+| m6-idle-r2 | 3388 | 17.7 / 18.4 | 4.515 / 7.228 |
+| m7-idle-r2 | 3390 | 17.7 / 18.4 | 4.645 / 7.742 |
+
+Frame median/p95 are unchanged. GPU is +0.09–0.17 ms median and
++0.45–0.58 ms p95: the larger target costs no measurable extra.

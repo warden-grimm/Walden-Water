@@ -412,6 +412,28 @@
 - Deviations: rings are rendered into a ripple height target rather than as visible ring meshes, so they bend the reflections, which reads as water.
 - Nits carried: shaft phone fill cost and phone presets (now including `pool.reflectionSteps`, `rippleResolution`, `mist`) (M9); haze drift ratio, burst saturation, seeds, noise precision (M9); HMR-after-restore warnings (M8).
 
+### M7 — Review r1 and blocker fix
+
+- Independent review of exact `6d9dddda5644406e999624f5689ae4735fd1d177`: [report r1](docs/reviews/M7-review-r1.md) **CHANGES REQUESTED**, one blocker.
+  - **Blocker:** the ripple target covered x ∈ ±3 m only, while landscape/desktop show about ±7.8 m of pool. Hard sideways swipes left rings cut at a seam. My submission claim "covers the visible pool in all orientations (tested)" was wrong: the test checked depth only.
+  - **Verified OK:**
+    - the shared launch chunks are a verbatim move of M5's math (only the lip clamp changes behaviour);
+    - rings coincide with landings and the pool line;
+    - byte/restore/HMR;
+    - cost under the trigger;
+    - the beam halving shows no regression;
+    - both carried nits closed.
+- **Fix:**
+  - `pool.rippleHalfWidth` 3 → 4.5 (864×384 at the same 96 texels/m);
+  - new `pool.rippleEdge` 0.25 m: rings fade out inside the target's edges instead of being cut;
+  - `tests/pool.test.js` now also asserts sideways reach (a full-strength sideways swipe from the sheet's edge at mid height lands about 4.06 m out, within 4.25 m);
+  - contract updated.
+- **Retest** ([evidence § r1 blocker fix](docs/evidence/M7/README.md#r1-blocker-fix-sideways-ripple-coverage)): the reviewer's reproduction in landscape and desktop now forms full rings with no seam. Probes were rerun in three viewports (byte path, restore, rebuild counts, 0 console warnings/errors). The matched timing rerun shows frame median/p95 unchanged, GPU +0.09–0.17 ms median / +0.45–0.58 ms p95. `npm test` 26/26; build passes.
+- **Nits addressed now:**
+  - the per-frame `['spray','bursts']` array is hoisted to a constant;
+  - the stale "wall plane" header comment in `pool.frag.glsl` is fixed.
+- **Nit kept:** a spray point keeps only its latest ring, so a ring outliving the drop's loop period ends when the next drop lands. Owner builder, M9.
+
 ### M<n> — <summary>
 
 - Status:

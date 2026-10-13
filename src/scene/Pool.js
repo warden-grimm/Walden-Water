@@ -14,6 +14,8 @@ import impactVertex from '../shaders/ring-impact.vert.glsl?raw';
 import sprayRingVertex from '../shaders/ring-spray.vert.glsl?raw';
 import burstRingVertex from '../shaders/ring-burst.vert.glsl?raw';
 
+const DROPLET_SOURCES = ['spray', 'bursts'];
+
 // Pool surface (M7). Each frame the ripple target is cleared and every live
 // ring is splatted into it as a point sprite: continuous impacts along the
 // curtain base, plus one ring per spray/burst droplet evaluated from that
@@ -53,7 +55,7 @@ export function createPool(config, time, light, camera, capture, curtain, partic
     uRippleScale: ['pool', 'rippleScale'], uRippleSpeed: ['pool', 'rippleSpeed'], uRippleSlope: ['pool', 'rippleSlope'],
     uChurn: ['pool', 'churn'], uChurnWidth: ['pool', 'churnWidth'], uChurnScale: ['pool', 'churnScale'], uChurnSpeed: ['pool', 'churnSpeed'],
     uPoolFoam: ['pool', 'foam'], uFoamThreshold: ['pool', 'foamThreshold'], uCurtainReflection: ['pool', 'curtainReflection'],
-    uRingHeight: ['pool', 'ringHeight'], uReflectionSteps: ['pool', 'reflectionSteps'], uWallPlane: ['wall', 'depth'], uBounceColor: ['light', 'bounceColor'], uBounce: ['light', 'bounce'],
+    uRingHeight: ['pool', 'ringHeight'], uRippleEdge: ['pool', 'rippleEdge'], uReflectionSteps: ['pool', 'reflectionSteps'], uWallPlane: ['wall', 'depth'], uBounceColor: ['light', 'bounceColor'], uBounce: ['light', 'bounce'],
     uCurtainWidth: ['curtain', 'width'], uCurtainHeight: ['curtain', 'height'], uCurtainBow: ['curtain', 'bow'],
     uCurtainEdgeUv: ['water', 'edgeWidth'], uBehindCurtain: ['droplets', 'behindCurtain'] };
   function bind() {
@@ -134,7 +136,7 @@ export function createPool(config, time, light, camera, capture, curtain, partic
   function update() {
     if (!config.pool.enabled || !target) return;
     // Follow the droplet systems' current geometry (rebuilt when their counts change).
-    for (const name of ['spray', 'bursts']) {
+    for (const name of DROPLET_SOURCES) {
       const droplets = particles.systems[name].points;
       sources[name].points.geometry = droplets.geometry;
       sources[name].points.visible = droplets.visible;

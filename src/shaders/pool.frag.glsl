@@ -2,8 +2,9 @@
 // curtain's impact line, and the ring heights in the ripple target. Fresnel
 // mixes a dark body with an analytic reflection: the reflected ray is
 // intersected with the resting curtain (shaded with the water's own flow
-// noise and coverage) and with the wall plane, which is looked up in the
-// completed wall capture. Nothing reads the frame this pass writes.
+// noise and coverage) and marched through the rock's depth range against the
+// wall depth; the rock it meets is looked up in the completed wall capture.
+// Nothing reads the frame this pass writes.
 uniform sampler2D uWallTexture, uSceneDepth, uRippleTexture;
 uniform vec2 uBufferSize, uTargetSize;
 uniform mat4 uProjection, uProjectionInverse, uCameraWorld;
@@ -14,6 +15,7 @@ uniform float uBounce;
 uniform vec4 uRippleDomain;  // xMin, zMin, xSize, zSize in metres (ring-common.glsl)
 uniform vec2 uRippleTexel;   // 1 / ripple target size
 uniform float uRingHeight;   // metres of surface height per stored ring unit
+uniform float uRippleEdge;   // rings fade out over this many metres inside the target's edges
 uniform vec3 uPoolColor, uPoolFoamColor, uPoolFallback;
 uniform float uWallPlane, uRockDepth, uReflectionSteps; // rock relief range marched by reflections
 uniform float uPoolHeight, uFresnelBase, uReflectivity, uPoolGloss, uShoreSoftness;
@@ -62,7 +64,9 @@ void main() {
   vec2 churn = vWorld.xz * uChurnScale + vec2(0.0, uTime * uChurnSpeed);
   slope += noiseSlope(churn) * uChurn * band;
   vec2 ringUv = (vWorld.xz - uRippleDomain.xy) / uRippleDomain.zw;
-  float inDomain = step(0.0, ringUv.x) * step(ringUv.x, 1.0) * step(0.0, ringUv.y) * step(ringUv.y, 1.0);
+  // A landing beyond the target fades out toward its edge instead of being cut.
+  vec2 inside = min(ringUv, 1.0 - ringUv) * uRippleDomain.zw;
+  float inDomain = smoothstep(0.0, uRippleEdge, min(inside.x, inside.y));
   vec2 metresPerTexel = uRippleTexel * uRippleDomain.zw;
   slope += inDomain * uRingHeight * vec2(
     (ringHeight(ringUv + vec2(uRippleTexel.x, 0.0)) - ringHeight(ringUv - vec2(uRippleTexel.x, 0.0))) / (2.0 * metresPerTexel.x),

@@ -1,5 +1,5 @@
 {
-  "measuredAt": "2026-10-13T10:50:44.921Z",
+  "measuredAt": "2026-10-13T11:25:05.952Z",
   "viewport": {
     "width": 844,
     "height": 390,
@@ -12,14 +12,14 @@
         "enabled": true,
         "view": "pool",
         "target": {
-          "width": 576,
+          "width": 864,
           "height": 384,
           "format": "RGBA16F"
         },
         "domain": [
-          -3,
+          -4.5,
           -1,
-          6,
+          9,
           4
         ],
         "rings": {
@@ -64,14 +64,14 @@
         "enabled": true,
         "view": "pool",
         "target": {
-          "width": 576,
+          "width": 864,
           "height": 384,
           "format": "RGBA8"
         },
         "domain": [
-          -3,
+          -4.5,
           -1,
-          6,
+          9,
           4
         ],
         "rings": {
@@ -108,14 +108,14 @@
         "enabled": true,
         "view": "pool",
         "target": {
-          "width": 384,
+          "width": 576,
           "height": 256,
           "format": "RGBA16F"
         },
         "domain": [
-          -3,
+          -4.5,
           -1,
-          6,
+          9,
           4
         ],
         "rings": {
@@ -152,14 +152,14 @@
         "enabled": true,
         "view": "pool",
         "target": {
-          "width": 576,
+          "width": 864,
           "height": 384,
           "format": "RGBA16F"
         },
         "domain": [
-          -3,
+          -4.5,
           -1,
-          6,
+          9,
           4
         ],
         "rings": {
@@ -196,14 +196,14 @@
         "enabled": true,
         "view": "pool",
         "target": {
-          "width": 576,
+          "width": 864,
           "height": 384,
           "format": "RGBA16F"
         },
         "domain": [
-          -3,
+          -4.5,
           -1,
-          6,
+          9,
           4
         ],
         "rings": {
@@ -242,8 +242,8 @@
   "info": [
     "[Walden] Wall capture: RGBA16F linear",
     "[Walden] Touch field: RGBA16F / manual bilinear; framebuffer, vertex sampling and neutral checks passed",
-    "[Walden] Pool ripples: RGBA16F 576x384",
-    "[Walden] Pool ripples: RGBA8 (quantized, clipped at 1) 576x384"
+    "[Walden] Pool ripples: RGBA16F 864x384",
+    "[Walden] Pool ripples: RGBA8 (quantized, clipped at 1) 864x384"
   ],
   "console": []
 }
