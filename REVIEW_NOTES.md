@@ -434,6 +434,19 @@
   - the stale "wall plane" header comment in `pool.frag.glsl` is fixed.
 - **Nit kept:** a spray point keeps only its latest ring, so a ring outliving the drop's loop period ends when the next drop lands. Owner builder, M9.
 
+### Coordinator outcome — M7 accepted
+
+- Independent focused review of exact `99d04e116e76b8eef4ebd47bebb9d3dd191310f1`: [report r2](docs/reviews/M7-review-r2.md) **APPROVE WITH NITS**, no blockers.
+  - The r1 blocker is fixed. Landscape/desktop right swipes, including a harder full-width one, ring out to about 4.3 m and fade softly with no seam.
+  - Byte path (RGBA8 864×384), pool off/on and restore counts verified, with no console errors.
+  - Matched timing: frame time unchanged, GPU +0.07–0.15 ms median / +0.48–0.65 ms p95 (under the trigger).
+  - 26/26 tests; build passes.
+- **M7 accepted. Accepted implementation head (M8 BASE_SHA): `99d04e116e76b8eef4ebd47bebb9d3dd191310f1`.** Phone look/cost/touch unverified.
+- Nit dispositions (owner builder):
+  1. Sideways-reach wording (`bursts.fullSpeed` caps splash strength, not drag speed; a very fast flick can land past 4.5 m, where it fades or makes no ring, never a seam). Either reword the claim or clamp throw speed. Due M9.
+  2. A spray point keeps only its latest ring. Due M9.
+  3. Carried: phone fill cost and presets (now including the 864×384 ripple target, `reflectionSteps` and mist), haze drift ratio, burst saturation, seeds, noise precision (M9); HMR-after-restore warnings (M8).
+
 ### M<n> — <summary>
 
 - Status:
