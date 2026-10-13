@@ -43,7 +43,10 @@ export function createDebugPanel({ config, resize, snapshot, renderer, resetTouc
       const { diff, stored } = settings.save();
       const text = JSON.stringify(diff, null, 2);
       let copied = false;
-      try { await navigator.clipboard.writeText(text); copied = true; } catch { /* clipboard blocked: the text stays selectable */ }
+      // Copy only from a real click; without user activation the browser would prompt or block.
+      if (navigator.userActivation?.isActive !== false) {
+        try { await navigator.clipboard.writeText(text); copied = true; } catch { /* clipboard blocked: the text stays selectable */ }
+      }
       showSnippet(text, stored, copied);
     },
     reset: () => {

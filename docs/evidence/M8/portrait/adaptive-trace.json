@@ -17,7 +17,7 @@
     ],
     "scale": 2,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "overload",
@@ -37,7 +37,7 @@
     ],
     "scale": 2,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "overload",
@@ -57,7 +57,7 @@
     ],
     "scale": 2,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "overload",
@@ -77,7 +77,7 @@
     ],
     "scale": 2,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "overload",
@@ -97,7 +97,7 @@
     ],
     "scale": 2,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "overload",
@@ -117,7 +117,7 @@
     ],
     "scale": 2,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "overload",
@@ -137,7 +137,7 @@
     ],
     "scale": 2,
     "backoff": 1,
-    "meanMs": 52.6
+    "meanMs": 52.9
   },
   {
     "label": "overload",
@@ -157,7 +157,7 @@
     ],
     "scale": 2,
     "backoff": 1,
-    "meanMs": 53.5
+    "meanMs": 53.6
   },
   {
     "label": "overload",
@@ -177,7 +177,7 @@
     ],
     "scale": 2,
     "backoff": 1,
-    "meanMs": 53.4
+    "meanMs": 53.6
   },
   {
     "label": "overload",
@@ -217,7 +217,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 53.5
+    "meanMs": 53.4
   },
   {
     "label": "overload",
@@ -237,7 +237,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 53.5
+    "meanMs": 53.4
   },
   {
     "label": "overload",
@@ -257,7 +257,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 53.5
+    "meanMs": 53.4
   },
   {
     "label": "overload",
@@ -277,7 +277,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 53.5
+    "meanMs": 53.4
   },
   {
     "label": "overload",
@@ -297,7 +297,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 53.5
+    "meanMs": 53.4
   },
   {
     "label": "overload",
@@ -317,7 +317,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 30.2
+    "meanMs": 30.5
   },
   {
     "label": "overload",
@@ -337,7 +337,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 30.2
+    "meanMs": 30.5
   },
   {
     "label": "overload",
@@ -382,22 +382,22 @@
   {
     "label": "overload",
     "t": 9.5,
-    "dpr": 1.5,
+    "dpr": 1,
     "buffer": [
-      585,
-      1266
+      390,
+      844
     ],
     "post": [
-      585,
-      1266
+      390,
+      844
     ],
     "capture": [
-      585,
-      1266
+      390,
+      844
     ],
-    "scale": 1.5,
+    "scale": 1,
     "backoff": 1,
-    "meanMs": 30.2
+    "meanMs": 30.5
   },
   {
     "label": "overload",
@@ -417,7 +417,7 @@
     ],
     "scale": 1,
     "backoff": 1,
-    "meanMs": 30.3
+    "meanMs": 30.5
   },
   {
     "label": "overload",
@@ -437,7 +437,7 @@
     ],
     "scale": 1,
     "backoff": 1,
-    "meanMs": 30.3
+    "meanMs": 30.5
   },
   {
     "label": "overload",
@@ -457,7 +457,7 @@
     ],
     "scale": 1,
     "backoff": 1,
-    "meanMs": 30.3
+    "meanMs": 30.5
   },
   {
     "label": "overload",
@@ -477,7 +477,7 @@
     ],
     "scale": 1,
     "backoff": 1,
-    "meanMs": 30.3
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -497,7 +497,7 @@
     ],
     "scale": 1,
     "backoff": 1,
-    "meanMs": 20.4
+    "meanMs": 19
   },
   {
     "label": "recovery",
@@ -517,7 +517,7 @@
     ],
     "scale": 1,
     "backoff": 1,
-    "meanMs": 20.4
+    "meanMs": 19
   },
   {
     "label": "recovery",
@@ -537,7 +537,7 @@
     ],
     "scale": 1,
     "backoff": 1,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -557,7 +557,7 @@
     ],
     "scale": 1,
     "backoff": 1,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -577,7 +577,7 @@
     ],
     "scale": 1,
     "backoff": 1,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -597,7 +597,7 @@
     ],
     "scale": 1,
     "backoff": 1,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -617,7 +617,7 @@
     ],
     "scale": 1,
     "backoff": 1,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -637,7 +637,7 @@
     ],
     "scale": 1,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -657,7 +657,7 @@
     ],
     "scale": 1,
     "backoff": 1,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -677,7 +677,7 @@
     ],
     "scale": 1,
     "backoff": 1,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -697,7 +697,7 @@
     ],
     "scale": 1,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -717,7 +717,7 @@
     ],
     "scale": 1,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -737,7 +737,7 @@
     ],
     "scale": 1,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -757,7 +757,7 @@
     ],
     "scale": 1,
     "backoff": 1,
-    "meanMs": 17.5
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -777,7 +777,7 @@
     ],
     "scale": 1,
     "backoff": 1,
-    "meanMs": 17.6
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -797,7 +797,7 @@
     ],
     "scale": 1,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -817,27 +817,27 @@
     ],
     "scale": 1,
     "backoff": 1,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
     "t": 8.5,
-    "dpr": 1,
+    "dpr": 1.5,
     "buffer": [
-      390,
-      844
+      585,
+      1266
     ],
     "post": [
-      390,
-      844
+      585,
+      1266
     ],
     "capture": [
-      390,
-      844
+      585,
+      1266
     ],
-    "scale": 1,
+    "scale": 1.5,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -857,7 +857,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -877,7 +877,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -897,7 +897,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -917,7 +917,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -937,7 +937,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 17.6
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -957,7 +957,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -977,7 +977,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 17.6
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -997,7 +997,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 17.5
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -1017,7 +1017,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -1037,7 +1037,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -1057,7 +1057,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -1077,7 +1077,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -1097,7 +1097,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 17.6
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -1117,7 +1117,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 17.6
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -1137,7 +1137,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -1157,7 +1157,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -1177,7 +1177,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -1197,7 +1197,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -1217,27 +1217,27 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
     "t": 18.5,
-    "dpr": 1.5,
+    "dpr": 2,
     "buffer": [
-      585,
-      1266
+      780,
+      1688
     ],
     "post": [
-      585,
-      1266
+      780,
+      1688
     ],
     "capture": [
-      585,
-      1266
+      780,
+      1688
     ],
-    "scale": 1.5,
+    "scale": 2,
     "backoff": 1,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -1257,7 +1257,7 @@
     ],
     "scale": 2,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -1277,7 +1277,7 @@
     ],
     "scale": 2,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -1297,7 +1297,7 @@
     ],
     "scale": 2,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -1317,7 +1317,7 @@
     ],
     "scale": 2,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -1337,7 +1337,7 @@
     ],
     "scale": 2,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -1357,7 +1357,7 @@
     ],
     "scale": 2,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -1377,7 +1377,7 @@
     ],
     "scale": 2,
     "backoff": 1,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -1397,7 +1397,7 @@
     ],
     "scale": 2,
     "backoff": 1,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -1417,7 +1417,7 @@
     ],
     "scale": 2,
     "backoff": 1,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "recovery",
@@ -1437,7 +1437,7 @@
     ],
     "scale": 2,
     "backoff": 1,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -1457,7 +1457,7 @@
     ],
     "scale": 2,
     "backoff": 1,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -1477,7 +1477,7 @@
     ],
     "scale": 2,
     "backoff": 1,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -1497,7 +1497,7 @@
     ],
     "scale": 2,
     "backoff": 1,
-    "meanMs": 24.1
+    "meanMs": 24
   },
   {
     "label": "resolution-dependent",
@@ -1517,7 +1517,7 @@
     ],
     "scale": 2,
     "backoff": 1,
-    "meanMs": 24.4
+    "meanMs": 24.2
   },
   {
     "label": "resolution-dependent",
@@ -1537,7 +1537,7 @@
     ],
     "scale": 2,
     "backoff": 1,
-    "meanMs": 24.3
+    "meanMs": 24.5
   },
   {
     "label": "resolution-dependent",
@@ -1557,7 +1557,7 @@
     ],
     "scale": 2,
     "backoff": 1,
-    "meanMs": 24.6
+    "meanMs": 24.5
   },
   {
     "label": "resolution-dependent",
@@ -1577,7 +1577,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 24.3
+    "meanMs": 24.2
   },
   {
     "label": "resolution-dependent",
@@ -1597,7 +1597,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 24.3
+    "meanMs": 24.2
   },
   {
     "label": "resolution-dependent",
@@ -1617,7 +1617,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 24.3
+    "meanMs": 24.2
   },
   {
     "label": "resolution-dependent",
@@ -1637,7 +1637,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 24.3
+    "meanMs": 24.2
   },
   {
     "label": "resolution-dependent",
@@ -1657,7 +1657,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 24.3
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -1677,7 +1677,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -1697,7 +1697,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 17.6
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -1717,7 +1717,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 17.6
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -1737,7 +1737,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -1757,7 +1757,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -1777,7 +1777,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -1797,7 +1797,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -1817,7 +1817,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -1837,7 +1837,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -1857,7 +1857,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -1877,7 +1877,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 17.6
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -1897,7 +1897,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 17.6
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -1917,7 +1917,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -1937,7 +1937,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -1957,7 +1957,7 @@
     ],
     "scale": 1.5,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -1977,7 +1977,7 @@
     ],
     "scale": 2,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -1997,7 +1997,7 @@
     ],
     "scale": 2,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -2017,7 +2017,7 @@
     ],
     "scale": 2,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -2037,7 +2037,7 @@
     ],
     "scale": 2,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -2057,7 +2057,7 @@
     ],
     "scale": 2,
     "backoff": 1,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -2077,7 +2077,7 @@
     ],
     "scale": 2,
     "backoff": 1,
-    "meanMs": 24.4
+    "meanMs": 24.5
   },
   {
     "label": "resolution-dependent",
@@ -2097,7 +2097,7 @@
     ],
     "scale": 2,
     "backoff": 1,
-    "meanMs": 24.4
+    "meanMs": 24.5
   },
   {
     "label": "resolution-dependent",
@@ -2117,7 +2117,7 @@
     ],
     "scale": 2,
     "backoff": 1,
-    "meanMs": 24.3
+    "meanMs": 24.2
   },
   {
     "label": "resolution-dependent",
@@ -2137,7 +2137,7 @@
     ],
     "scale": 2,
     "backoff": 1,
-    "meanMs": 24.4
+    "meanMs": 24.5
   },
   {
     "label": "resolution-dependent",
@@ -2157,7 +2157,7 @@
     ],
     "scale": 1.5,
     "backoff": 2,
-    "meanMs": 24.3
+    "meanMs": 24.2
   },
   {
     "label": "resolution-dependent",
@@ -2177,7 +2177,7 @@
     ],
     "scale": 1.5,
     "backoff": 2,
-    "meanMs": 24.3
+    "meanMs": 24.2
   },
   {
     "label": "resolution-dependent",
@@ -2197,7 +2197,7 @@
     ],
     "scale": 1.5,
     "backoff": 2,
-    "meanMs": 24.3
+    "meanMs": 24.2
   },
   {
     "label": "resolution-dependent",
@@ -2217,7 +2217,7 @@
     ],
     "scale": 1.5,
     "backoff": 2,
-    "meanMs": 24.3
+    "meanMs": 24.2
   },
   {
     "label": "resolution-dependent",
@@ -2237,7 +2237,7 @@
     ],
     "scale": 1.5,
     "backoff": 2,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -2257,7 +2257,7 @@
     ],
     "scale": 1.5,
     "backoff": 2,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -2277,7 +2277,7 @@
     ],
     "scale": 1.5,
     "backoff": 2,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -2297,7 +2297,7 @@
     ],
     "scale": 1.5,
     "backoff": 2,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -2317,7 +2317,7 @@
     ],
     "scale": 1.5,
     "backoff": 2,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -2337,7 +2337,7 @@
     ],
     "scale": 1.5,
     "backoff": 2,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -2357,7 +2357,7 @@
     ],
     "scale": 1.5,
     "backoff": 2,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -2377,7 +2377,7 @@
     ],
     "scale": 1.5,
     "backoff": 2,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -2397,7 +2397,7 @@
     ],
     "scale": 1.5,
     "backoff": 2,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -2417,7 +2417,7 @@
     ],
     "scale": 1.5,
     "backoff": 2,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -2437,7 +2437,7 @@
     ],
     "scale": 1.5,
     "backoff": 2,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -2457,7 +2457,7 @@
     ],
     "scale": 1.5,
     "backoff": 2,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -2477,7 +2477,7 @@
     ],
     "scale": 1.5,
     "backoff": 2,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -2497,7 +2497,7 @@
     ],
     "scale": 1.5,
     "backoff": 2,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -2517,7 +2517,7 @@
     ],
     "scale": 1.5,
     "backoff": 2,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -2537,7 +2537,7 @@
     ],
     "scale": 1.5,
     "backoff": 2,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -2557,7 +2557,7 @@
     ],
     "scale": 1.5,
     "backoff": 2,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -2577,7 +2577,7 @@
     ],
     "scale": 1.5,
     "backoff": 2,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -2597,7 +2597,7 @@
     ],
     "scale": 1.5,
     "backoff": 2,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -2617,7 +2617,7 @@
     ],
     "scale": 1.5,
     "backoff": 2,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -2637,7 +2637,7 @@
     ],
     "scale": 1.5,
     "backoff": 2,
-    "meanMs": 17.6
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -2657,7 +2657,7 @@
     ],
     "scale": 1.5,
     "backoff": 2,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -2677,7 +2677,7 @@
     ],
     "scale": 1.5,
     "backoff": 2,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -2697,7 +2697,7 @@
     ],
     "scale": 1.5,
     "backoff": 2,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -2717,7 +2717,7 @@
     ],
     "scale": 1.5,
     "backoff": 2,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -2737,7 +2737,7 @@
     ],
     "scale": 1.5,
     "backoff": 2,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -2757,7 +2757,7 @@
     ],
     "scale": 1.5,
     "backoff": 2,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -2777,7 +2777,7 @@
     ],
     "scale": 1.5,
     "backoff": 2,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -2797,7 +2797,7 @@
     ],
     "scale": 1.5,
     "backoff": 2,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -2817,7 +2817,7 @@
     ],
     "scale": 1.5,
     "backoff": 2,
-    "meanMs": 17.9
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -2837,27 +2837,27 @@
     ],
     "scale": 1.5,
     "backoff": 2,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
     "t": 35,
-    "dpr": 1.5,
+    "dpr": 2,
     "buffer": [
-      585,
-      1266
+      780,
+      1688
     ],
     "post": [
-      585,
-      1266
+      780,
+      1688
     ],
     "capture": [
-      585,
-      1266
+      780,
+      1688
     ],
-    "scale": 1.5,
+    "scale": 2,
     "backoff": 2,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -2877,7 +2877,7 @@
     ],
     "scale": 2,
     "backoff": 2,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -2897,7 +2897,7 @@
     ],
     "scale": 2,
     "backoff": 2,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -2917,7 +2917,7 @@
     ],
     "scale": 2,
     "backoff": 2,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -2937,7 +2937,7 @@
     ],
     "scale": 2,
     "backoff": 2,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -2957,7 +2957,7 @@
     ],
     "scale": 2,
     "backoff": 2,
-    "meanMs": 17.8
+    "meanMs": 24.5
   },
   {
     "label": "resolution-dependent",
@@ -2977,7 +2977,7 @@
     ],
     "scale": 2,
     "backoff": 2,
-    "meanMs": 24.3
+    "meanMs": 24.2
   },
   {
     "label": "resolution-dependent",
@@ -2997,7 +2997,7 @@
     ],
     "scale": 2,
     "backoff": 2,
-    "meanMs": 24.2
+    "meanMs": 24.5
   },
   {
     "label": "resolution-dependent",
@@ -3017,27 +3017,27 @@
     ],
     "scale": 2,
     "backoff": 2,
-    "meanMs": 24.5
+    "meanMs": 24.2
   },
   {
     "label": "resolution-dependent",
     "t": 39.5,
-    "dpr": 2,
+    "dpr": 1.5,
     "buffer": [
-      780,
-      1688
+      585,
+      1266
     ],
     "post": [
-      780,
-      1688
+      585,
+      1266
     ],
     "capture": [
-      780,
-      1688
+      585,
+      1266
     ],
-    "scale": 2,
-    "backoff": 2,
-    "meanMs": 24.3
+    "scale": 1.5,
+    "backoff": 4,
+    "meanMs": 24.5
   },
   {
     "label": "resolution-dependent",
@@ -3057,7 +3057,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 24.3
+    "meanMs": 24.5
   },
   {
     "label": "resolution-dependent",
@@ -3077,7 +3077,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 24.3
+    "meanMs": 24.5
   },
   {
     "label": "resolution-dependent",
@@ -3097,7 +3097,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 24.3
+    "meanMs": 24.5
   },
   {
     "label": "resolution-dependent",
@@ -3117,7 +3117,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 24.3
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3137,7 +3137,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3157,7 +3157,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3177,7 +3177,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3197,7 +3197,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3217,7 +3217,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3237,7 +3237,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3257,7 +3257,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3277,7 +3277,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3297,7 +3297,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3317,7 +3317,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3337,7 +3337,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3357,7 +3357,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3377,7 +3377,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3397,7 +3397,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3417,7 +3417,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3437,7 +3437,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3457,7 +3457,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3477,7 +3477,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3497,7 +3497,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3517,7 +3517,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3537,7 +3537,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3557,7 +3557,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.6
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3577,7 +3577,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3597,7 +3597,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3617,7 +3617,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3637,7 +3637,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.6
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3657,7 +3657,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3677,7 +3677,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3697,7 +3697,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3717,7 +3717,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.6
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3737,7 +3737,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3757,7 +3757,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3777,7 +3777,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.6
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3797,7 +3797,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3817,7 +3817,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3837,7 +3837,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3857,7 +3857,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3877,7 +3877,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3897,7 +3897,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3917,7 +3917,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3937,7 +3937,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3957,7 +3957,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3977,7 +3977,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -3997,7 +3997,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -4017,7 +4017,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -4037,7 +4037,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -4057,7 +4057,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -4077,7 +4077,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -4097,7 +4097,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -4117,7 +4117,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -4137,7 +4137,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -4157,7 +4157,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -4177,7 +4177,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -4197,7 +4197,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -4217,7 +4217,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -4237,7 +4237,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -4257,7 +4257,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -4277,7 +4277,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.6
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -4297,7 +4297,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.6
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -4317,7 +4317,7 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -4337,47 +4337,47 @@
     ],
     "scale": 1.5,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
     "t": 72.5,
-    "dpr": 1.5,
+    "dpr": 2,
     "buffer": [
-      585,
-      1266
+      780,
+      1688
     ],
     "post": [
-      585,
-      1266
+      780,
+      1688
     ],
     "capture": [
-      585,
-      1266
+      780,
+      1688
     ],
-    "scale": 1.5,
+    "scale": 2,
     "backoff": 4,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
     "t": 73,
-    "dpr": 1.5,
+    "dpr": 2,
     "buffer": [
-      585,
-      1266
+      780,
+      1688
     ],
     "post": [
-      585,
-      1266
+      780,
+      1688
     ],
     "capture": [
-      585,
-      1266
+      780,
+      1688
     ],
-    "scale": 1.5,
+    "scale": 2,
     "backoff": 4,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -4397,7 +4397,7 @@
     ],
     "scale": 2,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -4417,7 +4417,7 @@
     ],
     "scale": 2,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -4437,7 +4437,7 @@
     ],
     "scale": 2,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -4457,7 +4457,7 @@
     ],
     "scale": 2,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 24.5
   },
   {
     "label": "resolution-dependent",
@@ -4477,7 +4477,7 @@
     ],
     "scale": 2,
     "backoff": 4,
-    "meanMs": 17.7
+    "meanMs": 24.5
   },
   {
     "label": "resolution-dependent",
@@ -4497,7 +4497,7 @@
     ],
     "scale": 2,
     "backoff": 4,
-    "meanMs": 24.1
+    "meanMs": 24.2
   },
   {
     "label": "resolution-dependent",
@@ -4522,41 +4522,41 @@
   {
     "label": "resolution-dependent",
     "t": 77,
-    "dpr": 2,
+    "dpr": 1.5,
     "buffer": [
-      780,
-      1688
+      585,
+      1266
     ],
     "post": [
-      780,
-      1688
+      585,
+      1266
     ],
     "capture": [
-      780,
-      1688
+      585,
+      1266
     ],
-    "scale": 2,
-    "backoff": 4,
+    "scale": 1.5,
+    "backoff": 8,
     "meanMs": 24.2
   },
   {
     "label": "resolution-dependent",
     "t": 77.5,
-    "dpr": 2,
+    "dpr": 1.5,
     "buffer": [
-      780,
-      1688
+      585,
+      1266
     ],
     "post": [
-      780,
-      1688
+      585,
+      1266
     ],
     "capture": [
-      780,
-      1688
+      585,
+      1266
     ],
-    "scale": 2,
-    "backoff": 4,
+    "scale": 1.5,
+    "backoff": 8,
     "meanMs": 24.2
   },
   {
@@ -4577,7 +4577,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 24.5
+    "meanMs": 24.2
   },
   {
     "label": "resolution-dependent",
@@ -4597,7 +4597,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 24.5
+    "meanMs": 24.2
   },
   {
     "label": "resolution-dependent",
@@ -4617,7 +4617,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 24.5
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -4637,7 +4637,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 24.5
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -4657,7 +4657,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -4677,7 +4677,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 17.6
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -4697,7 +4697,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 17.6
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -4717,7 +4717,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -4737,7 +4737,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -4757,7 +4757,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 17.6
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -4777,7 +4777,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -4797,7 +4797,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -4817,7 +4817,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -4837,7 +4837,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -4857,7 +4857,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 17.6
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -4877,7 +4877,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -4897,7 +4897,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -4917,7 +4917,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -4937,7 +4937,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -4957,7 +4957,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 17.6
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -4977,7 +4977,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 17.6
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -4997,7 +4997,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 17.6
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -5017,7 +5017,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -5037,7 +5037,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -5057,7 +5057,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -5077,7 +5077,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -5097,7 +5097,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -5117,7 +5117,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -5137,7 +5137,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -5157,7 +5157,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -5177,7 +5177,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -5197,7 +5197,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -5217,7 +5217,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 17.8
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -5237,7 +5237,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -5257,7 +5257,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 17.6
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -5277,7 +5277,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -5297,7 +5297,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -5317,7 +5317,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 17.6
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -5337,7 +5337,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 17.6
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -5357,7 +5357,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 17.6
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -5377,7 +5377,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 17.6
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -5397,7 +5397,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -5417,7 +5417,7 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 17.7
+    "meanMs": 16.7
   },
   {
     "label": "resolution-dependent",
@@ -5437,6 +5437,6 @@
     ],
     "scale": 1.5,
     "backoff": 8,
-    "meanMs": 17.6
+    "meanMs": 16.7
   }
 ]

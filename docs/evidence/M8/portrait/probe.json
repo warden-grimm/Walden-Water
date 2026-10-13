@@ -1,5 +1,5 @@
 {
-  "measuredAt": "2026-10-13T12:30:50.603Z",
+  "measuredAt": "2026-10-13T13:29:51.532Z",
   "viewport": {
     "width": 390,
     "height": 844,
@@ -18,8 +18,8 @@
         "level": 0,
         "scale": 2,
         "backoff": 1,
-        "meanMs": 17.745312477927655,
-        "budgetMs": 17.20000058412552
+        "meanMs": 16.667187126586214,
+        "budgetMs": 16.666666666666668
       },
       "post": {
         "active": true,
@@ -30,10 +30,9 @@
         },
         "bloom": true,
         "vignette": true,
-        "grain": true,
         "bloomSize": [
-          390,
-          844
+          195,
+          422
         ]
       },
       "capture": [
@@ -46,7 +45,7 @@
       "textures": 18,
       "programs": 22,
       "running": true,
-      "frames": 222,
+      "frames": 238,
       "restores": 0,
       "savedSettings": 0,
       "touch": [],
@@ -67,8 +66,8 @@
         "level": 0,
         "scale": 2,
         "backoff": 1,
-        "meanMs": 17.745312477927655,
-        "budgetMs": 17.20000058412552
+        "meanMs": 16.667187126586214,
+        "budgetMs": 16.666666666666668
       },
       "post": {
         "active": true,
@@ -79,10 +78,9 @@
         },
         "bloom": false,
         "vignette": true,
-        "grain": true,
         "bloomSize": [
-          390,
-          844
+          195,
+          422
         ]
       },
       "capture": [
@@ -95,7 +93,7 @@
       "textures": 18,
       "programs": 22,
       "running": true,
-      "frames": 275,
+      "frames": 294,
       "restores": 0,
       "savedSettings": 0,
       "touch": []
@@ -112,8 +110,8 @@
         "level": 0,
         "scale": 2,
         "backoff": 1,
-        "meanMs": 17.745312477927655,
-        "budgetMs": 17.20000058412552
+        "meanMs": 16.667187126586214,
+        "budgetMs": 16.666666666666668
       },
       "post": {
         "active": true,
@@ -124,10 +122,9 @@
         },
         "bloom": true,
         "vignette": false,
-        "grain": true,
         "bloomSize": [
-          390,
-          844
+          195,
+          422
         ]
       },
       "capture": [
@@ -140,52 +137,7 @@
       "textures": 18,
       "programs": 22,
       "running": true,
-      "frames": 316,
-      "restores": 0,
-      "savedSettings": 0,
-      "touch": []
-    },
-    {
-      "step": "grain-off",
-      "dpr": 2,
-      "buffer": {
-        "width": 780,
-        "height": 1688
-      },
-      "adaptive": {
-        "enabled": true,
-        "level": 0,
-        "scale": 2,
-        "backoff": 1,
-        "meanMs": 17.745312477927655,
-        "budgetMs": 17.20000058412552
-      },
-      "post": {
-        "active": true,
-        "target": {
-          "width": 780,
-          "height": 1688,
-          "samples": 0
-        },
-        "bloom": true,
-        "vignette": true,
-        "grain": false,
-        "bloomSize": [
-          390,
-          844
-        ]
-      },
-      "capture": [
-        780,
-        1688
-      ],
-      "field": true,
-      "draws": 28,
-      "geometries": 13,
-      "textures": 18,
-      "programs": 22,
-      "running": true,
-      "frames": 356,
+      "frames": 335,
       "restores": 0,
       "savedSettings": 0,
       "touch": []
@@ -202,18 +154,17 @@
         "level": 0,
         "scale": 2,
         "backoff": 1,
-        "meanMs": 17.745312477927655,
-        "budgetMs": 17.20000058412552
+        "meanMs": 16.667187126586214,
+        "budgetMs": 16.666666666666668
       },
       "post": {
         "active": false,
         "target": null,
         "bloom": false,
         "vignette": false,
-        "grain": false,
         "bloomSize": [
-          390,
-          844
+          195,
+          422
         ]
       },
       "capture": [
@@ -226,7 +177,7 @@
       "textures": 18,
       "programs": 22,
       "running": true,
-      "frames": 396,
+      "frames": 377,
       "restores": 0,
       "savedSettings": 0,
       "touch": []
@@ -243,18 +194,17 @@
         "level": 0,
         "scale": 2,
         "backoff": 1,
-        "meanMs": 17.745312477927655,
-        "budgetMs": 17.20000058412552
+        "meanMs": 16.667187126586214,
+        "budgetMs": 16.666666666666668
       },
       "post": {
         "active": false,
         "target": null,
         "bloom": false,
         "vignette": false,
-        "grain": false,
         "bloomSize": [
-          390,
-          844
+          195,
+          422
         ]
       },
       "capture": [
@@ -267,7 +217,7 @@
       "textures": 18,
       "programs": 22,
       "running": true,
-      "frames": 437,
+      "frames": 420,
       "restores": 0,
       "savedSettings": 0,
       "touch": []
@@ -284,8 +234,8 @@
         "level": 0,
         "scale": 2,
         "backoff": 1,
-        "meanMs": 17.745312477927655,
-        "budgetMs": 17.20000058412552
+        "meanMs": 16.667187126586214,
+        "budgetMs": 16.666666666666668
       },
       "post": {
         "active": true,
@@ -296,10 +246,9 @@
         },
         "bloom": true,
         "vignette": true,
-        "grain": true,
         "bloomSize": [
-          390,
-          844
+          195,
+          422
         ]
       },
       "capture": [
@@ -312,7 +261,7 @@
       "textures": 18,
       "programs": 22,
       "running": true,
-      "frames": 472,
+      "frames": 456,
       "restores": 0,
       "savedSettings": 0,
       "touch": []
@@ -329,8 +278,8 @@
         "level": 2,
         "scale": 1,
         "backoff": 1,
-        "meanMs": 30.25000001071021,
-        "budgetMs": 17.500000074505806
+        "meanMs": 16.668749623931944,
+        "budgetMs": 16.666666666666668
       },
       "post": {
         "active": true,
@@ -341,10 +290,9 @@
         },
         "bloom": true,
         "vignette": true,
-        "grain": true,
         "bloomSize": [
-          195,
-          422
+          98,
+          211
         ]
       },
       "capture": [
@@ -357,7 +305,7 @@
       "textures": 18,
       "programs": 22,
       "running": true,
-      "frames": 855,
+      "frames": 848,
       "restores": 0,
       "savedSettings": 0,
       "touch": [],
@@ -378,8 +326,8 @@
         "level": 0,
         "scale": 2,
         "backoff": 1,
-        "meanMs": 17.831249948358163,
-        "budgetMs": 17.400000244379044
+        "meanMs": 16.668749623931944,
+        "budgetMs": 16.666666666666668
       },
       "post": {
         "active": true,
@@ -390,10 +338,9 @@
         },
         "bloom": true,
         "vignette": true,
-        "grain": true,
         "bloomSize": [
-          390,
-          844
+          195,
+          422
         ]
       },
       "capture": [
@@ -406,7 +353,7 @@
       "textures": 18,
       "programs": 22,
       "running": true,
-      "frames": 2266,
+      "frames": 2347,
       "restores": 0,
       "savedSettings": 0,
       "touch": [],
@@ -426,19 +373,19 @@
         },
         {
           "label": "overload",
-          "t": 10,
+          "t": 9.5,
           "scale": 1,
           "backoff": 1
         },
         {
           "label": "recovery",
-          "t": 9,
+          "t": 8.5,
           "scale": 1.5,
           "backoff": 1
         },
         {
           "label": "recovery",
-          "t": 19,
+          "t": 18.5,
           "scale": 2,
           "backoff": 1
         },
@@ -462,25 +409,25 @@
         },
         {
           "label": "resolution-dependent",
-          "t": 35.5,
+          "t": 35,
           "scale": 2,
           "backoff": 2
         },
         {
           "label": "resolution-dependent",
-          "t": 40,
+          "t": 39.5,
           "scale": 1.5,
           "backoff": 4
         },
         {
           "label": "resolution-dependent",
-          "t": 73.5,
+          "t": 72.5,
           "scale": 2,
           "backoff": 4
         },
         {
           "label": "resolution-dependent",
-          "t": 78,
+          "t": 77,
           "scale": 1.5,
           "backoff": 8
         }
@@ -502,8 +449,8 @@
         "level": 1,
         "scale": 1.5,
         "backoff": 8,
-        "meanMs": 17.61562525643967,
-        "budgetMs": 17.100000753998756
+        "meanMs": 16.667187126586214,
+        "budgetMs": 16.666666666666668
       },
       "post": {
         "active": true,
@@ -514,10 +461,9 @@
         },
         "bloom": true,
         "vignette": true,
-        "grain": true,
         "bloomSize": [
-          293,
-          633
+          146,
+          317
         ]
       },
       "capture": [
@@ -530,7 +476,7 @@
       "textures": 18,
       "programs": 22,
       "running": true,
-      "frames": 7961,
+      "frames": 8345,
       "restores": 1,
       "savedSettings": 0,
       "touch": []
@@ -539,10 +485,10 @@
       "step": "visibility",
       "hidden": {
         "hidden": true,
-        "frames": 7973,
+        "frames": 8357,
         "running": false
       },
-      "framesWhileHidden": 2,
+      "framesWhileHidden": 1,
       "after": {
         "dpr": 1.5,
         "buffer": {
@@ -554,8 +500,8 @@
           "level": 1,
           "scale": 1.5,
           "backoff": 8,
-          "meanMs": 21.256250300211832,
-          "budgetMs": 17.100000753998756
+          "meanMs": 16.668749623931944,
+          "budgetMs": 16.666666666666668
         },
         "post": {
           "active": true,
@@ -566,10 +512,9 @@
           },
           "bloom": true,
           "vignette": true,
-          "grain": true,
           "bloomSize": [
-            293,
-            633
+            146,
+            317
           ]
         },
         "capture": [
@@ -582,7 +527,7 @@
         "textures": 18,
         "programs": 22,
         "running": true,
-        "frames": 8032,
+        "frames": 8419,
         "restores": 1,
         "savedSettings": 0,
         "touch": []

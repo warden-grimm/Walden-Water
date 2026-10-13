@@ -7,7 +7,7 @@ const WINDOW = 64; // most recent frame intervals considered
 
 export function createAdaptiveResolution(settings) {
   const deltas = new Float32Array(WINDOW), sorted = new Float32Array(WINDOW);
-  let count = 0, head = 0, level = 0, backoff = 1;
+  let count = 0, head = 0, level = 0, backoff = 1, holding = false; // holding: the last change was an upgrade
   let overSince = -1, underSince = -1, changedAt = -Infinity, upgradedAt = -Infinity, evaluatedAt = -Infinity;
   let mean = 0, budget = 0;
   const levels = () => [settings.high, settings.mid, settings.low];
@@ -17,6 +17,7 @@ export function createAdaptiveResolution(settings) {
   function change(next, now) {
     if (next > level && now - upgradedAt < settings.recover) backoff = Math.min(backoff * 2, settings.maxBackoff);
     if (next < level) upgradedAt = now;
+    holding = next < level;
     level = next; changedAt = now; clearWindow();
     return true;
   }
@@ -31,6 +32,8 @@ export function createAdaptiveResolution(settings) {
       // Evaluate twice a second once the window is full.
       if (count < WINDOW || now - evaluatedAt < 0.5) return false;
       evaluatedAt = now;
+      // An upgrade that has held for the recovery time succeeded: forget past failures.
+      if (holding && backoff > 1 && now - upgradedAt >= settings.recover) backoff = 1;
       // The mean interval (1 / fps), not the median: rAF timestamps snap to
       // vsync, so a frame rate lost to dropped frames can keep the median at
       // the display interval. Isolated hitches barely move the mean.

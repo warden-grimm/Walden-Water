@@ -489,6 +489,28 @@
 - Deviations: display-space post instead of an HDR linear chain (reason above). The `isXRRenderTarget` flag on the post target is a documented Three workaround (#27868).
 - Nits carried: M9 items as listed in the M7 outcome (phone presets now also include post/bloom resolution and adaptive levels).
 
+### M8 — Review r1, fixes and grain removal
+
+- Independent review of exact `4afa5a6adb15dd2e099e54caeef502c734c9bbee`: [report r1](docs/reviews/M8-review-r1.md) **CHANGES REQUESTED**, one blocker.
+  - **Blocker:** an HMR of `main.js` recaptured the "defaults" from an already-modified config. A later Save dropped earlier saved values and Reset left them applied.
+  - **Verified OK:**
+    - post toggles; no double tone mapping (the `isXRRenderTarget` claim checked against r186 source); shadows not lifted;
+    - adaptive overload/recovery/backoff with consistent sizes and UV;
+    - float fallback; lifecycle; the HMR-after-restore reload; timing against M7;
+    - no M4–M7 regressions.
+- **Fix:** `config.js` exports `defaults`, captured once at module evaluation; `main.js` uses it. Retest `docs/evidence/M8/hmr-settings.mjs`: save, HMR, save keeps both values, and Reset restores defaults. Pass.
+- **Nits fixed now:**
+  - bloom is given twice its intended size, because the pass halves it; the default `bloomResolution` is now 0.25, the size it already ran at, so look and cost are unchanged;
+  - backoff resets after an upgrade holds for `recover` s, with a unit test;
+  - no resize when a level change does not change the effective ratio;
+  - the clipboard copy happens only from a real click.
+- **User feedback (mid-review):** "Bloom looks really good… the fine film grain… introduces flickering vertical stripes. Remove the film grain effect entirely." Grain was removed (code, config/GUI keys, shader noise chunk, probe step). The vignette is unchanged; the user noted it is hard to see, and `post.vignetteStrength` adjusts it.
+- **Retest:**
+  - probes in three viewports plus the portrait adaptive trace on the final code;
+  - 30-cycle HMR; HMR-after-restore with 0 warnings;
+  - `npm test` 34/34; build passes.
+  0 console warnings/errors.
+
 ### M<n> — <summary>
 
 - Status:

@@ -2,7 +2,6 @@ import { HalfFloatType, LinearFilter, Mesh, PlaneGeometry, Scene, ShaderMaterial
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
 import vertexShader from '../shaders/background.vert.glsl?raw';
 import compositeSource from '../shaders/composite.frag.glsl?raw';
-import noise from '../shaders/noise.glsl?raw';
 
 // M8 post-processing, in display space. Every scene material already applies
 // ACES + sRGB itself, and the water, particles and shaft were tuned blending in
@@ -10,15 +9,14 @@ import noise from '../shaders/noise.glsl?raw';
 // changed the approved look). So when any effect is on, the scene renders into
 // an RGBA16F target that Three treats like the canvas: each material tone maps
 // and encodes exactly as on screen, once. Bloom then adds its thresholded glow
-// to those display values, and the composite adds vignette and grain to the
+// to those display values, and the composite adds the vignette on the
 // canvas with no second tone mapping. With every effect off, or no renderable
 // float target, the scene renders straight to the canvas exactly as before.
-export function createPostProcessing(config, time, renderer) {
-  const uniforms = { uScene: { value: null }, uResolution: { value: new Vector2(1, 1) }, uTime: time,
-    uVignette: { value: 0 }, uVignetteStart: { value: 0 }, uVignetteEnd: { value: 1 },
-    uGrain: { value: 0 }, uGrainRate: { value: 0 }, uGrainShadow: { value: 1 } };
+export function createPostProcessing(config, renderer) {
+  const uniforms = { uScene: { value: null }, uResolution: { value: new Vector2(1, 1) },
+    uVignette: { value: 0 }, uVignetteStart: { value: 0 }, uVignetteEnd: { value: 1 } };
   // Input is already tone mapped and encoded: the composite must not do it again.
-  const material = new ShaderMaterial({ uniforms, vertexShader, fragmentShader: compositeSource.replace('// __NOISE__', noise),
+  const material = new ShaderMaterial({ uniforms, vertexShader, fragmentShader: compositeSource,
     depthTest: false, depthWrite: false, toneMapped: false });
   const geometry = new PlaneGeometry(1, 1);
   const quad = new Mesh(geometry, material);
@@ -28,7 +26,7 @@ export function createPostProcessing(config, time, renderer) {
   let target = null, bloom = null, key = '', available = true, loggedFallback = false;
   const bloomSize = [0, 0];
 
-  const active = () => available && config.post.enabled && (config.post.bloom || config.post.vignette || config.post.grain);
+  const active = () => available && config.post.enabled && (config.post.bloom || config.post.vignette);
 
   function allocate(width, height) {
     const s = config.post, samples = Math.min(s.samples, renderer.capabilities.maxSamples);
@@ -67,15 +65,15 @@ export function createPostProcessing(config, time, renderer) {
     uniforms.uVignette.value = s.vignette ? s.vignetteStrength : 0;
     uniforms.uVignetteStart.value = s.vignetteStart;
     uniforms.uVignetteEnd.value = Math.max(s.vignetteEnd, s.vignetteStart + 1e-3);
-    uniforms.uGrain.value = s.grain ? s.grainAmount : 0;
-    uniforms.uGrainRate.value = s.grainRate; uniforms.uGrainShadow.value = s.grainShadow;
-    if (!config.post.enabled || !(s.bloom || s.vignette || s.grain)) return;
+    if (!config.post.enabled || !(s.bloom || s.vignette)) return;
     allocate(bufferWidth, bufferHeight);
     if (!available) return;
     const bloomWidth = Math.max(2, Math.round(bufferWidth * s.bloomResolution));
     const bloomHeight = Math.max(2, Math.round(bufferHeight * s.bloomResolution));
-    bloom ??= new UnrealBloomPass(new Vector2(bloomWidth, bloomHeight), s.bloomStrength, s.bloomRadius, s.bloomThreshold);
-    bloom.setSize(bloomWidth, bloomHeight);
+    // UnrealBloomPass starts its mip chain at half the size it is given; pass
+    // double so its first level is bloomResolution x the buffer.
+    bloom ??= new UnrealBloomPass(new Vector2(2 * bloomWidth, 2 * bloomHeight), s.bloomStrength, s.bloomRadius, s.bloomThreshold);
+    bloom.setSize(2 * bloomWidth, 2 * bloomHeight);
     bloomSize[0] = bloomWidth; bloomSize[1] = bloomHeight;
     bloom.strength = s.bloomStrength; bloom.radius = s.bloomRadius; bloom.threshold = s.bloomThreshold;
   }
@@ -94,7 +92,7 @@ export function createPostProcessing(config, time, renderer) {
     // The lost context destroyed these GPU objects; build fresh ones on the next configure.
     contextRestored() { target = null; bloom = null; key = ''; uniforms.uScene.value = null; available = true; },
     snapshot: () => ({ active: active(), target: target && active() ? { width: target.width, height: target.height, samples: target.samples } : null,
-      bloom: active() && config.post.bloom, vignette: active() && config.post.vignette, grain: active() && config.post.grain,
+      bloom: active() && config.post.bloom, vignette: active() && config.post.vignette,
       bloomSize: bloom ? [...bloomSize] : null }),
     dispose() { target?.dispose(); bloom?.dispose(); geometry.dispose(); material.dispose(); output.clear(); } };
 }

@@ -51,6 +51,18 @@ test('recovery steps back up after headroom, and failed upgrades back off instea
   assert.ok(upgrades.length <= 5, `${upgrades.length} upgrade attempts in 240 s`);
 });
 
+test('an upgrade that holds forgets earlier failures', () => {
+  const adaptive = createAdaptiveResolution(config.adaptive), state = { now: 0 };
+  run(adaptive, state, 12, () => 1 / 30);
+  run(adaptive, state, 30, () => 1 / 60);
+  run(adaptive, state, 120, scale => (scale > 1.5 ? 1 / 30 : 1 / 60));
+  assert.ok(adaptive.snapshot().backoff > 1);
+  // The load goes away: the next upgrade holds, and backoff returns to 1.
+  run(adaptive, state, 150, () => 1 / 60);
+  assert.equal(adaptive.scale, 2);
+  assert.equal(adaptive.snapshot().backoff, 1);
+});
+
 test('disabling restores full resolution', () => {
   const settings = structuredClone(config.adaptive), adaptive = createAdaptiveResolution(settings), state = { now: 0 };
   run(adaptive, state, 12, () => 1 / 30);

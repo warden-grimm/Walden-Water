@@ -1,6 +1,6 @@
 import './styles.css';
 import { ACESFilmicToneMapping, SRGBColorSpace, WebGLRenderer } from 'three';
-import { config } from './config.js';
+import { config, defaults } from './config.js';
 import { loadSavedSettings, resetSettings, saveSettings } from './settings.js';
 import { createScene } from './scene/createScene.js';
 import { createTimeline } from './time.js';
@@ -12,8 +12,6 @@ const notice = document.querySelector('#scene-error');
 const noticeText = document.querySelector('#scene-error-text');
 const restart = document.querySelector('#restart');
 const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
-// Shipped defaults, captured before this browser's saved debug settings apply.
-const defaults = structuredClone(config);
 const savedSettings = loadSavedSettings(config);
 const timeline = createTimeline(config.timing);
 const adaptive = createAdaptiveResolution(config.adaptive);
@@ -31,13 +29,15 @@ function showNotice(message) {
   notice.hidden = false;
 }
 
+function pixelRatio() { return Math.min(window.devicePixelRatio, config.renderer.maxDpr, 2, adaptive.scale); }
+
 function resize() {
   if (disposed || contextLost) return;
   debug?.cancel('Settings or viewport changed; restart the sample.');
   width = Math.max(1, canvas.clientWidth);
   height = Math.max(1, canvas.clientHeight);
   // Adaptive resolution lowers the cap under sustained overload; every buffer follows this one ratio.
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, config.renderer.maxDpr, 2, adaptive.scale));
+  renderer.setPixelRatio(pixelRatio());
   adaptive.reset();
   renderer.setSize(width, height, false);
   renderer.toneMappingExposure = config.renderer.exposure;
@@ -67,7 +67,8 @@ function render(timestamp) {
     const until = performance.now() + config.adaptive.simulateLoad * canvas.width * canvas.height / 1e6;
     while (performance.now() < until) { /* busy wait */ }
   }
-  if (adaptive.record(rawDelta, timestamp / 1000)) resize();
+  // Resize only when the level change actually changes the ratio (not on DPR-1 devices).
+  if (adaptive.record(rawDelta, timestamp / 1000) && pixelRatio() !== renderer.getPixelRatio()) resize();
 }
 
 function syncLoop() {
@@ -115,7 +116,7 @@ function snapshot() {
     curtain: world.curtain.snapshot(), capture: world.capture.snapshot(),
     touch: { ...world.field.snapshot(), ...pointers.snapshot() },
     particles: world.particles.snapshot(), shaft: world.shaft.snapshot(), pool: world.pool.snapshot(), post: world.post.snapshot(),
-    effects: 'M8: touch field, water parting/foam, spray, touch bursts, shaft dust/mist, volumetric shaft, pool ripples/impact rings, low mist, bloom/vignette/grain post, adaptive DPR',
+    effects: 'M8: touch field, water parting/foam, spray, touch bursts, shaft dust/mist, volumetric shaft, pool ripples/impact rings, low mist, bloom/vignette post, adaptive DPR',
     userAgent: navigator.userAgent,
   };
 }

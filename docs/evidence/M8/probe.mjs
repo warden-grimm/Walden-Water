@@ -45,12 +45,12 @@ try {
   await shot('post-default');
   // Each pass alone off, then all off (direct rendering, M7 path), then back on.
   for (const [name, settings] of [['bloom-off', { 'post.bloom': false }], ['vignette-off', { 'post.vignette': false }],
-    ['grain-off', { 'post.grain': false }], ['all-off', { 'post.enabled': false }],
-    ['zero-effects', { 'post.bloom': false, 'post.vignette': false, 'post.grain': false }]]) {
+    ['all-off', { 'post.enabled': false }],
+    ['zero-effects', { 'post.bloom': false, 'post.vignette': false }]]) {
     await set(settings); await sleep(500);
     steps.push({ step: name, ...await snap() });
     await shot(name);
-    await set({ 'post.enabled': true, 'post.bloom': true, 'post.vignette': true, 'post.grain': true });
+    await set({ 'post.enabled': true, 'post.bloom': true, 'post.vignette': true });
   }
   await sleep(400);
   steps.push({ step: 'restored-defaults', ...await snap() });

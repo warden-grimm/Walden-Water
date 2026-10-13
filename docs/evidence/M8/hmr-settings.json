@@ -1,0 +1,26 @@
+{
+ "defaults": {
+  "shaft": 0.0225,
+  "refl": 1.8,
+  "saved": 0
+ },
+ "afterSave1": "{\"shaft\":{\"intensity\":0.2}}",
+ "afterHmr": {
+  "shaft": 0.2,
+  "refl": 1.8,
+  "saved": 1
+ },
+ "afterSave2": "{\"shaft\":{\"intensity\":0.2},\"pool\":{\"reflectivity\":1.4}}",
+ "afterReset": {
+  "stored": null,
+  "shaft": 0.0225,
+  "refl": 1.8,
+  "saved": 1
+ },
+ "cleanup": {
+  "stored": null,
+  "shaft": 0.0225,
+  "refl": 1.8,
+  "saved": 0
+ }
+}

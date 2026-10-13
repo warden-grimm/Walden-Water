@@ -35,10 +35,10 @@ was run for `portrait` (390×844 DPR2, with the adaptive trace), `landscape`
 (844×390 DPR2) and `desktop` (1440×900 DPR1). Each starts by resetting saved
 settings, with drift off.
 
-**Toggles.** Captures `post-default`, `bloom-off`, `vignette-off`, `grain-off`,
-`all-off` (post disabled) and `zero-effects` (all three off):
+**Toggles.** Captures `post-default`, `bloom-off`, `vignette-off`,
+`all-off` (post disabled) and `zero-effects` (both effects off):
 - With post on, the target equals the canvas buffer (e.g. 780×1688) and bloom
-  runs at half that (390×844).
+  starts at a quarter of it (195×422; the original run reported 390×844, the size passed to a pass that halves it again).
 - With all off there is no target and the draw count returns to M7's 14.
   Bloom adds 13 draws (high-pass, 10 blur, mip composite, blend) plus one
   composite: 28 total.
@@ -124,6 +124,55 @@ at 60 Hz for this session.
   this desktop vary with the clock state between runs, so I read the median
   as "no measurable increase", not a saving.
 - Post off returns close to M7.
-- Phone cost: bloom at half resolution is 13 full-screen-fraction passes.
+- Phone cost: bloom at quarter resolution is 13 small passes plus one full-screen composite.
   On phones, adaptive resolution and the per-effect toggles are the levers;
   M9 owns the presets and real-device numbers.
+
+## Review r1 fixes and user feedback
+
+**r1 blocker: saved settings across HMR.** `main.js` used to capture the
+defaults with `structuredClone(config)` each time it evaluated. An HMR of
+`main.js` therefore recaptured defaults that already contained the saved
+values: a later Save silently dropped them, and Reset left them applied. The
+defaults are now exported once from `config.js`, which an HMR of `main.js`
+does not re-evaluate.
+
+Retest `hmr-settings.mjs` (the reviewer's reproduction, on 5174):
+
+- save intensity 0.2;
+- HMR;
+- save reflectivity 1.4: storage holds both values;
+- Reset: storage is cleared and intensity is back to 0.0225 (`hmr-settings.json`, pass).
+
+**r1 nits, all three fixed:**
+
+- **Bloom size.** The size passed to the bloom pass is now doubled, so the
+  pass really starts at `bloomResolution` × the buffer. The default became
+  0.25, the size it actually ran at before, so the look and cost are
+  unchanged.
+- **Backoff.** It resets to 1 once an upgrade has held for `recover` s
+  (unit test added).
+- **No-op level changes.** A level change that leaves the effective pixel
+  ratio unchanged (DPR-1 devices) no longer resizes.
+
+Save also copies to the clipboard only from a real click (user activation).
+Scripted saves skip it, so the profile no longer logs a clipboard
+permission warning.
+
+**User feedback: film grain removed.** The user found the bloom subtle and
+effective, but the grain produced flickering vertical stripes. Removed: the
+`grain*` config/GUI keys, the composite's grain code and noise chunk, and the
+probe's grain step. Saved settings that still mention grain are dropped by
+validation. The likely cause of the stripes is the value-noise hash on
+integer pixel coordinates, re-seeded 24 times a second.
+
+All probes were rerun on the final code: three viewports plus the portrait
+adaptive trace, with the same level changes and backoff as above. Results:
+
+- 0 console warnings/errors;
+- save/reset passes;
+- `hmr.mjs` (30 cycles) and `hmr-restore.mjs` give 0 warnings;
+- 34/34 tests.
+
+Removing grain only takes work out of the composite; bloom cost is
+unchanged, so the timing pairs above stand.

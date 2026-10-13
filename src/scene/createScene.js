@@ -27,7 +27,7 @@ export function createScene(config, time, renderer, pointers) {
   const particles = createParticles(config, time, light, pointers, renderer);
   const shaft = createLightShaft(config, time, light, view.camera, capture.depth);
   const pool = createPool(config, time, light, view.camera, capture, curtain, particles, renderer);
-  const post = createPostProcessing(config, time, renderer);
+  const post = createPostProcessing(config, renderer);
   const geometry = new PlaneGeometry(1, 1);
   const backgroundMaterial = new ShaderMaterial({ uniforms: { uWallTexture: capture.texture },
     vertexShader: backgroundVertex, fragmentShader: backgroundFragment, depthTest: false, depthWrite: false });
