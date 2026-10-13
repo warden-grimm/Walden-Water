@@ -366,6 +366,12 @@
   4. Lip gradient with curtain visible: **closed** (within 1–2/255 of the neighbouring gradient; it comes from the water's own lip fade).
   5. Carried: M7 lip-origin clamp for splashes; M8 HMR-after-restore warnings; M9 burst saturation, shader spreads, decorrelated seeds, noise precision.
 
+### M6 — User follow-up: beam brightness halved
+
+- At the user's request after the M6 deploy ("The shaft of light is a little intense. Decrease its brightness by half"), `config.shaft.intensity` changed from 0.045 to 0.0225. One config value only; shaders, passes and cost are unchanged.
+- Evidence: [before/after captures](docs/evidence/M6/README.md#user-follow-up-beam-halved) in portrait and landscape. `npm test` passes.
+- Review: no separate gate (config-only). It falls inside the M7 review diff (BASE `d02b197`), which covers it as a regression item.
+
 ### M<n> — <summary>
 
 - Status:

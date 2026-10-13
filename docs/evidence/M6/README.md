@@ -44,3 +44,11 @@ phone (780×1688) shades about as many pixels as this desktop test, on a much
 weaker GPU. Levers: `shaft.samples` (14, linear cost), `shaft.enabled`, and
 a future half-resolution beam target. Preset choice is owned by M9 with real
 phone timing; the user's phone feedback is requested.
+
+## User follow-up: beam halved
+
+After publication the user found the beam a little intense and asked for half
+the brightness. `shaft.intensity` 0.045 → 0.0225 (linear radiance before tone
+mapping). `halved/shots.mjs` captures the same frame at both values (390×844 and
+844×390, DPR2, drift off): `halved/<view>-0.045.png` vs `halved/<view>-0.0225.png`.
+The beam still reads as the light source, now subordinate to the lit water.

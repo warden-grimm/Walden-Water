@@ -35,7 +35,7 @@ export const config = {
     wobble: 0.05, wobbleRate: 0.35, alongStart: 2, alongEnd: 8.5, spread: 1.15, edgeFade: 0.1, wallFade: 0.4,
     mistCount: 36, mistSize: 0.55, mistOpacity: 0.09, mistSoftness: 1.6, mistDrift: 0.012, mistAlongStart: 3.5, mistAlongEnd: 7.5, mistColor: '#d8d2c4' },
   // M6 visible beam: the shared light integrated along each view ray (no separate light model).
-  shaft: { enabled: true, view: 'shaft', intensity: 0.045, core: 2.5, samples: 14, softDepth: 0.35,
+  shaft: { enabled: true, view: 'shaft', intensity: 0.0225, core: 2.5, samples: 14, softDepth: 0.35,
     noise: 0.6, noiseScale: 1.2, lacunarity: 2.03, gain: 0.45, drift: 0.06, streaks: 0.6, streakScale: 40, streakDrift: 0.02 },
   markers: { color: '#819598', opacity: 0, thickness: 0.018, overhang: 0.16, depth: 0.01 },
   timing: { maxDelta: 0.05 },
