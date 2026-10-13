@@ -7,7 +7,7 @@ attribute float aKind; // 0 = dust, 1 = mist
 uniform float uWallDepth, uWallFade, uEdgeFade, uSpread, uSwirl, uWobble, uWobbleRate;
 uniform float uDensity, uDustSize, uDustBrightness, uDustSoftness, uDustTwinkleRate, uDrift, uAlongStart, uAlongEnd;
 uniform float uMistSize, uMistOpacity, uMistSoftness, uMistDrift, uMistAlongStart, uMistAlongEnd;
-uniform vec3 uMistColor;
+uniform vec3 uMistColor, uDustColor;
 varying vec3 vColor;
 varying float vAlpha, vSoftness;
 // __LIGHT__
@@ -42,7 +42,8 @@ void main() {
   } else {
     vAlpha = envelope;
     float flicker = 1.0 - uTwinkle + uTwinkle * (0.5 + 0.5 * sin(uTime * uDustTwinkleRate + TAU * aVary));
-    vColor = uLightColor * beam * uDustBrightness * flicker;
+    // Dim stone-toned motes: subtler than the warm sparkle of water droplets.
+    vColor = uDustColor * beam * uDustBrightness * flicker;
     vSoftness = uDustSoftness;
     gl_PointSize = spriteSize(viewPosition, uDustSize * (0.5 + aVary), vAlpha);
   }

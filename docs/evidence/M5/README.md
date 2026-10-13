@@ -70,3 +70,21 @@ Pipeline: draws 4 → 7 (three additive `Points`), programs 4 → 7, textures 3 
 Desktop vsync-limited timing cannot certify phone frame rate; mist sprite
 overdraw (36 sprites up to a few hundred px) is the main fill-rate risk to
 watch on phones and is reducible via `dust.mistCount`/`mistSize`.
+
+## User follow-up: splash rim origin and dimmer dust
+
+After acceptance, the user asked for two changes before publication. (1) Touch
+splashes should come from the upstream perimeter of the touch, bouncing off it,
+not from its centre. (2) Dust should be dimmer and closer to the stone colour,
+so it no longer resembles water spray. The `desktop/`, `portrait/` and
+`landscape/` probe captures above were regenerated at the new head; their
+counts are unchanged and there are no console warnings/errors.
+
+`splash-rim/` (`node docs/evidence/M5/splash-rim/shots.mjs docs/evidence/M5/splash-rim`,
+390×844 DPR2, drift off) has full frames and `*-crop.png` close-ups.
+`press-120ms`/`press-270ms` show the press splash leaving the **upper rim of the
+opening** and arcing out and down in front of the sheet. `drag` shows a
+down-right drag shedding droplets from the leading upstream edge. At rim 1
+(the field sigma), droplets started inside the dark opening; rim 2 matches its
+visible edge. Dust is now grey `#6b6a64` × 0.9 instead of warm light × 2.6;
+lip spray specks stay bright because they are water.

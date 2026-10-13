@@ -318,6 +318,13 @@
 - **M5 accepted. Accepted implementation head (next BASE_SHA): `e2ed56dc0d19a977454fa725e180f4a68e31c8b0`.** Physical-phone look, cost and feel of the particles remain unverified (user phone check requested; certification M9).
 - Nits (owner builder): (1) ~70 Three "object does not belong to this context" warnings when HMR follows a forced context restore. Same root cause as the existing item, now with more objects: M8. (2) Distance-spaced emission gives slow/medium drags more (smaller) splashes than a short fast flick (fewer, stronger). Judge on the phone: M5 phone feedback, else M9 presets. (3) Unchanged from r1: ten-finger live-burst overwrite (M9), shader spread constants (M9), motes behind the curtain and mist edge spill (M6). (4) Test indentation at `tests/particles.test.js:62`: next time the file is touched.
 
+### M5 — User visual follow-up before publication
+
+- The user reviewed M5 and requested two fixes before pushing. (1) Splash emitters sat at the touch centre; they should be upstream on the touch perimeter, so water reads as bouncing off the finger. The physics was otherwise approved. (2) Dust looked too much like water splashes; it should be darker, closer to the stone.
+- Change: `burst.vert.glsl` starts each droplet on the upstream arc (±`bursts.arcRadians` 1.2 rad from straight up) at `touch.radius × bursts.rim` (2: the visible edge of the opening; 1 put droplets inside it), adding a radial `bursts.bounce` (0.55 m/s). Dust uses new `dust.color` `#6b6a64` at brightness 0.9 (was the warm light colour × 2.6). All are config/GUI tunables. Emitter CPU logic, counts, passes and textures are unchanged; contract updated.
+- Evidence: [splash-rim close-ups and regenerated probes](docs/evidence/M5/README.md#user-follow-up-splash-rim-origin-and-dimmer-dust). `npm test` 23/23, build passes, no console warnings/errors.
+- Accepted base for review: `e2ed56dc0d19a977454fa725e180f4a68e31c8b0`. Focused review r3 of this head is requested before push.
+
 ### M<n> — <summary>
 
 - Status:

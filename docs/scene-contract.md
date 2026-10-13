@@ -281,6 +281,12 @@ plus `lift` up and `outward` toward the camera (both scaled by
 minShare + (1 − minShare)·strength), minus `carry` × the local accelerated
 water speed. Each slot draws `perBurst` points; a point renders only if its
 rank is below that same share, so stronger swipes release more droplets.
+The descriptor origin is the finger centre. Each droplet starts on the
+**upstream arc** of the touch perimeter: angle ±`arcRadians` from straight up
+(against the flow, a fixed seeded `aArc` per point), at `touch.radius × rim`
+(radius is the field's Gaussian sigma; rim 2 matches the visible edge of the
+opening). It adds a radial `bounce` away from the finger, so water appears to
+rebound off the contact rather than leave from inside it.
 A full ring overwrites the oldest burst (counted as `overwritten` in the
 debug snapshot), bounding cost under any number of fingers. Rebuilding
 `slots` reallocates and clears the ring. Context restoration re-flags the
@@ -299,9 +305,10 @@ and `src/scene/ballistics.js` define the same contract: gravity
 gravity), pool surface `POOL_HEIGHT` = 0 = the curtain base,
 p(t) = origin + v·t − ½g·t²ŷ, and `impactTime(y0, vy)` = the later root of
 y0 + vy·t − ½g·t² = pool. Burst droplets retire at
-min(their lifetime, impactTime). Each droplet's velocity is the slot
-velocity × (1 − jitter + 2·jitter·seed.x) + (seed.yzw·2 − 1)·spread·|v|, with
-z made non-negative. M7 makes rings without readback by sampling the same
+min(their lifetime, impactTime). Each droplet starts at origin + radial·radius·rim and its velocity is the
+slot velocity × (1 − jitter + 2·jitter·seed.x) + radial·bounce·(1 − jitter +
+2·jitter·seed.y) + (seed.yzw·2 − 1)·spread·|v|, with z made non-negative;
+radial = (sin θ, cos θ, 0), θ = (2·aArc − 1)·arcRadians. M7 makes rings without readback by sampling the same
 burst texture: for each live slot it can evaluate the mean trajectory (seed
 0.5) or a few representative seeds, compute impactTime, and draw a ring at
 the landing xz once uTime passes start + impactTime. Base spray lands on
@@ -312,7 +319,8 @@ analytic, so M7 may also derive these impacts from time alone.
 along-axis distance in [alongStart, alongEnd] (mist: its own range), then a
 disc whose radius follows the cone half-angle × `spread`. They drift down the
 beam and wrap, with `edgeFade` hiding the wrap, and fade out within `wallFade`
-metres in front of the undisplaced wall. Their colour is the light colour ×
-`shaftMask` × intensity: outside the mask they add exactly zero. `density`
+metres in front of the undisplaced wall. Dust colour is the dim stone-toned
+`dust.color` × `shaftMask` × intensity × `brightness` (subtler than the warm
+water sparkle); mist uses `mistColor`. Outside the mask they add exactly zero. `density`
 keeps a seeded random subset of the dust capacity live without a rebuild. The visible
 shaft volume remains M6.

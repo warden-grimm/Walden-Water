@@ -1,5 +1,5 @@
 {
-  "measuredAt": "2026-10-13T01:32:44.014Z",
+  "measuredAt": "2026-10-13T03:05:08.771Z",
   "width": 390,
   "height": 844,
   "dpr": 2,
@@ -120,12 +120,12 @@
     "running": true,
     "contextLost": false,
     "restores": 0,
-    "frames": 143,
-    "elapsed": 2.4335999999999975,
+    "frames": 140,
+    "elapsed": 2.383699999999998,
     "reducedMotion": false,
     "camera": [
-      0.018811020282364466,
-      3.008737302668832,
+      0.018520578681974566,
+      3.0085811478033286,
       10.647765095859238
     ],
     "drawCalls": 7,
@@ -173,10 +173,10 @@
       "height": 512,
       "format": "RGBA16F / manual bilinear",
       "generation": 1,
-      "steps": 145,
+      "steps": 142,
       "distinctTargets": true,
-      "readId": 12,
-      "writeId": 10,
+      "readId": 10,
+      "writeId": 12,
       "validation": "render + signed/pressure interpolation + vertex sampling + neutral passed",
       "count": 0,
       "pointers": []

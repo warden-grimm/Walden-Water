@@ -37,7 +37,7 @@ const layouts = {
     build: c => pointGeometry(c.spray.count, 0x5eed01, { aKind: i => (i < Math.round(c.spray.count * c.spray.lipShare) ? 0 : 1) }) },
   bursts: { key: (c, slots) => `${slots}:${c.bursts.perBurst}`,
     build: (c, slots) => pointGeometry(slots * c.bursts.perBurst, 0x5eed02, {
-      aSlot: i => Math.floor(i / c.bursts.perBurst), aShare: i => (i % c.bursts.perBurst) / c.bursts.perBurst }) },
+      aSlot: i => Math.floor(i / c.bursts.perBurst), aShare: i => (i % c.bursts.perBurst) / c.bursts.perBurst, aArc: (i, next) => next() }) },
   motes: { key: c => `${c.dust.capacity}:${c.dust.mistCount}`,
     build: c => pointGeometry(c.dust.capacity + c.dust.mistCount, 0x5eed03, {
       aVary: (i, next) => next(), aKind: i => (i < c.dust.capacity ? 0 : 1) }) },
@@ -57,7 +57,7 @@ export function createParticles(config, time, light, pointers, renderer) {
       uBaseSpread: ['spray', 'baseSpread'], uBaseRest: ['spray', 'baseRest'], uJitter: ['spray', 'jitter'],
       uSize: ['spray', 'size'], uOpacity: ['spray', 'opacity'], uSoftness: ['droplets', 'softness'] } },
     bursts: { vertex: burstVertex, group: 'bursts', extra: { uBursts: emitter.uniform, uBurstSlots: { value: emitter.slots } },
-      bindings: { uMinShare: ['bursts', 'minShare'], uSpread: ['bursts', 'spread'], uJitter: ['bursts', 'jitter'],
+      bindings: { uTouchRadius: ['touch', 'radius'], uRim: ['bursts', 'rim'], uArc: ['bursts', 'arcRadians'], uBounce: ['bursts', 'bounce'], uMinShare: ['bursts', 'minShare'], uSpread: ['bursts', 'spread'], uJitter: ['bursts', 'jitter'],
         uLifetime: ['bursts', 'lifetime'], uSize: ['bursts', 'size'], uOpacity: ['bursts', 'opacity'], uSoftness: ['droplets', 'softness'] } },
     motes: { vertex: motesVertex, group: 'dust', bindings: { uWallDepth: ['wall', 'depth'], uWallFade: ['dust', 'wallFade'],
       uEdgeFade: ['dust', 'edgeFade'], uSpread: ['dust', 'spread'], uSwirl: ['dust', 'swirl'], uWobble: ['dust', 'wobble'],
@@ -66,7 +66,7 @@ export function createParticles(config, time, light, pointers, renderer) {
       uDrift: ['dust', 'drift'], uAlongStart: ['dust', 'alongStart'], uAlongEnd: ['dust', 'alongEnd'],
       uMistSize: ['dust', 'mistSize'], uMistOpacity: ['dust', 'mistOpacity'], uMistSoftness: ['dust', 'mistSoftness'],
       uMistDrift: ['dust', 'mistDrift'], uMistAlongStart: ['dust', 'mistAlongStart'], uMistAlongEnd: ['dust', 'mistAlongEnd'],
-      uMistColor: ['dust', 'mistColor'] } },
+      uMistColor: ['dust', 'mistColor'], uDustColor: ['dust', 'color'] } },
   };
   function bind(uniforms, bindings) {
     for (const [name, [group, key]] of Object.entries(bindings)) {
