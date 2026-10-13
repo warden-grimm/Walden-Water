@@ -99,7 +99,8 @@ function snapshot() {
     wall: world.wall.snapshot(),
     curtain: world.curtain.snapshot(), capture: world.capture.snapshot(),
     touch: { ...world.field.snapshot(), ...pointers.snapshot() },
-    effects: 'M4: touch field, water parting and foam; no particles or postprocessing',
+    particles: world.particles.snapshot(),
+    effects: 'M5: touch field, water parting/foam, spray, touch bursts, shaft dust/mist; no visible shaft volume or postprocessing',
     userAgent: navigator.userAgent,
   };
 }

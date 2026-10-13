@@ -1,4 +1,4 @@
-# Scene contract through M4
+# Scene contract through M5
 
 World units are metres. +Y points up and +Z points toward the camera. The
 curtain is centred at x=0, z=0, extends from y=0 (pool) to y=6 (lip), and is
@@ -228,3 +228,87 @@ or production fragment-stage field read is added. The diagnostic overlay alone
 samples the full field in the fragment stage. All tunables are in `config.touch`
 and the GUI. An unavailable field is gated to zero in the vertex shader, so its
 neutral fallback continues to render undisturbed water.
+
+<a id="m5-particles"></a>
+
+## M5 particles and the M7 impact contract
+
+`createParticles()` (`src/scene/Particles.js`) adds three additive `Points`
+draws after the curtain (renderOrder 3–5): continuous **spray**, touch
+**bursts**, and shaft **motes** (dust plus mist). None is part of the wall
+capture, so refraction never samples particles. Additive premultiplied
+blending (ONE, ONE) is order-independent: overlapping points need no sorting,
+and nothing writes or tests depth. All positions are evaluated analytically in
+the vertex shader from the shared time uniform and fixed per-point seeds
+(deterministic mulberry32, regenerated only when a count changes). There is
+no CPU per-particle update, particle render target, or readback. Point
+geometry carries only seeds; `position` exists solely to set the draw count,
+so frustum culling is disabled.
+
+Sprites are sized in world metres: pixels = diameter × `uPointScale` / view
+depth, with `uPointScale` = buffer height / (2·tan(fov/2)) updated on resize.
+Below `droplets.minPixels` a sprite keeps the minimum size and its alpha is
+scaled by area, avoiding sub-pixel shimmer. Sizes clamp to the device's
+`ALIASED_POINT_SIZE_RANGE`, read at creation and after context restoration.
+The fragment profile is exp(−softness·r²)·(1−r²), reaching zero at the rim.
+
+**Spray.** `spray.count` points; the first `lipShare` peel forward off the
+lip (y=height, bow zero), the rest are thrown up from the base impact line
+(y=pool). Each point loops with a period fixed by its seeds; each loop
+re-seeds launch values with irrational increments so drops do not repeat.
+Base drops retire exactly when they return to the pool.
+
+**Touch bursts.** `SplashEmitter.js` owns a fixed ring of `bursts.slots`
+descriptors in a slots×2 RGBA32F `DataTexture` (nearest, no mipmaps):
+
+| Texel | RGB | A |
+| --- | --- | --- |
+| (i, row 0) | launch origin, world m | start time on the shared clock; < 0 = empty |
+| (i, row 1) | launch velocity, m/s | strength [0, 1] |
+
+The CPU writes eight floats only when a burst spawns and flags one texture
+upload that frame; nothing else changes per frame. A new contact (the
+tracker's `began` flag) splashes once at `bursts.press`, so a held finger never
+keeps emitting. A moving contact emits while its event-time drag speed is at
+least `minSpeed`, at most once per `interval` seconds per finger, with
+strength (speed − minSpeed)/(fullSpeed − minSpeed). Launch origin is the
+resting-curtain point of the contact UV. Launch velocity = drag × `throw`,
+plus `lift` up and `outward` toward the camera (both scaled by
+minShare + (1 − minShare)·strength), minus `carry` × the local accelerated
+water speed. Each slot draws `perBurst` points; a point renders only if its
+rank is below that same share, so stronger swipes release more droplets.
+A full ring overwrites the oldest burst (counted as `overwritten` in the
+debug snapshot), bounding cost under any number of fingers. Rebuilding
+`slots` reallocates and clears the ring. Context restoration re-flags the
+texture for upload; the descriptors stay in CPU memory.
+
+The tracker adds three per-contact arrays parallel to `segments`:
+`velocities` (curtain-plane drag, m/s, +x right, +y up, same event-time
+window as strength), `sources` (stable slot index), and `began`.
+The existing field-strength saturation at 1.25 m/s is kept: phone feedback
+reported good feel, and fast swipes are now distinguished by splash volume and
+throw, which scale to `fullSpeed` (3 m/s) independently of the field.
+
+**Ballistics / impacts (consumed by M7).** `shaders/particles-common.glsl`
+and `src/scene/ballistics.js` define the same contract: gravity
+`droplets.gravity` along −Y (artistic, separate from the curtain's flow
+gravity), pool surface `POOL_HEIGHT` = 0 = the curtain base,
+p(t) = origin + v·t − ½g·t²ŷ, and `impactTime(y0, vy)` = the later root of
+y0 + vy·t − ½g·t² = pool. Burst droplets retire at
+min(their lifetime, impactTime). Each droplet's velocity is the slot
+velocity × (1 − jitter + 2·jitter·seed.x) + (seed.yzw·2 − 1)·spread·|v|, with
+z made non-negative. M7 makes rings without readback by sampling the same
+burst texture: for each live slot it can evaluate the mean trajectory (seed
+0.5) or a few representative seeds, compute impactTime, and draw a ring at
+the landing xz once uTime passes start + impactTime. Base spray lands on
+y=0 along x ∈ ±width·baseSpread/2 at the curtain plane; its loop is
+analytic, so M7 may also derive these impacts from time alone.
+
+**Motes.** Dust and mist are sampled in the shared cone's own frame: an
+along-axis distance in [alongStart, alongEnd] (mist: its own range), then a
+disc whose radius follows the cone half-angle × `spread`. They drift down the
+beam and wrap, with `edgeFade` hiding the wrap, and fade out within `wallFade`
+metres in front of the undisplaced wall. Their colour is the light colour ×
+`shaftMask` × intensity: outside the mask they add exactly zero. `density`
+keeps a seeded random subset of the dust capacity live without a rebuild. The visible
+shaft volume remains M6.

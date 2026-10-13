@@ -5,6 +5,7 @@ import { createWall } from './Wall.js';
 import { createWallCapture } from './WallCapture.js';
 import { createWaterCurtain } from './WaterCurtain.js';
 import { createTouchField } from '../interaction/TouchField.js';
+import { createParticles } from './Particles.js';
 import backgroundVertex from '../shaders/background.vert.glsl?raw';
 import backgroundFragment from '../shaders/background.frag.glsl?raw';
 
@@ -19,6 +20,8 @@ export function createScene(config, time, renderer, pointers) {
   const field = createTouchField(renderer, config, pointers);
   const curtain = createWaterCurtain(config, time, light, capture.texture, field.uniforms);
   curtain.mesh.name = 'curtain';
+  // Additive droplets/motes draw after the water; never part of the wall capture.
+  const particles = createParticles(config, time, light, pointers, renderer);
   const geometry = new PlaneGeometry(1, 1);
   const backgroundMaterial = new ShaderMaterial({ uniforms: { uWallTexture: capture.texture },
     vertexShader: backgroundVertex, fragmentShader: backgroundFragment, depthTest: false, depthWrite: false });
@@ -27,7 +30,7 @@ export function createScene(config, time, renderer, pointers) {
   const markerMaterial = new MeshBasicMaterial({ transparent: true, depthWrite: false });
   const lip = new Mesh(geometry, markerMaterial), poolLine = new Mesh(geometry, markerMaterial);
   lip.renderOrder = poolLine.renderOrder = 2;
-  scene.add(background, curtain.mesh, lip, poolLine, view.camera);
+  scene.add(background, curtain.mesh, lip, poolLine, ...particles.objects, view.camera);
   function configure(aspect, reducedMotion, bufferWidth, bufferHeight) {
     wallScene.background.set(config.renderer.background);
     view.configure(aspect, reducedMotion);
@@ -37,6 +40,7 @@ export function createScene(config, time, renderer, pointers) {
     field.configure();
     const target = capture.snapshot();
     curtain.configure(bufferWidth, bufferHeight, target.width, target.height);
+    particles.configure(bufferHeight, view.camera);
     markerMaterial.color.set(config.markers.color);
     markerMaterial.opacity = config.markers.opacity;
     lip.visible = poolLine.visible = config.markers.opacity > 0;
@@ -45,8 +49,8 @@ export function createScene(config, time, renderer, pointers) {
     lip.scale.set(config.curtain.width + 2 * config.markers.overhang, config.markers.thickness, 1);
     poolLine.scale.copy(lip.scale);
   }
-  return { scene, camera: view.camera, updateCamera: view.updateCamera, configure, light, wall, curtain, capture, field,
-    render(delta) { field.update(delta); capture.render(); renderer.render(scene, view.camera); },
-    contextRestored() { capture.contextRestored(); field.contextRestored(); },
-    dispose() { field.dispose(); capture.dispose(); curtain.dispose(); wall.dispose(); geometry.dispose(); backgroundMaterial.dispose(); markerMaterial.dispose(); scene.clear(); wallScene.clear(); } };
+  return { scene, camera: view.camera, updateCamera: view.updateCamera, configure, light, wall, curtain, capture, field, particles,
+    render(delta) { field.update(delta); particles.update(); capture.render(); renderer.render(scene, view.camera); },
+    contextRestored() { capture.contextRestored(); field.contextRestored(); particles.contextRestored(); },
+    dispose() { particles.dispose(); field.dispose(); capture.dispose(); curtain.dispose(); wall.dispose(); geometry.dispose(); backgroundMaterial.dispose(); markerMaterial.dispose(); scene.clear(); wallScene.clear(); } };
 }

@@ -6,12 +6,16 @@ import { intersectCurtain } from './curtainContact.js';
 export const POINTER_CAPACITY = 10;
 const HISTORY_CAPACITY = 16;
 export function createPointerTracker(canvas, config, ownerWindow = window, ownerDocument = document) {
-  const slots = Array.from({ length: POINTER_CAPACITY }, () => ({ id: null, held: false, pending: false,
+  const slots = Array.from({ length: POINTER_CAPACITY }, () => ({ id: null, held: false, pending: false, fresh: false,
     x: 0, y: 0, previousX: 0, previousY: 0, eventTime: 0, velocityAge: 0,
     history: new Float64Array(HISTORY_CAPACITY * 3), historyIndex: 0, historyCount: 0,
     uv: new Vector2(), valid: false }));
   const segments = Array.from({ length: POINTER_CAPACITY }, () => new Vector4());
   const strengths = new Float32Array(POINTER_CAPACITY);
+  // Parallel to segments: curtain-plane drag velocity (m/s, +x right, +y up),
+  // the stable slot index for per-finger state, and 1 on a press's first frame.
+  const velocities = new Float32Array(POINTER_CAPACITY * 2);
+  const sources = new Uint8Array(POINTER_CAPACITY), began = new Uint8Array(POINTER_CAPACITY);
   const count = { value: 0 }, raycaster = new Raycaster(), ndc = new Vector2(), startUv = new Vector2();
   let left = 0, top = 0, width = 1, height = 1;
   let available = true, previousTimestamp = null;
@@ -43,7 +47,7 @@ export function createPointerTracker(canvas, config, ownerWindow = window, owner
     if (!slot) for (const candidate of slots) if (candidate.id === null) { slot = candidate; break; }
     if (!slot) return;
     event.preventDefault(); readBounds();
-    slot.id = event.pointerId; slot.held = true; slot.pending = true;
+    slot.id = event.pointerId; slot.held = true; slot.pending = true; slot.fresh = true;
     slot.x = slot.previousX = event.clientX; slot.y = slot.previousY = event.clientY;
     slot.eventTime = event.timeStamp; slot.velocityAge = 0; seedHistory(slot);
     try { canvas.setPointerCapture(event.pointerId); } catch { release(slot); }
@@ -84,7 +88,8 @@ export function createPointerTracker(canvas, config, ownerWindow = window, owner
     if (!available || !config.touch.enabled) { clear(); return; }
     const elapsed = previousTimestamp === null ? 0 : Math.max(0, timestamp - previousTimestamp);
     previousTimestamp = timestamp;
-    for (const slot of slots) {
+    for (let s = 0; s < POINTER_CAPACITY; s++) {
+      const slot = slots[s];
       if (slot.id === null) continue;
       // Expiry uses only the render clock, so an event-clock offset cannot keep
       // an old boost alive. The contact itself still uses the latest event.
@@ -95,6 +100,8 @@ export function createPointerTracker(canvas, config, ownerWindow = window, owner
         if (!startValid) startUv.copy(slot.uv);
         const index = count.value++;
         segments[index].set(startUv.x, startUv.y, slot.uv.x, slot.uv.y);
+        sources[index] = s; began[index] = slot.fresh ? 1 : 0; slot.fresh = false;
+        velocities[index * 2] = velocities[index * 2 + 1] = 0;
         // Sweep uses render positions; speed uses INPUT timestamps. Carry the
         // event velocity across faster display frames, then expire it at rest.
         // Reproject both event points with the current camera so drift alone
@@ -110,8 +117,10 @@ export function createPointerTracker(canvas, config, ownerWindow = window, owner
         const eventSeconds = (slot.eventTime - slot.history[sampleOffset + 2]) / 1000;
         if (startValid && eventSeconds > 0 && slot.velocityAge < config.touch.velocityHold * 1000 &&
             contact(slot.history[sampleOffset], slot.history[sampleOffset + 1], camera, startUv)) {
-          speed = Math.hypot((slot.uv.x - startUv.x) * config.curtain.width,
-            (slot.uv.y - startUv.y) * config.curtain.height) / eventSeconds;
+          const vx = (slot.uv.x - startUv.x) * config.curtain.width / eventSeconds;
+          const vy = (slot.uv.y - startUv.y) * config.curtain.height / eventSeconds;
+          velocities[index * 2] = vx; velocities[index * 2 + 1] = vy;
+          speed = Math.hypot(vx, vy);
         }
         strengths[index] = Math.min(config.touch.maxStrength, config.touch.holdStrength + speed * config.touch.velocityGain);
       }
@@ -127,7 +136,7 @@ export function createPointerTracker(canvas, config, ownerWindow = window, owner
   ownerWindow.addEventListener('blur', clear);
   ownerDocument.addEventListener('visibilitychange', visibility);
   resize();
-  return { segments, strengths, count, resize, update, clear,
+  return { segments, strengths, velocities, sources, began, count, resize, update, clear,
     setAvailable(value) { available = value; if (!value) clear(); },
     snapshot: () => ({ count: count.value, pointers: slots.filter(s => s.id !== null).map(s => ({ id: s.id, held: s.held, valid: s.valid, uv: s.uv.toArray() })) }),
     dispose() {

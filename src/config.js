@@ -23,6 +23,17 @@ export const config = {
     radius: 0.13, holdStrength: 0.85, velocityGain: 0.12, velocityHold: 0.05, velocityWindow: 0.05, maxStrength: 1,
     sidePush: 0.9, forwardPush: 0.8, gapStart: 0.001, gapEnd: 0.12, foam: 0.6, foamOpacity: 0.35, foamColor: '#bad0d0',
     recovery: 1.6, diffusion: 3, transport: 0.7, neutralThreshold: 0.001, maxStep: 1 / 30 },
+  // Shared droplet look and ballistics for spray and touch bursts (M5) and future pool impacts (M7).
+  droplets: { color: '#c9dde2', gravity: 4.2, ambient: 0.06, sparkle: 2.4, twinkle: 0.6, twinkleRate: 9,
+    softness: 3.5, minPixels: 1.5, fade: 0.2 },
+  spray: { enabled: true, count: 720, lipShare: 0.45, lipLife: 1.1, lipForward: 0.22, lipSide: 0.1, lipDrop: 0.35,
+    baseSpeed: 1.2, baseForward: 0.5, baseSide: 0.4, baseSpread: 1.08, baseRest: 0.35, jitter: 0.4, size: 0.022, opacity: 0.5 },
+  bursts: { enabled: true, slots: 96, perBurst: 32, minSpeed: 0.35, fullSpeed: 3, interval: 0.045, press: 0.3, minShare: 0.25,
+    throw: 0.6, outward: 1.1, lift: 0.55, carry: 0.25, spread: 0.4, jitter: 0.45, lifetime: 1.6, size: 0.03, opacity: 0.9 },
+  // Motes are sampled inside the shared shaft cone and lit only by its mask.
+  dust: { enabled: true, capacity: 1200, density: 0.6, size: 0.014, brightness: 2.6, softness: 3, twinkleRate: 2.2, drift: 0.035, swirl: 0.08,
+    wobble: 0.05, wobbleRate: 0.35, alongStart: 2, alongEnd: 8.5, spread: 1.15, edgeFade: 0.1, wallFade: 0.4,
+    mistCount: 36, mistSize: 0.55, mistOpacity: 0.09, mistSoftness: 1.6, mistDrift: 0.012, mistAlongStart: 3.5, mistAlongEnd: 7.5, mistColor: '#d8d2c4' },
   markers: { color: '#819598', opacity: 0, thickness: 0.018, overhang: 0.16, depth: 0.01 },
   timing: { maxDelta: 0.05 },
   // Fixed diagnostic protocol, not adjustable mid-sample; buffers allocated only in debug.
@@ -40,6 +51,9 @@ export const rebuildControls = {
   curtain: new Set(['width', 'height', 'bow', 'quality', 'referenceColumns', 'referenceRows', 'reducedColumns', 'reducedRows']),
   refraction: new Set(['wallResolution', 'precision', 'samples']),
   touch: new Set(['width', 'height', 'precision']),
+  spray: new Set(['count', 'lipShare']),
+  bursts: new Set(['slots', 'perBurst']),
+  dust: new Set(['capacity', 'mistCount']),
 };
 export const ranges = {
   renderer: { exposure: [0.1, 2, 0.01], maxDpr: [0.5, 2, 0.1] },
@@ -61,6 +75,19 @@ export const ranges = {
     sidePush: [0, 1.5, 0.01], forwardPush: [0, 1.5, 0.01], gapStart: [0.0005, 0.1, 0.0005], gapEnd: [0.02, 0.5, 0.005], foam: [0, 1, 0.01], foamOpacity: [0, 1, 0.01],
     recovery: [0.5, 3, 0.1], diffusion: [0, 12, 0.1], transport: [0, 1.5, 0.05],
     neutralThreshold: [0.0005, 0.005, 0.0005], maxStep: [1 / 120, 1 / 30, 1 / 120] },
+  droplets: { gravity: [0.5, 9.8, 0.1], ambient: [0, 0.3, 0.005], sparkle: [0, 8, 0.1], twinkle: [0, 1, 0.01], twinkleRate: [0, 30, 0.5],
+    softness: [0.5, 8, 0.1], minPixels: [1, 4, 0.1], fade: [0.02, 0.5, 0.01] },
+  spray: { count: [0, 2000, 40], lipShare: [0, 1, 0.01], lipLife: [0.2, 3, 0.05], lipForward: [0, 1, 0.01], lipSide: [0, 0.5, 0.01], lipDrop: [0, 1.5, 0.01],
+    baseSpeed: [0, 3, 0.05], baseForward: [0, 1.5, 0.01], baseSide: [0, 1.5, 0.01], baseSpread: [0.5, 1.5, 0.01], baseRest: [0, 2, 0.05],
+    jitter: [0, 0.9, 0.01], size: [0.002, 0.05, 0.001], opacity: [0, 1, 0.01] },
+  bursts: { slots: [16, 192, 16], perBurst: [8, 64, 4], minSpeed: [0, 2, 0.05], fullSpeed: [0.5, 8, 0.1], interval: [0.016, 0.25, 0.001],
+    press: [0, 1, 0.01], minShare: [0, 1, 0.01], throw: [0, 2, 0.01], outward: [0, 3, 0.05], lift: [0, 2, 0.05], carry: [0, 1, 0.01],
+    spread: [0, 1.5, 0.01], jitter: [0, 0.9, 0.01], lifetime: [0.3, 4, 0.05], size: [0.002, 0.05, 0.001], opacity: [0, 1, 0.01] },
+  dust: { capacity: [0, 4000, 100], density: [0, 1, 0.01], size: [0.001, 0.03, 0.001], brightness: [0, 6, 0.05], softness: [0.5, 8, 0.1], twinkleRate: [0, 10, 0.1],
+    drift: [0, 0.3, 0.005], swirl: [0, 0.5, 0.005], wobble: [0, 0.3, 0.005], wobbleRate: [0, 2, 0.01], alongStart: [0, 8, 0.1], alongEnd: [1, 12, 0.1],
+    spread: [0.2, 2, 0.01], edgeFade: [0.01, 0.4, 0.01], wallFade: [0.05, 1.5, 0.01],
+    mistCount: [0, 200, 4], mistSize: [0.05, 1.5, 0.01], mistOpacity: [0, 0.3, 0.001], mistSoftness: [0.5, 6, 0.1], mistDrift: [0, 0.1, 0.001],
+    mistAlongStart: [0, 8, 0.1], mistAlongEnd: [1, 12, 0.1] },
   markers: { opacity: [0, 1, 0.01], thickness: [0.005, 0.05, 0.001], overhang: [0, 0.4, 0.01], depth: [0.001, 0.05, 0.001] },
   timing: { maxDelta: [0.016, 0.1, 0.001] },
 };
