@@ -1,5 +1,5 @@
 {
-  "measuredAt": "2026-10-13T03:22:32.515Z",
+  "measuredAt": "2026-10-13T03:35:24.072Z",
   "width": 844,
   "height": 390,
   "dpr": 2,
@@ -16,12 +16,12 @@
     "running": true,
     "contextLost": false,
     "restores": 0,
-    "frames": 351,
-    "elapsed": 6.390500000000002,
+    "frames": 348,
+    "elapsed": 6.2851000000000035,
     "reducedMotion": false,
     "camera": [
-      0.019659357202405997,
-      3.0149712011422403,
+      0.020215572821811287,
+      3.0149907888968146,
       9.388320632897686
     ],
     "drawCalls": 7,
@@ -69,7 +69,7 @@
       "height": 512,
       "format": "RGBA16F / manual bilinear",
       "generation": 1,
-      "steps": 357,
+      "steps": 353,
       "distinctTargets": true,
       "readId": 13,
       "writeId": 11,

@@ -36,7 +36,7 @@ export const config = {
     mistCount: 36, mistSize: 0.55, mistOpacity: 0.09, mistSoftness: 1.6, mistDrift: 0.012, mistAlongStart: 3.5, mistAlongEnd: 7.5, mistColor: '#d8d2c4' },
   // M6 visible beam: the shared light integrated along each view ray (no separate light model).
   shaft: { enabled: true, view: 'shaft', intensity: 0.05, core: 2.5, samples: 14, softDepth: 0.35,
-    noise: 0.55, noiseScale: 1.2, drift: 0.06, streaks: 0.5, streakScale: 14, streakDrift: 0.02 },
+    noise: 0.55, noiseScale: 1.2, lacunarity: 2.03, gain: 0.45, drift: 0.06, streaks: 0.5, streakScale: 14, streakDrift: 0.02 },
   markers: { color: '#819598', opacity: 0, thickness: 0.018, overhang: 0.16, depth: 0.01 },
   timing: { maxDelta: 0.05 },
   // Fixed diagnostic protocol, not adjustable mid-sample; buffers allocated only in debug.
@@ -93,7 +93,7 @@ export const ranges = {
     mistCount: [0, 200, 4], mistSize: [0.05, 1.5, 0.01], mistOpacity: [0, 0.3, 0.001], mistSoftness: [0.5, 6, 0.1], mistDrift: [0, 0.1, 0.001],
     mistAlongStart: [0, 8, 0.1], mistAlongEnd: [1, 12, 0.1] },
   shaft: { intensity: [0, 1, 0.001], core: [1, 6, 0.05], samples: [4, 48, 1], softDepth: [0.01, 2, 0.01],
-    noise: [0, 1, 0.01], noiseScale: [0.1, 6, 0.05], drift: [0, 0.5, 0.005], streaks: [0, 1, 0.01], streakScale: [1, 40, 0.5], streakDrift: [0, 0.2, 0.001] },
+    noise: [0, 1, 0.01], noiseScale: [0.1, 6, 0.05], lacunarity: [1.1, 3, 0.01], gain: [0.1, 0.8, 0.01], drift: [0, 0.5, 0.005], streaks: [0, 1, 0.01], streakScale: [1, 40, 0.5], streakDrift: [0, 0.2, 0.001] },
   markers: { opacity: [0, 1, 0.01], thickness: [0.005, 0.05, 0.001], overhang: [0, 0.4, 0.01], depth: [0.001, 0.05, 0.001] },
   timing: { maxDelta: [0.016, 0.1, 0.001] },
 };

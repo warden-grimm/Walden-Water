@@ -1,4 +1,4 @@
-# Scene contract through M5
+# Scene contract through M6
 
 World units are metres. +Y points up and +Z points toward the camera. The
 curtain is centred at x=0, z=0, extends from y=0 (pool) to y=6 (lip), and is
@@ -324,3 +324,57 @@ metres in front of the undisplaced wall. Dust colour is the dim stone-toned
 water sparkle); mist uses `mistColor`. Outside the mask they add exactly zero. `density`
 keeps a seeded random subset of the dust capacity live without a rebuild. The visible
 shaft volume remains M6.
+
+<a id="m6-shaft"></a>
+
+## M6 volumetric shaft
+
+`createLightShaft()` (`src/scene/LightShaft.js`, `shaders/shaft.frag.glsl`)
+draws the visible beam as two fullscreen additive passes of one shader, with
+no cone mesh. Per pixel, the shader:
+
+1. Builds the view ray from `cameraPosition` and the live
+   `camera.projectionMatrixInverse` / `camera.matrixWorld` (uniforms reference
+   the camera's own matrices, so drift/resize need no copies).
+2. Intersects the ray with the shared light's forward cone (apex
+   `uLightPosition`, axis `uLightDirection`, `uLightCosOuter`). The nappe is
+   convex, so the inside set is one interval; a camera inside the cone starts
+   at t=0.
+3. Clips the interval at the wall: `WallCapture` attaches a `DepthTexture` to
+   its (MSAA) target, which Three blit-resolves after the wall pass. The
+   shader unprojects (uv, depth) with the same camera, so linearisation and
+   near/far come from the projection itself. Depth 1 (no wall) clips at
+   `camera.far`.
+4. Splits the interval at the resting curtain (analytic bow, two fixed-point
+   steps; only inside the sheet rectangle). The **behind** segment draws at
+   renderOrder 0, after the background (−1) and before the water (1), so the
+   translucent sheet attenuates it. The **front** segment draws at 2.5, before
+   the particles (3+). Outside the sheet rectangle the whole ray is "front".
+5. Integrates `pow(shaftMask(p), shaft.core) × beamTexture(p) × soft` over
+   `shaft.samples` jittered steps (interleaved-gradient per-pixel offset).
+   `soft` = smoothstep(0, `softDepth`, wallDistance − t) fades samples close
+   to the captured surface. Colour = light colour × light intensity ×
+   `shaft.intensity` × integral. Both passes integrate the **whole** interval
+   at identical sample positions, separating the part behind the curtain.
+   The output transform E (ACES, then sRGB) is concave, so encoding each part
+   separately and adding them brightened split pixels: a visible step at the
+   curtain outline (checkpoint r1 blocker). The behind pass outputs
+   E(behind); the front pass outputs E(behind + front) − E(behind). With
+   nothing between them they sum to exactly E(total), and the water still
+   attenuates the behind pass. Zero-contribution pixels are discarded.
+
+The beam therefore uses exactly the shared light data (position, direction,
+cone, penumbra, axial fade 6→10 m, colour, intensity): moving the light in the
+GUI moves the beam, the rock/water lighting and the dust together. The
+axial fade ends before the axis reaches the pool. Because brightness is an
+integral that shrinks continuously as the ray nears geometry, no surface ever
+cuts through a volume mesh, so there are no hard intersection lines; real
+occlusion by nearer rock is preserved by the depth clip.
+
+`beamTexture` multiplies radial streaks (value noise in the cone's angular
+coordinates, which converge on the source like god rays) with slowly
+drifting fBm (`shaft.lacunarity/gain`). Both factors have mean ≈1.
+The shaft is not in the wall capture, so refraction never samples it, and
+neither pass renders into a texture it reads. Debug views (`shaft.view`)
+replace the frame and hide particles: `depth` (wall distance, 25 m = white), `segment` (in-cone
+ray length, 6 m = white), `split` (red behind / green front, 4 m = full).

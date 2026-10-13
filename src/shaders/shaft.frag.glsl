@@ -9,13 +9,20 @@ uniform float uCurtainWidth, uCurtainHeight, uCurtainBow, uCameraFar;
 const float DEPTH_VIEW_METRES = 25.0; // debug view: this distance maps to white
 uniform float uIntensity, uCore, uSamples, uSoftDepth;
 uniform float uNoise, uNoiseScale, uDrift, uStreaks, uStreakScale, uStreakDrift, uTime;
-uniform float uLacunarity, uGain;
+uniform float uLacunarity, uGain; // beam fBm, from config.shaft
 uniform int uPart; // 0 = segment behind the curtain, 1 = in front (and all debug views)
 uniform int uView; // 0 shaft, 1 linear wall distance, 2 cone segment length, 3 behind/front split
 varying vec2 vUv;
 // __LIGHT__
 // __NOISE__
 const float NO_HIT = 1e6;
+// Output transform used by every other pass (ACES when enabled, then sRGB).
+vec3 encodeBeam(vec3 linear) {
+  #ifdef TONE_MAPPING
+  linear = toneMapping(linear);
+  #endif
+  return linearToOutputTexel(vec4(linear, 1.0)).rgb;
+}
 const int MAX_SAMPLES = 48; // loop bound for uSamples (WebGL needs a constant)
 // Unproject a screen uv and NDC depth to world space with the live camera.
 vec3 unproject(vec2 uv, float ndcZ) {
@@ -92,22 +99,32 @@ void main() {
     float behind = max(end - max(start, curtain), 0.0), front = max(min(end, curtain) - start, 0.0);
     gl_FragColor = vec4(behind / 4.0, front / 4.0, 0.0, 1.0); return;
   }
-  if (uPart == 0) start = max(start, curtain); else end = min(end, curtain);
   if (end <= start) discard;
+  // BOTH passes integrate the whole interval at identical sample positions,
+  // separating the part beyond the curtain. Tone mapping and sRGB encoding
+  // are concave, so encoding each part separately and adding them would
+  // brighten split pixels (a visible step at the curtain outline). Instead:
+  // behind pass = E(behind); front pass = E(behind + front) - E(behind).
+  // With nothing between them they sum to exactly E(total); the water still
+  // attenuates the behind pass it is composited over.
   // Interleaved-gradient jitter per pixel trades banding for fine static grain.
   float jitter = fract(52.9829189 * fract(dot(gl_FragCoord.xy, vec2(0.06711056, 0.00583715))));
-  float stepLength = (end - start) / uSamples, sum = 0.0;
+  float stepLength = (end - start) / uSamples, total = 0.0, behind = 0.0;
   for (int i = 0; i < MAX_SAMPLES; i++) {
     if (float(i) >= uSamples) break;
     float t = start + (float(i) + jitter) * stepLength;
+    if (uPart == 0 && t < curtain) continue; // in front: unused by the behind pass
     vec3 p = ro + rd * t;
     // Soft fade within uSoftDepth of the captured surface (soft-particle style).
     float soft = smoothstep(0.0, uSoftDepth, wall - t);
     // uCore > 1 concentrates the visible beam toward the axis of the lit cone.
-    sum += pow(shaftMask(p), uCore) * beamTexture(p) * soft;
+    float density = pow(shaftMask(p), uCore) * beamTexture(p) * soft;
+    total += density;
+    if (t >= curtain) behind += density;
   }
-  vec3 color = uLightColor * uLightIntensity * uIntensity * sum * stepLength;
+  vec3 scale = uLightColor * uLightIntensity * uIntensity * stepLength;
+  vec3 encodedBehind = encodeBeam(scale * behind);
+  vec3 color = uPart == 0 ? encodedBehind : max(encodeBeam(scale * total) - encodedBehind, 0.0);
+  if (dot(color, color) <= 0.0) discard;
   gl_FragColor = vec4(color, 1.0);
-  #include <tonemapping_fragment>
-  #include <colorspace_fragment>
 }

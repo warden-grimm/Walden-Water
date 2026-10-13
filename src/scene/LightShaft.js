@@ -34,7 +34,7 @@ export function createLightShaft(config, time, light, camera, sceneDepth) {
     for (const [name, key] of Object.entries(bindings)) shared[name].value = s[key];
     shared.uCameraFar.value = config.camera.far;
     shared.uCurtainWidth.value = config.curtain.width; shared.uCurtainHeight.value = config.curtain.height; shared.uCurtainBow.value = config.curtain.bow;
-    shared.uLacunarity.value = config.water.lacunarity; shared.uGain.value = config.water.gain;
+    shared.uLacunarity.value = s.lacunarity; shared.uGain.value = s.gain;
     shared.uView.value = choices.shaft.view.indexOf(s.view);
     // Debug views replace the frame so depth/segment values read directly.
     const blending = shared.uView.value === 0 ? AdditiveBlending : NoBlending;

@@ -331,6 +331,12 @@
 - **Accepted M5 implementation head: `900eb9648d58cb68ad735915c9561f454c87aaff` (M6 BASE_SHA).** Published to GitHub Pages at the user's request ("fix … before pushing M5"). Physical-phone check of the new splash/dust look is requested from the user.
 - New nits (owner builder): presses within ~0.26 m of the lip start droplets above the water line; clamp the start height to the curtain top (M7). One seed drives bounce, lifetime and vertical spread together; decorrelate if patterns appear (M9). All earlier nits keep their owners/dates.
 
+### M6 — Early checkpoint r1 and fix
+
+- Checkpoint `392db933f75a70353dc4ee4ed5af7496565d7706` (BASE `900eb96`): [draft feedback r1](docs/reviews/M6-checkpoint-r1.md). Verified: the depth source (MSAA resolve, 0 samples, byte capture, wallResolution 0.5, orientation, context restore, HMR); unprojection/near-far within 0.02 m; cone-interval cases including camera inside and grazing cones; render-order isolation.
+- **Blocker, fixed.** Per-pass tone mapping/sRGB of the split behind/front segments brightened pixels inside the curtain outline. The builder's "wet-sheen" explanation was wrong; the reviewer reproduced the step with the shaft alone. Now both passes integrate identical samples; behind outputs E(behind), front outputs E(total) − E(behind). Retest [`docs/evidence/M6/seam.mjs`](docs/evidence/M6/seam.mjs): shaft only, curtain hidden, black rock/background, intensities 0.05/0.15/0.6. Profiles across the curtain's left edge and lip are smooth and monotonic (e.g. 0.05: 86→109 over x 530–565 with no jump; previously 70→96 at the edge).
+- Nits addressed now: debug views hide particles; beam fBm has its own `shaft.lacunarity/gain`. Remaining: shaft GPU cost (+1.0 ms median desktop in the reviewer's run) and fill-rate options (single pass / half resolution), measured and dispositioned in the full M6 submission.
+
 ### M<n> — <summary>
 
 - Status:

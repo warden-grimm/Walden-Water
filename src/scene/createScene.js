@@ -44,6 +44,8 @@ export function createScene(config, time, renderer, pointers) {
     curtain.configure(bufferWidth, bufferHeight, target.width, target.height);
     particles.configure(bufferHeight, view.camera);
     shaft.configure();
+    // Shaft debug views are measurements: keep particles from drawing over them.
+    if (config.shaft.view !== 'shaft') for (const object of particles.objects) object.visible = false;
     markerMaterial.color.set(config.markers.color);
     markerMaterial.opacity = config.markers.opacity;
     lip.visible = poolLine.visible = config.markers.opacity > 0;
