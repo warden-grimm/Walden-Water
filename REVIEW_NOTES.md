@@ -325,6 +325,12 @@
 - Evidence: [splash-rim close-ups and regenerated probes](docs/evidence/M5/README.md#user-follow-up-splash-rim-origin-and-dimmer-dust). `npm test` 23/23, build passes, no console warnings/errors.
 - Accepted base for review: `e2ed56dc0d19a977454fa725e180f4a68e31c8b0`. Focused review r3 of this head is requested before push.
 
+### M5 — r3 approval of user follow-up and publication
+
+- Independent focused review of exact `900eb9648d58cb68ad735915c9561f454c87aaff`: [report r3](docs/reviews/M5-review-r3.md) **APPROVE WITH NITS**, no blockers. Press splashes form an arc on the opening's upper rim (centroid about 20 px above the finger with the curtain hidden, nothing below). Swipe direction is preserved. Dust peak luminance fell 196 → 78 (lip droplets 117), neutral stone-grey, still beam-only. The contract matches the shader; 23/23 tests and the build pass.
+- **Accepted M5 implementation head: `900eb9648d58cb68ad735915c9561f454c87aaff` (M6 BASE_SHA).** Published to GitHub Pages at the user's request ("fix … before pushing M5"). Physical-phone check of the new splash/dust look is requested from the user.
+- New nits (owner builder): presses within ~0.26 m of the lip start droplets above the water line; clamp the start height to the curtain top (M7). One seed drives bounce, lifetime and vertical spread together; decorrelate if patterns appear (M9). All earlier nits keep their owners/dates.
+
 ### M<n> — <summary>
 
 - Status:
